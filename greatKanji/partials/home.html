@@ -1,0 +1,39 @@
+ <div ng-controller="mainCtrl">
+        <input ng-model="query" type="text" />
+        <!--  <table>
+        <tr>
+            <th>Index</th>
+            <th>Level</th>
+            <th>Kanji</th>
+
+            <th>On</th>
+            <th>Romaji</th>
+            <th>Kun</th>
+            <th>Meaning</th>
+        </tr>
+         <tr ng-repeat="item in k | filter:query">
+       <td>{{item.id}}</td>
+        <td>{{item.kLevel}}</td>
+        <td>{{item.kanji}}</td>
+        <td>{{item.onR}}</td>
+        <td>{{item.romon}}</td>
+        <td>{{item.kun}}</td>
+        <td>{{item.meaning}}</td>
+      </tr>
+    </table>-->
+        <table>
+            <tr>
+                <th>index</th>
+                <th>radical</th>
+                <th>meaning</th>
+                <th>similar</th>
+            </tr>
+            <tr ng-repeat="rad in k | filter:query">
+                <td>{{rad.id}}</td>
+                <td class="pangolin">{{rad.radical}}</td>
+                <td>{{rad.meaning}}</td>
+                <td>{{rad.similar}}</td>
+                <td>cmon</td>
+            </tr>
+        </table>
+    </div>

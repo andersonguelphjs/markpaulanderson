@@ -1,0 +1,1132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+ <style>
+ div.container4 {
+    height: 10em;
+    position: relative }
+div.container4 p {
+    margin: 0;
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+     }
+    
+    .center {
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   left: 50%;
+   top: 50%; 
+   background-color:blue;
+   margin-left: -150px;
+   margin-top: -150px;
+}
+ </style>
+</head>
+
+<body>
+<span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
+  Make a request
+</span>
+Test
+<div id="test">
+
+</div>
+<div class=container4>
+  <p>Centered!
+</div>
+<div class="center"></div>
+</body>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="http://blueandwhitedisease.com/angular-1.2.23/angular-route.min.js"></script>
+    <link href="http://blueandwhitedisease.com/greatKanji/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="http://blueandwhitedisease.com/greatKanji/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <script src="http://blueandwhitedisease.com/greatKanji/bootstrap/js/bootstrap.min.js"></script> 
+
+<script type="text/javascript">
+(function() {
+  var httpRequest;
+  document.getElementById("ajaxButton").onclick = function() { makeRequest('http://blueandwhitedisease.com/greatKanji/flashcards.html'); };
+
+  function makeRequest(url) {
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+      httpRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE
+      try {
+        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      } 
+      catch (e) {
+        try {
+          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        } 
+        catch (e) {}
+      }
+    }
+
+    if (!httpRequest) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+    httpRequest.onreadystatechange = alertContents;
+    httpRequest.open('GET', url);
+    httpRequest.send();
+  }
+
+  function alertContents() {
+    if (httpRequest.readyState === 4) {
+      if (httpRequest.status === 200) {
+        alert(httpRequest.responseXML);
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+})();
+</script>
+<script type="text/javascript"> 
+/*
+things i need to study
+Data Structures
+ Algorithms
+ Concepts
+ Linked Lists
+ Breadth First Search
+ Bit Manipulation
+ Binary Trees
+ Depth First Search
+ Singleton Design Pattern
+ Tries
+ Binary Search
+ Factory Design Pattern
+ Stacks
+ Merge Sort
+ Memory (Stack vs Heap)
+ Queues
+ Quick Sort
+ Recursion
+ Vectors / ArrayLists
+ Tree Insert / Find / etc
+ Big-O Time
+ Hash Tables
+
+testing
+scalability
+amazon architecture
+raw ajax
+/*
+
+Frontend Engineer, Customer Service Applications
+Job Description
+Are you interested in building products used by millions of people?
+Amazon's Customer Service Team develops software used by millions of customers worldwide. We are seeking an experienced 
+Frontend Engineer to develop interfaces for our customer facing self-service tools across your orders and your account. 
+The interfaces will be internationalized into multiple languages and will need to be optimized for a variety of devices. 
+You should be a talented and experienced Frontend Engineer with expertise in web UI and AJAX-based interactive application
+ development. You should have a solid background in the fundamentals of software development, and have a deep understanding
+  of best practices in various languages/technologies. You should love creating things and take great personal pride in 
+  building engaging and innovative interfaces.
+Qualifications
+· Experience in XHTML, Javascript, CSS and general Web 2.0 techniques
+· Experience developing AJAX interfaces with AJAX libraries and frameworks (e.g. JQuery, Backbone.js, Angular.js, etc.)
+· Experience in a Unix/Linux environment
+· 1+ years of software development experience
+· Bachelor's degree
+Preferred Qualifications
+· Passion for creating efficient, scalable web interfaces
+· Familiarity with scripting languages (e.g. PHP, Ruby) is a plus
+· Understanding of web services technologies such as SOAP, HTTP, WSDL, XSD, and REST
+· Degree preferably in computer science or a similar technical discipline
+· Genuinely excited about technology, have a strong interest in learning about and playing with the latest technologies 
+and building compelling web applications and UI
+· Must be a self-starter and motivated
+
+*/
+
+//Binary Tree
+
+function BinarySearchTree() {
+    
+    this._root = null;
+    this.sel = $("#test");
+} 
+
+BinarySearchTree.prototype = {
+
+    //restore constructor
+    constructor: BinarySearchTree,
+
+write: function (val) {
+
+this.sel.append("<br>"+val);
+
+},
+
+remove: function(value){
+
+        var found       = false,
+            parent      = null,
+            current     = this._root,
+            childCount,
+            replacement,
+            replacementParent;
+
+        //find the node (removed for space)
+
+        //only proceed if the node was found
+        if (found){
+
+            //figure out how many children
+            childCount = (current.left !== null ? 1 : 0) + 
+                         (current.right !== null ? 1 : 0);
+
+            //special case: the value is at the root
+            if (current === this._root){
+                switch(childCount){
+
+                    //other cases removed to save space
+
+                    //two children, little work to do
+                    case 2:
+
+                        //new root will be the old root's left child
+                        //...maybe
+                        replacement = this._root.left;
+
+                        //find the right-most leaf node to be 
+                        //the real new root
+                        while (replacement.right !== null){
+                            replacementParent = replacement;
+                            replacement = replacement.right;
+                        }
+
+                        //it's not the first node on the left
+                        if (replacementParent !== null){
+
+                            //remove the new root from it's 
+                            //previous position
+                            replacementParent.right = replacement.left;
+
+                            //give the new root all of the old 
+                            //root's children
+                            replacement.right = this._root.right;
+                            replacement.left = this._root.left;
+                        } else {
+
+                            //just assign the children
+                            replacement.right = this._root.right;
+                        }
+
+                        //officially assign new root
+                        this._root = replacement;
+
+                    //no default
+
+                }        
+
+            //non-root values
+            } else {
+
+                switch (childCount){
+
+                    //other cases removed to save space 
+
+                    //two children, a bit more complicated
+                    case 2:
+
+                        //reset pointers for new traversal
+                        replacement = current.left;
+                        replacementParent = current;
+
+                        //find the right-most node
+                        while(replacement.right !== null){
+                            replacementParent = replacement;
+                            replacement = replacement.right;
+                        }
+
+                        replacementParent.right = replacement.left;
+
+                        //assign children to the replacement
+                        replacement.right = current.right;
+                        replacement.left = current.left;
+
+                        //place the replacement in the right spot
+                        if (current.value < parent.value){
+                            parent.left = replacement;
+                        } else {
+                            parent.right = replacement;
+                        }          
+
+                    //no default
+
+                }
+
+            }
+
+        }
+
+    },
+
+    contains: function(value){
+        var found       = false,
+            current     = this._root
+
+        //make sure there's a node to search
+        while(!found && current){
+
+            //if the value is less than the current node's, go left
+            if (value < current.value){
+                current = current.left;
+
+            //if the value is greater than the current node's, go right
+            } else if (value > current.value){
+                current = current.right;
+
+            //values are equal, found it!
+            } else {
+                found = true;
+            }
+        }
+
+        //only proceed if the node was found
+        return found;
+    },
+    add: function(value){
+        //create a new item object, place data in
+        this.write("will add "+value);
+        var node = {
+                value: value,
+                left: null,
+                right: null
+            },
+
+            //used to traverse the structure
+            current;
+
+        //special case: no items in the tree yet
+        if (this._root === null){
+            this._root = node;
+        } else {
+            current = this._root;
+
+            while(true){//infinite loop(!)
+
+                //if the new value is less than this node's value, go left
+                if (value < current.value){
+                this.write("value "+value+" is less than "+current.value);
+                    //if there's no left, then the new node belongs there
+                    if (current.left === null){
+                    this.write("found a home for value "+value+" to the lower left of "+current.value);
+                        current.left = node;
+                        break;
+                    } else {
+                    this.write("left node is already filled so lets go down another level");
+                        current = current.left;
+                    }
+
+                //if the new value is greater than this node's value, go right
+                } else if (value > current.value){
+                this.write("value "+value+" is greater than "+current.value);
+                    //if there's no right, then the new node belongs there
+                    if (current.right === null){
+                    this.write("found a home for value "+value+" to the lower right of "+current.value);
+                        current.right = node;
+                        break;
+                    } else {
+                    this.write("right node is already filled so lets go down another level");
+                        current = current.right;
+                    }       
+
+                //if the new value is equal to the current one, just ignore
+                } else {
+                this.write("this value already exists.");
+                    break;
+                }
+            }
+        }
+    },
+    traverse: function(process){//process is a function that is called on each node
+    //any time we want to do anything to every node, we can call this
+        //helper function
+        function inOrder(node){
+            if (node){
+
+                //traverse the left subtree
+                if (node.left !== null){
+                    inOrder(node.left);
+                }            
+
+                //call the process method on this node
+                process.call(this, node);
+
+                //traverse the right subtree
+                if (node.right !== null){
+                    inOrder(node.right);
+                }
+            }
+        }
+
+        //start with the root
+        inOrder(this._root);
+    },
+    size: function(){
+        var length = 0;
+
+        this.traverse(function(node){
+            length++;
+        });
+
+        return length;
+    },
+    
+    writeChildrenOfEachNode: function(inst){
+        inst.write("writing all nodes");
+        this.traverse(function(node){
+        
+        if(node){
+            if (node.value) {
+            
+              if (node.left && node.left.value) {
+              inst.write(node.value+" has a left child with value "+node.left.value);
+              }
+              else if(!node.left){
+              inst.write(node.value+" has no left child");
+              }
+              
+              if (node.right && node.right.value) {
+              inst.write(node.value + " has a right child with value "+node.right.value);
+              }
+              else if(!node.right){
+              inst.write(node.value+" has no right child");
+              }
+            }
+            
+        }
+        
+        });
+
+    },
+
+    toArray: function(){
+        var result = [];
+
+        this.traverse(function(node){
+            result.push(node.value);
+        });
+
+        return result;
+    },
+
+    toString: function(){
+        return this.toArray().toString();
+    }
+};
+
+
+
+//Trie
+
+    function Trie () {
+        this._t = { x: [] }; // x stands for "index"; v stands for "value"
+        this.sel = $("#test");
+    };
+ 
+    Trie.prototype = {
+       
+       constructor : Trie,
+       add : function (str, val) {
+        //start at root
+        var node = this._t;
+        for (var i = 0; i < str.length; i++) {
+            var cur = str.charAt(i);//get char
+            var prevNode = node;//prepare to get next node
+            node = node.x[cur];//next node is a char indicied(!) array node that holds the sub trie
+            if (typeof (node) === "undefined" || !node) {
+                prevNode.x[cur] = { x: [] }; //if this doesn't exist, add it
+                node = prevNode.x[cur];//move on down the trie
+                this.sel.append("<br>add Node: "+cur);
+            }
+        }
+        if (val) {//if it has a value, add it
+            node.v = val;
+        }
+    }, 
+    //If the search does not find a matching node, returns false. If a matching node is found, returns either:
+    // - the node's value (eg: an integer) if it has a value
+    // - true if the node does not have a value.
+    find : function (str) {
+        //TODO: lowercase?
+        var node = this._t;
+        for (var i = 0; i < str.length; i++) {
+            var cur = str.charAt(i);
+            node = node.x[cur];
+            if (typeof (node) === "undefined" || !node) {//go down the tree, if you get here, it dont exist
+                return false; //TODO: ID should be here...
+            }
+        }
+ 
+        if (node.v) {//survived the loop and made it here so return value if it exists
+            return node.v;
+        } else {
+            return true;
+        }
+    }
+}
+
+
+//trie test
+
+/*
+t = new Trie();
+t.add("test",14);
+$("#test").append("<br>value at test is: "+t.find("test"));
+*/
+
+
+
+b = new BinarySearchTree();
+b.add(14);
+b.add(17);
+b.add(22);
+b.writeChildrenOfEachNode(b);
+
+/*
+//Implement an algorithm to determine if a string has all unique characters. What if you can not //use additional data structures?
+
+var results = document.getElementById("results");
+
+function isHasUniqueCharacters(str) {
+
+    var charArr = [], len = str.length;
+    
+    while(len--) {
+    
+        if (charArr[str[len]]) {
+        return false;
+        }
+        else {
+        charArr[str[len]] = str[len];
+        }
+    }
+    
+    return true;
+    
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+write(isHasUniqueCharacters("talk"));
+write(isHasUniqueCharacters("fool"));
+write(isHasUniqueCharacters("victim"));
+write(isHasUniqueCharacters("heart"));
+
+//Write code to reverse a C-Style String. (C-String means that “abcd” is represented as five characters, including the null character.)
+
+var results = document.getElementById("results");
+
+function reverseStr(str) {
+
+    var len = str.length, i, temp, newStr=[len-1];
+    
+    for (i=0;i<len/2;i++){
+    //write(i+" "+str[len-i-1]+" "+str[i]); 
+    newStr[i] = str[len-i-1];
+    newStr[len-i-1]=str[i];
+    }
+    return newStr.join("");
+    
+}
+
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+var test = "talk";
+
+//write(test.split("").reverse().join(""));
+write(reverseStr("talk"));
+write(reverseStr("eagsles"));
+write(reverseStr("victim of love"));
+
+
+//Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of the array is not.
+//FOLLOW UP
+//Write the test cases for this method.
+
+var results = document.getElementById("results");
+
+function removeDuplicates(str){
+
+    var tempStr = str.split(''),len = tempStr.length, i, character;
+    
+    for (i=0;i<len;i++) {
+        character = tempStr[i];
+        
+        if (i!==len) {
+        for(j=i+1;j<len;j++) {
+            if (tempStr[j] === character){
+             tempStr.splice(j,1);
+             j--;
+             //tempStr = str.length;
+             len = tempStr.length;
+            }
+        }
+        }
+        
+        
+    }
+      
+    return tempStr.join('');
+  
+}
+
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+var test = "talk";
+
+//write(test.split("").reverse().join(""));
+write(removeDuplicates("tttdgdft"));
+write(removeDuplicates("great Expectations"));
+
+//Write a method to decide if two strings are anagrams or not.
+
+var results = document.getElementById("results");
+
+//for each character in first, does the character exist in the second in the same number
+
+function getNumberOfInstancesOfLetterInString(str, character) {
+
+var len = str.length, i, count=0;
+    
+    for(i=0;i<len;i++) {
+        if (str[i] === character) {
+        count++;
+        }
+    }
+
+    return count;
+}
+
+
+function isAnagrams(first, second) {
+    
+    var fLen = first.length, i, charArr=[];
+    
+    for(i=0;i<=fLen;i++) {
+    
+        if (!charArr[first[i]]) {
+            charArr[first[i]] = first[i];
+            if (getNumberOfInstancesOfLetterInString(first, first[i]) !== getNumberOfInstancesOfLetterInString(second, second[i])) {
+            return false;
+            }
+        }
+    
+    }
+
+    return true;
+
+}
+
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+var test = "talk";
+
+write(isAnagrams("talk","alkt"));
+write(isAnagrams("green","red"));
+write(isAnagrams("are","rea"));
+
+//Write a method to replace all spaces in a string with ‘%20’.
+
+var results = document.getElementById("results");
+
+function replaceChar(str, charToReplace, replaceStr) {
+
+    var strArr= str.split(""),len = strArr.length, i;
+    
+    for (i=0;i<len;i++) {
+        if (strArr[i]===charToReplace) {
+        strArr[i] = replaceStr;
+        }
+    }
+    
+return strArr.join("");
+    
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+write(replaceChar("talk talk heartache", " ","%20"));
+
+//Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?.
+
+//for each row of the matrix, write a new row 
+
+var results = document.getElementById("results");
+
+function getEmptyMatrix(len) {
+
+var i, matrix = [len-1];
+    
+    for (var i=0;i<len;i++) {
+    matrix[i] = [len-1];
+    }
+    
+return matrix;
+}
+
+function rotateMatrix(imageArr) {
+
+    var len = imageArr.length, newImageArr = getEmptyMatrix(5), i,j;
+    
+    for (i=0; i<len;i++) {
+        for (j=0;j<len;j++) {  
+           newImageArr[j][(len-1-i)] = imageArr[i][j];
+        }
+    }
+return newImageArr;    
+}
+
+function writeMatrix(matrix) {
+    
+var len = matrix.length, i, j, temp;
+
+   for(i=0;i<len;i++) {
+        temp="";
+        for(j=0;j<len;j++) {
+        temp+=" "+matrix[i][j];
+        }
+       write(temp);
+  }
+    
+}
+
+function fillMatrix(matrix) {
+  var len = matrix.length;
+  var x=0  
+       for(i=0;i<len;i++) {
+        for(j=0;j<len;j++) {
+        matrix[i][j] = Math.floor((Math.random() * 10) + 1);
+        }
+
+  }
+    
+    return matrix;
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+var imageArr = fillMatrix(getEmptyMatrix(5));
+writeMatrix(imageArr);
+var newImageArr = rotateMatrix(imageArr);
+write("");
+writeMatrix(newImageArr);
+
+//palindrome
+
+
+var results = document.getElementById("results");
+
+function isPalindrome(str) {
+
+    var i, maxI = str.length / 2, lastI = str.length-1;
+    
+    for (i=0;i<=maxI;i++) {
+        if (str[i] !== str[lastI-i]) {
+        return false;
+        }
+    }
+
+return true;
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";    
+results.appendChild(span);    
+
+}
+
+write(isPalindrome("dog")); 
+write(isPalindrome("doggod")); 
+write(isPalindrome("fgsdfgsfdgsfh")); 
+write(isPalindrome("rabababar")); 
+
+//Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0.
+
+function getEmptyMatrix(len) {
+
+var i, matrix = [len-1];
+    
+    for (var i=0;i<len;i++) {
+    matrix[i] = [len-1];
+    }
+    
+return matrix;
+}
+
+function writeMatrix(matrix) {
+    
+var len = matrix.length, i, j, temp;
+
+   for(i=0;i<len;i++) {
+        temp="";
+        for(j=0;j<len;j++) {
+        temp+=" "+matrix[i][j];
+        }
+       write(temp);
+  }
+    
+}
+
+function fillMatrix(matrix) {
+  var len = matrix.length;
+  var x=0  
+       for(i=0;i<len;i++) {
+        for(j=0;j<len;j++) {
+        matrix[i][j] = Math.floor((Math.random() * 10));
+        }
+
+  }
+    
+    return matrix;
+}
+
+function zeroify(matrix) {
+
+    var len = matrix.length;
+    var zRows=[], zColumns=[], i, j, k, l,m;
+       
+    for(i=0;i<len;i++) {
+        for(j=0;j<len;j++) {
+            if (!matrix[i][j]) {
+                if (zColumns.indexOf(j) ==-1) {
+                zColumns.push(j);
+                }
+                if (zRows.indexOf(i) ==-1) {
+                zRows.push(i);
+                }
+            };
+        }
+   }
+    write("columsn "+zColumns.join());
+    for(k=0;k<zColumns.length;k++) {
+
+        for(l=0;l<len;l++) {
+             matrix[l][zColumns[k]] = 0;
+        }
+    }
+    write("wrown "+zRows.join());
+    for(j=0;j<zRows.length;j++) {
+        for (m=0;m<len;m++) {
+        matrix[zRows[j]][m] = 0;
+        }
+     }
+
+    return matrix;
+
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";   
+span.style.width="15px";
+results.appendChild(span);    
+
+}
+
+var rndMatrix = fillMatrix(getEmptyMatrix(10));
+writeMatrix(rndMatrix);
+write("");
+writeMatrix(zeroify(rndMatrix));
+
+//Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
+
+
+function isRotation(one, two) {
+write("sRotation");
+    var i, len = one.length, tempString;
+    
+    if (one===two || one.length !== two.length) {
+    return false;
+    }
+    
+    for (i=1;i<len;i++) {
+        temp = one.slice(i, len) + one.substring(0, i);
+        if (temp ===two ){
+        return true
+        }
+        
+    }
+return false;
+}
+
+function write(str) {
+
+var span = document.createElement("span");
+span.innerHTML = str +"<br>";   
+span.style.width="15px";
+results.appendChild(span);    
+
+}
+
+write(isRotation("phillippe", "ephitlipp"));
+
+//Write a method to generate the nth Fibonacci number.
+
+function fibonacci(n) {
+        
+    if (n === 0) {        
+        return 0;    
+    } else if (n === 1) {
+        return 1
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+
+
+function write(str) {
+
+    var span = document.createElement("span");
+    span.innerHTML = str + "<br>";
+    span.style.width = "15px";
+    results.appendChild(span);
+
+}
+
+write(fibonacci(15));
+
+http://www.browserstack.com/
+ 							intranet				 lms					          rest
+Most Challenging       managing stakeholders     getting a list of users           making complicated queries
+What you learned       mvc                     how scorm works                 alot about ajax
+Most interesting       mvc          developing interface for assigning modules   exciting just to be able to do ti
+Hardest Bug          parsing french          flash, languages                    japanese        
+Enjoyed Most          minimizing          creating reporting                    using it to teach myself and my daughter
+Conflicts with teammates  democratic         issues list, producing results      self
+
+weakness - stress management led to some health problems
+strength - curiosity in everything, indefatigable, need a project to be done (make it work, make it better, make it perfect)
+
+q's for amazon - What makes a good front-end engineer? how large is the team in toronto, who do the front end engineers there interact with
+
+ways i would improve amazon - get into search, more social
+
+people i follow: nicholas zakas, john resign, todd motto, steve souders, paul irish, addy osmani, crockford and eich
+
+
+
+Write a method to sort an array of strings so that all the anagrams are next to each other.
+_
+________________________________________________________________
+
+//You are given two sorted arrays, A and B, and A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order.
+
+function createRandomArray(rnd, min, maxValue) {
+
+var numEl = Math.floor(Math.random() * rnd + min), i, arr=[];
+    
+    for (i=0;i<=numEl;i++) {
+    arr[i] = Math.floor(Math.random() * maxValue + 1);
+    } 
+return arr;
+}
+
+function sortCombined(one, two) {
+
+    var lastIndexOne = one.length-1,
+    lastIndexTwo = two.length-1,
+    lastIndexBoth = lastIndexOne + lastIndexTwo + 1;
+    
+    while (lastIndexOne >= 0 && lastIndexTwo >=0) {
+    
+        if (one[lastIndexOne] > two[lastIndexTwo]) {
+        one[lastIndexBoth--] = one[lastIndexOne--];
+        }
+        else{
+        one[lastIndexBoth--] = two[lastIndexTwo--];
+        }
+
+    }
+    
+    while (lastIndexTwo >=0) {
+    one[lastIndexBoth--] = two[lastIndexTwo--];
+    }
+    
+    return one;
+}
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+function write(str) {
+
+    var span = document.createElement("span");
+    span.innerHTML = str + "<br>";
+    span.style.width = "15px";
+    results.appendChild(span);
+
+}
+
+var arr1 = createRandomArray(25, 10, 100), arr2 = createRandomArray(25, 10, 100);
+write(arr1.sort(compareNumbers).join(",") + " len: "+arr1.length);
+write(arr2.sort(compareNumbers).join(",")+ " len: "+arr2.length);
+var arrC =sortCombined(arr1, arr2);
+write(arrC.join(",")+ " len: "+arrC.length);
+
+
+//Write a method to sort an array of strings so that all the anagrams are next to each other.
+
+var list =["power","der","werpo","green","pwero","blue","red","orange","uble","owerp","white","yes", "ngeer", "hello", "supers", "oehll", "erd", "woper"];
+
+// temporary holder of position and sort-value
+var map = list.map(function(e, i) {
+  return { index: i, value: e.split("").sort().join() };
+})
+
+// sorting the map containing the reduced values
+map.sort(function(a, b) {
+  return +(a.value > b.value) || +(a.value === b.value) - 1;
+});
+
+// container for the resulting order
+var result = map.map(function(e){
+  return list[e.index];
+});
+//write(isAnagrams("der","red"));
+//write(isAnagrams("owerp","pwero"));
+//write(isAnagrams("green","red"));
+
+//strArr.sort(sortByAnagrams);
+write(result.join(","));
+
+//Write a method to sort an array of strings so that all the anagrams are next to each other.
+
+function sortByAnagrams(one, two) {
+    
+    var o = one.split("").sort().join(),
+        t = two.split("").sort().join();
+   
+   return +(o > t) || +(o === t) - 1;
+    
+}
+
+function write(str) {
+
+    var span = document.createElement("span");
+    span.innerHTML = str + "<br>";
+    span.style.width = "15px";
+    results.appendChild(span);
+
+}
+
+var strArr =["power","der","werpo","green","pwero","blue","red","orange","uble","owerp","white","yes", "ngeer", "hello", "supers", "oehll", "erd", "woper"];
+
+write(strArr.sort(sortByAnagrams).join(","));
+
+/* Improved Real Time Anagram Engine */
+
+// Without generators, it's difficult to write this function
+// with the capability of processing a word of any length without
+// crashing the web browser, so this is written as the original,
+// with non-controlled execution speed. Long (9+ char) words may
+// crash browser.
+
+function generateAnagrams(word) {
+
+    if (word.length < 2) {
+
+        return [word];
+
+    } else {
+
+        // By declaring all variables outside of the loop,
+        // we improve efficiency, avoiding the needless
+        // declarations each time.
+
+        var anagrams = [];
+        var before, focus, after;
+        var shortWord, subAnagrams, newEntry;
+
+        for (var i = 0; i < word.length; i++) {
+
+            before = word.slice(0, i);
+            focus = word[i];
+            after = word.slice(i + 1, word.length + 1);
+            shortWord = before + after;
+            subAnagrams = generateAnagrams(shortWord);
+
+            for (var j = 0; j < subAnagrams.length; j++){
+
+                newEntry = focus + subAnagrams[j];
+                anagrams.push(newEntry);
+
+            }
+
+        }
+
+        return anagrams;
+
+    }
+
+}
+function write(str) {
+
+    var span = document.createElement("span");
+    span.innerHTML = str + "<br>";
+    span.style.width = "15px";
+    results.appendChild(span);
+
+}
+write(generateAnagrams("four").join());
+*/
+</script>
+</html>
