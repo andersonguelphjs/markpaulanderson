@@ -13,18 +13,18 @@
 	position: relative;
 	background-image: url("images/coin-tap-game-hud.png");
 	background-size: 100%;
-	width: 460px;
+	width: 100%;
 	height: auto;
 	margin: 0 auto;
 	padding-top: 24px;
-	-webkit-user-select: none;  
-	-moz-user-select: none;    
-	-ms-user-select: none;      
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 
 #coinTapGameContainer canvas {
 	margin: 0;
 	padding: 0;
-	width: 460px;
+	width: 100%;
 }

@@ -104,10 +104,10 @@
     // Create sprite
     coins[coinIndex] = sprite({
       context: canvas.getContext("2d"),
-      width: 4800,
-      height: 200,
+      width: 809,
+      height: 136,
       image: coinImg,
-      numberOfFrames: 12,
+      numberOfFrames: 8,
       ticksPerFrame: i
     });
 
@@ -120,10 +120,10 @@
    //coinImg.src = "images/coin-sprite-animation.png";// 10 1000 h100 transparent
 	//coinImg.src = "images/blackFireworks.png"; //15 789 h53 black
 	//coinImg.src = "images/Madoka.png"; //8 809 h136 black
-	//coinImg.src = "images/Madoka.png"; //8 809 h136 black
+	coinImg.src = "images/Madoka.png"; //8 809 h136 black
 	//coinImg.src = "images/yellowFireworks.png"; //10 567 h57 black
-	coinImg.src = "images/tripple.png"; //10 567 h57 black
-	coinImg.src = "images/catWalking.png"; //10 567 h57 black
+	//coinImg.src = "images/tripple.png"; //10 567 h57 black
+	//coinImg.src = "images/catWalking.png"; //10 567 h57 black
   }
 
 //getting canvas position
@@ -204,8 +204,8 @@
 
   // Get canvas
   canvas = document.getElementById("coinTapGame");
-  canvas.width = 460;
-  canvas.height = 230;
+  canvas.width = screen.availWidth;
+  canvas.height = screen.availHeight;
 
   for (i = 0; i < numCoins; i += 1) {
     spawnCoin();
