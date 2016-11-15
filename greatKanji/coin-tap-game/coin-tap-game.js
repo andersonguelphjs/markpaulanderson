@@ -104,10 +104,10 @@
     // Create sprite
     coins[coinIndex] = sprite({
       context: canvas.getContext("2d"),
-      width: 809,
-      height: 136,
+      width: 4800,
+      height: 200,
       image: coinImg,
-      numberOfFrames: 8,
+      numberOfFrames: 12,
       ticksPerFrame: i
     });
 
@@ -120,10 +120,10 @@
    //coinImg.src = "images/coin-sprite-animation.png";// 10 1000 h100 transparent
 	//coinImg.src = "images/blackFireworks.png"; //15 789 h53 black
 	//coinImg.src = "images/Madoka.png"; //8 809 h136 black
-	coinImg.src = "images/Madoka.png"; //8 809 h136 black
+	//coinImg.src = "images/Madoka.png"; //8 809 h136 black
 	//coinImg.src = "images/yellowFireworks.png"; //10 567 h57 black
 	//coinImg.src = "images/tripple.png"; //10 567 h57 black
-	//coinImg.src = "images/catWalking.png"; //10 567 h57 black
+	coinImg.src = "images/catWalking.png"; //12 4800 h200 black
   }
 
 //getting canvas position

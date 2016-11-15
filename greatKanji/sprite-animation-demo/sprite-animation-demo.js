@@ -97,6 +97,8 @@ if the frame index is over the max we go back to the first frame;
 		    that.width / numberOfFrames, //these two would likely be
 		    that.height);
 		};
+    return that;
+  }
     /*
     context.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
 
@@ -111,8 +113,7 @@ if the frame index is over the max we go back to the first frame;
   dh	Destination height	Frame height
   //for more: http://www.williammalone.com/articles/create-html5-canvas-javascript-sprite-animation/
   */
-		return that;
-	}
+
 
 	// Get and set canvas, size and height is set here, not in html
 	canvas = document.getElementById("coinAnimation");
