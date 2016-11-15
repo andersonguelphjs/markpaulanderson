@@ -1,19 +1,44 @@
 <div ng-controller="mainCtrl">
-<div ng-show="showSettings" id="settings">
-  <div id="operationContainer">Operation:
-    <input type="text" ng-model="operation" />
+<div class="row">
+  <div class="col-md-3">
+  <div class="btn-group stayPressed" role="group" aria-label="operators">
+    <button type="button" class="btn btn-default active" data-sign="+">+</button>
+    <button type="button" class="btn btn-default" data-sign="-">-</button>
+    <button type="button" class="btn btn-default" data-sign="*">x</button>
+    <button type="button" class="btn btn-default" data-sign="%">%</button>
+    <button type="button" class="btn btn-default clearButton" data-sign="">C</button>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="sizing-addon2">Min</span>
+    <input type="number" class="form-control" ng-model="minValue">
+    <span class="input-group-addon" id="sizing-addon1">Max</span>
+    <input type="number" class="form-control" ng-model="maxValue">
   </div>
 
-  <div id="maxValueContainer">Maximum Value:
-    <input type="number" ng-model="maxValue" />
+<div class="input-group">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-default active">
+      <strong>  &#8734;</strong>
+      </button>
+      <button type="button" class="btn btn-default" >
+      Number of Questions
+    </button>n
   </div>
+    <input class="form-control" ng-model="numQuestions">
+  </div>
+
+<div class="btn-group" role="group" aria-label="operators">
+  <button type="button" class="btn btn-default active"><span class="glyphicon glyphicon-play"></button>
+  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></button></button>
+
 </div>
-<div>Hit 'N' to continue...'S' for settings...{{keyPressed}}</div>
+</div>
+
+<div class="col-md-9"></div>
+</div>
+<div id="mainContainer">
+<canvas id="myAnimations"></canvas>
 <div id="calculationContainer">
-  <div>{{status}}</div>
-  <div>{{data}}</div>
-  <div>l:{{spriteLeft}} t:{{spriteTop}}</div>
-  <canvas id="coinAnimation"></canvas>
   <table>
     <tr>
       <td></td>
@@ -27,5 +52,6 @@
       <td id="operationAnswer" colspan="2" ng-show="showAnswer">{{answer}}</td>
     </tr>
   </table>
+</div>
 </div>
 </div>

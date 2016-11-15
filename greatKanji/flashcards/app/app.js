@@ -1,3 +1,5 @@
+"use strict";
+
 var flashApp = angular.module('flashApp', ['ngRoute'])
 
 .config(['$sceDelegateProvider', function($sceDelegateProvider) {

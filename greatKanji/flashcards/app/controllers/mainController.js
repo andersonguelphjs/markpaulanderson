@@ -1,12 +1,31 @@
-flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', function($scope, $http, $templateCache, $interval) {
 
+
+flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', 'animationTest',function($scope, $http, $templateCache, $interval, animationTest) {
+
+$(document).ready(function(){
+
+  $('.stayPressed .btn').not('.clearButton').click(function(e) {
+
+        $(this).addClass('active');
+  });
+  $('.stayPressed .clearButton').click(function(e) {
+
+        $('.stayPressed .btn').removeClass('active');
+  });
+});
+//animationTest.sayGoodbye();
+
+animationTest.init();
+console.log($scope.fromService);
   $scope.operation = "+";
+  $scope.operationArray = [];
+  $scope.minValue = 1;
   $scope.maxValue = 5;
+  $scope.numQuestions = 10;
   $scope.operand1;
   $scope.operand2;
   $scope.answer;
   $scope.showAnswer = false;
-  $scope.showSettings = false;
   $scope.keyPressed = 13;
   $scope.method = 'GET';
   $scope.url = 'json/sprites.json';
@@ -69,28 +88,51 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
 
   $scope.setOperands = function() {
     console.log($scope.maxValue);
-    $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + 1;
-    $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + 1;
-    if ($scope.operation === "+") {
-      $scope.answer = $scope.operand1 + $scope.operand2;
+    $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
+    $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
+
+    var ops = $(".stayPressed .active");
+    var opArr=[];
+
+    $.each(ops, function(){
+    opArr.push($(this).attr("data-sign"));
+    });
+
+    if (!opArr || opArr.length < 1){
+      $scope.operation = "+";
+    }
+    else{
+      $scope.operation = opArr[Math.floor((Math.random() * opArr.length))];
     }
 
+
+    if ($scope.operation === "*"){
+      $scope.answer = $scope.operand1 * $scope.operand2;
+    }
+    else if ($scope.operation === "-"){
+      $scope.answer = $scope.operand1 - $scope.operand2;
+    }
+    else if ($scope.operation === "%"){
+          $scope.answer = $scope.operand1 / $scope.operand2;
+    }
+    else{
+$scope.answer = $scope.operand1 + $scope.operand2;
+
+    }
   }
   $scope.setOperands();
 
   angular.element(window).bind('keypress', function(e) {
-
-    $scope.keyPressed = Number(e.keyCode);
-
-    if ($scope.keyPressed === 110 && !$scope.showSettings) {
+//e.keycode
+    $scope.keyPressed = Number(e.which);
+    console.log("$scope.keyPressed "+Number(e.which));
+    if ($scope.keyPressed === 110) {
       if ($scope.showAnswer) {
         $scope.showAnswer = false;
         $scope.setOperands();
       } else {
         $scope.showAnswer = true;
       }
-    } else if ($scope.keyPressed === 115) {
-      $scope.showSettings = !$scope.showSettings;
     }
     $scope.$apply();
     $scope.keyPressed = null;
