@@ -1,5 +1,5 @@
 flashApp.service('animationTest', function(){
-	var numCoins = 1,
+	var numCoins = 0,
     score = 0,
     coins = [],
     canvas;
@@ -26,6 +26,8 @@ flashApp.service('animationTest', function(){
     var that = {},
       frameIndex = 0,
       tickCount = 0,
+			totalTickCount=0,
+			maxTicks=100,
       ticksPerFrame = options.ticksPerFrame || 0,
       numberOfFrames = options.numberOfFrames || 1;
 
@@ -40,6 +42,7 @@ flashApp.service('animationTest', function(){
     that.update = function() {
 
       tickCount += 1;
+			totalTickCount += 1;
 
       if (tickCount > ticksPerFrame) {
 
@@ -53,11 +56,13 @@ flashApp.service('animationTest', function(){
           frameIndex = 0;
         }
       }
-    };
+		};
+
+
 
     that.render = function() {
-
-      // Draw the animation
+			if (totalTickCount < maxTicks) {
+    // Draw the animation
       that.context.drawImage(
         that.image,
         frameIndex * that.width / numberOfFrames,
@@ -68,7 +73,11 @@ flashApp.service('animationTest', function(){
         that.y,
         that.width / numberOfFrames * that.scaleRatio,
         that.height * that.scaleRatio);
-    };
+			}
+			else{
+				destroyCoin(that);
+			}
+	  };
 
     that.getFrameWidth = function() {
       return that.width / numberOfFrames;
@@ -90,8 +99,20 @@ flashApp.service('animationTest', function(){
     }
   }
 
-  function spawnCoin() {
-
+//  function spawnCoin(src,w,h,numFrames,ticksPer) {
+function spawnCoin(s) {
+		/*
+		"index":"4",
+	  "name":"tripple",
+	  "imageUrl":"../app/images/tripple.png",
+	  "type":"",
+	  "imgLength":567,
+	  "imgHeight":57,
+	  "numFrames":10,
+	  "ticksPer":5
+	},
+	*/
+	console.dir(s);
     var coinIndex,
       coinImg;
 
@@ -103,11 +124,11 @@ flashApp.service('animationTest', function(){
     // Create sprite
     coins[coinIndex] = sprite({
       context: canvas.getContext("2d"),
-      width: 4800,
-      height: 200,
+      width: s.imgLength,
+      height: s.imgHeight,
       image: coinImg,
-      numberOfFrames: 12,
-      ticksPerFrame: i
+      numberOfFrames: s.numFrames,
+      ticksPerFrame: s.ticksPer
     });
 
     coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
@@ -122,8 +143,10 @@ flashApp.service('animationTest', function(){
 	//coinImg.src = "images/Madoka.png"; //8 809 h136 black
 	//coinImg.src = "images/yellowFireworks.png"; //10 567 h57 black
 	//coinImg.src = "images/tripple.png"; //10 567 h57 black
-	coinImg.src = "../app/images/catWalking.png"; //12 4800 h200 black
+	coinImg.src = s.imageUrl; //12 4800 h200 black
 	console.dir(coinImg)
+	console.log("coins.legnth "+coins.length);
+	return false;
   }
 
 //getting canvas position
@@ -193,25 +216,27 @@ flashApp.service('animationTest', function(){
 		      score += parseInt(coinsToDestroy[i].scaleRatio * 10, 10);
 		      destroyCoin(coinsToDestroy[i]);
 					//make a new coin
-		      setTimeout(spawnCoin, 1000);
+		      //setTimeout(spawnCoin, 1000);
 		    }
 
 				//at least one was destoryed so change the score
 		    if (coinsToDestroy.length) {
-		      document.getElementById("score").innerHTML = score;
+		      //document.getElementById("score").innerHTML = score;
 		    }
   }
 
   // Get canvas
-	function init(){
-		canvas = document.getElementById("myAnimations");
-	  canvas.width = screen.availWidth;
-	  canvas.height = screen.availHeight;
-
+	function init(canvasId){
+		canvas = document.getElementById(canvasId);
+	canvas.width = screen.availWidth;
+	canvas.height = screen.availHeight;
+	//	canvas.width = screen.height;
+	//	canvas.height = screen.height;
+/*
 	  for (i = 0; i < numCoins; i += 1) {
 	    spawnCoin();
 	  }
-
+*/
 	  gameLoop();
 
 	  canvas.addEventListener("touchstart", tap);
@@ -221,6 +246,7 @@ flashApp.service('animationTest', function(){
 
 	return 	{
 		init:init,
-		destroyCoin:destroyCoin
+		destroyCoin:destroyCoin,
+		spawnCoin:spawnCoin
 	}
 });

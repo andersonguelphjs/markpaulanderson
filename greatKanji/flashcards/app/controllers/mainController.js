@@ -15,7 +15,7 @@ $(document).ready(function(){
 });
 //animationTest.sayGoodbye();
 
-animationTest.init();
+animationTest.init("myAnimations");
 console.log($scope.fromService);
   $scope.operation = "+";
   $scope.operationArray = [];
@@ -28,16 +28,24 @@ console.log($scope.fromService);
   $scope.showAnswer = false;
   $scope.keyPressed = 13;
   $scope.method = 'GET';
-  $scope.url = 'json/sprites.json';
+  $scope.url = '../app/json/sprites.json';
   $scope.status = "s";
   $scope.data = "d";
-  $scope.spriteLeft;
-  $scope.spriteTop;
-  $scope.iWidth = 50;
-  $scope.iHeight = 50;
-  $scope.iLeft = 50;
-  $scope.iBack = "url('images/blackFireworks.jpg') 0 0";
 
+  $http({
+    method: $scope.method,
+    url: $scope.url,
+    cache: $templateCache
+  }).
+  then(function(response) {
+    $scope.status = response.status;
+    $scope.data = response.data;
+    console.dir($scope.data[0]);
+
+  }, function(response) {
+    $scope.data = response.data || 'Request failed';
+    $scope.status = response.status;
+  });
 
 
   //to enable local http launch Chrome from terminal
@@ -64,27 +72,6 @@ console.log($scope.fromService);
 
   //  $scope.iBack="url('images/gohan.png') 0 0";
 
-  $scope.showSprites = function(data, index) {
-    // Don't start a new fight if we are already fighting
-    if (!data) return;
-    var l = d = 0;
-    $scope.iWidth = data.lengthPX;
-    $scope.iHeight = data.depthPX;
-    stop = $interval(function() {
-      l++;
-      l = l % data.length;
-      if (l === 0) {
-        d++;
-        d = d % data.depth;
-      }
-
-      $scope.spriteLeft = l * data.lengthPX;
-      $scope.spriteTop = d * data.depthPX;
-      $scope.iBack = "url('" + data.url + "') " + $scope.spriteLeft + " " + $scope.spriteTop;
-      $scope.apply();
-    }, 1000);
-  };
-
 
   $scope.setOperands = function() {
     console.log($scope.maxValue);
@@ -106,7 +93,7 @@ console.log($scope.fromService);
     }
 
 
-    if ($scope.operation === "*"){
+    if ($scope.operation === "x"){
       $scope.answer = $scope.operand1 * $scope.operand2;
     }
     else if ($scope.operation === "-"){
@@ -133,6 +120,8 @@ $scope.answer = $scope.operand1 + $scope.operand2;
       } else {
         $scope.showAnswer = true;
       }
+    //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
+    animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)]);
     }
     $scope.$apply();
     $scope.keyPressed = null;

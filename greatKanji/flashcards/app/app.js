@@ -13,8 +13,7 @@ var flashApp = angular.module('flashApp', ['ngRoute'])
 flashApp.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "../views/mainView.html",
-        controller : "mainCtrl"
+        templateUrl : "../views/mainView.html"
     })
 
 });

@@ -8,28 +8,39 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+#calculationContainer table{
+margin-left: auto;
+margin-right: auto;
+}
 #calculationContainer table td {
   height: 110px;
   font-size: 100px;
   padding: 3px;
+  color:#FFF;
 }
 
 .operand2 {
-  border-bottom: 4px black solid;
+  border-bottom: 4px #FFF solid;
 }
 
 #operationAnswer {
   text-align: right;
 }
+
 #mainContainer{
-  background-color: gray;
+  background-color: #000;
   height: 500px;
-  position:absolute;
+  /*position:absolute;*/
+  width:100%;
 }
 #myAnimations{
-  height:500px;
+  width:50%;
+  left:20%;
   top:0;
-
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
+}
+.numWidth{
+  width:75px !important;
 }
