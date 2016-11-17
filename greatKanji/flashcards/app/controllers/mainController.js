@@ -126,7 +126,9 @@ $scope.answer = $scope.operand1 + $scope.operand2;
 
     }
     $timeout(function() {
+      $scope.showAnswer=false;
       $scope.$apply();
+
       $scope.startProgressBar();
     }, 0);
 
