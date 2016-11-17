@@ -1,0 +1,89 @@
+<canvas id="coinAnimation"></canvas>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+(function($){
+
+
+  function sprite (options) {
+
+		var that = {},
+			frameIndex = 0,
+			tickCount = 0,
+			ticksPerFrame = options.ticksPerFrame || 0,
+			numberOfFrames = options.numberOfFrames || 1;
+
+		that.context = options.context;
+		that.width = options.width;
+		that.height = options.height;
+		that.x = 0;
+		that.y = 0;
+		that.image = options.image;
+		that.scaleRatio = 1;
+
+		that.update = function () {
+
+            tickCount += 1;
+
+            if (tickCount > ticksPerFrame) {
+
+				tickCount = 0;
+
+                // If the current frame index is in range
+                if (frameIndex < numberOfFrames - 1) {
+                    // Go to the next frame
+                    frameIndex += 1;
+                } else {
+                    frameIndex = 0;
+                }
+            }
+        };
+
+		that.render = function () {
+
+		  // Draw the animation
+		  that.context.drawImage(
+		    that.image,
+		    frameIndex * that.width / numberOfFrames,
+		    0,
+		    that.width / numberOfFrames,
+		    that.height,
+		    that.x,
+		    that.y,
+		    that.width / numberOfFrames * that.scaleRatio,
+		    that.height * that.scaleRatio);
+		};
+
+		that.getFrameWidth = function () {
+			return that.width / numberOfFrames;
+		};
+
+		return that;
+	}
+
+  function gameLoop() {
+
+    window.requestAnimationFrame(gameLoop);
+
+    coin.update();
+    coin.render();
+  }
+  var canvas = document.getElementById("coinAnimation");
+  canvas.width = 100;
+  canvas.height = 100;
+
+  var coinImage = new Image();
+  coinImage.src = "images/coin-sprite-animation-sprite-sheet.png";
+
+  var coin = sprite({
+    context: canvas.getContext("2d"),
+    width: 100,
+    height: 100,
+    image: coinImage
+  });
+
+  coinImage.addEventListener("load", gameLoop);
+
+}(jQuery))
+
+</script>

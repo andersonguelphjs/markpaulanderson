@@ -1,0 +1,68 @@
+<div ng-controller="mainCtrl"><!--cannot have this twice-->
+
+<div class="row">
+  <div class="col-md-12">
+  <div id="mainContainer">
+  <canvas id="myAnimations"></canvas>
+  <div id="calculationContainer">
+    <table>
+      <tr>
+        <td></td>
+        <td>{{operand1}}</td>
+      </tr>
+      <tr>
+        <td class="operand2">{{operation}}</td>
+        <td class="operand2">{{operand2}}</td>
+      </tr>
+      <tr>
+        <td id="operationAnswer" colspan="2" ng-show="showAnswer">{{answer}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>
+</div>
+<div class="row" id="controls">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="input-group">
+  <div class="input-group-btn stayPressed" role="group" aria-label="operators">
+    <button type="button" class="btn btn-default active" data-sign="+">+</button>
+    <button type="button" class="btn btn-default" data-sign="-">-</button>
+    <button type="button" class="btn btn-default" data-sign="x">x</button>
+    <button type="button" class="btn btn-default" data-sign="%">%</button>
+    <button type="button" class="btn btn-default clearButton" data-sign="">C</button>
+  </div>
+ <span class="divider"></span>
+    <span class="input-group-addon" id="sizing-addon2">Min</span>
+    <input type="number" class="form-control numWidth" ng-model="minValue">
+    <span class="input-group-addon" id="sizing-addon1">Max</span>
+    <input type="number" class="form-control numWidth" ng-model="maxValue">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-default active">
+      <strong>  &#8734;</strong>
+      </button>
+      <button type="button" class="btn btn-default">
+      Number of Questions
+    </button>
+  </div>
+<input class="form-control numWidth" ng-model="numQuestions">
+
+<div class="input-group-btn">
+  <button type="button" class="btn btn-default active"><span class="glyphicon glyphicon-play"></button>
+  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></button></button>
+</div>
+
+  </div>
+
+
+
+<!--span>
+{{data}}<br>
+{{status}}
+</span-->
+</div>
+
+<div class="col-md-2"></div>
+</div>
+</div>

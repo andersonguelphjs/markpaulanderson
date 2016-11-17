@@ -1,0 +1,89 @@
+
+
+<div ng-controller="kanjiDataCtrl">
+
+<div>Search kanji:<input ng-model="query" type="text"/></div>
+<table>
+<tr>
+<th>id</th>
+<th>kanji</th>
+<th>on</th>
+<th>kun</th>
+<th>meaning</th>
+<th>meaning2</th>
+<th>meme meaning</th>
+<th>meme</th>
+<th>rad</th>
+<th>radInd</th>
+<th>kRad</th>
+<th>similar</th>
+<th>update</th>
+</tr>
+<tr ng-repeat="k in kanji | emptyifblank:query | filter:query | limitTo: 50">
+<td>{{k.id}}</td>
+<td>{{k.kanji}}</td>
+<td>{{k.onR}}</td>
+<td><input ng-model="k.kun"/></td>
+<td><input title="iMeaning" ng-model="k.meaning"/></td>
+<td><input title="iMeaning" ng-model="k.meaning2"/></td>
+<td><input ng-model="k.memeMeaning"/></td>
+<td><textarea title="iMeme" ng-model="k.meme"/></td>
+<td><input title='kRad' class="pangolin14" ng-model="k.radical"/></td>
+<td><input title='kanji' ng-model="k.radIndices"/></td>
+<td><input title='kanji' ng-model="k.kanjiRadical"/></td>
+<td><input title='kanji' ng-model="k.similar"/></td>
+<td><button ng-click="updateKanji(k)" type="button" >update</button></td>
+</tr>
+</table>
+<hr>
+<div>Search helper kanji:<input ng-model="kquery" type="text"/></div>
+<table>
+<tr>
+<th>id</th>
+<th>kanji</th>
+<th>on</th>
+<th>romon</th>
+<th>kun</th>
+<th>romkun</th>
+<th>meaning</th>
+<th>meaning2</th>
+<th>meme meaning</th>
+<th>meme</th>
+<th>rad</th>
+<th>radInd</th>
+<th>kRad</th>
+<th>similar</th>
+</tr>
+<tr ng-repeat="k1 in kanji | emptyifblank:kquery | filter:kquery | limitTo: 50">
+<td>{{k1.id}}</td>
+<td>{{k1.kanji}}</td>
+<td>{{k1.onR}}</td>
+<td>{{k1.romon}}</td>
+<td>{{k1.kun}}</td>
+<td>{{k1.romkun}}</td>
+<td>{{k1.meaning}}</td>
+<td>{{k1.meaning2}}</td>
+<td>{{k1.memeMeaning}}</td>
+<td>{{k1.meme}}</td>
+<td>{{k1.radical}}</td>
+<td>{{k1.radIndices}}</td>
+<td>{{k1.kanjiRadical}}</td>
+<td>{{k1.similar}}</td>
+</tr>
+</table>
+<hr>
+<div>Search radicals:<input ng-model="rquery" type="text"/></div>
+<table>
+<tr>
+<th>id</th>
+<th>radical</th>
+<th>meaning</th>
+</tr>
+
+<tr ng-repeat="r in radicals | emptyifblank:rquery | filter:rquery | limitTo: 50">
+<td>{{r.id}}</td>
+<td class="pangolin">{{r.radical}}</td>
+<td>{{r.meaning}}</td>
+</tr>
+</table>
+<div>

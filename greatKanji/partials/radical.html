@@ -1,0 +1,33 @@
+<div ng-controller="radicalCtrl">
+
+<div><button ng-click="nextRadical()">next</button></div>
+<div><button ng-click="previousRadical()">previous</button></div>
+
+<div>Radical {{id}}: <span class="pangolin">{{radical}}</span></div>
+<div>Meaning: <span ng-hide="hideAnswers">{{meaning}}</span></div>
+<div>Similar to:</div>
+
+<div ng-repeat="s in similar">
+<div>Radical {{s.id}}: <span class="pangolin">{{s.radical}}</span></div>
+<div>Meaning: <span ng-hide="hideAnswers">{{s.meaning}}</span></div>
+</div>
+
+<div ng-repeat="a in ans">
+<div id="answerContainer">
+  <div>
+  <input ng-click="checkAnswer(a, false)" title="{{$index}}" type="radio" name="ans" value="{{a.meaning}}" id="{{a.id}}"/>
+  <label for="{{a.id}}">{{$index+1}}. {{a.meaning}}</label>
+  </div>
+</div>
+</div>
+
+<div>r: {{result}}</div>
+<div>Number Answered: {{numAnswered}}</div>
+<div>Number Correct: {{numCorrect}}</div>
+<div>Percent Correct: {{percentCorrect}}</div>
+
+           
+<div style="max-width:300px;"><div class="progress progress-striped active"> <div class="bar" style="width: {{(timeLeft / 150)}}%;"></div> </div></div>
+<div>Time Left: <span>{{timeLeft/1000}}</span> s</div>
+
+</div>

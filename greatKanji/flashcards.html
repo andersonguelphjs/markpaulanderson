@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flashcards</title>
+    <style>
+      #operationContainer {}
+
+      #calculationContainer {
+        padding-top: 10%;
+        width: 33%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #calculationContainer table td {
+        height: 110px;
+        font-size: 100px;
+        padding: 3px;
+      }
+
+      .operand2 {
+        border-bottom: 4px black solid;
+      }
+
+      #operationAnswer {
+        text-align: right;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container-fluid" ng-App="flashApp">
+      <div ng-controller="mainCtrl">
+        <div ng-show="showSettings" id="settings">
+          <div id="operationContainer">Operation:
+            <input type="text" ng-model="operation" />
+          </div>
+
+          <div id="maxValueContainer">Maximum Value:
+            <input type="number" ng-model="maxValue" />
+          </div>
+        </div>
+        <div>Hit 'N' to continue...'S' for settings...{{keyPressed}}</div>
+        <div id="calculationContainer">
+          <div>{{status}}</div>
+          <div>{{data}}</div>
+          <div>l:{{spriteLeft}} t:{{spriteTop}}</div>
+          <canvas id="coinAnimation"></canvas>
+          <table>
+            <tr>
+              <td></td>
+              <td>{{operand1}}</td>
+            </tr>
+            <tr>
+              <td class="operand2">{{operation}}</td>
+              <td class="operand2">{{operand2}}</td>
+            </tr>
+            <tr>
+              <td id="operationAnswer" colspan="2" ng-show="showAnswer">{{answer}}</td>
+            </tr>
+          </table>
+
+        </div>
+        <img id="imageContainer" src="images/trans.png" style="background:{{iBack}};width:{{iWidth}}px;height:{{iHeight}}px;left:{{iLeft}}" />
+      </div>
+
+  </div>
+</body>
+</html>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+
+    var flashApp = angular.module('flashApp', []).config(['$sceDelegateProvider', function($sceDelegateProvider) {
+      // We must whitelist the JSONP endpoint that we are using to show that we trust it
+      $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        '/**'
+      ]);
+    }])
+
+    .controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', function($scope, $http, $templateCache, $interval) {
+
+      $scope.operation = "+";
+      $scope.maxValue = 5;
+      $scope.operand1;
+      $scope.operand2;
+      $scope.answer;
+      $scope.showAnswer = false;
+      $scope.showSettings = false;
+      $scope.keyPressed = 13;
+      $scope.method = 'GET';
+      $scope.url = 'json/sprites.json';
+      $scope.status = "s";
+      $scope.data = "d";
+      $scope.spriteLeft;
+      $scope.spriteTop;
+      $scope.iWidth = 50;
+      $scope.iHeight = 50;
+      $scope.iLeft = 50;
+      $scope.iBack = "url('images/blackFireworks.jpg') 0 0";
+
+
+
+      //to enable local http launch Chrome from terminal
+      //open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+      /*
+      $http({
+        method: $scope.method,
+        url: $scope.url,
+        cache: $templateCache
+      }).
+      then(function(response) {
+        $scope.status = response.status;
+        $scope.data = response.data;
+        //$scope.showSprites($scope.data,1)
+        $scope.iWidth = data.lengthPX;
+        $scope.iHeight = data.depthPX;
+        $scope.iBack = "url('" + $scope.data.url + "') " + $scope.iWidth + " " + $scope.iHeight;
+
+      }, function(response) {
+        $scope.data = response.data || 'Request failed';
+        $scope.status = response.status;
+      });
+      */
+
+      //  $scope.iBack="url('images/gohan.png') 0 0";
+
+      $scope.showSprites = function(data, index) {
+        // Don't start a new fight if we are already fighting
+        if (!data) return;
+        var l = d = 0;
+        $scope.iWidth = data.lengthPX;
+        $scope.iHeight = data.depthPX;
+        stop = $interval(function() {
+          l++;
+          l = l % data.length;
+          if (l === 0) {
+            d++;
+            d = d % data.depth;
+          }
+
+          $scope.spriteLeft = l * data.lengthPX;
+          $scope.spriteTop = d * data.depthPX;
+          $scope.iBack = "url('" + data.url + "') " + $scope.spriteLeft + " " + $scope.spriteTop;
+          $scope.apply();
+        }, 1000);
+      };
+
+
+      $scope.setOperands = function() {
+        console.log($scope.maxValue);
+        $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + 1;
+        $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + 1;
+        if ($scope.operation === "+") {
+          $scope.answer = $scope.operand1 + $scope.operand2;
+        }
+
+      }
+      $scope.setOperands();
+
+      angular.element(window).bind('keypress', function(e) {
+
+        $scope.keyPressed = Number(e.keyCode);
+
+        if ($scope.keyPressed === 110 && !$scope.showSettings) {
+          if ($scope.showAnswer) {
+            $scope.showAnswer = false;
+            $scope.setOperands();
+          } else {
+            $scope.showAnswer = true;
+          }
+        } else if ($scope.keyPressed === 115) {
+          $scope.showSettings = !$scope.showSettings;
+        }
+        $scope.$apply();
+        $scope.keyPressed = null;
+      });
+    }]);
+  </script>

@@ -1,0 +1,60 @@
+[{
+  "index":"1",
+  "name":"fireworks",
+  "imageUrl":"../app/images/blackFireworks.png",
+  "type":"",
+  "imgLength":789,
+  "imgHeight":53,
+  "numFrames":15,
+  "ticksPer":5
+},
+{
+  "index":"2",
+  "name":"cat walking",
+  "imageUrl":"../app/images/catWalking.png",
+  "type":"",
+  "imgLength":4800,
+  "imgHeight":200,
+  "numFrames":12,
+  "ticksPer":5
+},
+{
+  "index":"3",
+  "name":"oin",
+  "imageUrl":"../app/images/coin-sprite-animation.png",
+  "type":"",
+  "imgLength":1000,
+  "imgHeight":100,
+  "numFrames":10,
+  "ticksPer":5
+},
+{
+  "index":"4",
+  "name":"tripple",
+  "imageUrl":"../app/images/tripple.png",
+  "type":"",
+  "imgLength":960,
+  "imgHeight":40,
+  "numFrames":24,
+  "ticksPer":5
+},
+{
+  "index":"5",
+  "name":"yellow fireworks",
+  "imageUrl":"../app/images/yellowFireworks.png",
+  "type":"",
+  "imgLength":567,
+  "imgHeight":57,
+  "numFrames":10,
+  "ticksPer":5
+},
+{
+  "index":"6",
+  "name":"madoka",
+  "imageUrl":"../app/images/Madoka.png",
+  "type":"",
+  "imgLength":809,
+  "imgHeight":136,
+  "numFrames":8,
+  "ticksPer":5
+}]
