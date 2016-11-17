@@ -1,6 +1,6 @@
 
 
-flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', 'animationTest',function($scope, $http, $templateCache, $interval, animationTest) {
+flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', '$timeout', 'animationTest',function($scope, $http, $templateCache, $interval, $timeout, animationTest) {
 
 $(document).ready(function(){
 
@@ -17,6 +17,7 @@ $(document).ready(function(){
 
 animationTest.init("myAnimations");
 console.log($scope.fromService);
+  $scope.timeLeft = 1000;
   $scope.operation = "+";
   $scope.operationArray = [];
   $scope.minValue = 1;
@@ -71,7 +72,25 @@ console.log($scope.fromService);
   */
 
   //  $scope.iBack="url('images/gohan.png') 0 0";
+  $scope.startProgressBar = function(){
 
+  $("#myProgressBar").css("width","100%");
+
+  setTimeout(function(){
+
+  $("#myProgressBar").animate({width:0},5000, function(){
+    $scope.showAnswer = true;
+    $timeout(function() {
+      $scope.$apply();
+    }, 0);
+    setTimeout(function(){
+      $scope.setOperands();
+    },1500);
+  });
+
+},500);
+
+};
 
   $scope.setOperands = function() {
     console.log($scope.maxValue);
@@ -106,8 +125,18 @@ console.log($scope.fromService);
 $scope.answer = $scope.operand1 + $scope.operand2;
 
     }
+    $timeout(function() {
+      $scope.$apply();
+      $scope.startProgressBar();
+    }, 0);
+
+
   }
   $scope.setOperands();
+
+
+
+
 
   angular.element(window).bind('keypress', function(e) {
 //e.keycode
@@ -123,7 +152,9 @@ $scope.answer = $scope.operand1 + $scope.operand2;
     //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
     animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)]);
     }
-    $scope.$apply();
+    $timeout(function() {
+      $scope.$apply();
+    }, 0);
     $scope.keyPressed = null;
   });
 }]);

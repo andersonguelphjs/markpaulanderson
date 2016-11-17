@@ -12,13 +12,15 @@ header("Content-Type: application/json; charset=UTF-8");
 //print_r($get_array);
 //echo $get_array;
 $host = $_SERVER[HTTP_HOST];
+$host = "non";
 $conn = new mysqli("localhost", "root", "rootPass", "test");
 //}
 //if ($_SERVER[HTTP_HOST] != "localhost"){
-if ($host != "localhost"){
+$outp = "";
+if ($host == "localhost"){
 $result = $conn->query("SELECT myInt, myVarChar, myText FROM myTest");
 
-$outp = "";
+
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"Name":"'  . $rs["myInt"] . '",';
@@ -32,9 +34,15 @@ $outp ='{"records":['.$outp.']}';
 //$outp ='{"records":['.$outp.',{"Name":,'."$_SERVER[HTTP_HOST]","City",'."$_SERVER[HTTP_HOST].","Country":'.$_SERVER[HTTP_HOST].'}]}';
 $conn->close();
 
-echo($outp);
+
 }
 else{
+  $outp ='{"records":[';
+    $outp .= '{"Name":"http://",';
+    $outp .= '"City":"'   . $_SERVER[HTTP_HOST]        . '",';
+    $outp .= '"Country":"'. $_SERVER[REQUEST_URI]     . '"}]}';
+  //  $outp ='{"records":['.$outp.']}';
 //echo('{"Name",'.$_SERVER[HTTP_HOST].',"City",'.$_SERVER[HTTP_HOST].',"Country":'.$_SERVER[HTTP_HOST].'}');
 }
+echo($outp);
 ?>
