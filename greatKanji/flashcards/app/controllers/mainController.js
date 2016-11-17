@@ -152,10 +152,12 @@ $scope.answer = $scope.operand1 + $scope.operand2;
         $scope.showAnswer = true;
       }
     //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
-    animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)]);
+    animationTest.spawnCoin($scope.danta[Math.floor(Math.random() * $scope.data.length)]);
     }
     $timeout(function() {
+      $scope.showAnswer=false;
       $scope.$apply();
+      $scope.startProgressBar();
     }, 0);
     $scope.keyPressed = null;
   });
