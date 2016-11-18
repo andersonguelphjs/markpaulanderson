@@ -27,7 +27,7 @@ flashApp.service('animationTest', function(){
       frameIndex = 0,
       tickCount = 0,
 			totalTickCount=0,
-			maxTicks=100,
+			maxTicks=500,
       ticksPerFrame = options.ticksPerFrame || 0,
       numberOfFrames = options.numberOfFrames || 1;
 
