@@ -57,4 +57,14 @@
   "imgHeight":136,
   "numFrames":8,
   "ticksPer":5
-}]
+},
+{
+  "index":"6",
+  "name":"luckyTama",
+  "imageUrl":"../app/images/luckyTamaS.png",
+  "type":"",
+  "imgLength":1500,
+  "imgHeight":150,
+  "numFrames":10,
+  "ticksPer":10
+  }]
