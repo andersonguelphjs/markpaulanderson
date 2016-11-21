@@ -130,9 +130,11 @@ flashApp.service('animationTest', function(){
 		}
 
 		//at least one was destoryed so change the score
-		if (coinsToDestroy.length) {
-			//document.getElementById("score").innerHTML = score;
-		}
+	if (coinsToDestroy.length) {
+			document.getElementById("score").innerHTML = score;
+			console.log()
+	}
+	coinsToDestroy=[];
 	}
 //pass a coin, remove it from the array
   function destroyCoin(coin) {
