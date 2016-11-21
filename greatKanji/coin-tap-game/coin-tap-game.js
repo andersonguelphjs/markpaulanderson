@@ -62,7 +62,7 @@
       //setTimeout(spawnCoin, 1000);
 
       if (tickCount > ticksPerFrame) {
-        that.x -=100;
+        that.x -=15;
         tickCount = 0;
 
         // If the current frame index is in range
