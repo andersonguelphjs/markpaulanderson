@@ -67,4 +67,25 @@
   "imgHeight":150,
   "numFrames":10,
   "ticksPer":10
-  }]
+  },
+  {
+    "index":"6",
+    "name":"Mogu Tan",
+    "imageUrl":"../app/images/moguTanS.png",
+    "type":"",
+    "imgLength":1500,
+    "imgHeight":150,
+    "numFrames":10,
+    "ticksPer":10
+  },
+  {
+    "index":"6",
+    "name":"Gera Cho",
+    "imageUrl":"../app/images/geraCho.png",
+    "type":"",
+    "imgLength":1500,
+    "imgHeight":150,
+    "numFrames":10,
+    "ticksPer":10
+  }
+]

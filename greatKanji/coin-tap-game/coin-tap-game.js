@@ -9,7 +9,7 @@
   function gameLoop() {
 
     var i;
-
+    var coinsToDestroy=[];
     //so instead of a timer, what we are doing here is adding this function everytime teh browswer wants to paint. Brilliant
     window.requestAnimationFrame(gameLoop);
 
@@ -18,8 +18,23 @@
 
     for (i = 0; i < coins.length; i += 1) {
       coins[i].update();
-      coins[i].render();
+      var destroy = coins[i].render();
+      console.log(destroy);
+      if (destroy){
+
+        coinsToDestroy.push(coins[i]);
+      }
     }
+
+    // Destroy tapped coins
+    for (j = 0; j < coinsToDestroy.length; j += 1) {
+      //giving random score
+      score += parseInt(coinsToDestroy[j].scaleRatio * 10, 10);
+      destroyCoin(coinsToDestroy[j]);
+      //make a new coin
+      setTimeout(spawnCoin, 1000);
+    }
+
   }
 //a sprite object, update and render
   function sprite(options) {
@@ -37,13 +52,17 @@
     that.y = 0;
     that.image = options.image;
     that.scaleRatio = 1;
+    that.destroy = false;
 
     that.update = function() {
 
       tickCount += 1;
+      //destroyCoin(coinsToDestroy[i]);
+      //make a new coin
+      //setTimeout(spawnCoin, 1000);
 
       if (tickCount > ticksPerFrame) {
-
+        that.x -=100;
         tickCount = 0;
 
         // If the current frame index is in range
@@ -59,6 +78,11 @@
     that.render = function() {
 
       // Draw the animation
+      console.log(that.x+" "+(-1*that.width/ numberOfFrames));
+      if (that.x < (-1*that.width/ numberOfFrames)){
+        return true;
+      }
+
       that.context.drawImage(
         that.image,
         frameIndex * that.width / numberOfFrames,
@@ -69,6 +93,8 @@
         that.y,
         that.width / numberOfFrames * that.scaleRatio,
         that.height * that.scaleRatio);
+        console.log("x: "+that.x+" y: "+that.y);
+        return false;
     };
 
     that.getFrameWidth = function() {
