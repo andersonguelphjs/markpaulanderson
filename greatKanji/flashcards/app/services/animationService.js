@@ -2,7 +2,8 @@ flashApp.service('animationTest', function(){
 	var numCoins = 0,
     score = 0,
     coins = [],
-    canvas;
+    canvas,
+		coinsToDestroy = [];
 
 //redraw loop
   function gameLoop() {
@@ -19,17 +20,28 @@ flashApp.service('animationTest', function(){
       coins[i].update();
       coins[i].render();
     }
+		destroyCoins();
   }
 //a sprite object, update and render
-  function sprite(options) {
+  function sprite(options, varOptions) {
 
     var that = {},
       frameIndex = 0,
       tickCount = 0,
 			totalTickCount=0,
-			maxTicks=500,
+			maxTicks=1000,
       ticksPerFrame = options.ticksPerFrame || 0,
-      numberOfFrames = options.numberOfFrames || 1;
+      numberOfFrames = options.numberOfFrames || 1,
+			type = varOptions.type || 1,
+			deltaX = varOptions.deltaX ? Math.floor((Math.random() * varOptions.deltaX) + 1) : 0,
+			deltaY = varOptions.deltaY ? Math.floor((Math.random() * varOptions.deltaX) + 1) : 0,
+			isWrap = varOptions.isWrap || false,
+			markedForDestruction = false;
+			/*
+			1-stationary
+			2-moving
+			3.-pattern
+			*/
 
     that.context = options.context;
     that.width = options.width;
@@ -58,10 +70,30 @@ flashApp.service('animationTest', function(){
       }
 		};
 
-
-
     that.render = function() {
-			if (totalTickCount < maxTicks) {
+
+			if (type > 1){
+				that.x += deltaX;
+				that.y += deltaY;
+				if (that.x + (options.width / numberOfFrames) < 0){
+					that.x = canvas.width;
+					markedForDestruction=true;
+				}
+				else if (that.x + (options.width / numberOfFrames) > canvas.width){
+					that.x = 0;
+					markedForDestruction=true;
+				}
+				if (that.y + (options.height) < 0){
+					that.y = canvas.height;
+					markedForDestruction=true;
+				}
+				else if (that.y + (options.height) > canvas.height){
+					that.y = 0;
+					markedForDestruction=true;
+				}
+			}
+
+			if (totalTickCount < maxTicks && !markedForDestruction) {
     // Draw the animation
       that.context.drawImage(
         that.image,
@@ -73,9 +105,11 @@ flashApp.service('animationTest', function(){
         that.y,
         that.width / numberOfFrames * that.scaleRatio,
         that.height * that.scaleRatio);
+				console.log("x: " +that.x +" y: "+that.y);
 			}
 			else{
-				destroyCoin(that);
+				//destroyCoin(that);
+				coinsToDestroy.push(this);
 			}
 	  };
 
@@ -85,6 +119,21 @@ flashApp.service('animationTest', function(){
 
     return that;
   }
+	function destroyCoins(){
+		// Destroy tapped coins
+		for (i = 0; i < coinsToDestroy.length; i += 1) {
+			//giving random score
+			score += parseInt(coinsToDestroy[i].scaleRatio * 10, 10);
+			destroyCoin(coinsToDestroy[i]);
+			//make a new coin
+			//setTimeout(spawnCoin, 1000);
+		}
+
+		//at least one was destoryed so change the score
+		if (coinsToDestroy.length) {
+			//document.getElementById("score").innerHTML = score;
+		}
+	}
 //pass a coin, remove it from the array
   function destroyCoin(coin) {
 
@@ -100,7 +149,7 @@ flashApp.service('animationTest', function(){
   }
 
 //  function spawnCoin(src,w,h,numFrames,ticksPer) {
-function spawnCoin(s) {
+function spawnCoin(s, v) {
 		/*
 		"index":"4",
 	  "name":"tripple",
@@ -129,7 +178,7 @@ function spawnCoin(s) {
       image: coinImg,
       numberOfFrames: s.numFrames,
       ticksPerFrame: s.ticksPer
-    });
+    },v);
 
     coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
     coins[coinIndex].y = Math.random() * (canvas.height - coins[coinIndex].height * coins[coinIndex].scaleRatio);
@@ -180,7 +229,7 @@ function spawnCoin(s) {
     var i,
       loc = {},
       dist,
-      coinsToDestroy = [];
+
     pos = getElementPosition(canvas),
 		//if canvas touched many times, get first place, or if just one get that one
       tapX = e.targetTouches ? e.targetTouches[0].pageX : e.pageX,
@@ -210,19 +259,7 @@ function spawnCoin(s) {
 		      }
 		    }
 
-		    // Destroy tapped coins
-		    for (i = 0; i < coinsToDestroy.length; i += 1) {
-					//giving random score
-		      score += parseInt(coinsToDestroy[i].scaleRatio * 10, 10);
-		      destroyCoin(coinsToDestroy[i]);
-					//make a new coin
-		      //setTimeout(spawnCoin, 1000);
-		    }
 
-				//at least one was destoryed so change the score
-		    if (coinsToDestroy.length) {
-		      //document.getElementById("score").innerHTML = score;
-		    }
   }
 
   // Get canvas

@@ -27,19 +27,27 @@ margin-right: auto;
   border-bottom: 4px #FFF solid;
 }
 
+.flip{
+  -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+transform: scale(-1, 1);
+filter: FlipH;
+}
+
 #operationAnswer {
   text-align: right;
 }
 
 #mainContainer{
   background-color: #000;
-  height: 500px;
+  height: 650px;
   /*position:absolute;*/
   width:100%;
+  overflow:hidden;
 }
 #myAnimations{
-  width:50%;
-  left:20%;
+  width:100%;
   top:0;
   margin-left: auto;
   margin-right: auto;

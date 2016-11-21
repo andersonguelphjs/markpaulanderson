@@ -3,7 +3,7 @@
 flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', '$timeout', 'animationTest',function($scope, $http, $templateCache, $interval, $timeout, animationTest) {
 
 $(document).ready(function(){
-$scope.progressBar = $("#myProgressBar");
+
   $('.stayPressed .btn').not('.clearButton').click(function(e) {
 
         $(this).addClass('active');
@@ -18,7 +18,6 @@ $scope.progressBar = $("#myProgressBar");
 animationTest.init("myAnimations");
 console.log($scope.fromService);
   $scope.timeLeft = 1000;
-
   $scope.operation = "+";
   $scope.operationArray = [];
   $scope.minValue = 1;
@@ -75,23 +74,24 @@ console.log($scope.fromService);
   //  $scope.iBack="url('images/gohan.png') 0 0";
   $scope.startProgressBar = function(){
 
-  $scope.progressBar.css("width","100%");
-  if (!$scope.progressBar.is(":animated")){
+  $("#myProgressBar").css("width","100%");
+  if (!$("#myProgressBar").is(":animated")){
+
   setTimeout(function(){
+$("#myProgressBar").animate().stop();
+  $("#myProgressBar").animate({width:0},5000, function(){
+      $scope.showAnswer = true;
+      $timeout(function() {
+        $scope.$apply();
+      }, 0);
+      setTimeout(function(){
+        $scope.setOperands();
+      },1500);
+    });
 
-  $scope.progressBar.animate({width:0},5000, function(){
-
-    $timeout(function() {
-      $scope.$apply();
-    }, 0);
-    setTimeout(function(){
-      $scope.setOperands();
-    },1500);
-  });
-
-},500);
-}
-};
+    },500);
+ }
+  };
 
   $scope.setOperands = function() {
     console.log($scope.maxValue);
@@ -112,6 +112,7 @@ console.log($scope.fromService);
       $scope.operation = opArr[Math.floor((Math.random() * opArr.length))];
     }
 
+
     if ($scope.operation === "x"){
       $scope.answer = $scope.operand1 * $scope.operand2;
     }
@@ -119,11 +120,10 @@ console.log($scope.fromService);
       $scope.answer = $scope.operand1 - $scope.operand2;
     }
     else if ($scope.operation === "%"){
-          $scope.answer = $scope.operand1 / $scope.operand2;
+        $scope.answer = $scope.operand1 / $scope.operand2;
     }
     else{
-    $scope.answer = $scope.operand1 + $scope.operand2;
-
+      $scope.answer = $scope.operand1 + $scope.operand2;
     }
     $timeout(function() {
       $scope.showAnswer=false;
@@ -137,28 +137,30 @@ console.log($scope.fromService);
   $scope.setOperands();
 
   angular.element(window).bind('keypress', function(e) {
-//e.keycode
-    $scope.keyPressed = Number(e.which);
-    console.log("$scope.keyPressed "+Number(e.which));
-    if ($scope.keyPressed === 110) {
-
-      if (!$scope.progressBar.is(":animated")) {
-       $scope.setOperands();
+  //e.keycode
+  $scope.keyPressed = Number(e.which);
+  console.log("$scope.keyPressed " + Number(e.which));
+  if ($scope.keyPressed === 110) {
+    $("#myProgressBar").animate().stop();
+      if ($scope.showAnswer) {
         $scope.showAnswer = false;
+        $scope.setOperands();
       } else {
-
-        $scope.progressBar.stop(true);
+      //  $("#myProgressBar").animate().stop().clearQueue() ;
         $scope.showAnswer = true;
         $timeout(function() {
-        //  $scope.showAnswer=false;
-          $scope.$apply();
-        //  $scope.startProgressBar();
+        $scope.$apply();
         }, 0);
       }
-    //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
-    animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)]);
-    }
+  //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
+  animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)], {
+    "type": 2,
+    "deltaX": 2 * (Math.random() < 0.5 ? -1 : 1),
+    "deltaY": 2 * (Math.random() < 0.5 ? -1 : 1),
+    "isWrap": true
+  });
+  }
 
     $scope.keyPressed = null;
-  });
-}]);
+    });
+  }]);
