@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<div>startx: <input type="number" id="startx" value="0"></input></div>
+<div>starty: <input type="number" id="starty" value="0"></input></div>
+
+<div>currentx: <input type="number" id="currentx" value="0"></input></div>
+<div>currenty: <input type="number" id="currenty" value="0"></input></div>
+
+<div>finalx: <input type="number" id="finalx" value="3"></input></div>
+<div>finaly: <input type="number" id="finaly" value="1"></input></div>
+<br><br>
+<div>cos dx <input type="number" id="cos" value=""></input></div>
+<div>sin dy <input type="number" id="sin" value=""></input></div>
+<div>ang <input type="number" id="ang" value=""></input></div>
+
+<div>numFrames <input type="number" id="numFrames" value="1"></input></div>
+<div>totalFrames <input type="number" id="totalFrames" value="10"></input></div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<button type="button" id="but">!</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var x=0;
+  var y=0;
+  $("#but").on("click", function(){
+    console.log("click");
+    //$("#x").val(Number($("#x").val()) + Math.cos($("#inp").val()));
+    //$("#y").val(Number($("#y").val()) + Math.sin($("#inp").val()));
+
+    //$("#x").val(Number($("#x").val()) + Math.cos($("#inp").val())*2);
+    //$("#y").val(Number($("#y").val()) + Math.sin($("#inp").val())*2);
+
+    var numFrames = Number($("#numFrames").val());
+    var totalFrames = Number($("#totalFrames").val());
+    var startx = Number($("#startx").val());
+    var starty= Number($("#starty").val());
+    var currentx = $("#currentx").val();
+    var currenty = $("#currenty").val();
+
+    var cos = $("#cos").val();
+    var sin = $("#sin").val();
+    var ang = Number($("#ang").val());
+
+    var finalx = Number($("#finalx").val());
+    var finaly = Number($("#finaly").val());
+    console.log("click" + (finalx - startx)  * (numFrames/totalFrames));
+
+    if (numFrames < totalFrames){
+      numFrames++;
+      console.log(numFrames);
+      $("#numFrames").val(numFrames);
+      //we can do this two ways.
+      //1. get the distance traveled between source and dest points, by dividing the number of frames we want it to get there in
+      $("#currentx").val((finalx - startx)  * (numFrames/totalFrames));
+      $("#currenty").val((finaly - starty)  * (numFrames/totalFrames));
+
+      //2. or calculating use pythag theorem the dx and dy (could also add in a speed factor here) (270 deg is the top of the plane, 0 : left, 90:down, 180:right)
+      $("#cos").val( Math.round(Math.cos((ang/180)*Math.PI) *100)/100);
+      $("#sin").val(Math.round(Math.sin((ang/180)*Math.PI)*100)/100);
+    }
+
+
+  })
+
+})
+</script>
+</html>

@@ -43,8 +43,7 @@
       frameIndex = 0,
       tickCount = 0,
       ticksPerFrame = options.ticksPerFrame || 0,
-      numberOfFrames = options.numberOfFrames || 1,
-      animatedPattern = option.animatedPattern;
+      numberOfFrames = options.numberOfFrames || 1;
 
     that.context = options.context;
     that.width = options.width;
@@ -135,8 +134,7 @@
       height: 200,
       image: coinImg,
       numberOfFrames: 12,
-      ticksPerFrame: i,
-      animatedPattern: []
+      ticksPerFrame: i
     });
 
     coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
