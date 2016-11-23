@@ -1,1 +1,14 @@
 body{background-color: #0df;}
+
+@font-face {
+    font-family: Pangolin;
+    src: url('pangolin.woff');
+}
+.pangolin {
+    font-family: Pangolin, Arial, Helvetica;
+    font-size: 32px;
+}
+.pangolin14 {
+    font-family: Pangolin, Arial, Helvetica;
+    font-size: 14px;
+}
