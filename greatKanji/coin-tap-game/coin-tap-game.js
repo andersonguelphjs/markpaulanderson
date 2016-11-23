@@ -44,7 +44,7 @@
       tickCount = 0,
       ticksPerFrame = options.ticksPerFrame || 0,
       numberOfFrames = options.numberOfFrames || 1,
-      animatedPattern = option.animatedPattern;
+      animatedPattern = options.animatedPattern;
 
     that.context = options.context;
     that.width = options.width;
@@ -55,17 +55,20 @@
     that.scaleRatio = 1;
     that.destroy = false;
 
+    if (animatedPattern){
+      that.patternIndex = 0; //the leg of the pattern we are on
+    //  that.patternLength = animatedPattern[0].patternLength; // how many ticks we will continue in this leg
+      //that.patternAngle = animatedPattern[0].patternAngle; // the angle we will travel
+      that.patternFrame = 0; //the current frame we are on
+    }
+
     that.update = function() {
 
       tickCount += 1;
-      //destroyCoin(coinsToDestroy[i]);
-      //make a new coin
-      //setTimeout(spawnCoin, 1000);
 
       if (tickCount > ticksPerFrame) {
-        that.x -=15;
+        //that.x -=15;
         tickCount = 0;
-
         // If the current frame index is in range
         if (frameIndex < numberOfFrames - 1) {
           // Go to the next frame
@@ -73,6 +76,19 @@
         } else {
           frameIndex = 0;
         }
+
+        that.patternFrame+=1;
+          console.log("that.patternFrame: "+that.patternFrame+ " "+that.patternIndex);
+        if (that.patternFrame > animatedPattern[that.patternIndex].patternLength){
+          that.patternFrame=0;
+          that.patternIndex += 1;
+          console.log("changed x: "+that.x+" y: "+that.y);
+          if (that.patternIndex > (animatedPattern.length -1)){
+            that.patternIndex = 0;
+          }
+        }
+        that.x += Math.round(Math.cos((animatedPattern[that.patternIndex].patternAngle/180)*Math.PI) *100)/100 * animatedPattern[that.patternIndex].speed;
+        that.y += Math.round(Math.sin((animatedPattern[that.patternIndex].patternAngle/180)*Math.PI)*100)/100 * animatedPattern[that.patternIndex].speed;
       }
     };
 
@@ -136,7 +152,7 @@
       image: coinImg,
       numberOfFrames: 12,
       ticksPerFrame: i,
-      animatedPattern: []
+      animatedPattern: [{"patternLength":200,"patternAngle":0,"speed":5},{"patternLength":200,"patternAngle":135,"speed":5},{"patternLength":200,"patternAngle":225,"speed":5}]
     });
 
     coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
