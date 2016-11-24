@@ -87,5 +87,25 @@
     "imgHeight":150,
     "numFrames":10,
     "ticksPer":10
+  },
+  {
+    "index":"7",
+    "name":"Melody",
+    "imageUrl":"../app/images/melodyS.png",
+    "type":"",
+    "imgLength":1500,
+    "imgHeight":150,
+    "numFrames":10,
+    "ticksPer":10
+  },
+  {
+    "index":"8",
+    "name":"Oshaki",
+    "imageUrl":"../app/images/oshakiS.png",
+    "type":"",
+    "imgLength":1500,
+    "imgHeight":150,
+    "numFrames":10,
+    "ticksPer":10
   }
 ]
