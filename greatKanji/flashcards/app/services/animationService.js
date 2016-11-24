@@ -23,8 +23,8 @@ flashApp.service('animationTest', function(){
 		destroyCoins();
   }
 //a sprite object, update and render
-  function sprite(options, varOptions) {
-
+  function sprite(options, straightPath) {
+/*
     var that = {},
       frameIndex = 0,
       tickCount = 0,
@@ -32,11 +32,32 @@ flashApp.service('animationTest', function(){
 			maxTicks=1000,
       ticksPerFrame = options.ticksPerFrame || 0,
       numberOfFrames = options.numberOfFrames || 1,
-			type = varOptions.type || 1,
-			deltaX = varOptions.deltaX ? Math.floor((Math.random() * varOptions.deltaX) + 1) : 0,
-			deltaY = varOptions.deltaY ? Math.floor((Math.random() * varOptions.deltaX) + 1) : 0,
-			isWrap = varOptions.isWrap || false,
-			markedForDestruction = false;
+
+			isWrap = options.isWrap || false,
+			markedForDestruction = false,
+			deltaX =straightPath.deltaX || 0,
+			deltaY = straightPath.deltaY || 0;
+*/
+var that = {};
+//	that.type = type || 1;
+	that.frameIndex = 0;
+	that.tickCount = 0;
+	that.totalTickCount=0;
+	that.maxTicks=1000;
+	that.ticksPerFrame = options.ticksPerFrame || 0;
+	that.numberOfFrames = options.numberOfFrames || 1;
+
+	that.isWrap = options.isWrap || false;
+	that.markedForDestruction = false;
+	that.type =1;
+
+//  if (that.type==2){
+if (straightPath){
+
+that.type = 2;
+	that.deltaX =straightPath.deltaX || 0;
+	that.deltaY = straightPath.deltaY || 0;
+  }
 			/*
 			1-stationary
 			2-moving
@@ -53,86 +74,89 @@ flashApp.service('animationTest', function(){
 
     that.update = function() {
 
-      tickCount += 1;
-			totalTickCount += 1;
+      that.tickCount += 1;
+			that.totalTickCount += 1;
 
-      if (tickCount > ticksPerFrame) {
+      if (that.tickCount > that.ticksPerFrame) {
 
-        tickCount = 0;
+        that.tickCount = 0;
 
         // If the current frame index is in range
-        if (frameIndex < numberOfFrames - 1) {
+        if (that.frameIndex < that.numberOfFrames - 1) {
           // Go to the next frame
-          frameIndex += 1;
+          that.frameIndex += 1;
         } else {
-          frameIndex = 0;
+          that.frameIndex = 0;
         }
       }
 		};
 
     that.render = function() {
+      	//console.log("s"+that.straightPath);
+				//console.dir(this);
+			if (that.deltaX || that.deltaY){
+				that.x += that.deltaX;
+				that.y += that.deltaY;
 
-			if (type > 1){
-				that.x += deltaX;
-				that.y += deltaY;
-				if (that.x + (options.width / numberOfFrames) < 0){
-					that.x = canvas.width;
-					markedForDestruction=true;
-				}
-				else if (that.x + (options.width / numberOfFrames) > canvas.width){
-					that.x = 0;
-					markedForDestruction=true;
-				}
-				if (that.y + (options.height) < 0){
-					that.y = canvas.height;
-					markedForDestruction=true;
-				}
-				else if (that.y + (options.height) > canvas.height){
-					that.y = 0;
-					markedForDestruction=true;
+				if (!that.isWrap) {
+					 if (that.x + (options.width / that.numberOfFrames) < 0){ //off left
+						that.x = canvas.width;
+						that.markedForDestruction=true;
+					}
+					else if (that.x + (options.width / that.numberOfFrames) > canvas.width){//of right
+						that.x = 0;
+						that.markedForDestruction=true;
+					}
+					if (that.y + (options.height) < 0){//off top
+						that.y = canvas.height;
+						that.markedForDestruction=true;
+					}
+					else if (that.y + (options.height) > canvas.height){//of bottom
+						that.y = 0;
+						that.markedForDestruction=true;
+					}
 				}
 			}
 
-			if (totalTickCount < maxTicks && !markedForDestruction) {
+			if (that.totalTickCount < that.maxTicks && !that.markedForDestruction) {
     // Draw the animation
       that.context.drawImage(
         that.image,
-        frameIndex * that.width / numberOfFrames,
+        that.frameIndex * that.width / that.numberOfFrames,
         0,
-        that.width / numberOfFrames,
+        that.width / that.numberOfFrames,
         that.height,
         that.x,
         that.y,
-        that.width / numberOfFrames * that.scaleRatio,
+        that.width / that.numberOfFrames * that.scaleRatio,
         that.height * that.scaleRatio);
-				console.log("x: " +that.x +" y: "+that.y);
+				//console.log("x: " +that.x +" y: "+that.y);
 			}
 			else{
-				//destroyCoin(that);
 				coinsToDestroy.push(this);
 			}
 	  };
 
     that.getFrameWidth = function() {
-      return that.width / numberOfFrames;
+      return that.width / that.numberOfFrames;
     };
-
+		console.log("this");
+    console.dir(that);
     return that;
   }
+
+	//call this function to destroy coins
 	function destroyCoins(){
 		// Destroy tapped coins
 		for (i = 0; i < coinsToDestroy.length; i += 1) {
 			//giving random score
 			score += parseInt(coinsToDestroy[i].scaleRatio * 10, 10);
 			destroyCoin(coinsToDestroy[i]);
-			//make a new coin
-			//setTimeout(spawnCoin, 1000);
 		}
 
 		//at least one was destoryed so change the score
 	if (coinsToDestroy.length) {
 			document.getElementById("score").innerHTML = score;
-			console.log()
 	}
 	coinsToDestroy=[];
 	}
@@ -180,7 +204,7 @@ function spawnCoin(s, v) {
       image: coinImg,
       numberOfFrames: s.numFrames,
       ticksPerFrame: s.ticksPer
-    },v);
+    },v)
 
     coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
     coins[coinIndex].y = Math.random() * (canvas.height - coins[coinIndex].height * coins[coinIndex].scaleRatio);
@@ -195,7 +219,7 @@ function spawnCoin(s, v) {
 	//coinImg.src = "images/yellowFireworks.png"; //10 567 h57 black
 	//coinImg.src = "images/tripple.png"; //10 567 h57 black
 	coinImg.src = s.imageUrl; //12 4800 h200 black
-	console.dir(coinImg)
+	//console.dir(coinImg)
 	console.log("coins.legnth "+coins.length);
 	return false;
   }
@@ -257,6 +281,7 @@ function spawnCoin(s, v) {
 		      // Check for tap collision with coin
 					//notice we use < frane width to account for inside the frame body
 		      if (dist < coins[i].getFrameWidth() / 2 * coins[i].scaleRatio) {
+						console.log("foudn "+i);
 		        coinsToDestroy.push(coins[i]);
 		      }
 		    }

@@ -117,6 +117,11 @@ $("#myProgressBar").animate().stop();
       $scope.answer = $scope.operand1 * $scope.operand2;
     }
     else if ($scope.operation === "-"){
+      if ($scope.operand1 < $scope.operand2){
+        var temp = $scope.operand1;
+        $scope.operand1 = $scope.operand2;
+        $scope.operand2 = temp;
+      }
       $scope.answer = $scope.operand1 - $scope.operand2;
     }
     else if ($scope.operation === "%"){
@@ -152,13 +157,14 @@ $("#myProgressBar").animate().stop();
         $scope.$apply();
         }, 0);
       }
-  //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
-  animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)], {
-    "type": 2,
-    "deltaX": 2 * (Math.random() < 0.5 ? -1 : 1),
-    "deltaY": 2 * (Math.random() < 0.5 ? -1 : 1),
+  var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
+  var straightPath = {
+    "deltaX": Math.floor(Math.random() * 2) * (Math.random() < 0.5 ? -1 : 1),
+    "deltaY": Math.floor(Math.random() * 2) * (Math.random() < 0.5 ? -1 : 1),
     "isWrap": true
-  });
+  };
+  //  animationTest.spawnCoin("../app/images/catWalking.png",4800,200,12,5);
+  animationTest.spawnCoin(sprite, straightPath);
   }
 
     $scope.keyPressed = null;

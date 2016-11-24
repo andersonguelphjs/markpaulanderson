@@ -9,6 +9,7 @@
   function gameLoop() {
 
     var i;
+    var j;
     var coinsToDestroy=[];
     //so instead of a timer, what we are doing here is adding this function everytime teh browswer wants to paint. Brilliant
     window.requestAnimationFrame(gameLoop);
@@ -44,23 +45,18 @@
       tickCount = 0,
       ticksPerFrame = options.ticksPerFrame || 0,
       numberOfFrames = options.numberOfFrames || 1,
-      animatedPattern = options.animatedPattern;
+      animatedPattern = options.animatedPattern || null;
 
     that.context = options.context;
     that.width = options.width;
     that.height = options.height;
-    that.x = 0;
-    that.y = 0;
+    that.x = options.startx || 0;
+    that.y =  options.starty ||0;
     that.image = options.image;
     that.scaleRatio = 1;
     that.destroy = false;
-
-    if (animatedPattern){
-      that.patternIndex = 0; //the leg of the pattern we are on
-    //  that.patternLength = animatedPattern[0].patternLength; // how many ticks we will continue in this leg
-      //that.patternAngle = animatedPattern[0].patternAngle; // the angle we will travel
-      that.patternFrame = 0; //the current frame we are on
-    }
+    that.patternIndex = 0;
+    that.patternFrame = 0;
 
     that.update = function() {
 
@@ -77,26 +73,27 @@
           frameIndex = 0;
         }
 
-        that.patternFrame+=1;
-          console.log("that.patternFrame: "+that.patternFrame+ " "+that.patternIndex);
-        if (that.patternFrame > animatedPattern[that.patternIndex].patternLength){
-          that.patternFrame=0;
-          that.patternIndex += 1;
-          console.log("changed x: "+that.x+" y: "+that.y);
-          if (that.patternIndex > (animatedPattern.length -1)){
-            that.patternIndex = 0;
+        if (animatedPattern && animatedPattern.length > 0) {
+          that.patternFrame += 1;
+          console.log("that.patternFrame: " + that.patternFrame + " " + that.patternIndex);
+          if (that.patternFrame > animatedPattern[that.patternIndex].patternLength) {
+            that.patternFrame = 0;
+            that.patternIndex += 1;
+            console.log("changed x: " + that.x + " y: " + that.y);
+            if (that.patternIndex > (animatedPattern.length - 1)) {
+              that.patternIndex = 0;
+            }
           }
+          that.x += Math.round(Math.cos((animatedPattern[that.patternIndex].patternAngle / 180) * Math.PI) * 100) / 100 * animatedPattern[that.patternIndex].speed;
+          that.y += Math.round(Math.sin((animatedPattern[that.patternIndex].patternAngle / 180) * Math.PI) * 100) / 100 * animatedPattern[that.patternIndex].speed;
         }
-        that.x += Math.round(Math.cos((animatedPattern[that.patternIndex].patternAngle/180)*Math.PI) *100)/100 * animatedPattern[that.patternIndex].speed;
-        that.y += Math.round(Math.sin((animatedPattern[that.patternIndex].patternAngle/180)*Math.PI)*100)/100 * animatedPattern[that.patternIndex].speed;
       }
     };
 
     that.render = function() {
 
       // Draw the animation
-      console.log(that.x+" "+(-1*that.width/ numberOfFrames));
-      if (that.x < (-1*that.width/ numberOfFrames)){
+      if (that.x < (-1*that.width/ numberOfFrames)){ //if off the screen, destroy it
         return true;
       }
 
@@ -152,13 +149,17 @@
       image: coinImg,
       numberOfFrames: 12,
       ticksPerFrame: i,
-      animatedPattern: [{"patternLength":200,"patternAngle":0,"speed":5},{"patternLength":200,"patternAngle":135,"speed":5},{"patternLength":200,"patternAngle":225,"speed":5}]
+      animatedPattern: [{"patternLength":150,"patternAngle":0,"speed":5},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}],
+      startx:0,
+      starty:0
     });
 
-    coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
-    coins[coinIndex].y = Math.random() * (canvas.height - coins[coinIndex].height * coins[coinIndex].scaleRatio);
+    //random placement
+    //coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
+  //  coins[coinIndex].y = Math.random() * (canvas.height - coins[coinIndex].height * coins[coinIndex].scaleRatio);
 
-    coins[coinIndex].scaleRatio = Math.random() * 0.5 + 0.5;
+//random scale
+  //  coins[coinIndex].scaleRatio = Math.random() * 0.5 + 0.5;
 
     // Load sprite sheet
    //coinImg.src = "images/coin-sprite-animation.png";// 10 1000 h100 transparent
