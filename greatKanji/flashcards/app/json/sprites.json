@@ -107,5 +107,15 @@
     "imgHeight":150,
     "numFrames":10,
     "ticksPer":10
+  },
+  {
+    "index":"8",
+    "name":"Kira Risu",
+    "imageUrl":"../app/images/kirarisu.png",
+    "type":"",
+    "imgLength":1500,
+    "imgHeight":150,
+    "numFrames":10,
+    "ticksPer":10
   }
 ]
