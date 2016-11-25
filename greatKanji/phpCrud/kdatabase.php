@@ -3,12 +3,12 @@
 class Database
 {
 
-/* web */
+/* web *//*
     private static $dbName = 'kanji2';
     private static $dbHost = 'localhost:3306';
     private static $dbUsername = 'markpaul1972';
     private static $dbUserPassword = 'REX1ABED3qUarr';
-
+*/
 
     /*home*
     private static $dbName = 'greatKanji';
@@ -16,12 +16,12 @@ class Database
     private static $dbUsername = 'root';
     private static $dbUserPassword = '';
 */
-/*work *//*
-    private static $dbName = 'greatKanji';
+/*work */
+    private static $dbName = 'kanji';
     private static $dbHost = 'localhost';
     private static $dbUsername = 'root';
-    private static $dbUserPassword = '';
-*/
+    private static $dbUserPassword = 'rootPass';
+
     private static $cont  = null;
 
     public function __construct() {

@@ -2,119 +2,108 @@
 /*
 The behaviour has to be different on the basis
 of the request method.
+specify table &table=kanji
+specify
+http://localhost/greatKanji/phpCrud/pdo.php?&table=kanji2&in=2241;153$key=id
+
+
 */
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require 'kdatabase.php';
-/*
-$delimiter = '/';
-        $dbhost = "greatKanji.db.11902129.hostedresource.com";
-        $dbuser = "greatKanji";
-        $dbpass = "e5R%eL95Ef";
-*/
-//$validTables = array("kanji2","radicals");
-
-
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      //  $sql = "SELECT * FROM radicals ORDER BY id ASC";
-        //echo $sql;
-      //  $q = $pdo->prepare($sql);
-      //  $q->execute();
-      //  $data = $q->fetchAll(PDO::FETCH_ASSOC);
 
-        //encode to json & output
-  // $callback = isset($_GET['callback'])?$_GET['callback']:'JSON_CALLBACK';
+      parse_str($_SERVER['QUERY_STRING'], $queryParam);
 
+//we may have multiple conditions in a query (usuallly sepearated by ;)
+//so return something that can be conumed by SQL
+function parseQueryParamSingleField($param, $seperator, $delim, $queryParam){
 
+if (array_key_exists($param,$queryParam) ) {
+   if (strpos($queryParam[$param], $delim) !== FALSE) { //is there more than one
+     $numArr=explode($delim, $queryParam[$param]);
+     for ($j=0;$j<count($numArr);$j++){
+       if (is_numeric($numArr[$j])) {
+         if ($j!==0) {
+         $bracket .=$seperator.$numArr[$j];
+         }
+         else{
+         $bracket .= $numArr[$j];
+         }
+       }
+     }
+     return $bracket;
+   }
+}
+return $queryParam[$param];
+}
 
- //   echo $callback."(".json_encode($array).")";
-        //$json = $data.substr(3, strlen($data)-1);
-      //  $json = json_encode($data);
-      //  echo $json;
+function parseQueryParamContains($str, $column, $andOr, $delim){
+
+//echo $delim.$str.$column;
+   if (strpos($str, $delim) != FALSE) { //is there more than one
+  //   echo "multiople";
+  $strArr=explode($delim, $str);
+   $columnArr=explode($delim, $column);
+     for ($j=0;$j<count($strArr);$j++){
+       if ($j!==0) {
+        $query .= " ".$andOr." ".$columnArr[$j]." LIKE '%".$strArr[$j]."%'";
+      }
+      else{
+      $query = $columnArr[$j]." LIKE '%".$strArr[$j]."%'";
+      }
+     }
+   }
+   else {
+  //   echo "just one";
+     $query = $column." LIKE '%".$str."%'";
+   }
+
+   return $query;
+
+}
+
 
 switch ($_SERVER['REQUEST_METHOD']) {
 
     case "GET":
-    //echo "get it mang";
-    //break;
-  //  }
+    //default will get allows
 
-       // echo "get";
+  //prioritize 'in'
+        if (array_key_exists("in",$queryParam) ) {
+          $nums = parseQueryParamSingleField('in',',',';',$queryParam);
+          $condition = "WHERE id in (".$nums.")";
+        }
 
-        $url=strtok($_SERVER["REQUEST_URI"],'?');
-        //$arr = explode("/", $url);
+         else if (array_key_exists("contains",$queryParam) AND array_key_exists("column",$queryParam)) {
 
-      //  $key = array_search('rest', $arr); //get arr values only after 'rest'
-       //$table = $arr[$key+1];
-        //echo "table: ".$table; //table name
-       // $id = $arr[$key+2];  //id
-        $sqlParams = "";
-        parse_str($_SERVER['QUERY_STRING'], $queryParam);
-        //echo ;
-        //echo '<pre>'; print_r($queryParam); echo '</pre>';
-/*
-        if (in_array($table, $validTables)){
-       // echo "get all";
-        $i=0;
-        $condition ="WHERE";
-        if (!empty($queryParam)){
-        foreach($queryParam as $key => $value) //each item in json string
-        {
-          //echo "key: ".$key." value: ".$value;
-          if ($i==1) {
-          $condition = "AND";
+          $contains = $queryParam['contains'];
+          $column = $queryParam['column'];
+          if (array_key_exists("andOr",$queryParam) ){
+           $andOr = $queryParam['andOr'];
           }
-          if (is_numeric($value)) {
-           //echo "cond1";
-           $sqlParams = $sqlParams." ".$condition." ".$key." = ".$value;
-           }
-           else {
-           if (strpos($value, ';') !== FALSE) {
-           //echo "cond2";
-           $numArr=explode(";", $value);
+          else{
+              $andOr='AND';
+          }
+        //  echo "conatins1 ".$contains." key ".$key;
+         $values = parseQueryParamContains($contains, $column, $andOr, ";");
+      //   echo "v1 ".$values;
+          $condition = "WHERE ".$values;
 
-           for ($j=1;$j<count($numArr);$j++){
-           if (is_numeric($numArr[$j])) {
-           if ($j!==1) {
-           $bracket .=','.$numArr[$j];
-           }
-           else{
-           $bracket .= $numArr[$j];
-           }
-           }
-           }
-           $sqlParams = $sqlParams." ".$condition." ".$key." IN (".$bracket.")";
-           //WHERE id IN (1,2,3)"
-           }
-           else{
-           //echo "cond3";
-           $sqlParams = $sqlParams." ".$condition." '".$key."' = ".$value;
-           }
-           }
+         }
 
 
-        }
-        }
-        */
-      //  $sql = "SELECT * FROM ".$table." ".$sqlParams." ORDER BY id ASC";
-       $sql = "SELECT * FROM radicals ORDER BY id ASC";
-        //echo $sql;
+
+    $sql = "SELECT * FROM ".$queryParam['table']." ".$condition." ORDER BY id ASC";
+      //echo $sql;
         $q = $pdo->prepare($sql);
         $q->execute();
         $data = $q->fetchAll(PDO::FETCH_ASSOC);
-      //  }
-        //encode to json & output
-  //$callback = isset($_GET['callback'])?$_GET['callback']:'JSON_CALLBACK';
 
-
-
- //echo $callback."(".json_encode($data).")";
-        //echo "<br>";
         $json = json_encode($data);
         echo $json;
-
         break;
 
     case "PUT":
