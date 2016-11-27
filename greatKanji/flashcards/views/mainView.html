@@ -32,7 +32,8 @@
       <button type="button" class="btn btn-default" data-sign="-">-</button>
       <button type="button" class="btn btn-default" data-sign="x">x</button>
       <button type="button" class="btn btn-default" data-sign="%">%</button>
-      <button type="button" class="btn btn-default clearButton" data-sign="">C</button>
+      <button type="button" class="btn btn-default notOperation" ng-click="timerToggle()"><span class="glyphicon glyphicon-time"></span></button>
+      <button type="button" class="btn btn-default notOperation clearButton" data-sign="">C</button>
     </div>
 
     <span class="input-group-addon" id="sizing-addon2">Min</span>
@@ -67,7 +68,7 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-  <div class="progress" style="margin-top:5px;">
+  <div ng-show="timerOn" class="progress" style="margin-top:5px;">
     <div id="myProgressBar" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
       <span class="sr-only">70% Complete</span>
     </div>

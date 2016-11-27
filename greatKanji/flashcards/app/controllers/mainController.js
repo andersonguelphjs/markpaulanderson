@@ -32,6 +32,7 @@ console.log($scope.fromService);
   $scope.url = '../app/json/sprites.json';
   $scope.status = "s";
   $scope.data = "d";
+  $scope.timerOn = true;
 
   $http({
     method: $scope.method,
@@ -70,7 +71,15 @@ console.log($scope.fromService);
     $scope.status = response.status;
   });
   */
+  $scope.timerToggle = function(){
 
+$scope.timerOn = !$scope.timerOn;
+
+if (!$scope.timerOn){
+  $("#myProgressBar").animate().stop();
+}
+
+  }
   //  $scope.iBack="url('images/gohan.png') 0 0";
   $scope.startProgressBar = function(){
 
@@ -98,7 +107,7 @@ $("#myProgressBar").animate().stop();
     $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
     $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
 
-    var ops = $(".stayPressed .active");
+    var ops = $(".stayPressed .active").not(".notOperation");
     var opArr=[];
 
     $.each(ops, function(){
@@ -133,8 +142,9 @@ $("#myProgressBar").animate().stop();
     $timeout(function() {
       $scope.showAnswer=false;
       $scope.$apply();
-
+      if ($scope.timerOn){
       $scope.startProgressBar();
+      }
     }, 0);
 
 
