@@ -6,15 +6,12 @@
 
 #calculationContainer {
   top:10%;
-  left:33%;
+  left:45%;
   position:absolute;
   width: 33%;
-  margin-left: auto;
-  margin-right: auto;
 }
 #calculationContainer table{
-margin-left: auto;
-margin-right: auto;
+
 }
 #calculationContainer table td {
   height: 110px;
