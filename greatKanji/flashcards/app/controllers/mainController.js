@@ -33,6 +33,9 @@ console.log($scope.fromService);
   $scope.status = "s";
   $scope.data = "d";
   $scope.timerOn = true;
+  $scope.operand1Arr = [1];
+  $scope.operand2Arr = [1];
+  $scope.answerArr = [1];
 
   $http({
     method: $scope.method,
@@ -42,8 +45,9 @@ console.log($scope.fromService);
   then(function(response) {
     $scope.status = response.status;
     $scope.data = response.data;
+    $scope.staticImages = $.grep($scope.data,function(n,i){return n.hasFirstFrame;});
     console.dir($scope.data[0]);
-
+    $scope.setOperands();
   }, function(response) {
     $scope.data = response.data || 'Request failed';
     $scope.status = response.status;
@@ -106,7 +110,36 @@ $("#myProgressBar").animate().stop();
     console.log($scope.maxValue);
     $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
     $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
-
+    $scope.operand1Arr = new Array (Number($scope.operand1));
+    $scope.operand2Arr = new Array (Number($scope.operand2));
+    var staticImageIndex = Math.floor(Math.random() * $scope.staticImages.length);
+console.log("staticImageIndex "+staticImageIndex);
+    //$("#staticContainer1,#staticContainer2").html();
+    $scope.outerStyle = {
+      "max-width" : $scope.staticImages[staticImageIndex].imgLength/$scope.staticImages[staticImageIndex].numFrames/4+"px",
+      "max-height" : $scope.staticImages[staticImageIndex].imgHeight/4+"px"
+    }
+    $scope.one1Style = {
+      "width" : $scope.staticImages[staticImageIndex].imgLength/2,
+      "height" : $scope.staticImages[staticImageIndex].imgHeight/2,
+      "background" :"url('"+$scope.staticImages[staticImageIndex].imageUrl+"')"
+    }
+  //  $scope.maxWidth =$scope.staticImages[staticImageIndex].imgLength/$scope.staticImages[staticImageIndex].numFrames/4+"px";
+  //  $scope.maxHeight=$scope.staticImages[staticImageIndex].imgHeight/4+"px";
+  //  $scope.height1=$scope.staticImages[staticImageIndex].imgHeight/2;
+  //  $scope.width1=$scope.staticImages[staticImageIndex].imgLength/2;
+  //  $scope.backgroundUrl="url('"+$scope.staticImages[staticImageIndex].imageUrl+"')";
+  //$(".outer").css("max-width",(($scope.staticImages[staticImageIndex].imgLength/$scope.staticImages[staticImageIndex].numFrames)/4)+"px")
+  //  .css("max-height",($scope.staticImages[staticImageIndex].imgHeight/4)+"px");
+  //  $(".one1").css("height",$scope.staticImages[staticImageIndex].imgHeight/2)
+  //  .css("width",$scope.staticImages[staticImageIndex].imgLength/2)
+  //  .css("background","url('"+$scope.staticImages[staticImageIndex].imageUrl+"')");
+    //.css("background-size","50% 50%");
+    //max-width:37.5px;/*h / 4*/
+    //max-height:37.5px;/*h / 4*/
+    //height:75px; /*h / 2*/
+    //width:750px;/*w / 2*/
+    //background: url("geraCho.png");
     var ops = $(".stayPressed .active").not(".notOperation");
     var opArr=[];
 
@@ -139,9 +172,10 @@ $("#myProgressBar").animate().stop();
     else{
       $scope.answer = $scope.operand1 + $scope.operand2;
     }
+    $scope.answerArr=new Array (Number($scope.answer));
     $timeout(function() {
       $scope.showAnswer=false;
-      $scope.$apply();
+    //  $scope.$apply();
       if ($scope.timerOn){
       $scope.startProgressBar();
       }
@@ -149,7 +183,7 @@ $("#myProgressBar").animate().stop();
 
 
   }
-  $scope.setOperands();
+
 
   angular.element(window).bind('keypress', function(e) {
   //e.keycode
@@ -164,7 +198,7 @@ $("#myProgressBar").animate().stop();
       //  $("#myProgressBar").animate().stop().clearQueue() ;
         $scope.showAnswer = true;
         $timeout(function() {
-        $scope.$apply();
+      //  $scope.$apply();
         }, 0);
       }
   var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];

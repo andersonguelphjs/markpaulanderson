@@ -56,3 +56,12 @@ filter: FlipH;
 .numWidth{
   width:75px !important;
 }
+
+.outer{
+  overflow: hidden;
+  display:inline-block;
+}
+.one1{
+display:inline-block;
+background-size: 50% 50% !important;
+}

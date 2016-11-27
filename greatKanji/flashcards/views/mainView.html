@@ -10,13 +10,28 @@
       <tr>
         <td></td>
         <td>{{operand1}}</td>
+        <td>
+            <div ng-repeat="i in operand1Arr track by $index" class="outer" ng-style=outerStyle>
+              <div class="one1" ng-style=one1Style></div>
+            </div>
+        </td>
       </tr>
       <tr>
         <td class="operand2">{{operation}}</td>
         <td class="operand2">{{operand2}}</td>
+        <td>
+          <div ng-repeat="i in operand2Arr track by $index" class="outer" ng-style=outerStyle>
+            <div class="one1" ng-style=one1Style></div>
+          </div>
+        </td>
       </tr>
       <tr>
         <td id="operationAnswer" colspan="2" ng-show="showAnswer">{{answer}}</td>
+        <td ng-show="showAnswer">
+          <div ng-repeat="i in answerArr track by $index" class="outer" ng-style=outerStyle>
+            <div class="one1" ng-style=one1Style></div>
+          </div>
+        </td>
       </tr>
     </table>
   </div>
