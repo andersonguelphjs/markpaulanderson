@@ -180,6 +180,35 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
 
   };
 
+ $scope.createSprite = function(){
+   var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
+   var animatedPattern;
+   var random = Math.random();
+   if (random < 0.5) { //random single path
+     animatedPattern = [{
+       "patternLength": 1000,
+       "patternAngle": Math.floor(Math.random() * 360),
+       "speed": Math.floor(Math.random() * 5),
+       "startx": 0,
+       "starty": 0,
+       "isRandom": false,
+       "isWrap": Math.random() < 0.5 ? false : true
+     }];
+   } else { //random pattern
+     animatedPattern = [{
+       "patternLength": Math.floor(Math.random() * 50),
+       "patternAngle": Math.floor(Math.random() * 360),
+       "speed": Math.floor(Math.random() * 5),
+       "startx": 0,
+       "starty": 0,
+       "isRandom": true,
+       "isWrap": Math.random() < 0.5 ? false : true
+     }];
+   }
+   // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
+   // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
+   animationTest.spawnCoin(sprite, animatedPattern);
+ };
 
   angular.element(window).bind('keypress', function(e) {
     //e.keycode
@@ -190,37 +219,13 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
       if ($scope.showAnswer) {
         $scope.showAnswer = false;
         $scope.setOperands();
+
       } else {
         $scope.showAnswer = true;
+        $scope.createSprite();
         $timeout(function() {}, 0);
       }
-      var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
-      var animatedPattern;
-      var random = Math.random();
-      if (random < 0.5) { //random single path
-        animatedPattern = [{
-          "patternLength": 1000,
-          "patternAngle": Math.floor(Math.random() * 360),
-          "speed": Math.floor(Math.random() * 5),
-          "startx": 0,
-          "starty": 0,
-          "isRandom": false,
-          "isWrap": Math.random() < 0.5 ? false : true
-        }];
-      } else { //random pattern
-        animatedPattern = [{
-          "patternLength": Math.floor(Math.random() * 50),
-          "patternAngle": Math.floor(Math.random() * 360),
-          "speed": Math.floor(Math.random() * 5),
-          "startx": 0,
-          "starty": 0,
-          "isRandom": true,
-          "isWrap": Math.random() < 0.5 ? false : true
-        }];
-      }
-      // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
-      // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
-      animationTest.spawnCoin(sprite, animatedPattern);
+
     }
 
     $scope.keyPressed = null;
