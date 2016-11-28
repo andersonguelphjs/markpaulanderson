@@ -94,8 +94,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
          }
 
-
-
     $sql = "SELECT * FROM ".$queryParam['table']." ".$condition." ORDER BY id ASC";
       //echo $sql;
         $q = $pdo->prepare($sql);
