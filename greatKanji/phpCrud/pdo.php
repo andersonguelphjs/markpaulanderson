@@ -9,20 +9,26 @@ http://localhost/greatKanji/phpCrud/pdo.php?&table=kanji2&in=2241;153$key=id
 //use
 http://localhost/greatKanji/phpCrud/pdo.php?&table=kanji2&contains=man;officer&column=meaning;meaning&andOr=AND
 
+//put
+//http://localhost/greatKanji/phpCrud/pdo.php?&table=radicals
+
+//delete, update
+http://localhost/greatKanji/phpCrud/pdo.php?&table=radicals&id=" + id
 */
+//for json
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require 'kdatabase.php';
 
-        $pdo = Database::connect();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo = Database::connect();
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      parse_str($_SERVER['QUERY_STRING'], $queryParam);
-      $id = $queryParam['id'];
-      $table = $queryParam['table'];
+parse_str($_SERVER['QUERY_STRING'], $queryParam);
+$id = $queryParam['id'];
+$table = $queryParam['table'];
 
 //we may have multiple conditions in a query (usuallly sepearated by ;)
-//so return something that can be conumed by SQL
+//so return something that can be consumed by SQL
 function parseQueryParamSingleField($param, $seperator, $delim, $queryParam){
 
 if (array_key_exists($param,$queryParam) ) {
@@ -44,9 +50,11 @@ if (array_key_exists($param,$queryParam) ) {
 return $queryParam[$param];
 }
 
+
+//return an and, or, contains query
 function parseQueryParamContains($str, $column, $andOr, $delim){
 
-   if (strpos($str, $delim) != FALSE) { //is there more than one
+  if (strpos($str, $delim) != FALSE) { //is there more than one
   $strArr=explode($delim, $str);
    $columnArr=explode($delim, $column);
      for ($j=0;$j<count($strArr);$j++){
@@ -72,7 +80,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case "GET":
     //default will get allows
 
-  //prioritize 'in'
+//http://localhost/greatKanji/phpCrud/pdo.php?&table=kanji2&in=2241;153$key=id
         if (array_key_exists("in",$queryParam) ) {
           $nums = parseQueryParamSingleField('in',',',';',$queryParam);
           $condition = "WHERE id in (".$nums.")";
@@ -106,7 +114,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //get json from sent data
           $json = json_decode(file_get_contents('php://input'), true);
           $sql = "UPDATE ".$table." SET ";
-           //update each json value
+
            $i =0;
            foreach($json as $key => $value) //each item in json string
           {
@@ -160,5 +168,4 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 }
 Database::disconnect();
-
 ?>
