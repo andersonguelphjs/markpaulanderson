@@ -23,9 +23,9 @@ class Database
     private static $dbUsername = 'root';
     private static $dbUserPassword = 'rootPass';
     */
-    private static $dbName = 'greatKanji';
-    private static $dbHost = 'localhost';
-    private static $dbUsername = 'root';
+    private static $dbName = '';
+    private static $dbHost = '';
+    private static $dbUsername = '';
     private static $dbUserPassword = '';
 
     private static $cont  = null;
@@ -34,8 +34,12 @@ class Database
         die('Init function is not allowed');
     }
 
-    public static function connect()
+    public static function connect($n, $h, $u, $p)
     {
+      Database::$dbName = $n;
+      Database::$dbHost = $h;
+      Database::$dbUsername = $u;
+      Database::$dbUserPassword = $p;
        // One connection through whole application
        if ( null == self::$cont )
        {

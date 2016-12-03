@@ -19,7 +19,7 @@ http://localhost/greatKanji/phpCrud/pdo.php?&table=radicals&id=" + id
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$_SERVER['REQUEST_METHOD'] = "POST";
+//$_SERVER['REQUEST_METHOD'] = "POST";
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 require 'kdatabase.php';
 $payload = file_get_contents("php://input");
@@ -27,10 +27,10 @@ $_POST = json_decode($payload, true);
 $condition = "";
 
 $table = $_POST['table'];
-$table = "radicals";
+//$table = "radicals";
 $sql = "SELECT * FROM ".$table." ".$condition." ORDER BY id ASC";
 //echo "table $table sql $sql";
-$pdo = Database::connect();
+$pdo = Database::connect('greatKanji','localhost','root','');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $q = $pdo->prepare($sql);
     $q->execute();
