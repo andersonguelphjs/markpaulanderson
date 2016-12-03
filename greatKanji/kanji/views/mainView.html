@@ -30,7 +30,7 @@
 <table class="table table-hover">
   <caption>Radicals</caption>
   <tr class="row"><th>id</th><th>radical</th><th>code</th><th>meaning</th><th>similar</th><th>update</th><th>delete</th></tr>
-  <tr class="row" ng-repeat="x in names">
+  <tr class="row" ng-repeat="x in names track by $index">
     <td class="col-md-1"><input class="form-control" ng-model="x.id"/></td>
     <td class="col-md-1 pangolin"><input class="form-control" ng-model="x.radical"/></td>
     <td class="col-md-2"><input class="form-control" ng-model="x.code"/></td>

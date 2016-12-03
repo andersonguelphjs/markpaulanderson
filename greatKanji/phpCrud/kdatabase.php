@@ -17,10 +17,16 @@ class Database
     private static $dbUserPassword = '';
 */
 /*work */
+/*
     private static $dbName = 'kanji';
     private static $dbHost = 'localhost';
     private static $dbUsername = 'root';
     private static $dbUserPassword = 'rootPass';
+    */
+    private static $dbName = 'greatKanji';
+    private static $dbHost = 'localhost';
+    private static $dbUsername = 'root';
+    private static $dbUserPassword = '';
 
     private static $cont  = null;
 
