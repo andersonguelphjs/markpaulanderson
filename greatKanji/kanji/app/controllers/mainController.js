@@ -59,10 +59,10 @@ app.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', 'm
 
   $scope.updateRadical = function(r) {
     var inputs = $("#addRow").find("input[data-field]");
-    var rad = {};
+    var rad = {"table":"radicals"};
 
     for (var key in r) {
-      if (key.substring(0, 1) !== "$" && key.substring(0, 1) !== "_" && key !== "id") {
+      if (key.substring(0, 1) !== "$" && key.substring(0, 1) !== "_") {
         console.log("k " + key);
         rad[key] = r[key];
       }
@@ -72,8 +72,9 @@ app.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', 'm
     modal.off("click");
     modal.on("click", function() {
       $http({
-          method: "PUT",
-          url: "http://localhost/greatKanji/phpCrud/pdo.php?&table=radicals&id=" + r.id,
+          method: "POST",
+          //url: "http://localhost/greatKanji/phpCrud/pdo.php?&table=radicals&id=" + r.id,
+          url: "../../phpCrud/update.php",
           data: JSON.stringify(rad)
         })
         .then(function(response) {
