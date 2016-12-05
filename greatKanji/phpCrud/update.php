@@ -36,7 +36,8 @@ $sql = "";
 
 $sql= "UPDATE ".$table." SET ".$sql." WHERE id = ".$id;
 
-$pdo = Database::connect('greatKanji','localhost','root','');
+//$pdo = Database::connect('greatKanji','localhost','root','');
+$pdo = Database::connect('kanji','localhost','root','rootPass');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $q = $pdo->prepare($sql);
 $q->execute();
