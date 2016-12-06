@@ -5,20 +5,14 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-function test_input($data)
-	{
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-	}
+
 
 // $_SERVER['REQUEST_METHOD'] = "POST";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 	require 'kdatabase.php';
-
+  require 'helperFunctions.php';
 	$payload = file_get_contents("php://input");
 	$_POST = json_decode($payload, true);
 	$condition = "";
