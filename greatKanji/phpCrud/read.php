@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 	require 'kdatabase.php';
   require 'helperFunctions.php';
-	$payload = file_get_contents("php://input");
-	$_POST = json_decode($payload, true);
+	$payload = json_decode(file_get_contents('php://input') , true);
+
 	$condition = "";
-	$table = test_input($_POST['table']);
+	$table = test_input($payload['table']);
 	$table = test_input("radicals");
 	$sql = "SELECT * FROM " . $table . " " . $condition . " ORDER BY id ASC";
 
