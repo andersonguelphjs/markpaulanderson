@@ -1,56 +1,68 @@
 <?php
 
-//for json
+// for json
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-//$_SERVER['REQUEST_METHOD'] = "POST";
+function test_input($data)
+	{
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+	}
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-require 'kdatabase.php';
-$payload = json_decode(file_get_contents('php://input'), true);
-//$payload = array("table"=>"radicals","radical"=>"hey","code"=>"ho","meaning"=>"lets","similar"=>"go");
-$table = test_input($payload['table']);
-//$table = "radicals";
-$fields = "(";
-$valueQs = "(";
-$valueArr = [];
+// $_SERVER['REQUEST_METHOD'] = "POST";
 
+if ($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+	require 'kdatabase.php';
 
-foreach($payload as $key => $value){
+	$payload = json_decode(file_get_contents('php://input') , true);
 
-  if ($key !="table"){
-   $v = test_input($value);
-   if (!empty($valueArr)){
-     $fields .= ", ".$key;
-     $valueQs .= ", ?";
-   }
-   else{
-     $fields .= $key;
-     $valueQs .= "?";
-   }
-   array_push($valueArr, $v);   }
-}
+	// $payload = array("table"=>"radicals","radical"=>"hey","code"=>"ho","meaning"=>"lets","similar"=>"go");
 
-$fields .= ")";
-$valueQs .= ")";
+	$table = test_input($payload['table']);
 
-$sql = "INSERT INTO ".$table." ".$fields." values".$valueQs;
+	// $table = "radicals";
 
-//$pdo = Database::connect('greatKanji','localhost','root','');
-$pdo = Database::connect('kanji','localhost','root','rootPass');
-$q = $pdo->prepare($sql);
-$q->execute($valueArr);
+	$fields = "(";
+	$valueQs = "(";
+	$valueArr = [];
+	foreach($payload as $key => $value)
+		{
+		if ($key != "table")
+			{
+			$v = test_input($value);
+			if (!empty($valueArr))
+				{
+				$fields.= ", " . $key;
+				$valueQs.= ", ?";
+				}
+			  else
+				{
+				$fields.= $key;
+				$valueQs.= "?";
+				}
 
-}
-else{
-echo "not post: update";
-}
+			array_push($valueArr, $v);
+			}
+		}
+
+	$fields.= ")";
+	$valueQs.= ")";
+	$sql = "INSERT INTO " . $table . " " . $fields . " values" . $valueQs;
+
+	// $pdo = Database::connect('greatKanji','localhost','root','');
+
+	$pdo = Database::connect('kanji', 'localhost', 'root', 'rootPass');
+	$q = $pdo->prepare($sql);
+	$q->execute($valueArr);
+	}
+  else
+	{
+	echo "not post: update";
+	}
 
 ?>

@@ -94,7 +94,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
         $("#myProgressBar").animate().stop();
         $("#myProgressBar").animate({
           width: 0
-        }, 5000, function() {
+        }, 10000, function() {
           $scope.showAnswer = true;
           $timeout(function() {
             $scope.$apply();
