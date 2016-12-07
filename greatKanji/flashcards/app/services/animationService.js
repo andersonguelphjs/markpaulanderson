@@ -180,8 +180,8 @@ flashApp.service('animationTest', function() {
 
     //at least one was destoryed so change the score
     var scoreDiv = document.getElementById("score");
-    if (coinsToDestroy.length && score) {
-      document.getElementById("score").innerHTML = scoreDiv;
+    if (coinsToDestroy.length && scoreDiv && score) {
+      document.getElementById("score").innerHTML = score;
     }
     coinsToDestroy = [];
   }
