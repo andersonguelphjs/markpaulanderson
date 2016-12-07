@@ -112,8 +112,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     console.log($scope.maxValue);
     $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
     $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
-    $scope.operand1Arr = new Array(Number($scope.operand1));
-    $scope.operand2Arr = new Array(Number($scope.operand2));
+
     var staticImageIndex = Math.floor(Math.random() * $scope.staticImages.length);
     console.log("staticImageIndex " + staticImageIndex);
     //$("#staticContainer1,#staticContainer2").html();
@@ -170,6 +169,8 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
       $scope.answer = $scope.operand1 + $scope.operand2;
     }
     $scope.answerArr = new Array(Number($scope.answer));
+    $scope.operand1Arr = new Array(Number($scope.operand1));
+    $scope.operand2Arr = new Array(Number($scope.operand2));
     $timeout(function() {
       $scope.showAnswer = false;
       if ($scope.timerOn) {
@@ -183,7 +184,10 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
  $scope.createSprite = function(){
    var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
    var animatedPattern;
+  // var rotation = {currentAngle:0,angleFunction:Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))};
    var random = Math.random();
+
+ //  that.angleFunction;
    if (random < 0.5) { //random single path
      animatedPattern = [{
        "patternLength": 1000,
@@ -207,7 +211,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
    }
    // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
    // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
-   animationTest.spawnCoin(sprite, animatedPattern);
+   animationTest.spawnCoin(sprite, animatedPattern, Math.random() < 0.5 ? {currentAngle:0,angleFunction:Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))} : null);
  };
 
   angular.element(window).bind('keypress', function(e) {

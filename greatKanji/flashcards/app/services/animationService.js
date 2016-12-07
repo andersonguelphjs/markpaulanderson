@@ -23,7 +23,7 @@ flashApp.service('animationTest', function() {
     destroyCoins();
   }
   //a sprite object, update and render
-  function sprite(imageData, animatedPattern) {
+  function sprite(imageData, animatedPattern, rotation) {
 
     var that = {};
     //	that.type = type || 1;
@@ -36,6 +36,9 @@ flashApp.service('animationTest', function() {
     that.isWrap = false; //if off screen, should we wrap to the other side
     that.markedForDestruction = false; //should we destory
 
+    that.rotation = rotation || false;
+    //that.currentAngle;
+  //  that.angleFunction;
     /*
     1-stationary
 
@@ -115,23 +118,40 @@ flashApp.service('animationTest', function() {
           that.isWrap ? that.markedForDestruction = true : that.y = 0;
         }
       }
+
+      //is rotation
+
     };
 
     that.render = function() {
 
       if (that.totalTickCount < that.maxTicks && !that.markedForDestruction) {
         // Draw the animation
+        var w = that.x; //where we start to draw x
+        var h =that.y; //where we start to draw y
+        that.context.save();//we do this to
+
+        if (that.rotation){
+          w = that.width / that.numberOfFrames / 2;
+          h =that.height /2
+          that.rotation.currentAngle += that.rotation.angleFunction;
+          that.context.translate(that.x+w,that.y+h); //we need to move the 0,0 in order to see the rotation
+          that.context.rotate(that.rotation.currentAngle*(3.14/180)); //rotate
+          w = -w; //make it negative to put it back when we draw
+          h = -h;
+        }
+
         that.context.drawImage(
           that.image,
           that.frameIndex * that.width / that.numberOfFrames,
           0,
           that.width / that.numberOfFrames,
           that.height,
-          that.x,
-          that.y,
+          w,//where to draw the x
+          h,
           that.width / that.numberOfFrames * that.scaleRatio,
           that.height * that.scaleRatio);
-        //console.log("x: " +that.x +" y: "+that.y);
+          that.context.restore();
       } else {
         coinsToDestroy.push(this);
       }
@@ -179,7 +199,7 @@ flashApp.service('animationTest', function() {
   }
 
   //  function spawnCoin(src,w,h,numFrames,ticksPer) {
-  function spawnCoin(imageData, animatedPattern) {
+  function spawnCoin(imageData, animatedPattern, rotation) {
     /*
 		"index":"4",
 	  "name":"tripple",
@@ -208,7 +228,7 @@ flashApp.service('animationTest', function() {
       image: coinImg,
       numberOfFrames: imageData.numFrames,
       ticksPerFrame: imageData.ticksPer
-    }, animatedPattern);
+    }, animatedPattern, rotation);
 
     //  coins[coinIndex].x = Math.random() * (canvas.width - coins[coinIndex].getFrameWidth() * coins[coinIndex].scaleRatio);
     //  coins[coinIndex].y = Math.random() * (canvas.height - coins[coinIndex].height * coins[coinIndex].scaleRatio);
