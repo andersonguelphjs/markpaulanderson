@@ -14,6 +14,10 @@ app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
         templateUrl : "../views/mainView.html"
-    })
+    },
+    .when("/interlude.html", {
+        templateUrl : "../views/interlude.html"
+    }
+)
 
 });

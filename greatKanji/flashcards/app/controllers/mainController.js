@@ -1,20 +1,20 @@
-flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', '$timeout', 'animationTest', function($scope, $http, $templateCache, $interval, $timeout, animationTest) {
+flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval', '$timeout', 'animationTest', 'sharedProperties', function($scope, $http, $templateCache, $interval, $timeout, animationTest, sharedProperties) {
 
   $(document).ready(function() {
 
     $('.stayPressed .btn').not('.clearButton').click(function(e) {
-
       $(this).addClass('active');
     });
-    $('.stayPressed .clearButton').click(function(e) {
 
+    $('.stayPressed .clearButton').click(function(e) {
       $('.stayPressed .btn').removeClass('active');
     });
+
   });
   //animationTest.sayGoodbye();
 
   animationTest.init("myAnimations");
-  console.log($scope.fromService);
+  //console.log($scope.fromService);
   $scope.timeLeft = 1000;
   $scope.operation = "+";
   $scope.operationArray = [];
@@ -26,15 +26,19 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
   $scope.answer = 0;
   $scope.showAnswer = false;
   $scope.keyPressed = 13;
-  $scope.method = 'GET';
-  $scope.url = '../app/json/sprites.json';
-  $scope.status = "s";
-  $scope.data = "d";
+  //$scope.method = 'GET';
+  //$scope.url = '../app/json/sprites.json';
+  //$scope.status = "s";
+  //$scope.data = "d";
   $scope.timerOn = true;
   $scope.operand1Arr = [1];
   $scope.operand2Arr = [1];
   $scope.answerArr = [1];
 
+  $scope.data = sharedProperties.getObjectValue().animatedData;
+  $scope.staticImages = sharedProperties.getObjectValue().staticImages;
+
+  /*
   $http({
     method: $scope.method,
     url: $scope.url,
@@ -52,6 +56,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     $scope.data = response.data || 'Request failed';
     $scope.status = response.status;
   });
+  */
 
 
   //to enable local http launch Chrome from terminal
@@ -75,6 +80,8 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     $scope.status = response.status;
   });
   */
+
+  //show hide timer
   $scope.timerToggle = function() {
 
     $scope.timerOn = !$scope.timerOn;
@@ -84,7 +91,8 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     }
 
   };
-  //  $scope.iBack="url('images/gohan.png') 0 0";
+
+  // start the timer
   $scope.startProgressBar = function() {
 
     $("#myProgressBar").css("width", "100%");
@@ -109,13 +117,14 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
   };
 
   $scope.setOperands = function() {
-    console.log($scope.maxValue);
+    //get random operands
     $scope.operand1 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
     $scope.operand2 = Math.floor(Math.random() * $scope.maxValue) + $scope.minValue;
 
+    //choose a random image
     var staticImageIndex = Math.floor(Math.random() * $scope.staticImages.length);
-    console.log("staticImageIndex " + staticImageIndex);
-    //$("#staticContainer1,#staticContainer2").html();
+
+    //to show the images beside the number
     $scope.outerStyle = {
       "max-width": $scope.staticImages[staticImageIndex].imgLength / $scope.staticImages[staticImageIndex].numFrames / 4 + "px",
       "max-height": $scope.staticImages[staticImageIndex].imgHeight / 4 + "px"
@@ -125,22 +134,8 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
       "height": $scope.staticImages[staticImageIndex].imgHeight / 2,
       "background": "url('" + $scope.staticImages[staticImageIndex].imageUrl + "')"
     };
-    //  $scope.maxWidth =$scope.staticImages[staticImageIndex].imgLength/$scope.staticImages[staticImageIndex].numFrames/4+"px";
-    //  $scope.maxHeight=$scope.staticImages[staticImageIndex].imgHeight/4+"px";
-    //  $scope.height1=$scope.staticImages[staticImageIndex].imgHeight/2;
-    //  $scope.width1=$scope.staticImages[staticImageIndex].imgLength/2;
-    //  $scope.backgroundUrl="url('"+$scope.staticImages[staticImageIndex].imageUrl+"')";
-    //$(".outer").css("max-width",(($scope.staticImages[staticImageIndex].imgLength/$scope.staticImages[staticImageIndex].numFrames)/4)+"px")
-    //  .css("max-height",($scope.staticImages[staticImageIndex].imgHeight/4)+"px");
-    //  $(".one1").css("height",$scope.staticImages[staticImageIndex].imgHeight/2)
-    //  .css("width",$scope.staticImages[staticImageIndex].imgLength/2)
-    //  .css("background","url('"+$scope.staticImages[staticImageIndex].imageUrl+"')");
-    //.css("background-size","50% 50%");
-    //max-width:37.5px;/*h / 4*/
-    //max-height:37.5px;/*h / 4*/
-    //height:75px; /*h / 2*/
-    //width:750px;/*w / 2*/
-    //background: url("geraCho.png");
+
+    //what are the operations the user has chosen
     var ops = $(".stayPressed .active").not(".notOperation");
     var opArr = [];
 
@@ -148,6 +143,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
       opArr.push($(this).attr("data-sign"));
     });
 
+    //if nothing chosen, choose +, then do basic math
     if (!opArr || opArr.length < 1) {
       $scope.operation = "+";
     } else {
@@ -157,6 +153,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     if ($scope.operation === "x") {
       $scope.answer = $scope.operand1 * $scope.operand2;
     } else if ($scope.operation === "-") {
+      //lets make sure we dont have negative numbers
       if ($scope.operand1 < $scope.operand2) {
         var temp = $scope.operand1;
         $scope.operand1 = $scope.operand2;
@@ -171,23 +168,23 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
     $scope.answerArr = new Array(Number($scope.answer));
     $scope.operand1Arr = new Array(Number($scope.operand1));
     $scope.operand2Arr = new Array(Number($scope.operand2));
+
+    //now show it
     $timeout(function() {
       $scope.showAnswer = false;
       if ($scope.timerOn) {
         $scope.startProgressBar();
       }
     }, 0);
-
-
   };
 
+//create teh sprite, generally of random types and behaviours
  $scope.createSprite = function(){
    var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
    var animatedPattern;
   // var rotation = {currentAngle:0,angleFunction:Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))};
    var random = Math.random();
 
- //  that.angleFunction;
    if (random < 0.5) { //random single path
      animatedPattern = [{
        "patternLength": 1000,
@@ -217,21 +214,22 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
   angular.element(window).bind('keypress', function(e) {
     //e.keycode
     $scope.keyPressed = Number(e.which);
-    console.log("$scope.keyPressed " + Number(e.which));
+    //clicked 'N'
     if ($scope.keyPressed === 110) {
       $("#myProgressBar").animate().stop();
       if ($scope.showAnswer) {
         $scope.showAnswer = false;
         $scope.setOperands();
-
       } else {
         $scope.showAnswer = true;
         $scope.createSprite();
         $timeout(function() {}, 0);
       }
-
     }
-
     $scope.keyPressed = null;
   });
+
+//start the program
+  $scope.setOperands();
+
 }]);

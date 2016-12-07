@@ -179,8 +179,9 @@ flashApp.service('animationTest', function() {
     }
 
     //at least one was destoryed so change the score
-    if (coinsToDestroy.length) {
-      document.getElementById("score").innerHTML = score;
+    var scoreDiv = document.getElementById("score");
+    if (coinsToDestroy.length && score) {
+      document.getElementById("score").innerHTML = scoreDiv;
     }
     coinsToDestroy = [];
   }

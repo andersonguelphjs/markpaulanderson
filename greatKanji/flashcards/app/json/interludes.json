@@ -1,0 +1,23 @@
+[{
+  "index":"1",
+  "name":"fireworks",
+  "imageUrl":"../app/images/blackFireWorks.png",
+  "type":"",
+  "imgLength":789,
+  "imgHeight":53,
+  "numFrames":15,
+  "ticksPer":5,
+  "hasFirstFrame":false
+},
+{
+  "index":"1",
+  "name":"fireworks",
+  "imageUrl":"../app/images/blackFireWorks.png",
+  "type":"",
+  "imgLength":789,
+  "imgHeight":53,
+  "numFrames":15,
+  "ticksPer":5,
+  "hasFirstFrame":false
+}
+]

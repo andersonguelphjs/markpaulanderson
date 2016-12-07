@@ -63,3 +63,12 @@ filter: FlipH;
 display:inline-block;
 background-size: 50% 50% !important;
 }
+/*interlude*/
+#lvlMsg{
+  top:10%;
+  left:45%;
+  position:absolute;
+  width: 33%;
+  font-size: 36px;
+  color:white;
+}
