@@ -1,23 +1,21 @@
 [{
   "index":"1",
-  "name":"fireworks",
-  "imageUrl":"../app/images/blackFireWorks.png",
-  "type":"",
-  "imgLength":789,
-  "imgHeight":53,
-  "numFrames":15,
-  "ticksPer":5,
-  "hasFirstFrame":false
+  "directions":"",
+  "randomNumber":0,
+  "interlude":[
+    [{"spriteIndex":9,"patternLength":25,"patternAngle":45,"patternAngleChange":0,"speed":3,"startx":0,"starty":0, "isRandom":true}],
+    [
+      {"spriteIndex":10,"patternLength":50,"patternAngle":0,"patternAngleChange":0,"speed":5,"startx":0,"starty":0},
+      {"patternLength":50,"patternAngle":90,"patternAngleChange":0,"speed":5},
+      {"patternLength":50,"patternAngle":180,"patternAngleChange":0,"speed":5},
+      {"patternLength":50,"patternAngle":270,"patternAngleChange":0,"speed":5}
+    ]
+    ]
 },
 {
-  "index":"1",
-  "name":"fireworks",
-  "imageUrl":"../app/images/blackFireWorks.png",
-  "type":"",
-  "imgLength":789,
-  "imgHeight":53,
-  "numFrames":15,
-  "ticksPer":5,
-  "hasFirstFrame":false
+  "index":"2",
+  "directions":"",
+  "randomNumber":0,
+  "interlude":[]
 }
 ]

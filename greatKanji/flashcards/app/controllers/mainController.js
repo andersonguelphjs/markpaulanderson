@@ -189,6 +189,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
      animatedPattern = [{
        "patternLength": 1000,
        "patternAngle": Math.floor(Math.random() * 360),
+       "patternAngleChange" : Math.random() < 0.5 ? Math.floor(Math.random() * 2 + 1) : 0,
        "speed": Math.floor(Math.random() * 5),
        "startx": 0,
        "starty": 0,
@@ -199,6 +200,7 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
      animatedPattern = [{
        "patternLength": Math.floor(Math.random() * 50),
        "patternAngle": Math.floor(Math.random() * 360),
+       "patternAngleChange" : Math.random() < 0.5 ? Math.floor(Math.random() * 2 + 1) : 0,
        "speed": Math.floor(Math.random() * 5),
        "startx": 0,
        "starty": 0,
@@ -206,9 +208,15 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
        "isWrap": Math.random() < 0.5 ? false : true
      }];
    }
+   random = Math.random();
+   if (random < 0.5){
+     animatedPattern[0].currentAngle = 0;
+     animatedPattern[0].angleFunction = Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1));
+   }
+
    // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
    // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
-   animationTest.spawnCoin(sprite, animatedPattern, Math.random() < 0.5 ? {currentAngle:0,angleFunction:Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))} : null);
+   animationTest.spawnCoin(sprite, animatedPattern);
  };
 
   angular.element(window).bind('keypress', function(e) {
@@ -222,7 +230,8 @@ flashApp.controller('mainCtrl', ['$scope', '$http', '$templateCache', '$interval
         $scope.setOperands();
       } else {
         $scope.showAnswer = true;
-        $scope.createSprite();
+        //$scope.createSprite();
+        animationTest.spawnCoin($scope.data[Math.floor(Math.random() * $scope.data.length)]);
         $timeout(function() {}, 0);
       }
     }

@@ -1,7 +1,9 @@
 flashApp.controller('interludeCtrl', ['$scope', '$http', '$templateCache', '$window', '$timeout', 'level', 'animationTest', 'sharedProperties', function($scope, $http, $templateCache, $window, $timeout, level, animationTest, sharedProperties) {
 
   //sharedProperties.setObjectValue("level", 2);
-  $scope.levelMsg = "Level " + sharedProperties.getObjectValue().level;
+  $scope.level = sharedProperties.getObjectValue().level;
+  $scope.levelMsg = "Level " + $scope.level;
+  $scope.interlude = null;
 
   $scope.data = sharedProperties.getObjectValue().animatedData;
   animationTest.init("myAnimations");
@@ -47,49 +49,22 @@ flashApp.controller('interludeCtrl', ['$scope', '$http', '$templateCache', '$win
     $scope.showAnimation();
   }
 
-  $scope.createSprite = function() {
-    var sprite = $scope.data[Math.floor(Math.random() * $scope.data.length)];
-    var animatedPattern;
-    // var rotation = {currentAngle:0,angleFunction:Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))};
-    var random = Math.random();
-
-    if (random < 0.5) { //random single path
-      animatedPattern = [{
-        "patternLength": 1000,
-        "patternAngle": Math.floor(Math.random() * 360),
-        "speed": Math.floor(Math.random() * 5),
-        "startx": 0,
-        "starty": 0,
-        "isRandom": false,
-        "isWrap": Math.random() < 0.5 ? false : true
-      }];
-    } else { //random pattern
-      animatedPattern = [{
-        "patternLength": Math.floor(Math.random() * 50),
-        "patternAngle": Math.floor(Math.random() * 360),
-        "speed": Math.floor(Math.random() * 5),
-        "startx": 0,
-        "starty": 0,
-        "isRandom": true,
-        "isWrap": Math.random() < 0.5 ? false : true
-      }];
-    }
-    // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
-    // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
-    animationTest.spawnCoin(sprite, animatedPattern, Math.random() < 0.5 ? {
-      currentAngle: 0,
-      angleFunction: Math.floor(Math.random() * (5 * Math.random() < 0.5 ? 1 : -1))
-    } : null);
-  };
-
   $scope.showAnimation = function() {
-    // animatedPattern = [{"patternLength":Math.floor(Math.random()*50),"patternAngle":Math.floor(Math.random()*360),"speed":Math.floor(Math.random()*10),"startx":0,"starty":0, "isRandom":true}];
-    // animatedPattern = [{"patternLength":150,"patternAngle":0,"speed":5,"startx":0,"starty":0, "isRandom":true},{"patternLength":100,"patternAngle":135,"speed":5},{"patternLength":100,"patternAngle":225,"speed":5}];
-    $scope.createSprite();
-    $scope.createSprite();
-    $scope.createSprite();
+
+    $scope.interlude = $scope.interludesData[$scope.level-1];
+
+    if ($scope.interlude.randomNumber > 0) {
+       for (var i=0;i < $scope.interlude.randomNumber;i++){
+         //$scope.createSprite();
+         animationTest.spawnCoin();
+       }
+    }else if ($scope.interlude.interlude){
+      for (var j=0;j < $scope.interlude.interlude.length;j++){
+        animationTest.spawnCoin($scope.data[$scope.interlude.interlude[j][0].spriteIndex],$scope.interlude.interlude[j]);
+      }
+    }
     $timeout(function() {
-      $window.location = "/greatKanji/flashcards/views/#mainView";
+     $window.location = "/greatKanji/flashcards/views/#mainView";
     }, 5000);
 
   };

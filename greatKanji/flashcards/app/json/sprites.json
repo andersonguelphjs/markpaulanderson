@@ -1,5 +1,5 @@
 [{
-  "index":"1",
+  "index":"0",
   "name":"fireworks",
   "imageUrl":"../app/images/blackFireWorks.png",
   "type":"",
@@ -10,7 +10,7 @@
   "hasFirstFrame":false
 },
 {
-  "index":"2",
+  "index":"1",
   "name":"cat walking",
   "imageUrl":"../app/images/catWalking.png",
   "type":"",
@@ -21,7 +21,7 @@
   "hasFirstFrame":false
 },
 {
-  "index":"3",
+  "index":"2",
   "name":"oin",
   "imageUrl":"../app/images/coin-sprite-animation.png",
   "type":"",
@@ -32,7 +32,7 @@
   "hasFirstFrame":true
 },
 {
-  "index":"4",
+  "index":"3",
   "name":"tripple",
   "imageUrl":"../app/images/tripple.png",
   "type":"",
@@ -43,7 +43,7 @@
   "hasFirstFrame":false
 },
 {
-  "index":"5",
+  "index":"4",
   "name":"yellow fireworks",
   "imageUrl":"../app/images/yellowFireworks.png",
   "type":"",
@@ -54,7 +54,7 @@
   "hasFirstFrame":false
 },
 {
-  "index":"6",
+  "index":"5",
   "name":"madoka",
   "imageUrl":"../app/images/Madoka.png",
   "type":"",
@@ -76,7 +76,7 @@
   "hasFirstFrame":true
   },
   {
-    "index":"6",
+    "index":"7",
     "name":"Mogu Tan",
     "imageUrl":"../app/images/moguTanS.png",
     "type":"",
@@ -87,7 +87,7 @@
     "hasFirstFrame":true
   },
   {
-    "index":"6",
+    "index":"8",
     "name":"Gera Cho",
     "imageUrl":"../app/images/geraCho.png",
     "type":"",
@@ -98,7 +98,7 @@
     "hasFirstFrame":true
   },
   {
-    "index":"7",
+    "index":"9",
     "name":"Melody",
     "imageUrl":"../app/images/melodyS.png",
     "type":"",
@@ -109,7 +109,7 @@
     "hasFirstFrame":true
   },
   {
-    "index":"8",
+    "index":"10",
     "name":"Oshaki",
     "imageUrl":"../app/images/oshakiS.png",
     "type":"",
@@ -120,7 +120,7 @@
     "hasFirstFrame":true
   },
   {
-    "index":"8",
+    "index":"11",
     "name":"Kira Risu",
     "imageUrl":"../app/images/kirarisu.png",
     "type":"",
