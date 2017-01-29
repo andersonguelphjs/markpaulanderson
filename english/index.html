@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sentences</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style media="screen">
+        body {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url("source/128-165.jpg");
+            background-repeat: repeat;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%), url("source/128-165.jpg");
+        }
+
+        .header {
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+        }
+
+        .footer {
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+        }
+
+        .controls {
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+
+        .content {
+            padding-top: 15px;
+            height: 250px;
+            min-height: 250px;
+            max-height: 250px;
+            font-size: 28px;
+        }
+
+        .wordOrderControls {
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+
+        .wordOrderJumbled {
+            height: 75px;
+            min-height: 75px;
+            max-height: 75px;
+            font-size: 18px;
+        }
+
+        .wordOrderChosen {
+            height: 75px;
+            min-height: 75px;
+            max-height: 75px;
+            font-size: 18px;
+        }
+
+        .wordOrderResult {
+            font-style: italic;
+        }
+
+        .jumbled,
+        .chosen {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .wordOrder {
+            visibility: hidden;
+        }
+
+        .reading {}
+
+        #topButtons {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 header randomColor">
+                <h1>Naoka's English</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-3 controls randomColor">
+                <select class="form-control" name="stories"></select>
+
+            </div>
+            <div class="col-md-10 col-sm-offset-1 content randomColorr reading">
+
+            </div>
+
+            <div class="col-md-10 col-sm-offset-1 wordOrderControls randomColor">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" id="wordOrderButton" class="btn btn-default">Word Order</button>
+                    <button type="button" id="prev" class="btn btn-default" disabled>&lt;&lt;</button>
+                    <button type="button" id="next" class="btn btn-default" disabled>&gt;&gt;</button>
+                    <button type="button" id="reset" class="btn btn-default" disabled>Reset</button>
+                    <button type="button" id="readingButton" class="btn btn-default">Reading</button>
+                    <button type="button" id="speak" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+
+                </div>
+            </div>
+            <span class="wordOrder">
+            <div class="col-md-10 col-sm-offset-1 wordOrderJumbled randomColor">
+
+            </div>
+            <div class="col-md-10 col-sm-offset-1 wordOrderChosen randomColor">
+
+            </div>
+            <div class="col-md-10 col-sm-offset-1 wordOrderResult randomColor">
+
+            </div>
+          </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12 footer randomColor">
+
+            </div>
+        </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    <script>
+        (function($) {
+
+            var storyData, sentenceArr = [],
+                story, jumbledSentenceArr, currentSentenceIndex = 0;
+
+            function getRandomNumber(min, max) {
+                return Math.floor(Math.random() * max + min);
+            }
+
+            function initEvents() {
+                $("select[name='stories']").on("change", function() {
+                    story = storyData[$(this).val()].story;
+                    $(".content").html(story);
+                    prepareSentenceGame($(this).val());
+                })
+                $(".container").on("click", ".jumbled", function() {
+                    $(".wordOrderChosen").append($(this).removeClass("jumbled").addClass("chosen"));
+                    checkResult();
+                })
+                $(".container").on("click", ".chosen", function() {
+                    $(".wordOrderJumbled").append($(this).removeClass("chosen").addClass("jumbled"));
+                    $(".wordOrderResult").removeClass("text-success").html("mada mada");
+                })
+                $("#prev").on("click", function() {
+                    if (currentSentenceIndex - 1 >= 0) {
+                        currentSentenceIndex -= 1;
+                        showJumbled(currentSentenceIndex);
+                    }
+                })
+                $("#reset").on("click", function() {
+                    showJumbled(currentSentenceIndex);
+                })
+                $("#next").on("click", function() {
+
+                    if (currentSentenceIndex + 1 < sentenceArr.length - 1) {
+                        currentSentenceIndex += 1;
+                        showJumbled(currentSentenceIndex);
+                    }
+
+                })
+                $("#readingButton").on("click", function() {
+                    console.log("#readingButton");
+                    $(".reading").css("visibility", "visible");
+                    $(".wordOrder").css("visibility", "hidden");
+                    $("#prev, #next, #reset").prop("disabled", true);
+                })
+                $("#wordOrderButton").on("click", function() {
+                    console.log("#wordOrderButton");
+                    $(".reading").css("visibility", "hidden");
+                    $(".wordOrder").css("visibility", "visible");
+                    $("#prev, #next, #reset").prop("disabled", false);
+                })
+                $("#speak").on("click", function() {
+                    var text = window.getSelection().toString();
+                    if (text.length > 0) {
+                        window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+                    } else if ($("#prev").is(":disabled")) {
+                        window.speechSynthesis.speak(new SpeechSynthesisUtterance(story));
+                    } else {
+                        window.speechSynthesis.speak(new SpeechSynthesisUtterance(sentenceArr[currentSentenceIndex]));
+                    }
+
+                })
+            }
+
+            function checkResult() {
+
+                var jumbled = $(".jumbled");
+                var sentence = "";
+                if (jumbled.length === 0) {
+
+                    sentenceArr[currentSentenceIndex];
+                    var chosen = $(".chosen");
+                    chosen.each(function() {
+                        sentence += $(this).text() + " ";
+                    })
+                    console.log(sentenceArr[currentSentenceIndex] + " " + sentence)
+                    if ($.trim(sentenceArr[currentSentenceIndex]) === $.trim(sentence)) {
+                        $(".wordOrderResult").addClass("text-success").html("You did it!");
+                        //$("#next").click();
+                    } else {
+                        $(".wordOrderResult").removeClass("text-success").html("Sorry, that's not correct!");
+                    }
+                } else {
+                    console.log("jumbled.length" + jumbled.length);
+                    $(".wordOrderResult").removeClass("text-success").html("mada mada");
+                }
+            }
+
+            function prepareSentenceGame() {
+
+                //$(".wordOrder").html("");
+                sentenceArr.length = 0;
+                sentenceArr = story.split(".");
+                for (var i = 0; i < sentenceArr.length; i++) {
+                    sentenceArr[i] += ".";
+                }
+
+                console.log("sentenceArr.l " + sentenceArr.length + " " + sentenceArr.join(";"));
+                showJumbled(0);
+            }
+
+            function shuffle(array) {
+                var i = 0,
+                    j = 0,
+                    temp = null
+
+                for (i = array.length - 1; i > 0; i -= 1) {
+                    j = Math.floor(Math.random() * (i + 1))
+                    temp = array[i]
+                    array[i] = array[j]
+                    array[j] = temp
+                }
+                return array;
+            }
+
+            function showJumbled(i) {
+                var html = "";
+                $(".wordOrderJumbled, .wordOrderChosen").html("");
+                $(".wordOrderResult").removeClass("text-success").html("");
+
+                currentSentenceIndex = i;
+                jumbledSentenceArr = shuffle($.trim(sentenceArr[i]).split(" "));
+                for (var i = 0; i < jumbledSentenceArr.length; i++) {
+                    html += "<span class='jumbled'>" + jumbledSentenceArr[i] + "</span>";
+                }
+                $(".wordOrderJumbled").html(html);
+
+            }
+
+            function stylize() {
+                var bodyColumns = $(".randomColor");
+
+                bodyColumns.each(function() {
+
+                    $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+                })
+            }
+            $.getJSON("source/paragraphs.json")
+                .done(function(data) {
+
+                    console.log("got paragraphs");
+                    console.dir(data);
+                    storyData = data;
+                    $(document).ready(function() {
+
+                        var selectHTML = "";
+                        for (var i = 0; i < data.length; i++) {
+                            selectHTML += "<option value='" + i + "'>" + data[i].title + "</option>";
+                        }
+                        $("select[name='stories']").html(selectHTML);
+                        initEvents();
+                        //stylize();
+
+                    })
+                })
+                .fail(function(data) {
+                    console.log("fail " + JSON.stringify(data));
+                })
+        }(jQuery));
+    </script>
+</body>
+
+</html>
