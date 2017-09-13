@@ -98,7 +98,9 @@
         <div class="row">
             <div class="col-md-6 col-sm-offset-3 controls randomColor">
                 <select class="form-control" name="stories"></select>
+                <select class="form-control" name="level">
 
+                </select>
             </div>
             <div class="col-md-10 col-sm-offset-1 content randomColorr reading">
 
@@ -149,8 +151,15 @@
             function getRandomNumber(min, max) {
                 return Math.floor(Math.random() * max + min);
             }
-
+            function showLevel(val){
+              var sel = $("select[name='stories']");
+              sel.find("option").hide();
+              sel.find("option[data-level='"+val+"']").show();
+            }
             function initEvents() {
+              $("select[name='level']").on("change", function() {
+                  showLevel($(this).val());
+              })
                 $("select[name='stories']").on("change", function() {
                     story = storyData[$(this).val()].story;
                     $(".content").html(story);
@@ -287,13 +296,25 @@
                     console.dir(data);
                     storyData = data;
                     $(document).ready(function() {
-
+                        var levelArr=[];
                         var selectHTML = "";
                         for (var i = 0; i < data.length; i++) {
-                            selectHTML += "<option value='" + i + "'>" + data[i].title + "</option>";
+                            selectHTML += "<option data-level='"+data[i].level+"' value='" + i + "'>" + data[i].title + "</option>";
+                            if (levelArr.indexOf(data[i].level)==-1){
+                              levelArr.push(data[i].level);
+                            }
                         }
                         $("select[name='stories']").html(selectHTML);
+                        var selectHTML = "";
+                        if (levelArr && levelArr.length > 0){
+                          for (var j = 0; j < levelArr.length; j++) {
+                          selectHTML += "<option value='" + levelArr[j] + "'>" + levelArr[j] + "</option>";
+                          }
+                          $("select[name='level']").html(selectHTML);
+                        }
+
                         initEvents();
+                        showLevel(1);
                         //stylize();
 
                     })

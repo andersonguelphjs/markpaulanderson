@@ -1,6 +1,6 @@
 [
   {"title":"-- Select a story --",
-   "level":0,
+   "level":1,
    "story":""
   },
 {"title":"Red Ball on the Floor",
@@ -94,5 +94,73 @@
 {"title":"The Baby Sister",
   "level":1,
   "story":"Betty loves her baby sister. Betty takes care of her. She changes her diaper. She feeds her. She teaches her how to walk. She teaches her new words. It is not easy to take care of babies. Betty's baby sister cries sometimes. Betty plays peekaboo with her. She covers her eyes and then opens them. The baby laughs."
+},
+{"title":"A Nice Teacher",
+  "level":2,
+  "story":"She is a teacher. She teaches third graders. She says 'good morning' every day. She asks her students how they are doing. The students love her. She is good at her job. She does not get a lot of money. Teachers should get more money. They work so hard."
+},
+{"title":"Harry studies everywhere",
+  "level":2,
+  "story":"Harry thinks his grades are very important. He studies a lot. He studies everywhere he goes. He studies at the library. He studies when he goes out to eat. He even studies when he goes to parties! His friends make fun of him. Harry does not care. He gets As all the time."
+},
+{"title":"The coloring book",
+  "level":2,
+  "story":"She takes out her coloring book. She gets her crayons. She opens the book. There is a drawing of a bunny dancing. She colors the bunny with a brown crayon. She colors the sky with a blue crayon. She colors the flower with a red crayon. She rips the page out. She sticks it to the wall."
+},
+{"title":"Picking a book",
+  "level":2,
+  "story":"She goes to the library. She looks at the shelves. She pulls out a book. She opens the book. She reads the first page. She laughs. The book is funny. She goes to the checkout desk. She gives the book to the librarian. She takes out her library card. She gives it to the librarian. The librarian gives her back the card and the book."
+},
+{"title":"Getting ready to study",
+  "level":2,
+  "story":"He gets ready to study at the library. He puts his science textbook in his backpack. He puts his pencils and pens in his backpack. He puts an eraser in his backpack. He puts a snack in his backpack. He might get hungry. He puts a notebook in his backpack. He is ready to study!"
+},
+{"title":"Studying at the library",
+  "level":2,
+  "story":"He is at the library. There are a lot of people. Everyone is studying for their final exams. He finally finds a seat. He sits down. He takes out his book. He takes out a pen. He takes out a highlighter. He highlights the important parts. Then he takes a study break."
+},
+{"title":"Taking notes",
+  "level":2,
+  "story":"He takes out his notebook. He reads his textbook. He copies the chapter title on top of the page. He writes down important information. He highlights words he should remember. He turns the page. He takes more notes. He writes a summary of the chapter at the end."
+},
+{"title":"She writes an essay",
+  "level":2,
+  "story":"She is taking an English class. She has to write an essay. The essay is on penguins. She finds information on penguins from the Internet. She finds information on penguins from books. Her first sentence is a riddle about penguins. Her last sentence is the answer to the riddle."
+},
+{"title":"He takes a test",
+  "level":2,
+  "story":"He sits down in his seat. He gets a copy of the test. He reads a question. He writes his answer. There are 20 questions. He checks his answers again when he is done. The bell rings. The class is over. He gets up. He hands his test to the teacher. He is going to celebrate."
+},
+{"title":"Punching a wall",
+  "level":2,
+  "story":"He gets his essay back. He got a C minus. He is mad. He feels that he deserves a better grade. He asks his teacher what went wrong. Ms. Flores says he made a lot of grammar mistakes. He asks her to re-grade it. She says no. He punches the wall. He gets in trouble."
+},
+{"title":"School supplies box",
+  "level":2,
+  "story":"He has a school supplies box. There are five pencils inside. They are sharp. They are all yellow. They all have a pink eraser at the end. He has two erasers. One eraser is white. Another is pink. He uses the pencil to write something. He uses the eraser to fix his mistake."
+},
+{"title":"He loses the cap",
+  "level":2,
+  "story":"He takes out a pen. He takes off the cap. He drops it. He looks down. He does not see the cap. He looks around his desk. He still does not see the cap. Where could it be? He has to find it. The pen will dry out without the cap. He goes to the other side of the room. He sees the cap."
+},
+{"title":"The lunch bag",
+  "level":2,
+  "story":"She has a lunch bag. It has two pockets. There is one on top. That is the big pocket. She puts a sandwich inside. There is another one in the front. That is the small pocket. She puts a pack of gum inside. There is a long strap too. She can put it over her shoulder."
+},
+{"title":"School Cafeteria",
+  "level":2,
+  "story":"She has a lunch bag. It has two pockets. There is one on top. That is the big pocket. She puts a sandwich inside. There is another one in the front. That is the small pocket. She puts a pack of gum inside. There is a long strap too. She can put it over her shoulder."
+},
+{"title":"Ice cream in the summer",
+  "level":2,
+  "story":"It is summer. It is 3 o'clock. It is very hot. He goes to the ice cream shop. He looks at all the flavors. There are so many! He wants to get chocolate, but he also wants vanilla. He decides to get both. The line is long. Everyone wants ice cream in the summer."
+},
+{"title":"She eats lemons",
+  "level":2,
+  "story":"She likes sour stuff. Lemons are sour. Lemons are yellow. She peels the skin off the lemon. She bites into the lemon. It tastes good. She spits out the seeds. The seeds are not good. Her mom says she is weird. Most people eat lemon with another food."
+},
+{"title":"Chicken smells good",
+  "level":2,
+  "story":"He is hungry. He smells something good. It is coming from the kitchen. He leaves the living-room. He goes to the kitchen. He sees a plate of chicken. It is hot. He gets a fork and knife. He cuts a piece of chicken. He sticks the fork in it. He eats the chicken."
 }
 ]
