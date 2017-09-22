@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>menu</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.carousel.css">
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <style media="screen">
+    body {
+      height: 2000px;
+      font-family: 'Raleway', sans-serif;
+      min-width: 320px;
+      background-color: #000;
+    }
+
+    .overlay {
+      position: fixed;
+      height: 100%;
+      width: 0;
+      opacity: 0.5;
+      z-index: 3;
+      background-color: #000;
+    }
+
+    .overlay.open {
+      width: 100%;
+    }
+
+    .container {
+      background-color: #FFF;
+    }
+
+    .mainBar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 42px;
+      background-color: #FFF;
+      z-index: 999;
+    }
+
+    #topInfo {
+      position: relative;
+    }
+
+    #topDonateBtn {
+      color: #ffffff;
+      font-size: 12px;
+      background: #00779e;
+      padding: 4px 8px 4px 8px;
+      text-decoration: none;
+      border: none;
+    }
+
+    #topDonateBtn:hover {
+      background: #3cb0fd;
+      background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+      text-decoration: none;
+    }
+
+    ul {
+      -webkit-padding-start: 0px;
+    }
+
+    #topSliderContainer {
+      margin-top: 42px;
+      position: relative;
+      text-transform: uppercase;
+      color: #FFF;
+      font-size: 1.2em;
+    }
+
+    #topSliderContainer img {
+      width: 100%;
+    }
+
+    #topSliderContainer .topSliderTopMsg {
+      position: absolute;
+      top: 5%;
+      left: 2%;
+      width: 70%;
+    }
+
+    #topSliderContainer .topSliderBottomMsg {
+      position: absolute;
+      bottom: 25%;
+      left: 2%;
+      width: 45%;
+      border-bottom: 2px solid #FFF;
+    }
+
+    #topSliderContainer span {
+      /*caret*/
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #topMiners{
+      font-family: 'Yantramanav', sans-serif;
+    }
+
+    @media (max-width: 540px) {
+      /*phone*/
+      #hamburger {
+        position: absolute;
+        height: 25px;
+        right: 2%;
+        top: 2%;
+      }
+      .navigation {
+        position: fixed;
+        top: 0;
+        width: 40%;
+        margin-left: 100%;
+        z-index: 999;
+        transition-timing-function: ease-out;
+        transition: 0.5s;
+        background-color: #ededed;
+      }
+      .navigation.open {
+        margin-left: 60%;
+        transition-timing-function: ease-out;
+        transition: 0.5s;
+      }
+      .nav-item {
+        /*nav*/
+        width: 100%;
+        float: none;
+        list-style: none;
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 1px solid #00779e;
+      }
+      .nav-item:hover {
+        background-color: #717771;
+      }
+      .nav-item:hover a {
+        color: #ededed;
+        text-decoration: none;
+      }
+      .nav-item a {
+        color: #717771;
+      }
+      .nav-item a:hover {
+        color: #ededed;
+        text-decoration: none;
+      }
+
+      #topInfoContainer {
+        position: relative;
+        /* width: 110%; */
+        margin-right: -15px;
+        margin-left: -15px;
+        height: 100%;
+
+      }
+
+      #topInfoContainer #topMiners {
+        line-height: 42px;
+        color: #a19061;
+        font-size: 1em;
+        position: absolute;
+        left: 2%;
+      }
+      #topLogo {
+        height: 30px;
+        margin-left: 5px;
+        position: absolute;
+        top: 4px;
+        left: 58%
+      }
+      #topDonateBtn {
+        position: absolute;
+        right: 15%;
+        top: 8px;
+        padding: 2px 4px 2px 4px;
+      }
+
+      #topSliderDiv {
+        padding: 0;
+        position: relative;
+      }
+    }
+
+
+    @media (min-width: 540px) {
+      /*for-tablet-portrait-up*/
+      #hamburger {
+        display: none;
+      }
+      .mainBar {
+        position: static;
+        height: auto;
+      }
+      #topInfo {
+        height: 80px;
+      }
+      #topInfoContainer {
+        position: relative;
+        width: 100%;
+        height: 120px;
+      }
+      #topMiners {
+        position: absolute;
+        font-size: 24px;
+        color: #a19061;
+        text-align: center;
+        width: 100%;
+        height: 55px;
+        font-weight: bold;
+        top: 5%;
+      }
+      #topLogo {
+        height: 60%;
+        position: absolute;
+        right: 5%;
+      }
+      .nav_handle {
+        display: none;
+      }
+      #navRow nav {
+        position: absolute;
+      }
+      .navigation {
+        display: block;
+        top: 58%;
+        left: 15%;
+        width: 65%;
+        position: absolute;
+      }
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav-item {
+        list-style: none;
+        text-align: center;
+        float: left;
+      }
+      .nav-item:hover {
+        background-color: #717771;
+      }
+      .nav-item:hover a {
+        color: #ededed;
+        text-decoration: none;
+      }
+      .nav-item a {
+        color: #717771;
+        font-size: 12px
+      }
+      .nav-item a:hover {
+        color: #ededed;
+        text-decoration: none;
+      }
+      #topSliderContainer {
+        font-size: 1.8em;
+        margin-top: 0;
+      }
+      #topDonateBtn {
+        position: absolute;
+        top: 38%;
+        left: 0px;
+        font-size: 12px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      /*for-tablet-landscape-up*/
+      #topInfo {
+        height: 100px;
+      }
+      #topInfoContainer {
+        height: 160px;
+      }
+      #topSliderContainer {
+        font-size: 2.7em;
+      }
+      #topMiners {
+        font-size: 30px;
+        height: 60px;
+      }
+      #topDonateBtn {
+        font-size: 16px;
+        top: 33%;
+      }
+      .nav-item a {
+        color: #717771;
+        font-size: 16px
+      }
+    }
+
+    @media (min-width: 1200px)
+    /*for-desktop-u*/
+
+    {
+      #topInfo {
+        height: 120px;
+      }
+      #topInfoContainer {
+        height: 200px;
+      }
+      #topSliderContainer {
+        font-size: 3.5em;
+      }
+      #topMiners {
+        font-size: 40px;
+        height: 65px;
+      }
+      .nav-item a {
+        color: #717771;
+        font-size: 20px
+      }
+      #topDonateBtn {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+
+    <div class="row">
+      <div class="mainBar">
+        <div id="topInfo" class="col-md-12">
+          <div id="topInfoContainer">
+            <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/MLLogo_51.jpg" srcset="dist/assets/images/MLLogo_80.jpg 700w, dist/assets/images/MLLogo_100.jpg 1000w" alt="topLogo" />
+            <button id="topDonateBtn" type="button">Donate</button>
+            <span id="hamburger">&#9776;</span>
+          </div>
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#">About Us </a></li>
+              <li class="nav-item"><a href="#">Your Impact</a></li>
+              <li class="nav-item"><a href="#">Get Involved</a></li>
+              <li class="nav-item"><a href="#">Blog</a></li>
+              <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <section class="col-md-12" id="topSliderDiv">
+        <div id="topSliderContainer">
+          <div class="owl-carousel owl-theme">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="../OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
+  <script type="text/javascript">
+    /* JavaScript Media Queries */
+;(function($, window){
+    if (matchMedia) {
+      var mq = window.matchMedia("(min-width: 540px)");
+      mq.addListener(widthChange);
+      widthChange(mq);
+    }
+
+    // media query change
+    function widthChange(mq) {
+      console.log("width over 600");
+      var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
+      if (mq.matches) {
+        console.log("over 600 " + msg);
+      } else {
+        console.log("no matches");
+      }
+    }
+
+    var topSliderData = [{
+        "id": 1,
+        "imgSrc": "dist/assets/images/topSlider1",
+        "ext": ".jpg",
+        "topMsg": "1 in 5 canadians will experience mental illness in their lifetime.",
+        "bottomMsg": "we can change that"
+      },
+      {
+        "id": 2,
+        "imgSrc": "dist/assets/images/topSlider2",
+        "ext": ".jpg",
+        "topMsg": "we work to raise awareness and funds for mental health",
+        "bottomMsg": "learn more below"
+      },
+      {
+        "id": 3,
+        "imgSrc": "dist/assets/images/topSlider3",
+        "ext": ".jpg",
+        "topMsg": "join us oct 15 at the miner's lamp award event",
+        "bottomMsg": "event details below"
+      }
+    ]
+
+    $(document).ready(function() {
+      function initEvents() {
+        $("#hamburger").on("click", function() {
+          console.log("mainbar");
+          $(".navigation,.overlay").addClass("open");
+        })
+        $(".overlay,.navigation").on("click", function() {
+          $(".overlay,.navigation").removeClass("open");
+        })
+        $("#topDonateBtn,#hamburger").on("click", function() {
+          console.log("clikced");
+        })
+      }
+
+      function initTopSlider() {
+        var topSliderHtml = "";
+        for (var i = 0; i < topSliderData.length; i++) {
+          topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
+          topSliderHtml += "<img src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
+            " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
+            topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
+            topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";
+
+          topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
+          topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
+          topSliderHtml += "<span>ˇ</span></div>";
+        }
+        console.log(topSliderHtml);
+
+        $('.owl-carousel').html(topSliderHtml).owlCarousel({
+          loop: true,
+          autoplay: true,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1
+            }
+          }
+        });
+      }
+
+      initTopSlider();
+      initEvents();
+    });
+    }(jQuery, window, undefined))
+  </script>
+</body>
+
+</html>

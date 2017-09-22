@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <style media="screen">
+  body{
+      font-family: 'Raleway', sans-serif;
+      background-color: #000;
+  }
+  #sectionTwo{
+    color:#717771;
+    background-color: #FFF;
+  }
+  #titleContainer{
+    font-family: 'Old Standard TT', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 40px:
+  }
+  #titleContainer div{
+    display: inline;
+    text-align: center;
+    width:auto;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  #titleContainer span {
+    width:75%;
+    border-bottom: 1px solid #e1af0a;
+    position: absolute;
+    transform: translateX(-50%);
+    left:50%;
+    bottom:0;
+    opacity: 0;
+  }
+  #quoteContainer{
+    height: 300px;
+    position: relative;
+  }
+  #quoteContainer span{
+    position: absolute;
+    left:1%;
+    font-family: 'Old Standard TT', sans-serif;
+    font-size: 135px;
+    margin-top:-25px;
+  }
+  #quoteContainer div{
+    position: absolute;
+    left:10%;
+    opacity: 0;
+    width:80%;
+    font-size: 17px;
+  }
+  .showing{
+    opacity: 1 !important;
+    transition: opacity 1s;
+  }
+  /*
+    #myContainer {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      align-content: center;
+      height: 400px;
+    }
+
+    #myContainer > div {
+      width: 33%;
+      position: relative;
+    }
+
+    .myTitle {
+      text-align: center;
+    }
+    .myTitle.selected {
+      border-bottom:1px solid #FFF;
+    }
+    .card [id^='s'] {
+
+    position: absolute;
+    bottom: 0;
+    height: 75%;
+    width:300%;
+    z-index:1;
+    overflow: visible;
+    display:none;
+    }
+
+    #sOne {}
+
+    #sTwo {
+         margin-left:-100%;
+    }
+
+    #sThree {
+      margin-left:-200%;
+    }
+    */
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <section id="sectionTwo">
+          <div id="titleContainer">
+            <div data-id="1">Our Ideas<span class="showing"></span></div>
+            <div data-id="2">Our Mission<span></span></div>
+            <div data-id="3">Event Details<span></span></div>
+          </div>
+          <div id="quoteContainer">
+            <span>&ldquo;</span>
+            <div class="quote showing" data-id="1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque ac nisl sit amet ornare. Donec velit nibh, tempor non cursus eget, pretium vel urna. Nam imperdiet sed libero ut tincidunt. Donec eget eleifend sem. Pellentesque dapibus mi nec ante ornare lacinia. Suspendisse potenti. Aliquam nisl ex, vulputate nec lacinia a, pharetra ac turpis.
+            </div>
+            <div class="quote" data-id="2">
+Curabitur aliquam ante in ligula imperdiet, eget cursus nisl molestie. Nam eu risus eu tortor auctor mollis. Pellentesque efficitur elit nisl, commodo dictum metus gravida a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse gravida auctor libero, non tristique nunc ultricies quis. Sed non neque ex. Maecenas imperdiet ultricies odio eu placerat.
+            </div>
+            <div class="quote" data-id="3">
+Vivamus luctus vel ligula ut ornare. Ut nisl nisl, pharetra vitae urna non, ullamcorper commodo purus. Vestibulum orci nunc, commodo eget ultrices a, dignissim ut elit. Phasellus eu metus sapien. Aliquam placerat massa eu libero facilisis volutpat. Nam blandit condimentum molestie. Aenean consectetur ipsum et blandit iaculis. Vivamus ultricies, tellus ut vestibulum tincidunt, ante enim malesuada ipsum, rhoncus consequat justo quam vel risus. Integer pulvinar tellus eget scelerisque sodales.
+            </div>
+
+          </div>
+          <!--div id="myContainer">
+            <div class="card" style="background-color:red;">
+              <div class="myTitle" data-id="sOne">
+                Burnin'
+              </div>
+              <div id="sOne">
+Etiam pharetra enim eget libero hendrerit aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas consequat velit eget interdum vulputate. Sed sed placerat tellus. Integer quis erat ac sem lobortis pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed venenatis tincidunt diam, vitae viverra sem tincidunt scelerisque. Donec non lorem mollis, suscipit odio quis, lobortis risus.
+              </div>
+            </div>
+            <div class="card" style="background-color:blue;">
+              <div class="myTitle" data-id="sTwo">
+                Catch a Fire
+              </div>
+
+              <div id="sTwo">
+Suspendisse interdum dolor lectus, et sagittis massa semper vitae. Morbi semper leo at diam porta, vel finibus ipsum tempus. Vestibulum maximus erat urna. Pellentesque ut sapien vel neque tincidunt rutrum. Cras sollicitudin est sit amet porta elementum. In eu est at elit lobortis volutpat non venenatis est. Etiam vitae urna id purus blandit faucibus quis sit amet sem. Duis vulputate diam vitae lobortis dapibus. Aliquam leo nulla, varius dignissim libero vel, dapibus consectetur metus. Fusce quis ipsum est.
+              </div>
+            </div>
+            <div class="card" style="background-color:pink;">
+
+              <div class="myTitle" data-id="sThree">
+                Babylon
+              </div>
+              <div id="sThree">
+Donec placerat, nisl id luctus fermentum, felis tellus vestibulum mi, et rhoncus elit elit at velit. Sed ornare lectus a massa consequat, vitae lobortis dui efficitur. Nam eu finibus lacus. Ut tortor quam, tempus ac nibh a, blandit interdum sapien. Suspendisse id augue nec ex fringilla faucibus nec quis magna. Nunc sed posuere sem. Suspendisse cursus, urna in imperdiet placerat, augue risus sagittis quam, commodo consequat eros elit vitae elit. Pellentesque dignissim cursus sagittis. Cras sapien elit, pellentesque sit amet commodo luctus, efficitur sit amet lectus. Pellentesque bibendum non nibh eget gravida. Nunc pulvinar a eros euismod auctor. Phasellus rhoncus est at lorem sagittis ultricies. Duis turpis mi, feugiat eu nunc eget, viverra iaculis nulla. Etiam feugiat leo sapien, in elementum urna tempor vulputate. Sed nisl mi, ultricies vitae est nec, aliquet porttitor elit.
+              </div>
+            </div>
+          </div-->
+
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#titleContainer").find("div").on("click", function(){
+      var id = $(this).attr("data-id");
+      $("#titleContainer").find("span").removeClass("showing");
+      $(this).find("span").addClass("showing");
+      $(".quote[data-id]").removeClass("showing");
+      $(".quote[data-id='"+id+"']").addClass("showing");
+
+    })
+  })
+
+  </script>
+</body>
+
+</html>
