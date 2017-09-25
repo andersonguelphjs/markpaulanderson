@@ -26,7 +26,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/assets/images',
           src: ['**/*.{png,gif}'],
-          dest: 'dist/assets/images'
+          dest: 'src/assets/images'
         }]
       }
     },
@@ -35,9 +35,9 @@ module.exports = function(grunt) {
         // using only dirs with output path
         task1: {
             src: 'src/assets/images/*.jpg',
-            dest: 'dist/assets/images'
+            dest: 'src/assets/images'
         }
-    },
+    },/*
     image_resize: {
       resize: {
         options: {
@@ -47,19 +47,19 @@ module.exports = function(grunt) {
         src: 'src/assets/images/*.png',
         dest: 'dist/assets/images/'
       }
-    },
+    },*/
     responsive_images: {
     myTask: {
       options: {
         sizes: [
           {
-            width: 1200
+            width: 600 /*1200*/
           },{
-          width: 320
+          width: 160/*320*/
         },{
-          width: 640
+          width: 320/*640*/
         },{
-          width: 900
+          width: 450/*900*/
           /*suffix: "_900"*/
         }]
       },
@@ -78,9 +78,25 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-img');
-  grunt.loadNpmTasks('grunt-image-resize');
+  /*grunt.loadNpmTasks('grunt-image-resize');*/
   grunt.loadNpmTasks('grunt-responsive-images');
+/*
+module.exports = function(grunt) {
+  grunt.initConfig({
+    cmq: {
+      options: {
+        log: false
+      },
+      your_target: {
+        files: {
+          'output': ['build/*.css']
+        }
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-combine-media-queries');
+  grunt.registerTask('default', 'cmq');
+};*/
 
-
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','image_resize','responsive_images']);
+  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images']);
 };

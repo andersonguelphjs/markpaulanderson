@@ -8,13 +8,15 @@
   <title>menu</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
   <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.carousel.css">
   <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
-  <style media="screen">
+  <style data-section="topAndSlider" media="screen">
     body {
       height: 2000px;
       font-family: 'Raleway', sans-serif;
@@ -48,10 +50,6 @@
       z-index: 999;
     }
 
-    #topInfo {
-      position: relative;
-    }
-
     #topDonateBtn {
       color: #ffffff;
       font-size: 12px;
@@ -59,15 +57,14 @@
       padding: 4px 8px 4px 8px;
       text-decoration: none;
       border: none;
+      font-family: 'Yantramanav', sans-serif;
+      text-transform: uppercase;
     }
 
     #topDonateBtn:hover {
-      background: #3cb0fd;
-      background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-      background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+      color: #00779e;
+      border: 1px solid #00779e;
+      background: #ffffff;
       text-decoration: none;
     }
 
@@ -109,17 +106,36 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    #topMiners{
+
+    #topMiners {
       font-family: 'Yantramanav', sans-serif;
     }
 
     @media (max-width: 540px) {
       /*phone*/
+      #topInfoContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #topInfoContainer #topMiners {
+        line-height: 42px;
+        color: #a19061;
+        font-size: 1em;
+      }
+      #topLogo {
+        height: 30px;
+      }
+      #topDonateBtn {
+        padding: 2px 4px 2px 4px;
+      }
       #hamburger {
-        position: absolute;
-        height: 25px;
-        right: 2%;
-        top: 2%;
+        line-height: 36px;
+      }
+
+      #hamburger img {
+        height: 28px !important;
+        width: 28px !important;
       }
       .navigation {
         position: fixed;
@@ -145,49 +161,9 @@
         text-align: center;
         border-bottom: 1px solid #00779e;
       }
-      .nav-item:hover {
-        background-color: #717771;
-      }
-      .nav-item:hover a {
-        color: #ededed;
-        text-decoration: none;
-      }
+
       .nav-item a {
         color: #717771;
-      }
-      .nav-item a:hover {
-        color: #ededed;
-        text-decoration: none;
-      }
-
-      #topInfoContainer {
-        position: relative;
-        /* width: 110%; */
-        margin-right: -15px;
-        margin-left: -15px;
-        height: 100%;
-
-      }
-
-      #topInfoContainer #topMiners {
-        line-height: 42px;
-        color: #a19061;
-        font-size: 1em;
-        position: absolute;
-        left: 2%;
-      }
-      #topLogo {
-        height: 30px;
-        margin-left: 5px;
-        position: absolute;
-        top: 4px;
-        left: 58%
-      }
-      #topDonateBtn {
-        position: absolute;
-        right: 15%;
-        top: 8px;
-        padding: 2px 4px 2px 4px;
       }
 
       #topSliderDiv {
@@ -197,7 +173,7 @@
     }
 
 
-    @media (min-width: 540px) {
+    @media (min-width: 541px) {
       /*for-tablet-portrait-up*/
       #hamburger {
         display: none;
@@ -274,7 +250,6 @@
         position: absolute;
         top: 38%;
         left: 0px;
-        font-size: 12px;
       }
     }
 
@@ -329,6 +304,924 @@
       }
     }
   </style>
+  <style data-section="sectionTwo-OurIdeas" media="screen">
+    /*section Two - Our ideas, Our mission*/
+
+    #sectionTwo {
+      color: #717771;
+      background-color: #FFF;
+      height: auto;
+    }
+
+    #titleContainer {
+      font-family: 'Old Standard TT', sans-serif;
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      padding: 40px:
+    }
+
+    #titleContainer div {
+      display: inline;
+      text-align: center;
+      width: auto;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    #titleContainer span {
+      width: 75%;
+      border-bottom: 1px solid #e1af0a;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    #quoteContainer {
+      position: relative;
+    }
+
+    #quoteContainer span {
+      position: absolute;
+      left: 1%;
+      font-family: 'Old Standard TT', sans-serif;
+      font-size: 135px;
+      margin-top: -25px;
+    }
+
+    #quoteContainer div {
+      margin-left: 10%;
+      width: 80%;
+      font-size: 17px;
+      display: none;
+      padding-bottom: 20px;
+    }
+
+    .showingChild {
+      opacity: 1 !important;
+      transition: opacity 1s;
+    }
+
+    @media (max-width: 540px) {
+      #titleContainer {
+        padding: 40px:
+      }
+      #titleContainer div {
+        font-size: 17px;
+      }
+      #quoteContainer span {
+        font-size: 60px;
+        margin-top: -8px;
+      }
+      #quoteContainer div {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 541px) {
+      #titleContainer div:hover {
+        opacity: 0.5;
+      }
+      #quoteContainer span {
+        font-size: 90px;
+        margin-top: -18px;
+      }
+      #quoteContainer div {
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      #titleContainer div {
+        font-size: 30px;
+      }
+      #quoteContainer div {
+        font-size: 20px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+
+      #titleContainer div {
+        font-size: 36px;
+      }
+      #quoteContainer span {
+        font-size: 135px;
+        margin-top: -25px;
+      }
+      #quoteContainer div {
+        font-size: 24px;
+      }
+    }
+  </style>
+  <style data-section="sectionThree-Donate" media="screen">
+      /*section Three - Donate, Partner, Sponship*/
+
+        #sectionThree {
+          background-color: #ededed;
+          font-family: 'Old Standard TT', sans-serif;
+        }
+
+        .sectionThreeroundTitle .round {
+          border-radius: 50%;
+          background-color: #00779e;
+          position: relative;
+        }
+
+        .round span {
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #ededed;
+        }
+
+        .sectionThreeItemBlurb {
+          color: #00779e;
+        }
+
+        @media (max-width: 540px) {
+          .sectionThreeItemContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px;
+          }
+          .two {
+            flex-direction: row-reverse;
+          }
+          .sectionThreeroundTitle {
+            padding: 10px;
+          }
+          .sectionThreeroundTitle .round {
+            padding: 40px;
+          }
+          .round span {
+            text-align: center;
+            font-size: 20px;
+          }
+          .sectionThreeItemBlurb {
+            font-size: 14px;
+            padding: 15px;
+          }
+          .three .round span {
+            font-size: 12px;
+          }
+        }
+
+        @media (min-width: 541px) {
+          #sectionThreeContainer {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+          }
+          .sectionThreeItemContainer {
+            width: 33%;
+          }
+          .sectionThreeroundTitle {
+            padding-top: 50px;
+            height: 120px;
+            text-align: center;
+          }
+          .sectionThreeroundTitle .round {
+            padding: 50px;
+          }
+          .round span {
+            text-align: center;
+            font-size: 24px;
+          }
+          .sectionThreeItemBlurb {
+            font-size: 17px;
+            padding: 15px;
+          }
+          .three .round span {
+            font-size: 14px;
+          }
+        }
+      }
+
+      @media (min-width: 900px) {}
+
+      @media (min-width: 1200px) {}
+  </style>
+  <style data-section="sectionFour-YourImpact" media="screen">
+      /*section Four - Donate, Partner, Sponship*/
+
+        #sectionFour {
+          background-color: #ededed;
+        }
+
+        #impactTitleContainer {
+          padding-top: 10px;
+        }
+
+        #impactItemsContainer {
+
+          font-family: 'Raleway', sans-serif;
+        }
+
+        #impactTitleContainer span {
+          color: #717771;
+          font-family: 'Old Standard TT', sans-serif;
+          font-size: 16px;
+        }
+
+        #impactTitleContainer div {
+          border-top: 1px solid #e1af0a;
+          width: 70%;
+          float: right;
+          margin-top: 10px;
+        }
+
+        .impactItem {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          background: #FFF;
+          padding-bottom: 50px;
+        }
+
+        .impactMetric {
+          font-size: 36px;
+        }
+
+        .impactVerb {
+          font-size: 22px;
+          padding-top: 5px;
+        }
+
+        .impactItem * {
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .impactItem img {
+          width: 50px;
+        }
+
+        .impactLeftLine {
+          position: absolute;
+          top: 43%;
+          left: 25%;
+          border-bottom: 1px solid #85a448;
+          width: 14%;
+        }
+
+        .impactRightLine {
+          position: absolute;
+          top: 43%;
+          left: 60%;
+          border-bottom: 1px solid #85a448;
+          width: 14%;
+        }
+
+        @media (max-width: 540px) {
+          #impactTitleContainer span {
+            font-size: 16px;
+          }
+          #impactTitleContainer div {
+            width: 70%;
+          }
+          .impactItem {
+            position: relative;
+            padding-bottom: 50px;
+          }
+          .impactMetric {
+            font-size: 36px;
+          }
+          .impactVerb {
+            font-size: 22px;
+          }
+          .impactItem img {
+            width: 50px;
+          }
+        }
+
+        @media (min-width: 541px) {
+          #impactItemsContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          #impactTitleContainer span {
+            font-size: 16px;
+          }
+          #impactTitleContainer div {
+            width: 80%;
+          }
+          .impactItem {
+            width: 100%;
+          }
+          .impactMetric {
+            font-size: 30px;
+          }
+          .impactVerb {
+            font-size: 18px;
+          }
+          .impactItem img {
+            width: 50px;
+          }
+          .impactLeftLine {
+            display: none;
+          }
+          .impactRightLine {
+            display: none;
+          }
+        }
+      }
+
+      @media (min-width: 900px) {}
+
+      @media (min-width: 1200px) {}
+  </style>
+  <style data-section="sectionFive-YourDonationsAtWork" media="screen">
+        /*section Three - Donate, Partner, Sponship*/
+
+        #sectionFiveContainer {
+          background-color: #85a448;
+          color: #FFF;
+          font-family: 'Raleway', sans-serif;
+        }
+
+        #yourDTitleContainer {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: 'Raleway', sans-serif;
+        }
+
+        #yourDTitleContainer span {
+          border-bottom: 1px solid #FFF;
+          width: 12%;
+        }
+
+        #yourDTitleContainer div {
+          background-color: #85a448;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+
+        .yourDItem {
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .yourDItem img {
+          width: 100%;
+        }
+
+        .yourDItemTitleContainer {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+
+        @media (max-width: 540px) {
+          #sectionFive {
+            font-size: 10px;
+          }
+
+          #yourDTitleContainer {
+            width: 90%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+
+          #yourDTitleContainer span {
+          width: 12%;
+          }
+
+          #yourDTitleContainer div {
+            width: 70%;
+            height: 20px;
+            line-height: 20px;
+            font-size: 13px;
+          }
+
+          #yourDItemsContainer {
+            padding-bottom: 20px;
+          }
+
+          .yourDItem {
+            width: 80%;
+          }
+
+          .yourDItem img {
+            padding-bottom: 20px;
+          }
+
+          .yourDItemTitleContainer {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+
+          .yourDItemTitleContainer.time {
+            padding-left: 5px;
+          }
+
+          .yourDItem .blurb {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+
+          #yourDItemsContainer .divider {
+            width: 100%;
+            border-bottom: 1px solid #FFF;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+          }
+        }
+
+        @media (min-width: 541px) {
+          #sectionFive {
+            font-size: 11px;
+          }
+
+          #yourDTitleContainer {
+            width: 90%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+
+          #yourDTitleContainer span {
+            width: 20%;
+          }
+
+          #yourDTitleContainer div {
+            width: 70%;
+            height: 20px;
+            line-height: 20px;
+            font-size: 18px;
+          }
+
+          #yourDItemsContainer {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-start;
+          }
+
+          .yourDItem {
+            width: 80%;
+          }
+
+          .yourDItem img {
+            width: 100%;
+            padding-bottom: 20px;
+          }
+
+          .yourDItemTitleContainer {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+
+          .yourDItemTitleContainer.time {
+            padding-left: 5px;
+          }
+
+          .yourDItem .blurb {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 14px;
+          }
+
+          #yourDItemsContainer .divider {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+
+        @media (min-width: 900px) {
+          #sectionFive {
+            font-size: 14px;
+          }
+
+          #yourDTitleContainer {
+            width: 90%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+          #yourDTitleContainer span {
+            width: 25%;
+          }
+
+          #yourDTitleContainer div {
+            width: 70%;
+            height: 20px;
+            line-height: 20px;
+            font-size: 20px;
+          }
+
+          #yourDItemsContainer {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-start;
+          }
+
+          .yourDItem {
+            width: 80%;
+          }
+
+          .yourDItem img {
+            width: 100%;
+            padding-bottom: 20px;
+          }
+
+          .yourDItemTitleContainer {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+
+          .yourDItemTitleContainer.time {
+            padding-left: 5px;
+          }
+
+          .yourDItem .blurb {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 16px;
+          }
+
+          #yourDItemsContainer .divider {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          #sectionFive {
+            font-size: 20px;
+          }
+
+          #yourDTitleContainer {
+            width: 90%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+          }
+
+          #yourDTitleContainer span {
+            width: 45%;
+          }
+
+          #yourDTitleContainer div {
+            width: 70%;
+            height: 20px;
+            line-height: 20px;
+            font-size: 24px;
+          }
+
+          #yourDItemsContainer {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-start;
+          }
+
+          .yourDItem {
+            width: 80%;
+          }
+
+          .yourDItem img {
+            width: 100%;
+            padding-bottom: 20px;
+          }
+
+          .yourDItemTitleContainer {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+
+          .yourDItemTitleContainer.time {
+            padding-left: 5px;
+          }
+
+          .yourDItem .blurb {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 22px;
+          }
+
+          #yourDItemsContainer .divider {
+            padding-left: 30px;
+            padding-right: 30px;
+          }
+        }
+  </style>
+  <style data-section="sectionSeven-Logo" media="screen">
+    /*section Seven - Donors */
+
+    #sectionSevenContainer {
+      background-color: #FFF;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    #logoTitleContainer {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #logoTitleContainer span {
+      color: #717771;
+      font-family: 'Old Standard TT', sans-serif;
+      font-size: 16px;
+    }
+
+    #logoTitleContainer div {
+      border-top: 1px solid #e1af0a;
+      width: 60%;
+      margin-top: 8px;
+    }
+
+    #logoItemContainer {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .logoItem {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+      width: 33%;
+    }
+
+    .logoItem img {
+      width: 80%;
+      display: inline-block;
+      height: 100%;
+    }
+
+    .logoItem img.vert {
+      width: 30%;
+      display: inline-block;
+      height: 100%;
+    }
+
+    @media (max-width: 540px) {
+
+      #logoTitleContainer {
+        padding-top: 10px;
+      }
+
+      #logoTitleContainer span {
+        font-size: 16px;
+      }
+
+      #logoTitleContainer div {
+        width: 60%;
+        margin-top: 8px;
+      }
+
+      .logoItem {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 50%;
+      }
+
+    }
+
+    @media (min-width: 541px) {
+      #logoTitleContainer {
+        padding-top: 10px;
+      }
+
+      #logoTitleContainer span {
+        font-size: 22px;
+      }
+
+      #logoTitleContainer div {
+        width: 70%;
+        margin-top: 13px;
+      }
+
+      .logoItem {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      #logoTitleContainer {
+        padding-top: 10px;
+      }
+
+      #logoTitleContainer span {
+        font-size: 26px;
+      }
+
+      #logoTitleContainer div {
+        width: 75%;
+        margin-top: 15px;
+      }
+
+      .logoItem {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      #logoTitleContainer {
+        padding-top: 10px;
+      }
+
+      #logoTitleContainer span {
+        font-size: 36px;
+      }
+
+      #logoTitleContainer div {
+        width: 80%;
+        margin-top: 20px;
+      }
+
+      .logoItem {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+  </style>
+  <style data-section="sectionTen-Contact" media="screen">
+    /*section Ten - Contacts */
+    #sectionTenContainer {
+      background-color: #FFF;
+      font-family: 'Raleway', sans-serif;
+      color: #717771;
+    }
+
+    #contactTitleContainer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #contactTitleContainer span {
+      color: #717771;
+    }
+
+    #contactTitleContainer div {
+      border-top: 1px solid #e1af0a;
+    }
+    .contactItem {
+      margin-left: auto;
+      margin-right: auto;
+      }
+
+    .contactItem .type {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .contactItem .divider {
+      height: 1px;
+      border-bottom: 1px solid #717771;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contactItem .info {
+      text-align: center;
+    }
+
+    #contactSocialMediaContainer{
+      padding-top: 40px;
+      padding-bottom: 15px;
+
+    }
+    #contactSocialMediaContainer .follow{
+        text-align: center;
+        text-transform: uppercase;
+    }
+    #contactSocialMediaContainer .icons{
+      display: flex;
+      width: 30%;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      height: 50px;
+    }
+    #contactSocialMediaContainer img{
+      width:20px;
+    }
+    #MLFooter{
+      height: 25px;
+      background-color: #e1af0a;
+      text-align: center;
+      line-height: 25px;
+    }
+    @media (max-width: 540px) {
+
+      #contactTitleContainer {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #contactTitleContainer span {
+        font-size: 16px;
+      }
+
+      #contactTitleContainer div {
+        width: 72%;
+        margin-top: 8px;
+      }
+    /**/
+          .contactItem {
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+
+          .contactItem .divider {
+            width: 45%;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+          }
+        }
+
+        @media (min-width: 541px) {
+          #sectionTenContainer{
+            background-color: #ededed;
+            font-size: 13px;
+          }
+          #contactTitleContainer {
+            padding-top: 10px;
+          }
+
+          #contactTitleContainer span {
+            font-size: 22px;
+            text-align: center;
+            border-bottom: 1px solid #717771;
+            padding-bottom: 5px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          #contactTitleContainer div {
+            display: none;
+          }
+          #contactItemsContainer {
+            display: flex;
+            padding-top: 25px;
+            padding-bottom: 25px;
+          }
+
+          .contactItem {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 34%;
+          }
+
+          .contactItem .divider {
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+          }
+
+        }
+
+        @media (min-width: 900px) {
+          #contactTitleContainer {
+            padding-top: 10px;
+          }
+
+          #contactTitleContainer span {
+            font-size: 26px;
+          }
+          .contactItem{
+            font-size: 18px;
+          }
+          #contactSocialMediaContainer .follow{
+              font-size: 18px;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          #contactTitleContainer {
+            padding-top: 10px;
+          }
+
+          #contactTitleContainer span {
+            font-size: 36px;
+          }
+          .contactItem{
+            font-size: 22px;
+          }
+          #contactSocialMediaContainer .follow{
+              font-size: 22px;
+          }
+
+        }
+  </style>
 </head>
 
 <body>
@@ -341,7 +1234,7 @@
           <div id="topInfoContainer">
             <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/MLLogo_51.jpg" srcset="dist/assets/images/MLLogo_80.jpg 700w, dist/assets/images/MLLogo_100.jpg 1000w" alt="topLogo" />
             <button id="topDonateBtn" type="button">Donate</button>
-            <span id="hamburger">&#9776;</span>
+            <span id="hamburger"><img class="icon icons8-Menu" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
           </div>
           <nav class="navigation">
             <ul class="nav-list">
@@ -356,13 +1249,282 @@
       </div>
     </div>
 
-    <div class="row">
+    <div data-section="1nav" class="row">
       <section class="col-md-12" id="topSliderDiv">
         <div id="topSliderContainer">
           <div class="owl-carousel owl-theme">
           </div>
         </div>
       </section>
+    </div>
+    <div data-section="2topSlider" class="row">
+      <div data-section="ourIdeas" class="col-md-12">
+        <section id="sectionTwo" class="parent">
+          <div id="titleContainer">
+            <div data-id="1">Our Ideas<span class="showingChild"></span></div>
+            <div data-id="2">Our Mission<span></span></div>
+            <div data-id="3">Event Details<span></span></div>
+          </div>
+          <div id="quoteContainer">
+            <span>&ldquo;</span>
+            <div class="quote" style="display:block;" data-id="1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque ac nisl sit amet ornare. Donec velit nibh, tempor non cursus eget, pretium vel urna. Nam imperdiet sed libero ut tincidunt. Donec eget eleifend sem. Pellentesque dapibus mi nec
+              ante ornare lacinia. Suspendisse potenti. Aliquam nisl ex, vulputate nec lacinia a, pharetra ac turpis.
+            </div>
+            <div class="quote" data-id="2">
+              Curabitur aliquam ante in ligula imperdiet, eget cursus nisl molestie. Nam eu risus eu tortor auctor mollis. Pellentesque efficitur elit nisl, commodo dictum metus gravida a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+              Curae; Suspendisse gravida auctor libero, non tristique nunc ultricies quis. Sed non neque ex. Maecenas imperdiet ultricies odio eu placerat.
+            </div>
+            <div class="quote" data-id="3">
+              Vivamus luctus vel ligula ut ornare. Ut nisl nisl, pharetra vitae urna non, ullamcorper commodo purus. Vestibulum orci nunc, commodo eget ultrices a, dignissim ut elit. Phasellus eu metus sapien. Aliquam placerat massa eu libero facilisis volutpat. Nam
+              blandit condimentum molestie. Aenean consectetur ipsum et blandit iaculis. Vivamus ultricies, tellus ut vestibulum tincidunt, ante enim malesuada ipsum, rhoncus consequat justo quam vel risus. Integer pulvinar tellus eget scelerisque sodales.
+            </div>
+
+          </div>
+
+        </section>
+      </div>
+    </div>
+    <div data-section="3donate" class="row">
+      <div class="col-md-12">
+        <section id="sectionThree">
+          <div id="sectionThreeContainer">
+
+            <div class="sectionThreeItemContainer one">
+              <div class="sectionThreeroundTitle">
+                <span class="round"><span>Donate</span></span>
+
+              </div>
+              <div class="sectionThreeItemBlurb">
+                His putant quaeque at, eos bonorum delenit dolorum ex. Vis ei modo placerat qualisque, qui sumo unum ei, cu fabulas sadipscing est.
+              </div>
+            </div>
+            <div class="sectionThreeItemContainer two">
+              <div class="sectionThreeroundTitle">
+                <span class="round"><span>Partner</span></span>
+              </div>
+              <div class="sectionThreeItemBlurb">
+                Sea cu iudico ubique mnesarchum, ea pro wisi brute nonumy. Nam ei civibus deserunt repudiandae, sit eu latine recteque, pri ne tota splendide.
+              </div>
+            </div>
+            <div class="sectionThreeItemContainer three">
+              <div class="sectionThreeroundTitle">
+                <span class="round"><span>Sponsorship<br>Opportunities</span></span>
+              </div>
+              <div class="sectionThreeItemBlurb">
+                Vis populo principes repudiare at, cu hinc pericula incorrupte sea, illum ipsum maiorum sed ex.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div data-section="4yourImpact" class="row">
+        <div id="impactContainer" class="col-md-12">
+          <div id="impactTitleContainer">
+            <span>Your Impact</span>
+            <div></div>
+          </div>
+          <div id="impactItemsContainer">
+            <div class="impactItem">
+              <div class="impactTopTwo">
+                <div class="impactMetric">
+                  2
+                </div>
+                <img src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
+              </div>
+              <div class="impactVerb">
+                Years since launch
+              </div>
+              <div class="impactLeftLine"></div>
+              <div class="impactRightLine"></div>
+            </div>
+
+            <div class="impactItem">
+              <div class="impactTopTwo">
+                <div class="impactMetric">
+                  $ 1 Million
+                </div>
+                <img src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
+              </div>
+              <div class="impactVerb">
+                Raised
+              </div>
+              <div class="impactLeftLine"></div>
+              <div class="impactRightLine"></div>
+            </div>
+
+            <div class="impactItem">
+              <div class="impactTopTwo">
+                <div class="impactMetric">
+                  &nbsp;&nbsp;&nbsp;100%
+                </div>
+                <img src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
+              </div>
+              <div class="impactVerb">
+                Funds Donated
+              </div>
+              <div class="impactLeftLine"></div>
+              <div class="impactRightLine"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div data-section="5yourDonationsAtWork" class="row">
+      <section id="sectionFive">
+        <div class="col-md-12" id="sectionFiveContainer">
+          <div id="yourDTitleContainer">
+            <span></span>
+            <div>Your donations at work</div>
+            <span></span>
+          </div>
+          <div id="yourDItemsContainer">
+            <div class="yourDItem">
+              <img src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
+              <div class="yourDItemTitleContainer">
+                <div class="title">
+                  Students at Univeristy of Toronto
+                </div>
+                <div class="hdivider">|</div>
+                <div class="time">
+                  2016 - present
+                </div>
+
+              </div>
+              <div class="blurb">
+                Vivamus elementum justo a ex pharetra efficitur. Phasellus et sapien ultrices, tincidunt sem at, convallis odio. Integer arcu purus, varius vitae accumsan at, condimentum ac nunc. Nam vel scelerisque elit, a imperdiet dolor.
+              </div>
+
+            </div>
+            <div class="divider"></div>
+            <div class="yourDItem">
+              <img src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-2--640.jpg 640w, dist/assets/images/yourDonation-2--900.jpg 900w, dist/assets/images/yourDonation-2--1200.jpg 1200w" alt="yourDItem">
+
+              <div class="yourDItemTitleContainer">
+                <div class="title">
+                  Students at Univeristy of Toronto
+                </div>
+                  <div class="hdivider">|</div>
+                <div class="time">
+                  2016 - present
+                </div>
+
+              </div>
+              <div class="blurb">
+                Cras tortor dui, auctor et ante eget, finibus mollis ante. Suspendisse faucibus ex at elit fringilla sagittis. Nam facilisis bibendum mauris a vehicula. Nam vel nisi eget odio egestas condimentum id non sapien. Phasellus consectetur tincidunt augue, vitae
+                rutrum magna pharetra sit amet. </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div data-section="7donorLogos" class="row">
+      <section id="sectionSeven">
+        <div class="col-md-12" id="sectionSevenContainer">
+          <div id="logoTitleContainer">
+            <span>2017 Donors</span>
+            <div></div>
+          </div>
+          <div id="logoItemContainer">
+            <div class="logoItem">
+              <img src="dist/assets/images/logoIMG-160.jpg"
+              srcset="dist/assets/images/logoIMG-320.jpg 640w,
+              dist/assets/images/logoIMG-450.jpg 900w,
+              dist/assets/images/logoIMG-600.jpg 1200w" alt="logo">
+
+            </div>
+            <div class="logoItem">
+              <img src="dist/assets/images/logoUTPsych-160.jpg"
+              srcset="dist/assets/images/logoUTPsych-320.jpg 640w,
+              dist/assets/images/logoUTPsych-450.jpg 900w,
+              dist/assets/images/logoUTPsych-600.jpg 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img src="dist/assets/images/logoAirCanada-160.jpg"
+              srcset="dist/assets/images/logoAirCanada-320.jpg 640w,
+              dist/assets/images/logoAirCanada-450.jpg 900w,
+              dist/assets/images/logoAirCanada-600.jpg 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img src="dist/assets/images/logoNationalB-160.png"
+              srcset="dist/assets/images/logoNationalB-320.png 640w,
+              dist/assets/images/logoNationalB-450.png 900w,
+              dist/assets/images/logoNationalB-600.png 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img class="vert" src="dist/assets/images/logoPearTree-80.png"
+              srcset="dist/assets/images/logoPearTree-160.png 640w,
+              dist/assets/images/logoPearTree-225.png 900w,
+              dist/assets/images/logoPearTree-300.png 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img src="dist/assets/images/logoRBC-160.png"
+              srcset="dist/assets/images/logoRBC-320.png 640w,
+              dist/assets/images/logoRBC-450.png 900w,
+              dist/assets/images/logoRBC-600.png 1200w" alt="logo">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div data-section="Contacts" class="row">
+        <div class="col-md-12" id="sectionTenContainer">
+          <div id="contactTitleContainer">
+            <span>Contact</span>
+            <div></div>
+          </div>
+          <div id="contactItemsContainer">
+            <div class="contactItem">
+              <div class="type">
+                address
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="info">
+                401 Bay St #3200<br>Toronto, ON<br> M5H 2Y4
+              </div>
+            </div>
+            <div class="contactItem">
+              <div class="type">
+                phone
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="info">
+                (416) 360-4710
+              </div>
+            </div>
+            <div class="contactItem">
+              <div class="type">
+                email
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="info">
+                iamgoldcommunications<br>
+                @iamgold.com
+              </div>
+            </div>
+          </div>
+          <div id="contactSocialMediaContainer">
+            <div class="follow">
+              follow us
+            </div>
+            <div class="icons">
+              <img src="dist/assets/svg/Twitter.svg" alt="twitter">
+              <img src="dist/assets/svg/Instagram.svg" alt="instagram">
+            </div>
+
+          </div>
+          <div id="MLFooter">
+          &copy;2017
+          </div>
+        </div>
+
     </div>
   </div>
 
@@ -371,92 +1533,98 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="../OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
   <script type="text/javascript">
-    /* JavaScript Media Queries */
-;(function($, window){
-    if (matchMedia) {
-      var mq = window.matchMedia("(min-width: 540px)");
-      mq.addListener(widthChange);
-      widthChange(mq);
-    }
-
-    // media query change
-    function widthChange(mq) {
-      console.log("width over 600");
-      var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
-      if (mq.matches) {
-        console.log("over 600 " + msg);
-      } else {
-        console.log("no matches");
-      }
-    }
-
-    var topSliderData = [{
-        "id": 1,
-        "imgSrc": "dist/assets/images/topSlider1",
-        "ext": ".jpg",
-        "topMsg": "1 in 5 canadians will experience mental illness in their lifetime.",
-        "bottomMsg": "we can change that"
-      },
-      {
-        "id": 2,
-        "imgSrc": "dist/assets/images/topSlider2",
-        "ext": ".jpg",
-        "topMsg": "we work to raise awareness and funds for mental health",
-        "bottomMsg": "learn more below"
-      },
-      {
-        "id": 3,
-        "imgSrc": "dist/assets/images/topSlider3",
-        "ext": ".jpg",
-        "topMsg": "join us oct 15 at the miner's lamp award event",
-        "bottomMsg": "event details below"
-      }
-    ]
-
-    $(document).ready(function() {
-      function initEvents() {
-        $("#hamburger").on("click", function() {
-          console.log("mainbar");
-          $(".navigation,.overlay").addClass("open");
-        })
-        $(".overlay,.navigation").on("click", function() {
-          $(".overlay,.navigation").removeClass("open");
-        })
-        $("#topDonateBtn,#hamburger").on("click", function() {
-          console.log("clikced");
-        })
+    /* JavaScript Media Queries */ ;
+    (function($, window) {
+      if (matchMedia) {
+        var mq = window.matchMedia("(min-width: 540px)");
+        mq.addListener(widthChange);
+        widthChange(mq);
       }
 
-      function initTopSlider() {
-        var topSliderHtml = "";
-        for (var i = 0; i < topSliderData.length; i++) {
-          topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
-          topSliderHtml += "<img src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
-            " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
-            topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
-            topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";
-
-          topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
-          topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
-          topSliderHtml += "<span>ˇ</span></div>";
+      // media query change
+      function widthChange(mq) {
+        console.log("width over 600");
+        var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
+        if (mq.matches) {
+          console.log("over 600 " + msg);
+        } else {
+          console.log("no matches");
         }
-        console.log(topSliderHtml);
-
-        $('.owl-carousel').html(topSliderHtml).owlCarousel({
-          loop: true,
-          autoplay: true,
-          dots: false,
-          responsive: {
-            0: {
-              items: 1
-            }
-          }
-        });
       }
 
-      initTopSlider();
-      initEvents();
-    });
+      var topSliderData = [{
+          "id": 1,
+          "imgSrc": "dist/assets/images/topSlider1",
+          "ext": ".jpg",
+          "topMsg": "1 in 5 canadians will experience mental illness in their lifetime.",
+          "bottomMsg": "we can change that"
+        },
+        {
+          "id": 2,
+          "imgSrc": "dist/assets/images/topSlider2",
+          "ext": ".jpg",
+          "topMsg": "we work to raise awareness and funds for mental health",
+          "bottomMsg": "learn more below"
+        },
+        {
+          "id": 3,
+          "imgSrc": "dist/assets/images/topSlider3",
+          "ext": ".jpg",
+          "topMsg": "join us oct 15 at the miner's lamp award event",
+          "bottomMsg": "event details below"
+        }
+      ]
+
+      $(document).ready(function() {
+        function initEvents() {
+          /*section nav and top slider*/
+          $("#hamburger").on("click", function() {
+            $(".navigation,.overlay").addClass("open");
+          })
+          $(".overlay,.navigation").on("click", function() {
+            $(".overlay,.navigation").removeClass("open");
+          })
+          /*section two*/
+          $("#titleContainer").find("div").on("click", function() {
+            var id = $(this).attr("data-id");
+            $("#titleContainer").find("span").removeClass("showingChild");
+            $(this).find("span").addClass("showingChild");
+            $(".quote[data-id]").css("display", "none");
+            $(".quote[data-id='" + id + "']").fadeIn("fast");
+          })
+        }
+
+        function initTopSlider() {
+          var topSliderHtml = "";
+          for (var i = 0; i < topSliderData.length; i++) {
+            topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
+            topSliderHtml += "<img src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
+              " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
+              topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
+              topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";
+
+            topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
+            topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
+            topSliderHtml += "<span>ˇ</span></div>";
+          }
+          console.log(topSliderHtml);
+
+          $('.owl-carousel').html(topSliderHtml).owlCarousel({
+            loop: true,
+            autoplay: true,
+            dots: false,
+            responsive: {
+              0: {
+                items: 1
+              }
+            }
+          });
+        }
+
+        initTopSlider();
+        initEvents();
+
+      });
     }(jQuery, window, undefined))
   </script>
 </body>
