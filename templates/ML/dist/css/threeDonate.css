@@ -1,0 +1,146 @@
+/*section Three - Donate, Partner, Sponship*/
+
+#sectionThree {
+  background-color: #ededed;
+}
+
+.sectionThreeroundTitle .round {
+  border-radius: 50%;
+  background-color: #00779e;
+  position: relative;
+}
+
+.round span {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ededed;
+}
+
+.sectionThreeItemBlurb {
+  color: #00779e;
+}
+
+@media (max-width: 540px) {
+  .sectionThreeItemContainer {
+    padding: 15px;
+  }
+  .sectionThreeItemBlurb {
+    font-size: 4vmin;
+    width:60%;
+    max-height: 109px;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+
+  }
+.sectionThreeItemBlurb.long {
+  max-height: 1500px;
+  transition: max-height 0.25s ease-in;
+  display: inline;
+}
+
+  .one{
+    float:left;
+  }
+  .two {
+    float:right;
+  }
+
+  .sectionThreeroundTitle {
+    padding:10px;
+    width:40%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .sectionThreeroundTitle .round {
+    padding: 40px;
+  }
+
+  .round span {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .three .round span {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 541px) {
+  #sectionThreeContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+   text-align: center;
+  }
+
+  .sectionThreeItemContainer {
+    width: 50%;
+  }
+
+  .sectionThreeroundTitle {
+    padding-top: 50px;
+    height: 120px;
+    text-align: center;
+    display:inline-block;
+  }
+
+  .sectionThreeroundTitle .round {
+    padding: 50px;
+  }
+
+  .round span {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .sectionThreeItemBlurb {
+    font-size: 18px;
+    padding: 15px;
+    max-height: 118px;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+
+  }
+.sectionThreeItemBlurb.long {
+  max-height: 1500px;
+  transition: max-height 0.25s ease-in;
+}
+
+}
+@media (min-width: 901px) {
+  #sectionThreeContainer {
+    padding: 25px;
+  }
+  .sectionThreeItemBlurb {
+    padding-top: 20px;
+    font-size: 20px;
+    max-height: 167px;
+  }
+  .round span {
+    text-align: center;
+    font-size: 30px;
+  }
+  .sectionThreeroundTitle .round {
+    padding: 60px;
+}
+}
+@media (min-width: 1201px) {
+  #sectionThreeContainer {
+    padding: 45px;
+  }
+  .sectionThreeItemBlurb {
+    padding-top: 30px;
+    font-size: 24px;
+}
+.round span {
+  text-align: center;
+  font-size: 36px;
+}
+.sectionThreeroundTitle .round {
+  padding: 75px;
+}
+}

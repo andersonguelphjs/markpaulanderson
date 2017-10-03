@@ -5,253 +5,147 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>LG</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="../lightGallery/node_modules/lightgallery/dist/css/lightgallery.css" />
   <style media="screen">
-    /*section Ten - Contacts */
-    #sectionTenContainer {
-      background-color: #FFF;
-      font-family: 'Raleway', sans-serif;
-      color: #717771;
+    .myThumb {
+      width: 100px;
     }
 
-    #contactTitleContainer {
+    #lightGalleryContainer {
+      padding-top: 1vw;
+          height: 26vw;
+          overflow: hidden;
+          background-color: #FFF;
+    }
+    #lightGalleryTitleContainer {
       display: flex;
       justify-content: space-between;
+      font-size: 16px;
+      font-size: 5vmin;
+      font-weight: 200;
     }
 
-    #contactTitleContainer span {
+    #lightGalleryTitleContainer span {
       color: #717771;
     }
 
-    #contactTitleContainer div {
+    #lightGalleryTitleContainer div {
       border-top: 1px solid #e1af0a;
+      margin-top: 10px;
+      margin-top: 4vmin;
+      width: 60%;
+      width: 40vmax;
     }
-    .contactItem {
-      margin-left: auto;
-      margin-right: auto;
-      }
-
-    .contactItem .type {
-      text-align: center;
-      text-transform: uppercase;
+    #lightgallery>a>img {
+      padding-bottom: 3vw;
+      width:32%;
     }
-
-    .contactItem .divider {
-      height: 1px;
-      border-bottom: 1px solid #717771;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contactItem .info {
+    #lightgallery{
       text-align: center;
     }
-
-    #contactSocialMediaContainer{
-      padding-top: 40px;
-      padding-bottom: 15px;
-
-    }
-    #contactSocialMediaContainer .follow{
-        text-align: center;
-        text-transform: uppercase;
-    }
-    #contactSocialMediaContainer .icons{
-      display: flex;
-      width: 30%;
-      justify-content: space-around;
-      margin-left: auto;
-      margin-right: auto;
-      height: 50px;
-    }
-    #contactSocialMediaContainer img{
-      width:20px;
-    }
-    #MLFooter{
-      height: 25px;
-      background-color: #e1af0a;
-      text-align: center;
-      line-height: 25px;
-    }
-    @media (max-width: 540px) {
-
-      #contactTitleContainer {
-        padding-top: 10px;
-        display: flex;
-        justify-content: space-between;
+      @media (min-width: 541px) {
+        #lightgallery>a>img {
+          padding-bottom: 3vw;
+          width:24%;
+        }
+        #lightGalleryContainer {
+            padding-top: 1.5vw;
+            height: 117px;
+            overflow: hidden;
+            background-color: #FFF;
+        }
+        #lightgallery>a>img {
+          width: 122px;
+        }
+        #lightgalleryTitleContainer div {
+          width: 50vmax;
+        }
+      }
+      @media (min-width: 901px) {
+        #lightgallery>a>img {
+          padding-bottom: 3vw;
+          width:19%;
+        }
+        #lightGalleryContainer {
+          padding-top: 1vw;
+          height: 130px;
+          overflow: hidden;
+          background-color: #FFF;
+        }
+        #lightgallery>a>img {
+          width: 136px;
+        }
+      }
+      @media (min-width: 1201px) {
+        #lightgallery>a>img {
+          width:216px;
+        }
+        #lightGalleryContainer {
+          height: 180px;
+        }
       }
 
-      #contactTitleContainer span {
-        font-size: 16px;
-      }
-
-      #contactTitleContainer div {
-        width: 72%;
-        margin-top: 8px;
-      }
-    /**/
-          .contactItem {
-            padding-top: 15px;
-            padding-bottom: 15px;
-          }
-
-          .contactItem .divider {
-            width: 45%;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-          }
-        }
-
-        @media (min-width: 541px) {
-          #sectionTenContainer{
-            background-color: #ededed;
-            font-size: 13px;
-          }
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 22px;
-            text-align: center;
-            border-bottom: 1px solid #717771;
-            padding-bottom: 5px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-
-          #contactTitleContainer div {
-            display: none;
-          }
-          #contactItemsContainer {
-            display: flex;
-            padding-top: 25px;
-            padding-bottom: 25px;
-          }
-
-          .contactItem {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            width: 34%;
-          }
-
-          .contactItem .divider {
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-          }
-
-        }
-
-        @media (min-width: 900px) {
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 26px;
-          }
-          .contactItem{
-            font-size: 18px;
-          }
-          #contactSocialMediaContainer .follow{
-              font-size: 18px;
-          }
-        }
-
-        @media (min-width: 1200px) {
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 36px;
-          }
-          .contactItem{
-            font-size: 22px;
-          }
-          #contactSocialMediaContainer .follow{
-              font-size: 22px;
-          }
-
-        }
   </style>
-
 </head>
 
-<body>
+<body style="background-color:#000;">
   <div class="container">
-    <div data-section="Contacts" class="row">
-        <div class="col-md-12" id="sectionTenContainer">
-          <div id="contactTitleContainer">
-            <span>Contact</span>
-            <div></div>
-          </div>
-          <div id="contactItemsContainer">
-            <div class="contactItem">
-              <div class="type">
-                address
-              </div>
-              <div class="divider">
-
-              </div>
-              <div class="info">
-                401 Bay St #3200<br>Toronto, ON<br> M5H 2Y4
-              </div>
-            </div>
-            <div class="contactItem">
-              <div class="type">
-                phone
-              </div>
-              <div class="divider">
-
-              </div>
-              <div class="info">
-                (416) 360-4710
-              </div>
-            </div>
-            <div class="contactItem">
-              <div class="type">
-                email
-              </div>
-              <div class="divider">
-
-              </div>
-              <div class="info">
-                iamgoldcommunications<br>
-                @iamgold.com
-              </div>
-            </div>
-          </div>
-          <div id="contactSocialMediaContainer">
-            <div class="follow">
-              follow us
-            </div>
-            <div class="icons">
-              <img src="dist/assets/svg/Twitter.svg" alt="twitter">
-              <img src="dist/assets/svg/Instagram.svg" alt="instagram">
-            </div>
-
-          </div>
-          <div id="MLFooter">
-          &copy;2017
-          </div>
+    <div class="row">
+      <div class="col-md-12" id="lightGalleryContainer">
+      <div id="lightGalleryTitleContainer">
+        <span>Gallery</span>
+        <div></div>
+      </div>
+        <div id="lightgallery">
+          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
+          </a>
         </div>
 
+      </div>
     </div>
   </div>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="../lightGallery/node_modules/lightgallery/dist/js/lightgallery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script src="../lightGallery/node_modules/lg-thumbnail/dist/lg-thumbnail.min.js"></script>
+  <script src="../lightGallery/node_modules/lg-fullscreen/dist/lg-fullscreen.min.js"></script>
+  <script src="../lightGallery/node_modules/lg-share/dist/lg-share.min.js"></script>
+  <script src="../lightGallery/node_modules/lg-zoom/dist/lg-zoom.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-
-    })
+      $("#lightgallery").lightGallery({
+        "share": true
+      });
+    });
   </script>
 </body>
 

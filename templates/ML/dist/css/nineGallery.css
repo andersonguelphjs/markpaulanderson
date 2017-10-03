@@ -1,0 +1,43 @@
+
+#lightgallery  .myThumb {
+    width: 100%;
+  }
+#lightgallery  .myThumb:hover {
+    opacity:0.5;
+  }
+#lightgallery{
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+#lightgallery > a {
+    background: #ccc;
+    width: 140px;
+    display: inline-block;
+}
+  @media (min-width: 541px) {
+    #lightgallery{
+        padding-bottom: 15px;
+    }
+    #lightgallery > a {
+        width: 160px;
+    }
+
+  @media (min-width: 901px) {
+    #lightgallery{
+        padding-bottom: 20px;
+    }
+    #lightgallery > a {
+        width: 200px;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    #lightgallery{
+        padding-bottom: 25px;
+    }
+    #lightgallery > a {
+        width: 250px;
+    }
+  }

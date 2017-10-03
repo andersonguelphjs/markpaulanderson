@@ -1,0 +1,124 @@
+    /*section Ten - Contacts */
+
+    #sectionTenContainer {
+      background-color: #FFF;
+      font-family: 'Raleway', sans-serif;
+      color: #717771;
+    }
+    #sectionTenContainer .titleText{
+    background-color: #ededed;
+    }
+    .contactItem {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contactItem .type {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .contactItem .divider {
+      height: 1px;
+      border-bottom: 1px solid #717771;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contactItem .info {
+      text-align: center;
+    }
+
+    #contactSocialMediaContainer img:hover{
+      opacity:0.5;
+    }
+
+    #contactSocialMediaContainer {
+      padding-top: 40px;
+      padding-bottom: 15px;
+    }
+
+    #contactSocialMediaContainer .follow {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    #contactSocialMediaContainer .icons {
+      display: flex;
+      width: 30%;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      height: 50px;
+    }
+
+    #contactSocialMediaContainer img {
+      width: 20px;
+    }
+
+    #MLFooter {
+      height: 25px;
+      background-color: #e1af0a;
+      text-align: center;
+      line-height: 25px;
+    }
+
+    @media (max-width: 540px) {
+      #sectionTenContainer .titleText{
+      background-color: #FFF;
+      }
+      .contactItem {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .contactItem .divider {
+        width: 45%;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    @media (min-width: 541px) {
+      #sectionTenContainer {
+        background-color: #ededed;
+        font-size: 13px;
+      }
+      #contactTitleContainer {
+        padding-top: 10px;
+      }
+      #contactItemsContainer {
+        display: flex;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      .contactItem {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 34%;
+      }
+
+      .contactItem .divider {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .contactItem {
+        font-size: 18px;
+      }
+      #contactSocialMediaContainer .follow {
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .contactItem {
+        font-size: 22px;
+      }
+      #contactSocialMediaContainer .follow {
+        font-size: 22px;
+      }
+    }

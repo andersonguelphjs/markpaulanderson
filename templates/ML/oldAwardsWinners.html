@@ -1,0 +1,235 @@
+<style data-section="sectionEightAwardWinners" media="screen">
+  #awardWinnersContainer {
+    margin-top: 20vmin;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #717771;
+    background-color: #ededed;
+    height: 60vmin;
+  }
+
+  #awardWinnersTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90%;
+  }
+
+  #awardWinnersTitleContainer span {
+    font-size: 7vmin;
+    padding-left: 7vmin;
+  }
+
+  #awardWinnersTitleContainer div {
+    border-bottom: 1px solid #717771;
+    width: 23vmin;
+  }
+
+  .awardWinnersItem {
+    position: relative;
+    height: 43vw;
+  }
+
+  .awardWinnersItem .year {
+    transform: rotate(-90deg);
+    font-size: 7vmin;
+    border-bottom: 2px solid #717771;
+    text-align: center;
+    position: absolute;
+    top: 6vmin;
+    right: 100%;
+    white-space: nowrap;
+    width: 40vmin;
+    -webkit-transform: rotate(270deg);
+    -webkit-transform-origin: right top;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: right top;
+    -ms-transform: rotate(270deg);
+    -ms-transform-origin: right top;
+    -o-transform: rotate(270deg);
+    -o-transform-origin: right top;
+    transform: rotate(270deg);
+    transform-origin: right top;
+  }
+
+  .awardWinnersItem .img {
+    right: 3vmin;
+    top: 5vmin;
+    position: absolute;
+    width: 23vmin !important;
+  }
+
+  .awardWinnersItem .contentContainer {
+    position: absolute;
+    left: 15vmin;
+    top: 6vmin;
+    font-size: 3vmin;
+    width: 55%;
+  }
+
+  .awardWinnersItem .name {
+    padding-bottom: 2vmin;
+  }
+
+  .bottomContainer {
+    position: relative;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+    width: 90%;
+    font-size: 3vmin;
+  }
+
+  .bottomContainer img {
+    width: 4vmin !important;
+    padding-left: 1vmin;
+    padding-right: 1vmin;
+    display: inline !important;
+  }
+
+  .bottomContainer .right {
+    position: absolute;
+    left: 0;
+  }
+
+  .bottomContainer .left {
+    position: absolute;
+    right: 0;
+  }
+
+  .bottomContainer .right img {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .bottomContainerContainer {
+    position: absolute;
+    bottom: 0vmin;
+    width: 60%;
+    left: 12vmin;
+  }
+
+  @media (min-width: 541px) {
+    #awardWinnersTitleContainer div {
+      width: 35vmin;
+    }
+    .bottomContainerContainer {
+      bottom: 0;
+    }
+    .awardWinnersItem {
+      height: 230px;
+    }
+  }
+
+  @media (min-width: 901px) {
+    #awardWinnersTitleContainer div {
+      width: 70vmin;
+    }
+    .awardWinnersItem .contentContainer {
+      font-size: 4vmin;
+      width: 70%;
+    }
+    .bottomContainer {
+
+      width: 90%;
+      font-size: 4vmin;
+    }
+    .contentContainer {
+      font-size: 4vmin;
+      width: 70%;
+    }
+    .bottomContainerContainer {
+      bottom: 20px;
+      width: 80%;
+    }
+    .bottomContainer img {
+      width: 6vmin !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .awardWinnersItem .contentContainer {
+      font-size: 4vmin;
+      width: 60%;
+    }
+    .bottomContainerContainer {
+      display: none;
+    }
+    #awardWinnersTitleContainer div {
+      width: 140vmin;
+    }
+  }
+</style>
+<div data-section="8awardWinners" class="row">
+  <div class="col-md-12">
+    <div id="awardWinnersContainer">
+      <div id="awardWinnersTitleContainer">
+        <span>Award Winners</span>
+        <div></div>
+      </div>
+      <div class="owl-three owl-carousel owl-theme">
+        <div class="item">
+          <div class="awardWinnersItem">
+            <div class="year">
+              2017
+            </div>
+            <img class="img" src="dist/assets/images/lampH-1-675.jpg" srcset="dist/assets/images/lampH-1-180.jpg 320w, dist/assets/images/lampH-1-360.jpg 541w, dist/assets/images/lampH-1-506.jpg 900w, dist/assets/images/lampH-1-675.jpg 1200w" alt="lamp">
+            <div class="contentContainer">
+              <div class="name">
+                Name
+              </div>
+              <div class="contentBox">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fringilla ligula eu mi blandit, sed congue purus hendrerit. Integer vitae lobortis libero. Nam vel mattis turpisis
+              </div>
+            </div>
+            <!--item-->
+            <div class="bottomContainerContainer">
+              <div class="bottomContainer">
+                <div class="left">
+                  <span>Back</span>
+                  <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                </div>
+                <div class="right">
+                  <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                  <span>2017 Winner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="awardWinnersItem">
+            <div class="year">
+              2016
+            </div>
+            <img class="img" src="dist/assets/images/lampH-2-675.jpg" srcset="dist/assets/images/lampH-2-180.jpg 320w, dist/assets/images/lampH-2-360.jpg 541w, dist/assets/images/lampH-2-506.jpg 900w, dist/assets/images/lampH-2-675.jpg 1200w" alt="lamp">
+            <div class="contentContainer">
+              <div class="name">
+                Sophie Trudeau
+              </div>
+              <div class="contentBox">
+                Nunc a lorem quis mi condimentum iaculis. Proin neque diam, posuere non luctus id, aliquet sed nisi. Sed id elit dolor. Suspendisse id nulla eget elit luctus ultrices at quis nisl. Praesent vehicula et libero id tristique.
+              </div>
+            </div>
+            <!--item-->
+            <div class="bottomContainerContainer">
+              <div class="bottomContainer">
+                <div class="left">
+                  <span>Back</span>
+                  <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                </div>
+                <div class="right">
+                  <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                  <span>2017 Winner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

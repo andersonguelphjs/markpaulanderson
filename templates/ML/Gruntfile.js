@@ -53,13 +53,13 @@ module.exports = function(grunt) {
       options: {
         sizes: [
           {
-            width: 600 /*1200*/
+            width: 675 /*1200*/
           },{
-          width: 160/*320*/
+          width: 180/*320*/
         },{
-          width: 320/*640*/
+          width: 360/*640*/
         },{
-          width: 450/*900*/
+          width: 506/*900*/
           /*suffix: "_900"*/
         }]
       },
@@ -71,7 +71,24 @@ module.exports = function(grunt) {
       }]
     }
   },
-
+  sass: {                              // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'expanded'
+        },
+        files: {                         // Dictionary of files
+          'dist/css/main.css': 'src/css/main.scss'
+        }
+      }
+    },
+    purifycss: {
+    options: {},
+    target: {
+      src: ['index.html', 'dist/js/*.js'],
+      css: ['src/css/eightAwardWinners.css'],
+      dest: 'src/css/eightAwardWinners.css'
+    },
+  },
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -80,6 +97,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-img');
   /*grunt.loadNpmTasks('grunt-image-resize');*/
   grunt.loadNpmTasks('grunt-responsive-images');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-purifycss');
 /*
 module.exports = function(grunt) {
   grunt.initConfig({
@@ -98,5 +117,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'cmq');
 };*/
 
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images']);
+  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images','sass','purifycss']);
 };

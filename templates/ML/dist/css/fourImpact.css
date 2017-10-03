@@ -1,0 +1,130 @@
+/*section Four - Donate, Partner, Sponship*/
+
+  #sectionFour {
+    background-color: #ededed;
+  }
+
+  .headingTitleContainer {
+    position: relative;
+    padding-top: 3vw;
+    padding-bottom: 6vw;
+    font-size: 4vmin;
+  }
+
+  .headingTitleContainer .titleText {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    color: #717771;
+    background-color: #FFF;
+    padding-right: 3vw;
+  }
+
+  .headingTitleContainer .centeredLine {
+    border-top: 1px solid #e1af0a;
+    margin-top: 10px;
+    margin-top: 3%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  .impactItem {
+    width: 90%;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background: #FFF;
+    padding-bottom: 16vmin;
+  }
+
+  .impactMetric {
+    font-size: 14vmin;
+  }
+
+  .impactVerb {
+    font-size: 9vmin;
+    padding-top: 5px;
+  }
+
+  .impactItem * {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .impactItem img {
+    width: 16vmin;
+  }
+
+  .impactLeftLine {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    border-bottom: 1px solid #85a448;
+    width: 14vmin;
+  }
+
+  .impactRightLine {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    border-bottom: 1px solid #85a448;
+    width: 14vmin;
+  }
+
+  @media (max-width: 540px) {
+
+  }
+
+  @media (min-width: 541px) {
+    .impactItem {
+      width: 100%;
+    }
+    .headingTitleContainer {
+      font-size: 20px;
+    }
+
+    .impactMetric {
+    font-size: 30px;
+    }
+    .impactVerb {
+      font-size: 20px;
+    }
+  }
+
+@media (min-width: 901px) {
+  .headingTitleContainer {
+    font-size: 30px;
+  }
+
+  .impactLeftLine {
+    display: none;
+  }
+  .impactRightLine {
+    display: none;
+  }
+  #impactItemsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .impactMetric {
+  font-size: 36px;
+  }
+  .impactVerb {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .headingTitleContainer {
+    font-size: 36px;
+  }
+
+  .impactMetric {
+  font-size: 48px;
+  }
+  .impactVerb {
+    font-size: 36px;
+  }
+}

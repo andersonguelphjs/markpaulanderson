@@ -1,0 +1,99 @@
+
+    #myContainer {
+      height: 500px;
+      background-color: grey;
+    }
+
+    #newsContainer {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+    }
+    #newsContainer .item:hover{
+      opacity: 0.5;
+    }
+    #newsContainer .headingTitleContainer{
+      margin-bottom: 25px;
+    }
+    #newsContainer .preview {
+      width: 100%;
+      padding-bottom: 10px;
+      padding-bottom: 3vmin;
+    }
+
+    .detailContainer {
+      padding-bottom: 10px;
+      padding-bottom: 3vmin;
+      display: flex;
+      align-items: center;
+    }
+
+    .detailContainer div {
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-right: 2vmin;
+      padding-left: 2vmin;
+    }
+
+    .detailContainer img {
+      width: 2vmin !important;
+      padding: 0 !important;
+    }
+
+    .detailContainer  {
+      font-size: 3vmin;
+    }
+
+    #newsContainer .title{
+      font-size: 4vmin;
+      text-transform: uppercase;
+      color: #e1af0a;
+    }
+    #newsContainer .content {
+      font-size: 4vmin;
+      max-height: 3em;
+      overflow: hidden;
+      transition: max-height 0.15s ease-out;
+    }
+
+    #newsContainer .long {
+      max-height: 1500px;
+      transition: max-height 0.25s ease-in;
+    }
+
+    @media (min-width: 541px) {
+      #newsContainer .headingTitleContainer{
+        margin-bottom: 30px;
+      }
+      #newsContainer .content {
+        font-size: 14px;
+      }
+      .detailContainer {
+        padding-bottom: 1vmin;
+        font-size: 2vmin;
+      }
+      #newsContainer .title{
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 901px) {
+      #newsContainer .headingTitleContainer{
+        margin-bottom: 40px;
+      }
+      #newsContainer .content {
+        font-size: 18px;
+      }
+      #newsContainer .title{
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 1201px) {
+      #newsContainer .headingTitleContainer{
+        margin-bottom: 50px;
+      }
+      #newsContainer .content {
+        font-size: 22px;
+      }
+      #newsContainer .title{
+        font-size: 22px;
+      }
+    }

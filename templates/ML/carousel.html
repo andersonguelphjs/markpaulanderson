@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Owl carousel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.carousel.css">
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <!--link href="../lity-2.3.0/dist/lity.css" rel="stylesheet"-->
+  <style media="screen">
+    #myContainer {
+      height: 500px;
+      background-color: grey;
+    }
+
+    #newsContainer {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+    }
+
+    #newsTitleContainer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-size: 5vmin;
+      font-weight: 200;
+    }
+
+    #newsTitleContainer span {
+      color: #717771;
+    }
+
+    #newsTitleContainer div {
+      border-top: 1px solid #e1af0a;
+      margin-top: 10px;
+      margin-top: 4vmin;
+      width: 60%;
+      width: 40vmax;
+    }
+
+    #newsContainer .preview {
+      width: 100%;
+      padding-bottom: 10px;
+      padding-bottom: 3vmin;
+    }
+
+    .detailContainer {
+      padding-bottom: 10px;
+      padding-bottom: 3vmin;
+      font-size: 8px;
+      font-size: 3vmin;
+      display: flex;
+      align-items: center;
+    }
+
+    .detailContainer div {
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-right: 2vmin;
+      padding-left: 2vmin;
+    }
+
+    .detailContainer img {
+      height: 20px;
+      height: 7vmin;
+      width:10px !important;
+      width:3vmin !important;
+      padding: 0 !important;
+    }
+
+    .detailContainer .pipe {
+    }
+
+    .detailContainer .date {}
+
+    #newsContainer .title {
+      text-transform: uppercase;
+      color: #e1af0a;
+      font-size: 14px;
+      font-size: 4vmin;
+    }
+/*
+    #newsContainer .content {
+      font-size: 12px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      transition: : display 1s;
+    }
+    #newsContainer .long{
+      display: block !important;
+      transition: : display 1s;
+    }*/
+    #newsContainer .content {
+      font-size: 12px;
+      max-height: 3em;
+       overflow: hidden;
+      transition: max-height 0.15s ease-out;
+    }
+    #newsContainer .long{
+      max-height: 1500px;
+      transition: max-height 0.25s ease-in;
+    }
+      @media (min-width: 541px) {
+        #newsContainer .title{
+          font-size: 3vmin;
+        }
+        .detailContainer{
+          padding-bottom: 1vmin;
+          font-size: 2vmin;
+
+        }
+        #newsTitleContainer div{
+          width:50vmax;
+        }
+      }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div data-section="sectionEightContainer" class="row">
+      <div class="col-md-12" id="newsContainer">
+        <div id="newsTitleContainer">
+          <span>What's new</span>
+          <div></div>
+        </div>
+        <div class="owl-carousel owl-theme">
+
+          <div class="item">
+            <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-4-.-320.jpg" srcset="dist/assets/images/1200x675-4-.-640.jpg 640w, dist/assets/images/1200x675-4-.-900.jpg 900w, dist/assets/images/1200x675-4-.-1200.jpg 1200w">
+            <div class="detailContainer">
+              <div class="type">
+                Miner's Lamp article
+              </div>
+              <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
+              <div class="pipe">|</div>
+              <div class="date">Sept 21, 2017</div>
+            </div>
+            <div class="title">
+              Antonio Conte has been speaking
+            </div>
+            <div class="content">
+              Antonio Conte has been speaking about the qualities of new signing Danny Drinkwater, as well as the midfielder’s relationship with N’Golo Kante, ahead of today’s visit to their former club Leicester City. Drinkwater was one of two deadline-day arrivals at Stamford Bridge along with Italian defender Davide Zappacosta, who signed from Torino, and could potentially make his Chelsea debut this afternoon.During the 2015/16 campaign Drinkwater formed a formidable midfield partnership withKante as Leicester defied the odds to win the Premier League title, and Conte believes they will work well together once again.‘I think Danny is a really good player,’ said Conte. ‘Two years ago together with N’Golo they won the league. They played regularly and showed how strong they were.‘Danny is a strong player who can help us. The midfield is very important. I need midfielders with particular characteristics which he has. Now he must find his best physical condition to be ready tohelp us.’Conte also explained why the fact we have signed two new players will not lead to a change in shape or system for his side.‘We want to continue to play with this system because, don’t forget, there are 11 players who played last season and we changed our system to give them the best condition to exploit their talent. With the new signings we have to try to give them the best chance to be in top condition.’
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-1--320.jpg" srcset="dist/assets/images/1200x675-1--640.jpg 640w, dist/assets/images/1200x675-1--900.jpg 900w, dist/assets/images/1200x675-1--1200.jpg 1200w">
+            <div class="detailContainer">
+              <div class="type">
+                News article
+              </div>
+              <div class="pipe">|</div>
+              <div class="date">Sept 22, 2017</div>
+            </div>
+            <div class="title">
+              Just the name of another news article that will be a bit long
+            </div>
+            <div class="content">
+              In their Man United game, Jose Mourinho had special measures to deal with Leicester’s biggest threat: wingers Demarai Gray and Marc Albrighton, forwards Jamie Vardy, and now Kelechi Iheanacho, finding space behind the defence from raking passes by the
+              likes of Riyad Mahrez. Vardy, with Shinji Okazaki just behind, gave the Gunners’ rearguard a tough ride at times on the opening day but the Red Devils defended deep and blocked channels in midfield, forcing him into wide areas. Chelsea may
+              try to win the battle for midfield and stifle the hosts’ danger men in similar fashion.
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-2-.-320.jpg" srcset="dist/assets/images/1200x675-2-.-640.jpg 640w, dist/assets/images/1200x675-2-.-900.jpg 900w, dist/assets/images/1200x675-2-.-1200.jpg 1200w">
+            <div class="detailContainer">
+              <div class="type">
+                Miner's Lamp article
+              </div>
+              <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
+              <div class="pipe">|</div>
+              <div class="date">Sept 23, 2017</div>
+            </div>
+            <div class="title">
+              Title of article
+            </div>
+            <div class="content">
+              Just over a month after he was a late substitute in the Community Shield match, Toni Rudiger is facing his first game as a Chelsea player outside of London having been an ever-present in our league campaign so far. He has also been in action for Germany over the international break, with notable success too, so the official Chelsea website sat down with the summer addition to the defence to look back at the opening weeks and ahead to games to come, including this afternoon’s fixture in Leicester. He also has an insight into another addition to the squad…IT HAS BEEN A PRETTY BUSY FIRST MONTH OF THE SEASON FOR YOU…‘For me it was important to adapt to the new place, to the new club, to the new country, and I have to say thank you to the guys and to the staff as they helped me a lot.‘To adapt it has been good to play games. Of course I came here because I want to play and I want to develop myself, and sometimes in life it is like this, someone gets suspended or injured. It is not that I wish that for my team-mates of course, but sometimes football works like this and then I have the chance to show myself very quickly in this team.‘I think it was positive for me and I would like to continue like this but it always depends on my effort in the training, and also in the games, and the coach decides.’
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-3-.-320.jpg" srcset="dist/assets/images/1200x675-3-.-640.jpg 640w, dist/assets/images/1200x675-3-.-900.jpg 900w, dist/assets/images/1200x675-3-.-1200.jpg 1200w">
+            <div class="detailContainer">
+              <div class="type">
+                New article
+              </div>
+
+              <div class="pipe">|</div>
+              <div class="date">Sept 24, 2017</div>
+            </div>
+            <div class="title">
+              42 games undefeated all the way back to April 2015
+            </div>
+            <div class="content">
+              Our youth team return to action in the Under-18 Premier League this morning (Saturday), with Arsenal the visitors to Cobham for a London derby captured live by the Chelsea TV cameras (kick-off 10.30am).The young Blues will tick over 900 days unbeaten at home in all competitions if they avoid defeat against the Gunners, who were the nearest challengers to Jody Morris’s side last term, finishing runners-up to our youngsters in the both the south section and national merit round.It is an unblemished record that stretches across four different seasons, 42 games undefeated all the way back to April 2015 when Middlesbrough took the points home following a 3-1 victory. Morris frequently used the run as motivation for his players during the Treble-winning campaign of 2016/17 and it continues to be a source of inspiration as a new crop of first-year scholars step forward.George McEachran is a more familiar face in the Under-18 surroundings, the midfielder featuring on 26 occasions last season and in every game so far this term. His goals opened the scoring against both Aston Villa and Norwich City last month, with his impact in front of goal highlighted as a key area for further improvement in the months ahead by the coaching staff.‘We want to carry on the unbeaten run for as long as possible,’ the 17-year-old tells the official Chelsea website as we look ahead to the game. ‘Jody and Ed [Brand, Under-18s assistant] speak about it quite a lot and it’s a big thing for the Under-18s group.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
+<!--script type="text/javascript" src="../lity-2.3.0/dist/lity.js"></script-->
+
+<script type="text/javascript">
+  /*
+      var myData = [{
+              "id":1,
+              "type": "news",
+              "date": "SAT 9 SEP 2017",
+              "imageUrl": "img/246x138-1.jpg",
+              "title": "PMB: Leicester v Chelsea - tactics",
+              "article": "In their Man United game, Jose Mourinho had special measures to deal with Leicester’s biggest threat: wingers Demarai Gray and Marc Albrighton, forwards Jamie Vardy, and now Kelechi Iheanacho, finding space behind the defence from raking passes by the likes of Riyad Mahrez. Vardy, with Shinji Okazaki just behind, gave the Gunners’ rearguard a tough ride at times on the opening day but the Red Devils defended deep and blocked channels in midfield, forcing him into wide areas. Chelsea may try to win the battle for midfield and stifle the hosts’ danger men in similar fashion."
+          },
+          {   "id":2,
+              "type": "news",
+              "date": "SAT 9 SEP 2017",
+              "imageUrl": "img/246x138-2.jpg",
+              "title": "Conte: The best conditions",
+              "article": "Antonio Conte has been speaking about the qualities of new signing Danny Drinkwater, as well as the midfielder’s relationship with N’Golo Kante, ahead of today’s visit to their former club Leicester City. Drinkwater was one of two deadline-day arrivals at Stamford Bridge along with Italian defender Davide Zappacosta, who signed from Torino, and could potentially make his Chelsea debut this afternoon.During the 2015/16 campaign Drinkwater formed a formidable midfield partnership withKante as Leicester defied the odds to win the Premier League title, and Conte believes they will work well together once again.‘I think Danny is a really good player,’ said Conte. ‘Two years ago together with N’Golo they won the league. They played regularly and showed how strong they were.‘Danny is a strong player who can help us. The midfield is very important. I need midfielders with particular characteristics which he has. Now he must find his best physical condition to be ready tohelp us.’Conte also explained why the fact we have signed two new players will not lead to a change in shape or system for his side.‘We want to continue to play with this system because, don’t forget, there are 11 players who played last season and we changed our system to give them the best condition to exploit their talent. With the new signings we have to try to give them the best chance to be in top condition.’"
+          },
+          {   "id":3,
+              "type": "news",
+              "date": "SAT 9 SEP 2017",
+              "imageUrl": "img/246x138-3.jpg",
+              "title": "Rudiger: Early starter",
+              "article": "Just over a month after he was a late substitute in the Community Shield match, Toni Rudiger is facing his first game as a Chelsea player outside of London having been an ever-present in our league campaign so far. He has also been in action for Germany over the international break, with notable success too, so the official Chelsea website sat down with the summer addition to the defence to look back at the opening weeks and ahead to games to come, including this afternoon’s fixture in Leicester. He also has an insight into another addition to the squad…IT HAS BEEN A PRETTY BUSY FIRST MONTH OF THE SEASON FOR YOU…‘For me it was important to adapt to the new place, to the new club, to the new country, and I have to say thank you to the guys and to the staff as they helped me a lot.‘To adapt it has been good to play games. Of course I came here because I want to play and I want to develop myself, and sometimes in life it is like this, someone gets suspended or injured. It is not that I wish that for my team-mates of course, but sometimes football works like this and then I have the chance to show myself very quickly in this team.‘I think it was positive for me and I would like to continue like this but it always depends on my effort in the training, and also in the games, and the coach decides.’"
+          },
+          {   "id":4,
+              "type": "news",
+              "date": "FRI 8 SEP 2017",
+              "imageUrl": "img/246x138-4.jpg",
+              "title": "Under-18s preview: Rivals test record",
+              "article": "Our youth team return to action in the Under-18 Premier League this morning (Saturday), with Arsenal the visitors to Cobham for a London derby captured live by the Chelsea TV cameras (kick-off 10.30am).The young Blues will tick over 900 days unbeaten at home in all competitions if they avoid defeat against the Gunners, who were the nearest challengers to Jody Morris’s side last term, finishing runners-up to our youngsters in the both the south section and national merit round.It is an unblemished record that stretches across four different seasons, 42 games undefeated all the way back to April 2015 when Middlesbrough took the points home following a 3-1 victory. Morris frequently used the run as motivation for his players during the Treble-winning campaign of 2016/17 and it continues to be a source of inspiration as a new crop of first-year scholars step forward.George McEachran is a more familiar face in the Under-18 surroundings, the midfielder featuring on 26 occasions last season and in every game so far this term. His goals opened the scoring against both Aston Villa and Norwich City last month, with his impact in front of goal highlighted as a key area for further improvement in the months ahead by the coaching staff.‘We want to carry on the unbeaten run for as long as possible,’ the 17-year-old tells the official Chelsea website as we look ahead to the game. ‘Jody and Ed [Brand, Under-18s assistant] speak about it quite a lot and it’s a big thing for the Under-18s group. "
+          }
+      ];
+      var html = "";
+      for (var i = 0; i < myData.length; i++) {
+          html += '<div class="item">' +
+              '<article class="article news-article item" data-id="'+myData[i].id+'" id="article'+myData[i].id+'">' +
+              '<a class="read-more" href="#article'+myData[i].id+'" data-lity>' +
+              '<header>' +
+              '<div class="preview">' +
+              '<img class="<img class="img-responsive" alt="" src="' + myData[i].imageUrl + '">' +
+              '</div>' +
+              '<span class="article-type">' + myData[i].type + '</span>' +
+              '<span class="article-time">' + myData[i].date + '</span>' +
+              '<h3>' + myData[i].title + '</h3>' +
+              '</header>' +
+              '<span class="dotdotdot">'+
+              '<p>' + myData[i].article + '</p>' +
+              '</span>'+
+              '</a>' +
+              '</div>';
+      }
+      */
+  $(document).ready(function() {
+
+    var carouselChanged = function(event) {
+      $("#newsContainer").find(".content").removeClass("long");
+    };
+    $('.owl-carousel').owlCarousel({
+      center: true,
+      items: 1.2,
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: false,
+      onDragged: carouselChanged,
+      responsive: {
+        541: {
+          items: 3
+        }
+      }
+    });
+    $("#newsContainer").find(".content").on("click",function(){
+      console.log(".content");
+      $(this).toggleClass("long");
+    })
+    /*
+        $('.owl-carousel').html(html).owlCarousel({
+            center: true,
+            items: 1.2,
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            onDragged:carouselChanged,
+            responsive: {
+                600: {
+                    items: 4
+                }
+            }
+        });
+
+
+        	$('.article').each(function(){
+            var h3 = $(this).find("h3");
+            var h3text= h3.text();
+            var h3lineHeight = parseFloat(h3.css("line-height"));
+            var h3height = parseFloat(h3.css("height"));
+            var p = $(this).find("p");
+            p.attr("data-article",p.text())
+            var pLineHeight = parseFloat($(this).find("p").css("line-height"));
+            var titleHeight = pLineHeight * (4-(h3height/h3lineHeight)); //getTitleHeight();
+            p.css("height",titleHeight);
+            p.css({
+              "-webkit-line-clamp": "" + titleHeight/pLineHeight + ""
+            });
+            console.log(h3text+" nl: "+h3height/h3lineHeight+ " pLineHeight: "+pLineHeight +" th: "+titleHeight);
+          })
+*/
+
+  });
+</script>

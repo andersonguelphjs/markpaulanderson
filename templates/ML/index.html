@@ -11,1224 +11,29 @@
   <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.carousel.css">
-  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="dist/css/owl.theme.default.min.css">
+  <link type="text/css" rel="stylesheet" href="dist/css/lightgallery.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
-  <style data-section="topAndSlider" media="screen">
-    body {
-      height: 2000px;
-      font-family: 'Raleway', sans-serif;
-      min-width: 320px;
-      background-color: #000;
-    }
-
-    .overlay {
-      position: fixed;
-      height: 100%;
-      width: 0;
-      opacity: 0.5;
-      z-index: 3;
-      background-color: #000;
-    }
-
-    .overlay.open {
-      width: 100%;
-    }
-
-    .container {
-      background-color: #FFF;
-    }
-
-    .mainBar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 42px;
-      background-color: #FFF;
-      z-index: 999;
-    }
-
-    #topDonateBtn {
-      color: #ffffff;
-      font-size: 12px;
-      background: #00779e;
-      padding: 4px 8px 4px 8px;
-      text-decoration: none;
-      border: none;
-      font-family: 'Yantramanav', sans-serif;
-      text-transform: uppercase;
-    }
-
-    #topDonateBtn:hover {
-      color: #00779e;
-      border: 1px solid #00779e;
-      background: #ffffff;
-      text-decoration: none;
-    }
-
-    ul {
-      -webkit-padding-start: 0px;
-    }
-
-    #topSliderContainer {
-      margin-top: 42px;
-      position: relative;
-      text-transform: uppercase;
-      color: #FFF;
-      font-size: 1.2em;
-    }
-
-    #topSliderContainer img {
-      width: 100%;
-    }
-
-    #topSliderContainer .topSliderTopMsg {
-      position: absolute;
-      top: 5%;
-      left: 2%;
-      width: 70%;
-    }
-
-    #topSliderContainer .topSliderBottomMsg {
-      position: absolute;
-      bottom: 25%;
-      left: 2%;
-      width: 45%;
-      border-bottom: 2px solid #FFF;
-    }
-
-    #topSliderContainer span {
-      /*caret*/
-      position: absolute;
-      top: 95%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    #topMiners {
-      font-family: 'Yantramanav', sans-serif;
-    }
-
-    @media (max-width: 540px) {
-      /*phone*/
-      #topInfoContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      #topInfoContainer #topMiners {
-        line-height: 42px;
-        color: #a19061;
-        font-size: 1em;
-      }
-      #topLogo {
-        height: 30px;
-      }
-      #topDonateBtn {
-        padding: 2px 4px 2px 4px;
-      }
-      #hamburger {
-        line-height: 36px;
-      }
-
-      #hamburger img {
-        height: 28px !important;
-        width: 28px !important;
-      }
-      .navigation {
-        position: fixed;
-        top: 0;
-        width: 40%;
-        margin-left: 100%;
-        z-index: 999;
-        transition-timing-function: ease-out;
-        transition: 0.5s;
-        background-color: #ededed;
-      }
-      .navigation.open {
-        margin-left: 60%;
-        transition-timing-function: ease-out;
-        transition: 0.5s;
-      }
-      .nav-item {
-        /*nav*/
-        width: 100%;
-        float: none;
-        list-style: none;
-        line-height: 50px;
-        text-align: center;
-        border-bottom: 1px solid #00779e;
-      }
-
-      .nav-item a {
-        color: #717771;
-      }
-
-      #topSliderDiv {
-        padding: 0;
-        position: relative;
-      }
-    }
-
-
-    @media (min-width: 541px) {
-      /*for-tablet-portrait-up*/
-      #hamburger {
-        display: none;
-      }
-      .mainBar {
-        position: static;
-        height: auto;
-      }
-      #topInfo {
-        height: 80px;
-      }
-      #topInfoContainer {
-        position: relative;
-        width: 100%;
-        height: 120px;
-      }
-      #topMiners {
-        position: absolute;
-        font-size: 24px;
-        color: #a19061;
-        text-align: center;
-        width: 100%;
-        height: 55px;
-        font-weight: bold;
-        top: 5%;
-      }
-      #topLogo {
-        height: 60%;
-        position: absolute;
-        right: 5%;
-      }
-      .nav_handle {
-        display: none;
-      }
-      #navRow nav {
-        position: absolute;
-      }
-      .navigation {
-        display: block;
-        top: 58%;
-        left: 15%;
-        width: 65%;
-        position: absolute;
-      }
-      nav ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      .nav-item {
-        list-style: none;
-        text-align: center;
-        float: left;
-      }
-      .nav-item:hover {
-        background-color: #717771;
-      }
-      .nav-item:hover a {
-        color: #ededed;
-        text-decoration: none;
-      }
-      .nav-item a {
-        color: #717771;
-        font-size: 12px
-      }
-      .nav-item a:hover {
-        color: #ededed;
-        text-decoration: none;
-      }
-      #topSliderContainer {
-        font-size: 1.8em;
-        margin-top: 0;
-      }
-      #topDonateBtn {
-        position: absolute;
-        top: 38%;
-        left: 0px;
-      }
-    }
-
-    @media (min-width: 900px) {
-      /*for-tablet-landscape-up*/
-      #topInfo {
-        height: 100px;
-      }
-      #topInfoContainer {
-        height: 160px;
-      }
-      #topSliderContainer {
-        font-size: 2.7em;
-      }
-      #topMiners {
-        font-size: 30px;
-        height: 60px;
-      }
-      #topDonateBtn {
-        font-size: 16px;
-        top: 33%;
-      }
-      .nav-item a {
-        color: #717771;
-        font-size: 16px
-      }
-    }
-
-    @media (min-width: 1200px)
-    /*for-desktop-u*/
-
-    {
-      #topInfo {
-        height: 120px;
-      }
-      #topInfoContainer {
-        height: 200px;
-      }
-      #topSliderContainer {
-        font-size: 3.5em;
-      }
-      #topMiners {
-        font-size: 40px;
-        height: 65px;
-      }
-      .nav-item a {
-        color: #717771;
-        font-size: 20px
-      }
-      #topDonateBtn {
-        font-size: 20px;
-      }
-    }
-  </style>
-  <style data-section="sectionTwo-OurIdeas" media="screen">
-    /*section Two - Our ideas, Our mission*/
-
-    #sectionTwo {
-      color: #717771;
-      background-color: #FFF;
-      height: auto;
-    }
-
-    #titleContainer {
-      font-family: 'Old Standard TT', sans-serif;
-      display: flex;
-      justify-content: space-around;
-      align-content: center;
-      padding: 40px:
-    }
-
-    #titleContainer div {
-      display: inline;
-      text-align: center;
-      width: auto;
-      position: relative;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      font-size: 24px;
-    }
-
-    #titleContainer span {
-      width: 75%;
-      border-bottom: 1px solid #e1af0a;
-      position: absolute;
-      transform: translateX(-50%);
-      left: 50%;
-      bottom: 0;
-      opacity: 0;
-    }
-
-    #quoteContainer {
-      position: relative;
-    }
-
-    #quoteContainer span {
-      position: absolute;
-      left: 1%;
-      font-family: 'Old Standard TT', sans-serif;
-      font-size: 135px;
-      margin-top: -25px;
-    }
-
-    #quoteContainer div {
-      margin-left: 10%;
-      width: 80%;
-      font-size: 17px;
-      display: none;
-      padding-bottom: 20px;
-    }
-
-    .showingChild {
-      opacity: 1 !important;
-      transition: opacity 1s;
-    }
-
-    @media (max-width: 540px) {
-      #titleContainer {
-        padding: 40px:
-      }
-      #titleContainer div {
-        font-size: 17px;
-      }
-      #quoteContainer span {
-        font-size: 60px;
-        margin-top: -8px;
-      }
-      #quoteContainer div {
-        font-size: 16px;
-      }
-    }
-
-    @media (min-width: 541px) {
-      #titleContainer div:hover {
-        opacity: 0.5;
-      }
-      #quoteContainer span {
-        font-size: 90px;
-        margin-top: -18px;
-      }
-      #quoteContainer div {
-        font-size: 18px;
-      }
-    }
-
-    @media (min-width: 900px) {
-      #titleContainer div {
-        font-size: 30px;
-      }
-      #quoteContainer div {
-        font-size: 20px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-
-      #titleContainer div {
-        font-size: 36px;
-      }
-      #quoteContainer span {
-        font-size: 135px;
-        margin-top: -25px;
-      }
-      #quoteContainer div {
-        font-size: 24px;
-      }
-    }
-  </style>
-  <style data-section="sectionThree-Donate" media="screen">
-      /*section Three - Donate, Partner, Sponship*/
-
-        #sectionThree {
-          background-color: #ededed;
-          font-family: 'Old Standard TT', sans-serif;
-        }
-
-        .sectionThreeroundTitle .round {
-          border-radius: 50%;
-          background-color: #00779e;
-          position: relative;
-        }
-
-        .round span {
-          position: absolute;
-          top: 55%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: #ededed;
-        }
-
-        .sectionThreeItemBlurb {
-          color: #00779e;
-        }
-
-        @media (max-width: 540px) {
-          .sectionThreeItemContainer {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 15px;
-          }
-          .two {
-            flex-direction: row-reverse;
-          }
-          .sectionThreeroundTitle {
-            padding: 10px;
-          }
-          .sectionThreeroundTitle .round {
-            padding: 40px;
-          }
-          .round span {
-            text-align: center;
-            font-size: 20px;
-          }
-          .sectionThreeItemBlurb {
-            font-size: 14px;
-            padding: 15px;
-          }
-          .three .round span {
-            font-size: 12px;
-          }
-        }
-
-        @media (min-width: 541px) {
-          #sectionThreeContainer {
-            display: flex;
-            justify-content: space-around;
-            padding: 15px;
-          }
-          .sectionThreeItemContainer {
-            width: 33%;
-          }
-          .sectionThreeroundTitle {
-            padding-top: 50px;
-            height: 120px;
-            text-align: center;
-          }
-          .sectionThreeroundTitle .round {
-            padding: 50px;
-          }
-          .round span {
-            text-align: center;
-            font-size: 24px;
-          }
-          .sectionThreeItemBlurb {
-            font-size: 17px;
-            padding: 15px;
-          }
-          .three .round span {
-            font-size: 14px;
-          }
-        }
-      }
-
-      @media (min-width: 900px) {}
-
-      @media (min-width: 1200px) {}
-  </style>
-  <style data-section="sectionFour-YourImpact" media="screen">
-      /*section Four - Donate, Partner, Sponship*/
-
-        #sectionFour {
-          background-color: #ededed;
-        }
-
-        #impactTitleContainer {
-          padding-top: 10px;
-        }
-
-        #impactItemsContainer {
-
-          font-family: 'Raleway', sans-serif;
-        }
-
-        #impactTitleContainer span {
-          color: #717771;
-          font-family: 'Old Standard TT', sans-serif;
-          font-size: 16px;
-        }
-
-        #impactTitleContainer div {
-          border-top: 1px solid #e1af0a;
-          width: 70%;
-          float: right;
-          margin-top: 10px;
-        }
-
-        .impactItem {
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
-          position: relative;
-          background: #FFF;
-          padding-bottom: 50px;
-        }
-
-        .impactMetric {
-          font-size: 36px;
-        }
-
-        .impactVerb {
-          font-size: 22px;
-          padding-top: 5px;
-        }
-
-        .impactItem * {
-          text-align: center;
-          text-transform: uppercase;
-        }
-
-        .impactItem img {
-          width: 50px;
-        }
-
-        .impactLeftLine {
-          position: absolute;
-          top: 43%;
-          left: 25%;
-          border-bottom: 1px solid #85a448;
-          width: 14%;
-        }
-
-        .impactRightLine {
-          position: absolute;
-          top: 43%;
-          left: 60%;
-          border-bottom: 1px solid #85a448;
-          width: 14%;
-        }
-
-        @media (max-width: 540px) {
-          #impactTitleContainer span {
-            font-size: 16px;
-          }
-          #impactTitleContainer div {
-            width: 70%;
-          }
-          .impactItem {
-            position: relative;
-            padding-bottom: 50px;
-          }
-          .impactMetric {
-            font-size: 36px;
-          }
-          .impactVerb {
-            font-size: 22px;
-          }
-          .impactItem img {
-            width: 50px;
-          }
-        }
-
-        @media (min-width: 541px) {
-          #impactItemsContainer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-          #impactTitleContainer span {
-            font-size: 16px;
-          }
-          #impactTitleContainer div {
-            width: 80%;
-          }
-          .impactItem {
-            width: 100%;
-          }
-          .impactMetric {
-            font-size: 30px;
-          }
-          .impactVerb {
-            font-size: 18px;
-          }
-          .impactItem img {
-            width: 50px;
-          }
-          .impactLeftLine {
-            display: none;
-          }
-          .impactRightLine {
-            display: none;
-          }
-        }
-      }
-
-      @media (min-width: 900px) {}
-
-      @media (min-width: 1200px) {}
-  </style>
-  <style data-section="sectionFive-YourDonationsAtWork" media="screen">
-        /*section Three - Donate, Partner, Sponship*/
-
-        #sectionFiveContainer {
-          background-color: #85a448;
-          color: #FFF;
-          font-family: 'Raleway', sans-serif;
-        }
-
-        #yourDTitleContainer {
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-family: 'Raleway', sans-serif;
-        }
-
-        #yourDTitleContainer span {
-          border-bottom: 1px solid #FFF;
-          width: 12%;
-        }
-
-        #yourDTitleContainer div {
-          background-color: #85a448;
-          text-transform: uppercase;
-          text-align: center;
-        }
-
-
-        .yourDItem {
-          width: 80%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .yourDItem img {
-          width: 100%;
-        }
-
-        .yourDItemTitleContainer {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-        }
-
-
-        @media (max-width: 540px) {
-          #sectionFive {
-            font-size: 10px;
-          }
-
-          #yourDTitleContainer {
-            width: 90%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-          }
-
-          #yourDTitleContainer span {
-          width: 12%;
-          }
-
-          #yourDTitleContainer div {
-            width: 70%;
-            height: 20px;
-            line-height: 20px;
-            font-size: 13px;
-          }
-
-          #yourDItemsContainer {
-            padding-bottom: 20px;
-          }
-
-          .yourDItem {
-            width: 80%;
-          }
-
-          .yourDItem img {
-            padding-bottom: 20px;
-          }
-
-          .yourDItemTitleContainer {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          .yourDItemTitleContainer.time {
-            padding-left: 5px;
-          }
-
-          .yourDItem .blurb {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          #yourDItemsContainer .divider {
-            width: 100%;
-            border-bottom: 1px solid #FFF;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-          }
-        }
-
-        @media (min-width: 541px) {
-          #sectionFive {
-            font-size: 11px;
-          }
-
-          #yourDTitleContainer {
-            width: 90%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-          }
-
-          #yourDTitleContainer span {
-            width: 20%;
-          }
-
-          #yourDTitleContainer div {
-            width: 70%;
-            height: 20px;
-            line-height: 20px;
-            font-size: 18px;
-          }
-
-          #yourDItemsContainer {
-            padding-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items:flex-start;
-          }
-
-          .yourDItem {
-            width: 80%;
-          }
-
-          .yourDItem img {
-            width: 100%;
-            padding-bottom: 20px;
-          }
-
-          .yourDItemTitleContainer {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          .yourDItemTitleContainer.time {
-            padding-left: 5px;
-          }
-
-          .yourDItem .blurb {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-size: 14px;
-          }
-
-          #yourDItemsContainer .divider {
-            padding-left: 10px;
-            padding-right: 10px;
-          }
-        }
-
-        @media (min-width: 900px) {
-          #sectionFive {
-            font-size: 14px;
-          }
-
-          #yourDTitleContainer {
-            width: 90%;
-            padding-top: 30px;
-            padding-bottom: 30px;
-          }
-
-          #yourDTitleContainer span {
-            width: 25%;
-          }
-
-          #yourDTitleContainer div {
-            width: 70%;
-            height: 20px;
-            line-height: 20px;
-            font-size: 20px;
-          }
-
-          #yourDItemsContainer {
-            padding-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items:flex-start;
-          }
-
-          .yourDItem {
-            width: 80%;
-          }
-
-          .yourDItem img {
-            width: 100%;
-            padding-bottom: 20px;
-          }
-
-          .yourDItemTitleContainer {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          .yourDItemTitleContainer.time {
-            padding-left: 5px;
-          }
-
-          .yourDItem .blurb {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-size: 16px;
-          }
-
-          #yourDItemsContainer .divider {
-            padding-left: 20px;
-            padding-right: 20px;
-          }
-        }
-
-        @media (min-width: 1200px) {
-          #sectionFive {
-            font-size: 20px;
-          }
-
-          #yourDTitleContainer {
-            width: 90%;
-            padding-top: 40px;
-            padding-bottom: 40px;
-          }
-
-          #yourDTitleContainer span {
-            width: 45%;
-          }
-
-          #yourDTitleContainer div {
-            width: 70%;
-            height: 20px;
-            line-height: 20px;
-            font-size: 24px;
-          }
-
-          #yourDItemsContainer {
-            padding-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items:flex-start;
-          }
-
-          .yourDItem {
-            width: 80%;
-          }
-
-          .yourDItem img {
-            width: 100%;
-            padding-bottom: 20px;
-          }
-
-          .yourDItemTitleContainer {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          .yourDItemTitleContainer.time {
-            padding-left: 5px;
-          }
-
-          .yourDItem .blurb {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-size: 22px;
-          }
-
-          #yourDItemsContainer .divider {
-            padding-left: 30px;
-            padding-right: 30px;
-          }
-        }
-  </style>
-  <style data-section="sectionSeven-Logo" media="screen">
-    /*section Seven - Donors */
-
-    #sectionSevenContainer {
-      background-color: #FFF;
-      font-family: 'Raleway', sans-serif;
-    }
-
-    #logoTitleContainer {
-      padding-top: 10px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    #logoTitleContainer span {
-      color: #717771;
-      font-family: 'Old Standard TT', sans-serif;
-      font-size: 16px;
-    }
-
-    #logoTitleContainer div {
-      border-top: 1px solid #e1af0a;
-      width: 60%;
-      margin-top: 8px;
-    }
-
-    #logoItemContainer {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .logoItem {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      text-align: center;
-      width: 33%;
-    }
-
-    .logoItem img {
-      width: 80%;
-      display: inline-block;
-      height: 100%;
-    }
-
-    .logoItem img.vert {
-      width: 30%;
-      display: inline-block;
-      height: 100%;
-    }
-
-    @media (max-width: 540px) {
-
-      #logoTitleContainer {
-        padding-top: 10px;
-      }
-
-      #logoTitleContainer span {
-        font-size: 16px;
-      }
-
-      #logoTitleContainer div {
-        width: 60%;
-        margin-top: 8px;
-      }
-
-      .logoItem {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        width: 50%;
-      }
-
-    }
-
-    @media (min-width: 541px) {
-      #logoTitleContainer {
-        padding-top: 10px;
-      }
-
-      #logoTitleContainer span {
-        font-size: 22px;
-      }
-
-      #logoTitleContainer div {
-        width: 70%;
-        margin-top: 13px;
-      }
-
-      .logoItem {
-        padding-top: 25px;
-        padding-bottom: 25px;
-      }
-    }
-
-    @media (min-width: 900px) {
-      #logoTitleContainer {
-        padding-top: 10px;
-      }
-
-      #logoTitleContainer span {
-        font-size: 26px;
-      }
-
-      #logoTitleContainer div {
-        width: 75%;
-        margin-top: 15px;
-      }
-
-      .logoItem {
-        padding-top: 25px;
-        padding-bottom: 25px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      #logoTitleContainer {
-        padding-top: 10px;
-      }
-
-      #logoTitleContainer span {
-        font-size: 36px;
-      }
-
-      #logoTitleContainer div {
-        width: 80%;
-        margin-top: 20px;
-      }
-
-      .logoItem {
-        padding-top: 25px;
-        padding-bottom: 25px;
-      }
-    }
-  </style>
-  <style data-section="sectionTen-Contact" media="screen">
-    /*section Ten - Contacts */
-    #sectionTenContainer {
-      background-color: #FFF;
-      font-family: 'Raleway', sans-serif;
-      color: #717771;
-    }
-
-    #contactTitleContainer {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    #contactTitleContainer span {
-      color: #717771;
-    }
-
-    #contactTitleContainer div {
-      border-top: 1px solid #e1af0a;
-    }
-    .contactItem {
-      margin-left: auto;
-      margin-right: auto;
-      }
-
-    .contactItem .type {
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .contactItem .divider {
-      height: 1px;
-      border-bottom: 1px solid #717771;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contactItem .info {
-      text-align: center;
-    }
-
-    #contactSocialMediaContainer{
-      padding-top: 40px;
-      padding-bottom: 15px;
-
-    }
-    #contactSocialMediaContainer .follow{
-        text-align: center;
-        text-transform: uppercase;
-    }
-    #contactSocialMediaContainer .icons{
-      display: flex;
-      width: 30%;
-      justify-content: space-around;
-      margin-left: auto;
-      margin-right: auto;
-      height: 50px;
-    }
-    #contactSocialMediaContainer img{
-      width:20px;
-    }
-    #MLFooter{
-      height: 25px;
-      background-color: #e1af0a;
-      text-align: center;
-      line-height: 25px;
-    }
-    @media (max-width: 540px) {
-
-      #contactTitleContainer {
-        padding-top: 10px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      #contactTitleContainer span {
-        font-size: 16px;
-      }
-
-      #contactTitleContainer div {
-        width: 72%;
-        margin-top: 8px;
-      }
-    /**/
-          .contactItem {
-            padding-top: 15px;
-            padding-bottom: 15px;
-          }
-
-          .contactItem .divider {
-            width: 45%;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-          }
-        }
-
-        @media (min-width: 541px) {
-          #sectionTenContainer{
-            background-color: #ededed;
-            font-size: 13px;
-          }
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 22px;
-            text-align: center;
-            border-bottom: 1px solid #717771;
-            padding-bottom: 5px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-
-          #contactTitleContainer div {
-            display: none;
-          }
-          #contactItemsContainer {
-            display: flex;
-            padding-top: 25px;
-            padding-bottom: 25px;
-          }
-
-          .contactItem {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            width: 34%;
-          }
-
-          .contactItem .divider {
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-          }
-
-        }
-
-        @media (min-width: 900px) {
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 26px;
-          }
-          .contactItem{
-            font-size: 18px;
-          }
-          #contactSocialMediaContainer .follow{
-              font-size: 18px;
-          }
-        }
-
-        @media (min-width: 1200px) {
-          #contactTitleContainer {
-            padding-top: 10px;
-          }
-
-          #contactTitleContainer span {
-            font-size: 36px;
-          }
-          .contactItem{
-            font-size: 22px;
-          }
-          #contactSocialMediaContainer .follow{
-              font-size: 22px;
-          }
-
-        }
-  </style>
+  <link href="dist/css/main.css" rel="stylesheet">
+  <link href="dist/css/top.css" rel="stylesheet">
+  <link href="dist/css/twoOurIdeas.css" rel="stylesheet">
+  <link href="dist/css/threeDonate.css" rel="stylesheet">
+  <link href="dist/css/fourImpact.css" rel="stylesheet">
+  <link href="dist/css/fiveYourDonations.css" rel="stylesheet">
+  <link href="dist/css/sixWhatsNew.css" rel="stylesheet">
+  <link href="dist/css/sevenLogo.css" rel="stylesheet">
+  <link href="dist/css/eightAwardWinners.css" rel="stylesheet">
+  <link href="dist/css/nineGallery.css" rel="stylesheet">
+  <link href="dist/css/tenContact.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="overlay"></div>
   <div class="container">
-
-    <div class="row">
+    <div data-section="0Nav" class="row">
       <div class="mainBar">
         <div id="topInfo" class="col-md-12">
           <div id="topInfoContainer">
@@ -1248,127 +53,165 @@
         </div>
       </div>
     </div>
-
-    <div data-section="1nav" class="row">
+    <div data-section="1TopSlider" class="row">
       <section class="col-md-12" id="topSliderDiv">
         <div id="topSliderContainer">
-          <div class="owl-carousel owl-theme">
+          <div class="owl-one owl-carousel owl-theme">
           </div>
         </div>
       </section>
     </div>
-    <div data-section="2topSlider" class="row">
-      <div data-section="ourIdeas" class="col-md-12">
+    <div data-section="2ourIdeas" class="col-md-12">
         <section id="sectionTwo" class="parent">
           <div id="titleContainer">
-            <div data-id="1">Our Ideas<span class="showingChild"></span></div>
-            <div data-id="2">Our Mission<span></span></div>
-            <div data-id="3">Event Details<span></span></div>
+            <div data-id="1">About<span class="showingChild"></span></div>
+            <div data-id="2">Funding Research<span></span></div>
+            <div data-id="3">Award Dinner<span></span></div>
           </div>
           <div id="quoteContainer">
             <span>&ldquo;</span>
             <div class="quote" style="display:block;" data-id="1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque ac nisl sit amet ornare. Donec velit nibh, tempor non cursus eget, pretium vel urna. Nam imperdiet sed libero ut tincidunt. Donec eget eleifend sem. Pellentesque dapibus mi nec
-              ante ornare lacinia. Suspendisse potenti. Aliquam nisl ex, vulputate nec lacinia a, pharetra ac turpis.
+              Thank you for your interest in the Miner’s Lamp Award!<br><br>
+              One in five Canadians will experience mental illness in their lifetime and, of these, over 70%
+              encounter their first symptoms between 16 and 24. Research into the causes of mental illness
+              among young people is therefore essential.<br><br>
+              The Miner’s Lamp Award has been raising funds to do this since 2016, thanks to a partnership
+              between IAMGOLD Corporation and University of Toronto Department of Psychiatry, and
+              generous sponsorship from many companies and individuals in different walks of life.<br><br>
+              While investing in the future, we believe it’s equally important to recognize individuals whose
+              outstanding leadership in eroding the stigma of mental illness has brought fresh hope to those
+              affected by it. Each year, we honour them with the presentation of the Miner’s Lamp Award and
+              encourage others to follow their lead.<br><br>
+              We invite you to help us improve mental health for generations to come by supporting the 2018
+              Miner’s Lamp Award Dinner.<br><br>
+              (Two signatures &amp; titles)
             </div>
             <div class="quote" data-id="2">
-              Curabitur aliquam ante in ligula imperdiet, eget cursus nisl molestie. Nam eu risus eu tortor auctor mollis. Pellentesque efficitur elit nisl, commodo dictum metus gravida a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-              Curae; Suspendisse gravida auctor libero, non tristique nunc ultricies quis. Sed non neque ex. Maecenas imperdiet ultricies odio eu placerat.
+              A growing body of medical research highlighting the impact of mental illness, a greater
+              understanding of its physiological origins and clearer evidence of its connection with physical
+              health...<i>all are cause for optimism.</i><br><br>
+
+              Building on this optimism requires continuing financial investment. We have chosen to focus on
+              funding research that sows the seeds of new insight into the causes of mental illness among
+              adolescents and young people. Research in this area is underfunded compared to other leading
+              causes of illness and disability, so we want to act quickly to avert the challenges that arise when
+              mental health conditions go undiagnosed and untreated for extended periods.<br><br>
+              Since 2016, the Miner’s Lamp Award Campaign has raised over $1m for new research in the
+              prevention and early detection of severe mental illness in adolescents and young people. The
+              2016 portion of the funds raised is supporting innovative studies at the Centre for Addiction and
+              Mental Health (CAMH). Further research grants using the 2017 funds will be awarded later this
+              year.<br><br>
+              <i>IAMGOLD Corporation pays all costs associated with hosting the Miner’s Lamp Award Dinner,
+              so 100% of funds raised go directly to new research.</i>
             </div>
             <div class="quote" data-id="3">
-              Vivamus luctus vel ligula ut ornare. Ut nisl nisl, pharetra vitae urna non, ullamcorper commodo purus. Vestibulum orci nunc, commodo eget ultrices a, dignissim ut elit. Phasellus eu metus sapien. Aliquam placerat massa eu libero facilisis volutpat. Nam
-              blandit condimentum molestie. Aenean consectetur ipsum et blandit iaculis. Vivamus ultricies, tellus ut vestibulum tincidunt, ante enim malesuada ipsum, rhoncus consequat justo quam vel risus. Integer pulvinar tellus eget scelerisque sodales.
+              The 2018 Miner’s Lamp Award Dinner will be held on Tuesday March 27 at The Carlu, Toronto.
+              Following an inaugural event for 200 members of Canada’s business and academic
+              communities in March 2016, the Miner’s Lamp Award Dinner moved to The Carlu in April 2017
+              to accommodate growing demand from the 400 guests who sponsored and attended the event.<br><br>
+              By bringing together an influential group of engaged Canadians, accomplished individuals
+              speaking courageously of their own struggles with mental illness, and talented performers, the
+              Miner’s Lamp Award Dinner has become a memorable evening… an opportunity for our
+              community to celebrate progress and renews its commitment to improving mental health for
+              generations to come.<br><br>
+              Our 2017 guests saw Sophie Grégoire Trudeau join Steven Page (founder of the Barenaked
+              Ladies) in speaking up for greater understanding of mental illness. In March 2018, we look
+              forward to honouring George Cope, President &amp; CEO, BCE Inc. &amp; Bell Canada, and founder of
+              Bell Let’s Talk, with the Miner’s Lamp Award.<br><br>
+              For more details of the 2018 Miner’s Lamp Award Dinner, including sponsorship opportunities at
+              many levels, click here.
             </div>
 
           </div>
 
         </section>
-      </div>
+
     </div>
     <div data-section="3donate" class="row">
       <div class="col-md-12">
         <section id="sectionThree">
           <div id="sectionThreeContainer">
 
-            <div class="sectionThreeItemContainer one">
-              <div class="sectionThreeroundTitle">
+            <div class="sectionThreeItemContainer">
+              <span class="sectionThreeroundTitle one">
                 <span class="round"><span>Donate</span></span>
 
-              </div>
-              <div class="sectionThreeItemBlurb">
-                His putant quaeque at, eos bonorum delenit dolorum ex. Vis ei modo placerat qualisque, qui sumo unum ei, cu fabulas sadipscing est.
+              </span>
+              <div class="sectionThreeItemBlurb">Since 2016, the Miner's Lamp Award has brought together a network of engaged leaders from across industries, committed to improving the trajectory and outcomes of mental illness for adolescents and young adults. To date, we have invested over $1 million in groundbreaking research that will help to define the future of mental healthcare and drive the cultural shift around public attitudes towards mental illness. Our ability to invest in groundbreaking research is made possible by the generous support of sponsors like you. Please consider joining us for the 2018 Miner's Lamp Award Dinner. Full details of sponsorship opportunities are available here. [Link to pdf.] Please note that as all costs for the Miner's Lamp Award Dinner are covered by IAMGOLD Corporation, 100% of funds raised go directly into new research.
               </div>
             </div>
-            <div class="sectionThreeItemContainer two">
-              <div class="sectionThreeroundTitle">
+            <div class="clearfix">
+
+            </div>
+            <div class="sectionThreeItemContainer">
+              <span class="sectionThreeroundTitle two">
                 <span class="round"><span>Partner</span></span>
-              </div>
-              <div class="sectionThreeItemBlurb">
-                Sea cu iudico ubique mnesarchum, ea pro wisi brute nonumy. Nam ei civibus deserunt repudiandae, sit eu latine recteque, pri ne tota splendide.
+              </span>
+              <div class="sectionThreeItemBlurb">While IAMGOLD Corporation covers all costs for the Miner's Lamp Award Dinner, we are fortunate to enjoy the support of partners who contribute in kind in areas of special significance to them. If you would like to explore an in-kind contribution, please contact [TBD]. Thanks in advance for your support for the Miner's Lamp Award!
               </div>
             </div>
-            <div class="sectionThreeItemContainer three">
+            <!--div class="sectionThreeItemContainer three">
               <div class="sectionThreeroundTitle">
                 <span class="round"><span>Sponsorship<br>Opportunities</span></span>
               </div>
               <div class="sectionThreeItemBlurb">
                 Vis populo principes repudiare at, cu hinc pericula incorrupte sea, illum ipsum maiorum sed ex.
               </div>
-            </div>
+            </div-->
           </div>
         </section>
       </div>
     </div>
     <div data-section="4yourImpact" class="row">
-        <div id="impactContainer" class="col-md-12">
-          <div id="impactTitleContainer">
-            <span>Your Impact</span>
-            <div></div>
+      <div id="impactContainer" class="col-md-12">
+        <div class="headingTitleContainer">
+          <div class="titleText">Your Impact</div>
+          <div class="centeredLine"></div>
+        </div>
+        <div id="impactItemsContainer">
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                2
+              </div>
+              <img src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
+            </div>
+            <div class="impactVerb">
+              Years since launch
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
           </div>
-          <div id="impactItemsContainer">
-            <div class="impactItem">
-              <div class="impactTopTwo">
-                <div class="impactMetric">
-                  2
-                </div>
-                <img src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
-              </div>
-              <div class="impactVerb">
-                Years since launch
-              </div>
-              <div class="impactLeftLine"></div>
-              <div class="impactRightLine"></div>
-            </div>
 
-            <div class="impactItem">
-              <div class="impactTopTwo">
-                <div class="impactMetric">
-                  $ 1 Million
-                </div>
-                <img src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                $ 1 Million
               </div>
-              <div class="impactVerb">
-                Raised
-              </div>
-              <div class="impactLeftLine"></div>
-              <div class="impactRightLine"></div>
+              <img src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
             </div>
+            <div class="impactVerb">
+              Raised
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
+          </div>
 
-            <div class="impactItem">
-              <div class="impactTopTwo">
-                <div class="impactMetric">
-                  &nbsp;&nbsp;&nbsp;100%
-                </div>
-                <img src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                &nbsp;&nbsp;&nbsp;100%
               </div>
-              <div class="impactVerb">
-                Funds Donated
-              </div>
-              <div class="impactLeftLine"></div>
-              <div class="impactRightLine"></div>
+              <img src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
             </div>
+            <div class="impactVerb">
+              Funds Donated
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
           </div>
         </div>
+      </div>
     </div>
     <div data-section="5yourDonationsAtWork" class="row">
       <section id="sectionFive">
@@ -1378,12 +221,15 @@
             <div>Your donations at work</div>
             <span></span>
           </div>
+          <div class="yourDSummary">
+              Every dollar donated to the Miner's Lamp Award Campaign supports new research into youth mental health. As IAMGOLD covers the cost of the dinner, 100% of proceeds are channelled into new research to support the field’s most promising studies. With the funds raised in 2016, two new studies are under way at Toronto's Centre for Addiction and Mental Health (CAMH).
+          </div>
           <div id="yourDItemsContainer">
             <div class="yourDItem">
               <img src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
               <div class="yourDItemTitleContainer">
                 <div class="title">
-                  Students at Univeristy of Toronto
+                  Pic summary
                 </div>
                 <div class="hdivider">|</div>
                 <div class="time">
@@ -1392,7 +238,7 @@
 
               </div>
               <div class="blurb">
-                Vivamus elementum justo a ex pharetra efficitur. Phasellus et sapien ultrices, tincidunt sem at, convallis odio. Integer arcu purus, varius vitae accumsan at, condimentum ac nunc. Nam vel scelerisque elit, a imperdiet dolor.
+                  Drs. Joanna Henderson and Aristotle Voineskos are collaborating with child and youth clinics, and using a new approach to identify early signs of psychosis spectrum symptoms.
               </div>
 
             </div>
@@ -1402,77 +248,350 @@
 
               <div class="yourDItemTitleContainer">
                 <div class="title">
-                  Students at Univeristy of Toronto
+                  Pic info
                 </div>
-                  <div class="hdivider">|</div>
+                <div class="hdivider">|</div>
                 <div class="time">
                   2016 - present
                 </div>
 
               </div>
               <div class="blurb">
-                Cras tortor dui, auctor et ante eget, finibus mollis ante. Suspendisse faucibus ex at elit fringilla sagittis. Nam facilisis bibendum mauris a vehicula. Nam vel nisi eget odio egestas condimentum id non sapien. Phasellus consectetur tincidunt augue, vitae
-                rutrum magna pharetra sit amet. </div>
+                Dr. Vincenzo De Luca is studying the interaction of early life adversities and schizophrenia vulnerability genes in young people – with a specific focus on how this relates to suicide risk.
+                With over $630,000 raised at the 2017 Miner's Lamp Award Dinner, further research grants will be awarded in fall 2017.
+              </div>
 
             </div>
           </div>
         </div>
       </section>
     </div>
+    <div data-section="6WhatsNew" class="row">
+        <div class="col-md-12" id="newsContainer">
+          <div class="headingTitleContainer">
+            <div class="titleText">What's new</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div class="owl-two owl-carousel owl-theme">
+
+            <div class="item">
+              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-4-.-320.jpg" srcset="dist/assets/images/1200x675-4-.-640.jpg 640w, dist/assets/images/1200x675-4-.-900.jpg 900w, dist/assets/images/1200x675-4-.-1200.jpg 1200w">
+              <div class="detailContainer">
+                <div class="type">
+                  Miner's Lamp
+                </div>
+                <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
+                <div class="pipe">|</div>
+                <div class="date">Sept 21, 2017</div>
+              </div>
+              <div class="title">
+                Antonio Conte has been speaking
+              </div>
+              <div class="content">
+                Antonio Conte has been speaking about the qualities of new signing Danny Drinkwater, as well as the midfielder’s relationship with N’Golo Kante, ahead of today’s visit to their former club Leicester City. Drinkwater was one of two deadline-day arrivals
+                at Stamford Bridge along with Italian defender Davide Zappacosta, who signed from Torino, and could potentially make his Chelsea debut this afternoon.During the 2015/16 campaign Drinkwater formed a formidable midfield partnership withKante
+                as Leicester defied the odds to win the Premier League title, and Conte believes they will work well together once again.‘I think Danny is a really good player,’ said Conte. ‘Two years ago together with N’Golo they won the league. They played
+                regularly and showed how strong they were.‘Danny is a strong player who can help us. The midfield is very important. I need midfielders with particular characteristics which he has. Now he must find his best physical condition to be ready
+                tohelp us.’Conte also explained why the fact we have signed two new players will not lead to a change in shape or system for his side.‘We want to continue to play with this system because, don’t forget, there are 11 players who played last
+                season and we changed our system to give them the best condition to exploit their talent. With the new signings we have to try to give them the best chance to be in top condition.’
+
+              </div>
+            </div>
+
+            <div class="item">
+              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-1--320.jpg" srcset="dist/assets/images/1200x675-1--640.jpg 640w, dist/assets/images/1200x675-1--900.jpg 900w, dist/assets/images/1200x675-1--1200.jpg 1200w">
+              <div class="detailContainer">
+                <div class="type">
+                  News article
+                </div>
+                <div class=""><img src="dist/assets/svg/Newspaper.svg" alt=""></div>
+                <div class="pipe">|</div>
+                <div class="date">Sept 22, 2017</div>
+              </div>
+              <div class="title">
+                Just the name of another news article that will be a bit long
+              </div>
+              <div class="content">
+                In their Man United game, Jose Mourinho had special measures to deal with Leicester’s biggest threat: wingers Demarai Gray and Marc Albrighton, forwards Jamie Vardy, and now Kelechi Iheanacho, finding space behind the defence from raking passes by the
+                likes of Riyad Mahrez. Vardy, with Shinji Okazaki just behind, gave the Gunners’ rearguard a tough ride at times on the opening day but the Red Devils defended deep and blocked channels in midfield, forcing him into wide areas. Chelsea may
+                try to win the battle for midfield and stifle the hosts’ danger men in similar fashion.
+              </div>
+            </div>
+
+            <div class="item">
+              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-2-.-320.jpg" srcset="dist/assets/images/1200x675-2-.-640.jpg 640w, dist/assets/images/1200x675-2-.-900.jpg 900w, dist/assets/images/1200x675-2-.-1200.jpg 1200w">
+              <div class="detailContainer">
+                <div class="type">
+                  Miner's Lamp
+                </div>
+                <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
+                <div class="pipe">|</div>
+                <div class="date">Sept 23, 2017</div>
+              </div>
+              <div class="title">
+                Title of article
+              </div>
+              <div class="content">
+                Just over a month after he was a late substitute in the Community Shield match, Toni Rudiger is facing his first game as a Chelsea player outside of London having been an ever-present in our league campaign so far. He has also been in action for Germany
+                over the international break, with notable success too, so the official Chelsea website sat down with the summer addition to the defence to look back at the opening weeks and ahead to games to come, including this afternoon’s fixture in
+                Leicester. He also has an insight into another addition to the squad…IT HAS BEEN A PRETTY BUSY FIRST MONTH OF THE SEASON FOR YOU…‘For me it was important to adapt to the new place, to the new club, to the new country, and I have to say thank
+                you to the guys and to the staff as they helped me a lot.‘To adapt it has been good to play games. Of course I came here because I want to play and I want to develop myself, and sometimes in life it is like this, someone gets suspended or
+                injured. It is not that I wish that for my team-mates of course, but sometimes football works like this and then I have the chance to show myself very quickly in this team.‘I think it was positive for me and I would like to continue like
+                this but it always depends on my effort in the training, and also in the games, and the coach decides.’
+
+              </div>
+            </div>
+
+            <div class="item">
+              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-3-.-320.jpg" srcset="dist/assets/images/1200x675-3-.-640.jpg 640w, dist/assets/images/1200x675-3-.-900.jpg 900w, dist/assets/images/1200x675-3-.-1200.jpg 1200w">
+              <div class="detailContainer">
+                <div class="type">
+                  News article
+                </div>
+                <div class=""><img src="dist/assets/svg/Newspaper.svg" alt=""></div>
+                <div class="pipe">|</div>
+                <div class="date">Sept 24, 2017</div>
+              </div>
+              <div class="title">
+                42 games undefeated all the way back to April 2015
+              </div>
+              <div class="content">
+                Our youth team return to action in the Under-18 Premier League this morning (Saturday), with Arsenal the visitors to Cobham for a London derby captured live by the Chelsea TV cameras (kick-off 10.30am).The young Blues will tick over 900 days unbeaten
+                at home in all competitions if they avoid defeat against the Gunners, who were the nearest challengers to Jody Morris’s side last term, finishing runners-up to our youngsters in the both the south section and national merit round.It is an
+                unblemished record that stretches across four different seasons, 42 games undefeated all the way back to April 2015 when Middlesbrough took the points home following a 3-1 victory. Morris frequently used the run as motivation for his players
+                during the Treble-winning campaign of 2016/17 and it continues to be a source of inspiration as a new crop of first-year scholars step forward.George McEachran is a more familiar face in the Under-18 surroundings, the midfielder featuring
+                on 26 occasions last season and in every game so far this term. His goals opened the scoring against both Aston Villa and Norwich City last month, with his impact in front of goal highlighted as a key area for further improvement in the
+                months ahead by the coaching staff.‘We want to carry on the unbeaten run for as long as possible,’ the 17-year-old tells the official Chelsea website as we look ahead to the game. ‘Jody and Ed [Brand, Under-18s assistant] speak about it
+                quite a lot and it’s a big thing for the Under-18s group.
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
     <div data-section="7donorLogos" class="row">
       <section id="sectionSeven">
         <div class="col-md-12" id="sectionSevenContainer">
-          <div id="logoTitleContainer">
-            <span>2017 Donors</span>
-            <div></div>
+          <div class="headingTitleContainer">
+            <div class="titleText">2017 Donors</div>
+            <div class="centeredLine"></div>
           </div>
           <div id="logoItemContainer">
             <div class="logoItem">
-              <img src="dist/assets/images/logoIMG-160.jpg"
-              srcset="dist/assets/images/logoIMG-320.jpg 640w,
+              <img src="dist/assets/images/logoIMG-160.jpg" srcset="dist/assets/images/logoIMG-320.jpg 640w,
               dist/assets/images/logoIMG-450.jpg 900w,
               dist/assets/images/logoIMG-600.jpg 1200w" alt="logo">
 
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoUTPsych-160.jpg"
-              srcset="dist/assets/images/logoUTPsych-320.jpg 640w,
+              <img src="dist/assets/images/logoUTPsych-160.jpg" srcset="dist/assets/images/logoUTPsych-320.jpg 640w,
               dist/assets/images/logoUTPsych-450.jpg 900w,
               dist/assets/images/logoUTPsych-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoAirCanada-160.jpg"
-              srcset="dist/assets/images/logoAirCanada-320.jpg 640w,
+              <img src="dist/assets/images/logoAirCanada-160.jpg" srcset="dist/assets/images/logoAirCanada-320.jpg 640w,
               dist/assets/images/logoAirCanada-450.jpg 900w,
               dist/assets/images/logoAirCanada-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoNationalB-160.png"
-              srcset="dist/assets/images/logoNationalB-320.png 640w,
+              <img src="dist/assets/images/logoNationalB-160.png" srcset="dist/assets/images/logoNationalB-320.png 640w,
               dist/assets/images/logoNationalB-450.png 900w,
               dist/assets/images/logoNationalB-600.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="vert" src="dist/assets/images/logoPearTree-80.png"
-              srcset="dist/assets/images/logoPearTree-160.png 640w,
+              <img class="vert" src="dist/assets/images/logoPearTree-80.png" srcset="dist/assets/images/logoPearTree-160.png 640w,
               dist/assets/images/logoPearTree-225.png 900w,
               dist/assets/images/logoPearTree-300.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoRBC-160.png"
-              srcset="dist/assets/images/logoRBC-320.png 640w,
+              <img src="dist/assets/images/logoRBC-160.png" srcset="dist/assets/images/logoRBC-320.png 640w,
               dist/assets/images/logoRBC-450.png 900w,
               dist/assets/images/logoRBC-600.png 1200w" alt="logo">
             </div>
+
+            <div class="logoListAllContainer">
+              <div class="headingTitleContainer">
+                <div class="titleText">Silver Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Agnico Eagle Mines</div>
+                <div> Barrick</div>
+                <div> Deloitte</div>
+                <div> EY</div>
+                <div> KPMG MSLP</div>
+                <div> Purves Redmond</div>
+                <div> TD Securities</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Bronze Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Ausenco</div>
+                <div> Geoff Beattie & Amanda Lang</div>
+                <div> Black Loon Metals</div>
+                <div> Blake, Cassels & Graydon LLP</div>
+                <div> BMO</div>
+                <div> CAMH</div>
+                <div> Citi</div>
+                <div> Detour Gold</div>
+                <div> Emerging Markets Capital</div>
+                <div> Evans Investment Counsel</div>
+                <div> Fasken Martineau</div>
+                <div> Kinross Gold</div>
+                <div> Labatt Family</div>
+                <div> Magris Resources Inc.</div>
+                <div> Maple Leaf Foods</div>
+                <div> Morgan Stanley</div>
+                <div> Paul, Weiss, Rifkind, Wharton & Garrison LLP</div>
+                <div> Ryan Bignucolo</div>
+                <div> SickKids Foundation</div>
+                <div> Stikeman Elliott LLP</div>
+                <div> Teck Resources</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Jamie & Patsy Anderson</div>
+                <div> John Hunkin</div>
+                <div> Mancal Corporation</div>
+                <div> PwC</div>
+                <div> Jim & Sandi Treliving</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Supporters</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Barberian's Steak House</div>
+                <div> Donnelley Financial Siolutions</div>
+                <div> Maple Leaf Sports & Entertainment</div>
+              </div>
+
+
+            </div>
+            <div class="logoCaretContainer">
+              <div class="more"></div>
+              <!--img class="logoCaret" src="dist/assets/svg/OffWhiteCarat.svg" alt="caret"/-->
+            </div>
           </div>
+
         </div>
       </section>
     </div>
-    <div data-section="Contacts" class="row">
+    <div data-section="8awardWinners" class="row">
+      <div class="col-md-12">
+        <div id="awardWinnersContainer">
+          <div class="awardWinnersTitleContainer">
+            <div class="titleText">Award Winner</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div class="owl-three owl-carousel owl-theme">
+            <div class="item">
+              <div class="awardWinnersItem">
+                <div class="year">
+                  2016
+                </div>
+                <div class="contentContainer">
+                  <img class="img" src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
+
+                  <div class="name">
+                    Paul M. Beeston
+                  </div>
+                  <div class="contentBox">
+                    Paul M. Beeston is known for many achievements. He was the very first employee of the Toronto Blue Jays; the whiz kid accountant who helped bring two World Series championships to Canada. He is a member of the Order of Canada and the beloved Canadian who went on to become president of Major League Baseball. What he is less known for but where his footprint has been no less influential is his work to support people living with mental illness. During his time as chair of the board of trustees at the Centre for Addiction and Mental Health, Paul’s impact was felt at all levels. From supporting an ambitious $1 billion expansion, to handing out cookies on Christmas Day with his wife Kaye to staff who worked in the emergency room, Paul has had an enormous impact on the lives of many.                  </div>
+                <!--item-->
+                    <div class="bottomContainer">
+                      <div class="left">
+                        <span>Back</span>
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                      </div>
+                      <div class="right">
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <span>2017 Winner</span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="awardWinnersItem">
+                <div class="year">
+                  2017
+                </div>
+                <div class="contentContainer">
+                  <img class="img" src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
+
+                  <div class="name">
+                    Jamie & Patsy Anderson
+                  </div>
+                  <div class="contentBox">
+                    Mental health has long been a focus of Jamie and Patsy Anderson’s philanthropic commitments. In 2013, building on previous gifts, they generously established a Chair in Child and Youth Mental Health between CAMH, SickKids and the University of Toronto. The Chair enabled development and leadership of an integrated program in this area of mental health.
+                    <br><br>
+                    Jamie and Patsy are equally generous with their time, energy and expertise as volunteers. Patsy joined the Board of Directors of SickKids Foundation in 2001 and served as its Chair from 2006 to 2011, a transformative period for the hospital. Jamie, meanwhile, first joined CAMH’s fundraising campaign in 1998 and has been involved ever since, serving in a number of key governance and fundraising roles, including Co-Chair of the current “Breakthrough” campaign.
+                  </div>
+                <!--item-->
+                  <div class="bottomContainer">
+                      <div class="left">
+                        <span>Back</span>
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                      </div>
+                      <div class="right">
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <span>2016 Winner</span>
+                      </div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-section="9Gallery" class="row">
+      <div class="col-md-12" id="lightGalleryContainer">
+        <div class="headingTitleContainer">
+          <div class="titleText">Gallery</div>
+          <div class="centeredLine"></div>
+        </div>
+        <div id="lightgallery">
+          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
+          </a>
+          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
+              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div data-section="10Contacts" class="row">
         <div class="col-md-12" id="sectionTenContainer">
-          <div id="contactTitleContainer">
-            <span>Contact</span>
-            <div></div>
+          <div class="headingTitleContainer">
+            <div class="titleText">Contact</div>
+            <div class="centeredLine"></div>
           </div>
           <div id="contactItemsContainer">
             <div class="contactItem">
@@ -1505,8 +624,7 @@
 
               </div>
               <div class="info">
-                iamgoldcommunications<br>
-                @iamgold.com
+                iamgoldcommunications<br> @iamgold.com
               </div>
             </div>
           </div>
@@ -1521,112 +639,178 @@
 
           </div>
           <div id="MLFooter">
-          &copy;2017
+            &copy;2017
           </div>
         </div>
 
     </div>
-  </div>
+</div><!--container-->
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="../OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
-  <script type="text/javascript">
-    /* JavaScript Media Queries */ ;
-    (function($, window) {
-      if (matchMedia) {
-        var mq = window.matchMedia("(min-width: 540px)");
-        mq.addListener(widthChange);
-        widthChange(mq);
-      }
-
-      // media query change
-      function widthChange(mq) {
-        console.log("width over 600");
-        var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
-        if (mq.matches) {
-          console.log("over 600 " + msg);
-        } else {
-          console.log("no matches");
-        }
-      }
-
-      var topSliderData = [{
-          "id": 1,
-          "imgSrc": "dist/assets/images/topSlider1",
-          "ext": ".jpg",
-          "topMsg": "1 in 5 canadians will experience mental illness in their lifetime.",
-          "bottomMsg": "we can change that"
-        },
-        {
-          "id": 2,
-          "imgSrc": "dist/assets/images/topSlider2",
-          "ext": ".jpg",
-          "topMsg": "we work to raise awareness and funds for mental health",
-          "bottomMsg": "learn more below"
-        },
-        {
-          "id": 3,
-          "imgSrc": "dist/assets/images/topSlider3",
-          "ext": ".jpg",
-          "topMsg": "join us oct 15 at the miner's lamp award event",
-          "bottomMsg": "event details below"
-        }
-      ]
-
-      $(document).ready(function() {
-        function initEvents() {
-          /*section nav and top slider*/
-          $("#hamburger").on("click", function() {
-            $(".navigation,.overlay").addClass("open");
-          })
-          $(".overlay,.navigation").on("click", function() {
-            $(".overlay,.navigation").removeClass("open");
-          })
-          /*section two*/
-          $("#titleContainer").find("div").on("click", function() {
-            var id = $(this).attr("data-id");
-            $("#titleContainer").find("span").removeClass("showingChild");
-            $(this).find("span").addClass("showingChild");
-            $(".quote[data-id]").css("display", "none");
-            $(".quote[data-id='" + id + "']").fadeIn("fast");
-          })
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="dist/js/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="dist/js/lg-thumbnail.min.js"></script>
+    <script src="dist/js/lg-fullscreen.min.js"></script>
+    <script src="dist/js/lg-share.min.js"></script>
+    <script src="dist/js/lg-zoom.min.js"></script>
+    <script src="dist/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+      /* JavaScript Media Queries */ ;
+      (function($, window) {
+        if (matchMedia) {
+          var mq = window.matchMedia("(min-width: 540px)");
+          mq.addListener(widthChange);
+          widthChange(mq);
         }
 
-        function initTopSlider() {
-          var topSliderHtml = "";
-          for (var i = 0; i < topSliderData.length; i++) {
-            topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
-            topSliderHtml += "<img src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
-              " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
-              topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
-              topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";
-
-            topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
-            topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
-            topSliderHtml += "<span>ˇ</span></div>";
+        // media query change
+        function widthChange(mq) {
+          console.log("width over 600");
+          var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
+          if (mq.matches) {
+            console.log("over 600 " + msg);
+          } else {
+            console.log("no matches");
           }
-          console.log(topSliderHtml);
+        }
 
-          $('.owl-carousel').html(topSliderHtml).owlCarousel({
+        var topSliderData = [{
+            "id": 1,
+            "imgSrc": "dist/assets/images/topSlider1",
+            "ext": ".jpg",
+            "topMsg": "1 in 5 Canadians will experience mental illness in their lifetime. <br><br>With your support, we can change that.",
+            "bottomMsg": "we can change that"
+          },
+          {
+            "id": 2,
+            "imgSrc": "dist/assets/images/topSlider2",
+            "ext": ".jpg",
+            "topMsg": "Since 2016, we’ve raised awareness of mental illness and over $1m to fund new research into its causes.",
+            "bottomMsg": "learn more below"
+          },
+          {
+            "id": 3,
+            "imgSrc": "dist/assets/images/topSlider3",
+            "ext": ".jpg",
+            "topMsg": "Show your support by joining us on March 27, 2018 for the Miner’s Lamp Award Dinner.",
+            "bottomMsg": "event details below"
+          }
+        ]
+
+        $(document).ready(function() {
+
+          function initEvents() {
+            /*section nav and top slider*/
+            $("#hamburger").on("click", function() {
+              $(".navigation,.overlay").addClass("open");
+            })
+            $(".overlay,.navigation").on("click", function() {
+              $(".overlay,.navigation").removeClass("open");
+            })
+            /*section two*/
+            $("#titleContainer").find("div").on("click", function() {
+              var id = $(this).attr("data-id");
+              $("#titleContainer").find("span").removeClass("showingChild");
+              $(this).find("span").addClass("showingChild");
+              $(".quote[data-id]").css("display", "none");
+              $(".quote[data-id='" + id + "']").fadeIn("fast");
+            })
+/*
+            $("#newsContainer").find(".content").on("click", function() {
+              console.log(".content");
+              $(this).toggleClass("long");
+            })
+            */
+            $("#newsContainer").find(".item").on("click", function() {
+              console.log(".content");
+              $(this).find(".content").toggleClass("long");
+            })
+            $(".sectionThreeItemContainer").on("click", function() {
+              console.log(".content");
+              $(this).find(".sectionThreeItemBlurb").toggleClass("long");
+            })
+            $(".logoCaretContainer").find(".more").on("click", function() {
+              console.log(".logoListAllContainer");
+              $(".logoListAllContainer").toggleClass("long");
+            });
+            $(".contentContainer").on("click", function() {
+              console.log(".contentBox");
+              $(this).find(".contentBox").toggleClass("long");
+            });
+
+          }
+
+          function initTopSlider() {
+            var topSliderHtml = "";
+            for (var i = 0; i < topSliderData.length; i++) {
+              topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
+              topSliderHtml += "<img class='topSliderImg' src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
+                " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
+                topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
+                topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";
+
+              topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
+              //topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
+              topSliderHtml += "<span><img class='topSliderCaret' src='dist/assets/svg/OffWhiteCarat.svg'></span></div>";
+            }
+            console.log(topSliderHtml);
+
+            $('.owl-one').html(topSliderHtml).owlCarousel({
+              loop: true,
+              autoplay: true,
+              dots: false,
+              responsive: {
+                0: {
+                  items: 1
+                }
+              }
+            });
+          }
+          var carouselChanged = function(event) {
+            $("#newsContainer").find(".content").removeClass("long");
+          };
+
+          $('.owl-two').owlCarousel({
+            center: true,
+            items: 1.2,
             loop: true,
-            autoplay: true,
+            margin: 10,
+            nav: false,
             dots: false,
+            onDragged: carouselChanged,
             responsive: {
-              0: {
-                items: 1
+              901: {
+                items: 3
               }
             }
           });
-        }
 
-        initTopSlider();
-        initEvents();
+          $('.owl-three').owlCarousel({
+            center: true,
+            items: 1,
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            responsive: {
+              901: {
+                items: 2,
+                center: false,
+              }
+            }
+          })
 
-      });
-    }(jQuery, window, undefined))
-  </script>
+          $("#lightgallery").lightGallery({
+            "share": true
+          });
+          initTopSlider();
+          initEvents();
+
+        });
+      }(jQuery, window, undefined))
+    </script>
 </body>
 
 </html>

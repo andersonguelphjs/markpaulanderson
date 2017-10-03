@@ -1,0 +1,356 @@
+  #awardWinnersContainer {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #717771;
+    background-color: #ededed;
+  }
+
+  .awardWinnersTitleContainer {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 22px;
+    font-size: 24px;
+  }
+
+  .awardWinnersTitleContainer .titleText {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    color: #717771;
+    background-color: #ededed;
+    padding-right: 3vw;
+    padding-left: 4vmin;
+  }
+
+  .awardWinnersTitleContainer .centeredLine {
+    border-top: 2px solid #717771;
+    margin-top: 17px;
+    position: absolute;
+    left: 0;
+    width: 95%;
+  }
+
+  .awardWinnersItem {
+    position: relative;
+    min-height: 270px;
+  }
+
+  .awardWinnersItem .year {
+    font-size: 24px;
+    /*border-bottom: 2px solid #717771;*/
+    text-align: center;
+    position: absolute;
+    top: 3%;
+    right: 95%;
+    white-space: nowrap;
+    width: 50%;
+    -webkit-transform: rotate(270deg);
+    -webkit-transform-origin: right top;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: right top;
+    -ms-transform: rotate(270deg);
+    -ms-transform-origin: right top;
+    -o-transform: rotate(270deg);
+    -o-transform-origin: right top;
+    transform: rotate(270deg);
+    transform-origin: right top;
+  }
+
+  .awardWinnersItem .contentContainer {
+    float: right;
+    padding-right: 5%;
+    padding-top: 8%;
+    font-size: 18px;
+    width: 80%;
+  }
+
+  .awardWinnersItem .img {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  .contentContainer .name, .contentContainer .contentBox {
+    padding-bottom: 2vmin;
+  }
+  .contentContainer .name{
+    font-size: 18px;
+    text-align: center;
+  }
+  .contentContainer .contentBox {
+    max-height: 76px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .contentContainer .contentBox.long {
+    max-height: 1500px;
+    transition: max-height 0.5s ease-in;
+  }
+
+  .bottomContainer {
+    padding-top: 10px;
+  }
+
+  .bottomContainer img {
+    width: 20px !important;
+    padding-left: 1vmin;
+    padding-right: 1vmin;
+    display: inline !important;
+  }
+
+  .bottomContainer .right {
+    float: left;
+    padding-bottom: 10px;
+  }
+
+  .bottomContainer .left {
+    float: right;
+    padding-bottom: 10px;
+  }
+
+  .bottomContainer .right img {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .bottomContainerContainer {}
+
+  @media (min-width: 541px) {
+
+    .awardWinnersTitleContainer {
+      padding-top: 12px;
+      padding-bottom: 22px;
+      font-size: 36px;
+    }
+
+    .awardWinnersTitleContainer .titleText {
+      left: 0;
+      padding-right: 3vw;
+      padding-left: 4vmin;
+    }
+
+    .awardWinnersTitleContainer .centeredLine {
+      margin-top: 27px;
+      left: 0;
+      width: 95%;
+    }
+
+    .awardWinnersItem {
+      position: relative;
+      min-height: 270px;
+    }
+
+    .awardWinnersItem .year {
+      font-size: 36px;
+      top: 3%;
+      right: 95%;
+      width: 50%;
+    }
+
+    .awardWinnersItem .contentContainer {
+      float: right;
+      padding-right: 5%;
+      padding-top: 8%;
+      font-size: 18px;
+      width: 80%;
+    }
+
+    .awardWinnersItem .img {
+      width: 100%;
+      padding-bottom: 5px;
+    }
+
+    .contentContainer .name, .contentContainer .contentBox {
+      padding-bottom: 2vmin;
+    }
+    .contentContainer .name{
+      font-size: 20px;
+    }
+
+    .contentContainer .contentBox {
+      max-height: 76px;
+      font-size: 18px;
+    }
+
+    .bottomContainer {
+      padding-top: 10px;
+      font-size: 18px;
+    }
+
+    .bottomContainer img {
+      width: 20px !important;
+      padding-left: 1vmin;
+      padding-right: 1vmin;
+    }
+
+    .bottomContainer .right {
+      float: left;
+      padding-bottom: 10px;
+    }
+
+    .bottomContainer .left {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 901px) {
+
+        .awardWinnersTitleContainer {
+          padding-top: 12px;
+          padding-bottom: 22px;
+          font-size: 30px;
+        }
+
+        .awardWinnersTitleContainer .titleText {
+          left: 0;
+          padding-right: 3vw;
+          padding-left: 4vmin;
+        }
+
+        .awardWinnersTitleContainer .centeredLine {
+          margin-top: 22px;
+          left: 0;
+          width: 95%;
+        }
+
+        .awardWinnersItem {
+          position: relative;
+          min-height: 270px;
+        }
+
+        .awardWinnersItem .year {
+          font-size: 30px;
+          top: 3%;
+          right: 95%;
+          width: 50%;
+        }
+
+        .awardWinnersItem .contentContainer {
+          float: right;
+          padding-right: 5%;
+          padding-top: 10%;
+          font-size: 18px;
+          width: 80%;
+        }
+
+        .awardWinnersItem .img {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .contentContainer .name, .contentContainer .contentBox {
+          padding-bottom: 2vmin;
+        }
+        .contentContainer .name{
+          font-size: 22px;
+        }
+        .contentContainer .contentBox {
+          max-height: 96px;
+              font-size: 20px;
+        }
+
+        .bottomContainer {
+          padding-top: 10px;
+        }
+
+        .bottomContainer img {
+          width: 20px !important;
+          padding-left: 1vmin;
+          padding-right: 1vmin;
+        }
+
+        .bottomContainer .right {
+          float: left;
+          padding-bottom: 10px;
+        }
+
+        .bottomContainer .left {
+          padding-bottom: 10px;
+        }
+    .bottomContainer{
+      display: none;
+    }
+  }
+
+  @media (min-width: 1201px) {
+
+
+        .awardWinnersTitleContainer {
+          padding-top: 12px;
+          padding-bottom: 22px;
+          font-size: 36px;
+        }
+
+        .awardWinnersTitleContainer .titleText {
+          left: 0;
+          padding-right: 3vw;
+          padding-left: 4vmin;
+        }
+
+        .awardWinnersTitleContainer .centeredLine {
+          margin-top: 27px;
+          left: 0;
+          width: 95%;
+        }
+
+        .awardWinnersItem {
+          position: relative;
+          min-height: 270px;
+        }
+
+        .awardWinnersItem .year {
+          font-size: 36px;
+          top: 3%;
+          right: 95%;
+          width: 50%;
+        }
+
+        .awardWinnersItem .contentContainer {
+          float: right;
+          padding-right: 5%;
+          padding-top: 8%;
+          font-size: 18px;
+          width: 80%;
+        }
+
+        .awardWinnersItem .img {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .contentContainer .name, .contentContainer .contentBox {
+          padding-bottom: 2vmin;
+        }
+        .contentContainer .name{
+          font-size: 26px;
+        }
+        .contentContainer .contentBox {
+          max-height: 116px;
+          font-size: 24px;
+        }
+
+        .bottomContainer {
+          padding-top: 10px;
+        }
+
+        .bottomContainer img {
+          width: 20px !important;
+          padding-left: 1vmin;
+          padding-right: 1vmin;
+        }
+
+        .bottomContainer .right {
+          float: left;
+          padding-bottom: 10px;
+        }
+
+        .bottomContainer .left {
+          padding-bottom: 10px;
+        }
+    .bottomContainer{
+      display: none;
+    }
+  }
