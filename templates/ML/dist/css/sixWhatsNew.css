@@ -21,32 +21,39 @@
     }
 
     .detailContainer {
-      padding-bottom: 10px;
-      padding-bottom: 3vmin;
       display: flex;
       align-items: center;
+      font-size: 3vmin;
     }
-
-    .detailContainer div {
+    .lityItem .detailContainer, .detailContainer {
+      padding-bottom: 0px;
+      display: flex;
+      align-items: center;
+      font-size: 3vmin;
+    }
+    .lityItem .detailContainer div, .detailContainer div {
       padding-right: 5px;
       padding-left: 5px;
-      padding-right: 2vmin;
-      padding-left: 2vmin;
+      padding-right: 14px;
+      padding-left: 14px;
     }
 
-    .detailContainer img {
-      width: 2vmin !important;
+    .detailContainer img, .lityItem .detailContainer img  {
+      width: 14px !important;
       padding: 0 !important;
     }
 
-    .detailContainer  {
-      font-size: 3vmin;
-    }
+
 
     #newsContainer .title{
       font-size: 4vmin;
       text-transform: uppercase;
       color: #e1af0a;
+    }
+    .lityItem .title{
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #e1af0a;
     }
     #newsContainer .content {
       font-size: 4vmin;
@@ -69,7 +76,7 @@
       }
       .detailContainer {
         padding-bottom: 1vmin;
-        font-size: 2vmin;
+        font-size: 14px;
       }
       #newsContainer .title{
         font-size: 14px;
@@ -85,6 +92,29 @@
       #newsContainer .title{
         font-size: 18px;
       }
+      .lityItem{
+        background: rgb(253, 253, 246);
+        padding: 20px;
+        border-radius: 6px;
+        min-width: 66%;
+        width: 66%;
+        overflow: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .lityItem .full{
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        max-height:500px;
+      }
+    #newsContainer a,#newsContainer a:hover,#newsContainer a:visited{
+      text-decoration: none;
+      color: #292b2c;
+    }
+    .content{
+
+    }
     }
     @media (min-width: 1201px) {
       #newsContainer .headingTitleContainer{
