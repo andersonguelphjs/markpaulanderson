@@ -766,22 +766,25 @@
 
         var topSliderData = [{
             "id": 1,
-            "imgSrc": "dist/assets/images/topSlider1",
-            "ext": ".jpg",
+            "imgSrc": "dist/assets/images/one/blinds",
+            "imgOpacity":"0.7",
+            "ext": ".png",
             "topMsg": "1 in 5 Canadians will experience mental illness in their lifetime. <br><br>With your support, we can change that.",
             "bottomMsg": "we can change that"
           },
           {
             "id": 2,
-            "imgSrc": "dist/assets/images/topSlider2",
+            "imgSrc": "dist/assets/images/one/carolSophie",
+            "imgOpacity":"0.7",
             "ext": ".jpg",
             "topMsg": "Since 2016, we’ve raised awareness of mental illness and over $1m to fund new research into its causes.",
             "bottomMsg": "learn more below"
           },
           {
             "id": 3,
-            "imgSrc": "dist/assets/images/topSlider3",
-            "ext": ".jpg",
+            "imgSrc": "dist/assets/images/one/green",
+            "imgOpacity":"0.9",
+            "ext": ".png",
             "topMsg": "Show your support by joining us on March 27, 2018 for the Miner’s Lamp Award Dinner.",
             "bottomMsg": "event details below"
           }
@@ -863,7 +866,7 @@
             var topSliderHtml = "";
             for (var i = 0; i < topSliderData.length; i++) {
               topSliderHtml += "<div class='item' data-id='" + topSliderData[i].id + "'>";
-              topSliderHtml += "<img class='topSliderImg' src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
+              topSliderHtml += "<img style='opacity:"+topSliderData[i].imgOpacity+"' class='topSliderImg' src='" + topSliderData[i].imgSrc + "-320" + topSliderData[i].ext + "'" +
                 " srcset='" + topSliderData[i].imgSrc + "-640" + topSliderData[i].ext + " 640w, " +
                 topSliderData[i].imgSrc + "-900" + topSliderData[i].ext + " 900w, " +
                 topSliderData[i].imgSrc + "-1200" + topSliderData[i].ext + " 1200w' alt='" + topSliderData[i].imgSrc + topSliderData[i].id + "'>";

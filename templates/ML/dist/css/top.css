@@ -66,6 +66,8 @@ ul {
   top: 5%;
   left: 2%;
   width: 80%;
+  text-shadow: 2px 2px 2px #000;
+
 }
 
 #topSliderContainer .topSliderBottomMsg {
