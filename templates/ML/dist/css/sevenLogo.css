@@ -40,7 +40,7 @@
   .logoItem img {
     width: 80%;
     display: inline-block;
-    height: 100%;
+    max-height: 100%;
   }
 
   .logoItem img.vert {
@@ -54,7 +54,9 @@
     width:100%;
     transition: max-height 0.5s ease-out;
   }
-
+.logoListAllContainer .headingTitleContainer{
+  padding-bottom: 2vmin;
+}
   .logoListAllContainer.long {
   max-height: 1500px;
   transition: max-height 0.5s ease-in;
@@ -97,6 +99,9 @@
         -ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
         -webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
         transform: translate(-50%, -50%) rotate(180deg);
+      }
+      .logoListContainer{
+        padding-top: 4em;
       }
     .logoListContainer div{
 text-align: center;

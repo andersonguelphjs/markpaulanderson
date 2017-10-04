@@ -39,16 +39,16 @@
         <div id="topInfo" class="col-md-12">
           <div id="topInfoContainer">
             <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/MLLogo_51.jpg" srcset="dist/assets/images/MLLogo_80.jpg 700w, dist/assets/images/MLLogo_100.jpg 1000w" alt="topLogo" />
-            <button id="topDonateBtn" type="button">Donate</button>
+            <a id="topDonateBtn" href="#sectionThreeContainer" type="button">Donate</a>
             <span id="hamburger"><img class="icon icons8-Menu" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
           </div>
           <nav class="navigation">
             <ul class="nav-list">
               <li class="nav-item"><a href="#">About Us </a></li>
-              <li class="nav-item"><a href="#">Your Impact</a></li>
+              <li class="nav-item"><a href="#impactContainer">Your Impact</a></li>
               <li class="nav-item"><a href="#">Get Involved</a></li>
-              <li class="nav-item"><a href="#">Blog</a></li>
-              <li class="nav-item"><a href="#">Contact</a></li>
+              <li class="nav-item"><a href="#newsContainer">Blog</a></li>
+              <li class="nav-item"><a href="#sectionTenContainer">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -816,7 +816,41 @@
 
             })*/
 
-
+            $('button,a[href*="#"]')
+              // Remove links that don't actually link to anything
+              .not('[href="#"]')
+              .not('[href="#0"]')
+              .click(function(event) {
+                // On-page links
+                if (
+                  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                  &&
+                  location.hostname == this.hostname
+                ) {
+                  // Figure out element to scroll to
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                  // Does a scroll target exist?
+                  if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                      scrollTop: target.offset().top
+                    }, 1000, function() {
+                      // Callback after animation
+                      // Must change focus!
+                      var $target = $(target);
+                      $target.focus();
+                      if ($target.is(":focus")) { // Checking if the target was focused
+                        return false;
+                      } else {
+                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                        $target.focus(); // Set focus again
+                      };
+                    });
+                  }
+                }
+              });
 
 
             $(document).on('lity:open', function(event, instance) {
@@ -873,7 +907,7 @@
 
               topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
               //topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
-              topSliderHtml += "<span><img class='topSliderCaret' src='dist/assets/svg/OffWhiteCarat.svg'></span></div>";
+              topSliderHtml += "<span><a href='#titleContainer'><img class='topSliderCaret' src='dist/assets/svg/OffWhiteCarat.svg'></a></span></div>";
             }
             console.log(topSliderHtml);
 
@@ -923,7 +957,8 @@
           })
 
           $("#lightgallery").lightGallery({
-            "share": true
+            "share": true,
+            "googlePlus":false
           });
           initTopSlider();
           initEvents();

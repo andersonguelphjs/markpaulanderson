@@ -10,6 +10,7 @@
     width: 100%;
     overflow-x: auto;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 #lightgallery > a {
     background: #ccc;
@@ -19,6 +20,7 @@
   @media (min-width: 541px) {
     #lightgallery{
         padding-bottom: 15px;
+        padding-top: 15px;
     }
     #lightgallery > a {
         width: 160px;
@@ -27,6 +29,7 @@
   @media (min-width: 901px) {
     #lightgallery{
         padding-bottom: 20px;
+        padding-top: 20px;
     }
     #lightgallery > a {
         width: 200px;
@@ -36,6 +39,7 @@
   @media (min-width: 1201px) {
     #lightgallery{
         padding-bottom: 25px;
+        padding-top: 25px;
     }
     #lightgallery > a {
         width: 250px;
