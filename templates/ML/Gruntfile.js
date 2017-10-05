@@ -20,16 +20,16 @@ module.exports = function(grunt) {
         ]
       }
     },
-    imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'src/assets/images',
-          src: ['**/*.{png,gif}'],
-          dest: 'src/assets/images'
-        }]
-      }
-    },
+  //  imagemin: {
+    //  dynamic: {
+      //  files: [{
+        //  expand: true,
+          //cwd: 'src/assets/images',
+          //src: ['**/*.{png,gif}'],
+          //dest: 'src/assets/images'
+        //}]
+    //  }
+    //},*/
     img: {
 
         // using only dirs with output path
@@ -53,13 +53,13 @@ module.exports = function(grunt) {
       options: {
         sizes: [
           {
-            width: 675 /*1200*/
+            width: 1200 /*1200*/
           },{
-          width: 180/*320*/
+          width: 320/*320*/
         },{
-          width: 360/*640*/
+          width: 640/*640*/
         },{
-          width: 506/*900*/
+          width: 900/*900*/
           /*suffix: "_900"*/
         }]
       },
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         expand: true,
         src: ['**.{jpg,gif,png}'],
         cwd: 'src/assets/images/',
-        dest: 'dist/assets/images/'
+        dest: 'dist/assets/images/nine/2017/'
       }]
     }
   },
@@ -117,5 +117,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'cmq');
 };*/
 
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images','sass','purifycss']);
+//  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images','sass','purifycss']);
+    grunt.registerTask('default', ['img','responsive_images']);
 };
