@@ -4,7 +4,12 @@ body {
   min-width: 320px;
   background-color: #FFF;
 }
-
+html [type=button] {
+    -webkit-appearance: none;
+}
+.hiddenEl{
+  display: none;
+}
 .overlay {
   position: fixed;
   height: 100%;
@@ -44,11 +49,24 @@ body {
   background: #ffffff;
   text-decoration: none;
 }
+strong{
+  font-weight: bold !important;
+}
 
 ul {
   -webkit-padding-start: 0px;
   -webkit-margin-after: 0px;
 }
+
+
+  .shortHeight{
+    max-height:3em;
+    transition: max-height 0.5s ease-out;
+  }
+  .long {
+      transition: max-height 0.5s ease-in;
+      max-height:1500px;
+  }
 
 #topSliderContainer {
   margin-top: 42px;
@@ -65,30 +83,52 @@ ul {
   position: absolute;
   top: 5%;
   left: 2%;
-  width: 80%;
-  text-shadow: 2px 2px 2px #000;
+  width: 65%;
+  font-weight: 400;
+/*  text-shadow: 2px 2px 2px #000; */
 
 }
 
 #topSliderContainer .topSliderBottomMsg {
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   left: 2%;
-  width: 45%;
+  width: 60%;
   border-bottom: 2px solid #FFF;
+  font-weight: 400;
+/*  text-shadow: 2px 2px 2px #000;*/
 }
-
-#topSliderContainer .topSliderCaret {
-  /*caret*/
+#topSliderContainer .topSliderCaretContainer{
   position: absolute;
-  top: 88%;
+  top: 93%;
   left: 50%;
-  width:5vw;
   -ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
   -webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
+#topSliderContainer .topSliderCaret {
+  /*caret*/
+  width:1em;
+  -webkit-animation: pulsate 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.0;
+}
+@-webkit-keyframes pulsate {
+    0% {opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.0;}
+    /*https://stackoverflow.com/questions/4910963/how-to-create-a-pulse-effect-using-webkit-animation-outward-rings*/
+}
+#topSliderContainer .topSliderLogo{
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%, -50%);
+  width:25%;
+}
 #topMiners {
   font-family: 'Yantramanav', sans-serif;
 }
@@ -136,8 +176,8 @@ ul {
   }
 
   #hamburger img {
-    height: 28px !important;
-    width: 28px !important;
+    height: 20px !important;
+    width: 25px !important;
   }
 
   .navigation {
@@ -150,7 +190,15 @@ ul {
     transition: 0.25s;
     background-color: #ededed;
   }
-
+  .nav-list{
+    position: relative;
+  }
+  .navigation .closeX{
+    position: absolute;
+    width: 1em;
+    right: 0.5em;
+    top: 0.5em;
+  }
   .navigation.open {
     margin-left: 30%;
     transition-timing-function: ease-out;
@@ -169,6 +217,7 @@ ul {
 
   .nav-item a {
     color: #717771;
+    font-size: 14px;
   }
 
   #topSliderDiv {
@@ -178,12 +227,27 @@ ul {
   #topSliderContainer {
     font-size: 5vw;
   }
+  .socialMedia a{
+    float: left;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+  .nav-item.socialMedia{
+    line-height: 16px;
+  }
+  .socialMedia img{
+    width:16px;
+  }
+  .nav-item.borderless{
+    border:none !important;
+  }
 }
 
 @media (min-width: 541px) {
   /*for-tablet-portrait-up*/
 
-  #hamburger {
+  #hamburger,.navigation .closeX, .socialMedia {
     display: none;
   }
 
@@ -265,6 +329,10 @@ text-decoration: none;
     position: absolute;
     top: 38%;
     left: 0px;
+  }
+  #topSliderContainer .topSliderBottomMsg {
+    border-bottom: 3px solid #FFF;
+  /*  text-shadow: 2px 2px 2px #000;*/
   }
 }
 

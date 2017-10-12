@@ -1,152 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LG</title>
+  <title>THE MINER'S LAMP AWARD</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../lightGallery/node_modules/lightgallery/dist/css/lightgallery.css" />
-  <style media="screen">
-    .myThumb {
-      width: 100px;
-    }
+  <!-- Bootstrap -->
+  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    #lightGalleryContainer {
-      padding-top: 1vw;
-          height: 26vw;
-          overflow: hidden;
-          background-color: #FFF;
-    }
-    #lightGalleryTitleContainer {
-      display: flex;
-      justify-content: space-between;
-      font-size: 16px;
-      font-size: 5vmin;
-      font-weight: 200;
-    }
-
-    #lightGalleryTitleContainer span {
-      color: #717771;
-    }
-
-    #lightGalleryTitleContainer div {
-      border-top: 1px solid #e1af0a;
-      margin-top: 10px;
-      margin-top: 4vmin;
-      width: 60%;
-      width: 40vmax;
-    }
-    #lightgallery>a>img {
-      padding-bottom: 3vw;
-      width:32%;
-    }
-    #lightgallery{
-      text-align: center;
-    }
-      @media (min-width: 541px) {
-        #lightgallery>a>img {
-          padding-bottom: 3vw;
-          width:24%;
-        }
-        #lightGalleryContainer {
-            padding-top: 1.5vw;
-            height: 117px;
-            overflow: hidden;
-            background-color: #FFF;
-        }
-        #lightgallery>a>img {
-          width: 122px;
-        }
-        #lightgalleryTitleContainer div {
-          width: 50vmax;
-        }
-      }
-      @media (min-width: 901px) {
-        #lightgallery>a>img {
-          padding-bottom: 3vw;
-          width:19%;
-        }
-        #lightGalleryContainer {
-          padding-top: 1vw;
-          height: 130px;
-          overflow: hidden;
-          background-color: #FFF;
-        }
-        #lightgallery>a>img {
-          width: 136px;
-        }
-      }
-      @media (min-width: 1201px) {
-        #lightgallery>a>img {
-          width:216px;
-        }
-        #lightGalleryContainer {
-          height: 180px;
-        }
-      }
-
-  </style>
+  <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="dist/css/owl.theme.default.min.css">
+  <link type="text/css" rel="stylesheet" href="dist/css/lightgallery.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <link href="dist/css/main.css" rel="stylesheet">
+  <link href="dist/css/top.css" rel="stylesheet">
+  <link href="dist/css/twoOurIdeas.css" rel="stylesheet">
+  <link href="dist/css/threeDonate.css" rel="stylesheet">
+  <link href="dist/css/fourImpact.css" rel="stylesheet">
+  <link href="dist/css/fiveYourDonations.css" rel="stylesheet">
+  <link href="dist/css/sixWhatsNew.css" rel="stylesheet">
+  <link href="dist/css/sevenLogo.css" rel="stylesheet">
+  <link href="dist/css/eightAwardWinners.css" rel="stylesheet">
+  <link href="dist/css/nineGallery.css" rel="stylesheet">
+  <link href="dist/css/tenContact.css" rel="stylesheet">
+  <link href="../lity-2.3.0/dist/lity.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="HeadRecreationBlack-180.png" sizes="16x16">
 </head>
 
-<body style="background-color:#000;">
+<body>
+  <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12" id="lightGalleryContainer">
-      <div id="lightGalleryTitleContainer">
-        <span>Gallery</span>
-        <div></div>
+    <div data-section="0Nav" class="row">
+      <div class="mainBar">
+        <div id="topInfo" class="col-md-12">
+          <div id="topInfoContainer">
+            <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/one/MLLogo_51.jpg" srcset="dist/assets/images/one/MLLogo_80.jpg 700w, dist/assets/images/one/MLLogo_100.jpg 1000w" alt="topLogo" />
+            <a id="topDonateBtn" href="#sectionThreeContainer" type="button">Donate</a>
+            <span id="hamburger"><img class="icon icons8-Menu" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
+          </div>
+          <nav class="navigation">
+
+            <ul class="nav-list">
+              <img class="closeX" src="dist/assets/svg/Grey _X_ Icon.svg">
+              <li class="nav-item"><a href="#sectionTwo">About Us </a></li>
+              <li class="nav-item"><a href="#impactContainer">Impact</a></li>
+              <li class="nav-item"><a href="#sectionThree">Donate</a></li>
+              <li class="nav-item"><a href="#newsContainer">News</a></li>
+              <li class="nav-item borderless"><a href="#sectionTenContainer">Connect</a></li>
+              <li class="nav-item borderless socialMedia">
+                <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" ><img src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/minerslampaward/"><img src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-        <div id="lightgallery">
-          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-1--320.jpg" data-responsive="dist/assets/images/1200x675-1--640.jpg 899, dist/assets/images/1200x675-1--900.jpg 1199, dist/assets/images/1200x675-1--1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-1--320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-2-.-320.jpg" data-responsive="dist/assets/images/1200x675-2-.-640.jpg 899, dist/assets/images/1200x675-2-.-900.jpg 1199, dist/assets/images/1200x675-2-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-2-.-320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-3-.-320.jpg" data-responsive="dist/assets/images/1200x675-3-.-640.jpg 899, dist/assets/images/1200x675-3-.-900.jpg 1199, dist/assets/images/1200x675-3-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-3-.-320.jpg" />
-          </a>
-          <a href="dist/assets/images/1200x675-4-.-320.jpg" data-responsive="dist/assets/images/1200x675-4-.-640.jpg 899, dist/assets/images/1200x675-4-.-900.jpg 1199, dist/assets/images/1200x675-4-.-1200.jpg 2000">
-              <img class="myThumb" src="dist/assets/images/1200x675-4-.-320.jpg" />
-          </a>
+    </div>
+    <div data-section="1TopSlider" class="row">
+      <section class="col-md-12" id="topSliderDiv">
+        <div id="topSliderContainer">
+          <div class="owl-one owl-carousel owl-theme">
+          </div>
+        </div>
+      </section>
+    </div>
+    <div data-section="2ourIdeas" class="col-md-12">
+        <section id="sectionTwo" class="parent">
+          <div id="titleContainer">
+            <div data-id="1">About<span class="showingChild"></span></div>
+            <div data-id="2">Funding Research<span></span></div>
+            <div data-id="3">Award Dinner<span></span></div>
+          </div>
+          <div id="quoteContainer">
+            <span>&ldquo;</span>
+            <div class="quote" style="display:block;" data-id="1">
+              Thank you for your interest in the Miner’s Lamp Award!<br><br>
+              One in five Canadians will experience mental illness in their lifetime and, of these, over 70%
+              encounter their first symptoms between 16 and 24. Research into the causes of mental illness
+              among young people is therefore essential.<br><br>
+              The Miner’s Lamp Award has been raising funds to do this since 2016, thanks to a partnership
+              between IAMGOLD Corporation and University of Toronto Department of Psychiatry, and
+              generous sponsorship from many companies and individuals in different walks of life.<br><br>
+              While investing in the future, we believe it’s equally important to recognize individuals whose
+              outstanding leadership in eroding the stigma of mental illness has brought fresh hope to those
+              affected by it. Each year, we honour them with the presentation of the Miner’s Lamp Award and
+              encourage others to follow their lead.<br><br>
+              We invite you to help us improve mental health for generations to come by supporting the 2018
+              Miner’s Lamp Award Dinner.<br><br>
+              (Two signatures &amp; titles)
+            </div>
+            <div class="quote" data-id="2">
+              A growing body of medical research highlighting the impact of mental illness, a greater
+              understanding of its physiological origins and clearer evidence of its connection with physical
+              health...<i>all are cause for optimism.</i><br><br>
+
+              Building on this optimism requires continuing financial investment. We have chosen to focus on
+              funding research that sows the seeds of new insight into the causes of mental illness among
+              adolescents and young people. Research in this area is underfunded compared to other leading
+              causes of illness and disability, so we want to act quickly to avert the challenges that arise when
+              mental health conditions go undiagnosed and untreated for extended periods.<br><br>
+              Since 2016, the Miner’s Lamp Award Campaign has raised over $1m for new research in the
+              prevention and early detection of severe mental illness in adolescents and young people. The
+              2016 portion of the funds raised is supporting innovative studies at the Centre for Addiction and
+              Mental Health (CAMH). Further research grants using the 2017 funds will be awarded later this
+              year.<br><br>
+              <i>IAMGOLD Corporation pays all costs associated with hosting the Miner’s Lamp Award Dinner,
+              so 100% of funds raised go directly to new research.</i>
+            </div>
+            <div class="quote" data-id="3">
+              The 2018 Miner’s Lamp Award Dinner will be held on Tuesday March 27 at The Carlu, Toronto.
+              Following an inaugural event for 200 members of Canada’s business and academic
+              communities in March 2016, the Miner’s Lamp Award Dinner moved to The Carlu in April 2017
+              to accommodate growing demand from the 400 guests who sponsored and attended the event.<br><br>
+              By bringing together an influential group of engaged Canadians, accomplished individuals
+              speaking courageously of their own struggles with mental illness, and talented performers, the
+              Miner’s Lamp Award Dinner has become a memorable evening… an opportunity for our
+              community to celebrate progress and renews its commitment to improving mental health for
+              generations to come.<br><br>
+              Our 2017 guests saw Sophie Grégoire Trudeau join Steven Page (founder of the Barenaked
+              Ladies) in speaking up for greater understanding of mental illness. In March 2018, we look
+              forward to honouring George Cope, President &amp; CEO, BCE Inc. &amp; Bell Canada, and founder of
+              Bell Let’s Talk, with the Miner’s Lamp Award.<br><br>
+              For more details of the 2018 Miner’s Lamp Award Dinner, including sponsorship opportunities at
+              many levels, click here.
+            </div>
+
+          </div>
+
+        </section>
+
+    </div>
+    <div data-section="3donate" id="sectionThree" class="row">
+      <div class="col-md-12">
+          <div id="sectionThreeContainer">
+            <a href="#" onclick="window.open('dist/assets/pdf/MobileWireframV2.pdf', '_blank', 'fullscreen=yes'); return false;">SEND ME A DONATION PACKAGE</a>
+
+            <div class="sectionThreeItemContainer">
+
+                  <span class="sectionThreeroundTitle one">
+              <span class="round"><span>Donate</span></span></span>
+              <div class="sectionThreeItemBlurb" data-ellipsis="4">
+                Since 2016, the Miner's Lamp Award has brought together a network of engaged leaders from across industries, committed to improving the trajectory and outcomes of mental illness for adolescents and young adults. To date, we have invested over $1 million in groundbreaking research that will help to define the future of mental healthcare and drive the cultural shift around public attitudes towards mental illness. Our ability to invest in groundbreaking research is made possible by the generous support of sponsors like you. Please consider joining us for the 2018 Miner's Lamp Award Dinner. Full details of sponsorship opportunities are available here. [Link to pdf.] Please note that as all costs for the Miner's Lamp Award Dinner are covered by IAMGOLD Corporation, 100% of funds raised go directly into new research.
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="sectionThreeItemContainer">
+              <span class="sectionThreeroundTitle two">
+                <span class="round"><span>Partner</span></span>
+              </span>
+              <div class="sectionThreeItemBlurb" data-ellipsis="4">
+                While IAMGOLD Corporation covers all costs for the Miner's Lamp Award Dinner, we are fortunate to enjoy the support of partners who contribute in kind in areas of special significance to them. If you would like to explore an in-kind contribution, please contact [TBD]. Thanks in advance for your support for the Miner's Lamp Award!
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div data-section="4yourImpact" class="row">
+      <div id="impactContainer" class="col-md-12">
+        <div class="headingTitleContainer">
+          <div class="titleText">Your Impact</div>
+          <div class="centeredLine"></div>
+        </div>
+        <div id="impactItemsContainer">
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                2
+              </div>
+              <img src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
+            </div>
+            <div class="impactVerb">
+              Years since launch
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
+          </div>
+
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                $ 1 Million
+              </div>
+              <img src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
+            </div>
+            <div class="impactVerb">
+              Raised
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
+          </div>
+
+          <div class="impactItem">
+            <div class="impactTopTwo">
+              <div class="impactMetric">
+                &nbsp;&nbsp;&nbsp;100%
+              </div>
+              <img src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
+            </div>
+            <div class="impactVerb">
+              Funds Donated
+            </div>
+            <div class="impactLeftLine"></div>
+            <div class="impactRightLine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-section="5yourDonationsAtWork" class="row">
+      <section class="col-md-12" id="sectionFive">
+        <div class="col-md-12" id="sectionFiveContainer">
+          <div id="yourDTitleContainer">
+            <span></span>
+            <div>Your donations at work</div>
+            <span></span>
+          </div>
+          <div class="yourDSummary">
+              Every dollar donated to the Miner's Lamp Award Campaign supports new research into youth mental health. As IAMGOLD covers the cost of the dinner, 100% of proceeds are channelled into new research to support the field’s most promising studies. With the funds raised in 2016, two new studies are under way at Toronto's Centre for Addiction and Mental Health (CAMH).
+          </div>
+          <div id="yourDItemsContainer">
+            <div class="yourDItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/five/AristotleVoineskos--320.jpg" srcset="dist/assets/images/five/AristotleVoineskos--640.jpg 640w, dist/assets/images/five/AristotleVoineskos--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-1--1200.jpg 1200w-->
+              <div class="yourDItemTitleContainer">
+                <div class="title">
+                  Aristotle Voineskos
+                </div>
+                <!--div class="hdivider">|</div>
+                <div class="time">
+                  2016 - present
+                </div-->
+
+              </div>
+              <div class="blurb">
+                  Drs. Joanna Henderson and Aristotle Voineskos are collaborating with child and youth clinics, and using a new approach to identify early signs of psychosis spectrum symptoms.
+              </div>
+
+            </div>
+            <div class="divider"></div>
+            <div class="yourDItem">
+              <img class="b-lazy" src="dist/assets/images/loading.gif" data-src="dist/assets/images/five/VincenzoDeLuca--320.jpg" srcset="dist/assets/images/five/VincenzoDeLuca--640.jpg 640w, dist/assets/images/five/VincenzoDeLuca--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-2--1200.jpg 1200w-->
+
+              <div class="yourDItemTitleContainer">
+                <div class="title">
+                  Dr. Vincenzo De Luca
+                </div>
+                <!--div class="hdivider">|</div>
+                <div class="time">
+                  2016 - present
+                </div-->
+
+              </div>
+              <div class="blurb">
+                Dr. Vincenzo De Luca is studying the interaction of early life adversities and schizophrenia vulnerability genes in young people – with a specific focus on how this relates to suicide risk.
+                With over $630,000 raised at the 2017 Miner's Lamp Award Dinner, further research grants will be awarded in fall 2017.
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div data-section="6WhatsNew" class="row">
+        <div class="col-md-12" id="newsContainer">
+          <div class="headingTitleContainer">
+            <div class="titleText">What's new</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div id="hiddenNews" class="lity-hide">
+         </div>
+          <div class="owl-two owl-carousel owl-theme">
+            </div>
+        </div>
+    </div>
+    <div data-section="7donorLogos" class="row">
+      <section class="col-md-12" id="sectionSeven">
+        <div class="col-md-12" id="sectionSevenContainer">
+          <div class="headingTitleContainer">
+            <div class="titleText">2017 Donors</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div id="logoItemContainer">
+            <div class="logoItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoIMG-160.jpg" srcset="dist/assets/images/seven/logoIMG-320.jpg 640w,
+              dist/assets/images/seven/logoIMG-450.jpg 900w,
+              dist/assets/images/seven/logoIMG-600.jpg 1200w" alt="logo">
+
+            </div>
+            <div class="logoItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoUTPsych-160.jpg" srcset="dist/assets/images/seven/logoUTPsych-320.jpg 640w,
+              dist/assets/images/seven/logoUTPsych-450.jpg 900w,
+              dist/assets/images/seven/logoUTPsych-600.jpg 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoAirCanada-160.jpg" srcset="dist/assets/images/seven/logoAirCanada-320.jpg 640w,
+              dist/assets/images/seven/logoAirCanada-450.jpg 900w,
+              dist/assets/images/seven/logoAirCanada-600.jpg 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoNationalB-160.png" srcset="dist/assets/images/seven/logoNationalB-320.png 640w,
+              dist/assets/images/seven/logoNationalB-450.png 900w,
+              dist/assets/images/seven/logoNationalB-600.png 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img class="b-lazy vert" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 150 200'%2F%3E" data-src="dist/assets/images/seven/logoPearTree-80.png" srcset="dist/assets/images/seven/logoPearTree-160.png 640w,
+              dist/assets/images/seven/logoPearTree-225.png 900w,
+              dist/assets/images/seven/logoPearTree-300.png 1200w" alt="logo">
+            </div>
+            <div class="logoItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoRBC-160.png" srcset="dist/assets/images/seven/logoRBC-320.png 640w,
+              dist/assets/images/seven/logoRBC-450.png 900w,
+              dist/assets/images/seven/logoRBC-600.png 1200w" alt="logo">
+            </div>
+
+            <div class="logoListAllContainer">
+              <div class="headingTitleContainer">
+                <div class="titleText">Silver Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Agnico Eagle Mines</div>
+                <div> Barrick</div>
+                <div> Deloitte</div>
+                <div> EY</div>
+                <div> KPMG MSLP</div>
+                <div> Purves Redmond</div>
+                <div> TD Securities</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Bronze Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Ausenco</div>
+                <div> Geoff Beattie & Amanda Lang</div>
+                <div> Black Loon Metals</div>
+                <div> Blake, Cassels & Graydon LLP</div>
+                <div> BMO</div>
+                <div> CAMH</div>
+                <div> Citi</div>
+                <div> Detour Gold</div>
+                <div> Emerging Markets Capital</div>
+                <div> Evans Investment Counsel</div>
+                <div> Fasken Martineau</div>
+                <div> Kinross Gold</div>
+                <div> Labatt Family</div>
+                <div> Magris Resources Inc.</div>
+                <div> Maple Leaf Foods</div>
+                <div> Morgan Stanley</div>
+                <div> Paul, Weiss, Rifkind, Wharton & Garrison LLP</div>
+                <div> Ryan Bignucolo</div>
+                <div> SickKids Foundation</div>
+                <div> Stikeman Elliott LLP</div>
+                <div> Teck Resources</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Sponsors</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Jamie & Patsy Anderson</div>
+                <div> John Hunkin</div>
+                <div> Mancal Corporation</div>
+                <div> PwC</div>
+                <div> Jim & Sandi Treliving</div>
+              </div>
+              <div class="headingTitleContainer">
+                <div class="titleText">Supporters</div>
+                <div class="centeredLine"></div>
+              </div>
+              <div class="logoListContainer">
+                <div> Barberian's Steak House</div>
+                <div> Donnelley Financial Siolutions</div>
+                <div> Maple Leaf Sports & Entertainment</div>
+              </div>
+
+
+            </div>
+            <div class="logoCaretContainer">
+              <div class="more">
+                <img class="logoCaret" src="/Applications/XAMPP/xamppfiles/htdocs/devDocs/templates/ML/dist/assets/svg/carat717771.png" alt="caret"/>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+    <div data-section="8awardWinners" class="row">
+      <div class="col-md-12">
+        <div id="awardWinnersContainer">
+          <div class="awardWinnersTitleContainer">
+            <div class="titleText">Award Winners</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div class="owl-three owl-carousel owl-theme">
+            <div class="item">
+              <div class="awardWinnersItem">
+                <div class="year">
+                  2016
+                </div>
+                <div class="contentContainer">
+                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/Beeston-320.jpg" srcset="dist/assets/images/eight/Beeston-640.jpg 640w, dist/assets/images/eight/Beeston-900.jpg 900w, dist/assets/images/eight/Beeston-1200.jpg 1200w" alt="yourDItem">
+                  <div class="name">
+                    Paul M. Beeston
+                  </div>
+                  <div class="contentBox" data-ellipsis="3">
+                    Paul M. Beeston is known for many achievements. He was the very first employee of the Toronto Blue Jays; the whiz kid accountant who helped bring two World Series championships to Canada. He is a member of the Order of Canada and the beloved Canadian who went on to become president of Major League Baseball. What he is less known for but where his footprint has been no less influential is his work to support people living with mental illness. During his time as chair of the board of trustees at the Centre for Addiction and Mental Health, Paul’s impact was felt at all levels. From supporting an ambitious $1 billion expansion, to handing out cookies on Christmas Day with his wife Kaye to staff who worked in the emergency room, Paul has had an enormous impact on the lives of many.                  </div>
+                <!--item-->
+                    <div class="bottomContainer">
+                      <div class="left">
+                        <span>2017 Winner</span>
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                      </div>
+                      <div class="right">
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <span>Back</span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="awardWinnersItem">
+                <div class="year">
+                  2017
+                </div>
+                <div class="contentContainer">
+                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/JamesAndPatsyAnderson-320.jpg" srcset="dist/assets/images/eight/JamesAndPatsyAnderson-640.jpg 640w, dist/assets/images/eight/JamesAndPatsyAnderson-900.jpg 900w, dist/assets/images/eight/JamesAndPatsyAnderson-1200.jpg 1200w" alt="yourDItem">
+
+                  <div class="name">
+                    Jamie & Patsy Anderson
+                  </div>
+                  <div class="contentBox" data-ellipsis="3">
+                    Mental health has long been a focus of Jamie and Patsy Anderson’s philanthropic commitments. In 2013, building on previous gifts, they generously established a Chair in Child and Youth Mental Health between CAMH, SickKids and the University of Toronto. The Chair enabled development and leadership of an integrated program in this area of mental health.
+                    <br><br>
+                    Jamie and Patsy are equally generous with their time, energy and expertise as volunteers. Patsy joined the Board of Directors of SickKids Foundation in 2001 and served as its Chair from 2006 to 2011, a transformative period for the hospital. Jamie, meanwhile, first joined CAMH’s fundraising campaign in 1998 and has been involved ever since, serving in a number of key governance and fundraising roles, including Co-Chair of the current “Breakthrough” campaign.
+                  </div>
+                <!--item-->
+                  <div class="bottomContainer">
+                      <div class="left">
+                        <span>2016 Winner</span>
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                      </div>
+                      <div class="right">
+                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <span>Back</span>
+                      </div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-section="9Gallery" class="row">
+      <div class="col-md-12" id="lightGalleryContainer">
+        <div class="headingTitleContainer">
+          <div class="titleText">Gallery</div>
+          <div class="centeredLine"></div>
+        </div>
+        <div class="yearHeading">
+          2016
+        </div>
+        <div id="lightgallery2016">
+
+        </div>
+        <div class="yearHeading">
+          2017
+        </div>
+        <div id="lightgallery2017">
+
         </div>
 
       </div>
     </div>
-  </div>
+    <div data-section="10Contacts" class="row">
+        <div class="col-md-12" id="sectionTenContainer">
+          <div class="headingTitleContainer">
+            <div class="titleText">Connect</div>
+            <div class="centeredLine"></div>
+          </div>
+          <div id="contactItemsContainer">
+            <div class="contactItem">
+
+            <div class="type">
+                Gabrielle Dang
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="info">
+                647-526-3957<br>gabrielle.dang@utoronto.ca
+              </div>
+            </div>
+            <div class="contactItem">
+              <div class="type">
+                Jonathan Carson
+              </div>
+              <div class="divider">
+
+              </div>
+              <div class="info">
+                416-360-4763<br>jonathan_carson@iamgold.com
+              </div>
+            </div>
+            </div>
+          <div id="contactSocialMediaContainer">
+            <div class="follow">
+              follow us
+            </div><br>
+            <div class="icons">
+              <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" ><img src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
+              <a target="_blank" href="https://www.instagram.com/minerslampaward/"><img src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
+            </div>
+          </div>
+          <div id="MLFooter">
+            &copy;2017
+          </div>
+        </div>
+
+    </div>
+</div><!--container-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="dist/js/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="dist/js/lg-thumbnail.min.js"></script>
+    <script src="dist/js/lg-fullscreen.min.js"></script>
+    <script src="dist/js/lg-share.min.js"></script>
+    <script src="dist/js/lg-zoom.min.js"></script>
+    <script src="dist/js/owl.carousel.min.js"></script>
+    <script src="../lity-2.3.0/dist/lity.js"></script>
+    <!--script src="dist/js/ellipsis.min.js"></script>
+    <script type="text/javascript" src="dist/js/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="dist/js/jquery.lazy.plugins.min.js"></script-->
+    <script src="dist/js/blazy.min.js"></script>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="../lightGallery/node_modules/lightgallery/dist/js/lightgallery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-  <script src="../lightGallery/node_modules/lg-thumbnail/dist/lg-thumbnail.min.js"></script>
-  <script src="../lightGallery/node_modules/lg-fullscreen/dist/lg-fullscreen.min.js"></script>
-  <script src="../lightGallery/node_modules/lg-share/dist/lg-share.min.js"></script>
-  <script src="../lightGallery/node_modules/lg-zoom/dist/lg-zoom.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#lightgallery").lightGallery({
-        "share": true
-      });
-    });
-  </script>
+
+    <script src="dist/js/index.js">>
+
+    </script>
 </body>
 
 </html>

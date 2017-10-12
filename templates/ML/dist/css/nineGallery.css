@@ -2,10 +2,19 @@
 [id^='lightgallery'] .myThumb {
   max-width: 160px;
   max-height: 90px;
+
   }
+  [id^='lightgallery'] .myThumb.triggered {
+    max-width: 160px;
+    max-height: 90px;
+    display: block !important;
+    }
+
 #lightGalleryContainer .yearHeading{
-  font-size: 2em;
+  font-size: 16px;
   padding-left: 1em;
+  color: #717771;
+  padding: 0.5em;
 }
 [id^='lightgallery']  .myThumb:hover {
     opacity:0.5;
@@ -14,34 +23,28 @@
     white-space: nowrap;
     width: 100%;
     overflow-x: auto;
+    background: #000;
 }
 [id^='lightgallery'] > a {
     background: #ccc;
-
     display: inline-block;
 }
   @media (min-width: 541px) {
-    [id^='lightgallery']{
-
-    }
-    [id^='lightgallery'] > a {
-
+    #lightGalleryContainer .yearHeading{
+      font-size: 18px;
+      padding-left: 1em;
     }
 }
   @media (min-width: 901px) {
-    [id^='lightgallery']{
-
-    }
-    [id^='lightgallery'] > a {
-
+    #lightGalleryContainer .yearHeading{
+      font-size: 20px;
+      padding-left: 1em;
     }
   }
 
   @media (min-width: 1201px) {
-    [id^='lightgallery']{
-
-    }
-    [id^='lightgallery'] > a {
-
+    #lightGalleryContainer .yearHeading{
+      font-size: 24px;
+      padding-left: 1em;
     }
   }

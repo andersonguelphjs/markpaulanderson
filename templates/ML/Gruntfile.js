@@ -53,19 +53,20 @@ module.exports = function(grunt) {
       options: {
         sizes: [
           {
-            width: 1200 /*1200*/
-          },{
-          width: 320/*320*/
-        },{
-          width: 640/*640*/
-        },{
-          width: 900/*900*/
+          width: 100/*320,180*/
+        }//,{
+        //  width: 640/*640,360*/
+        //},{
+        //  width: 900/*900,506*/
           /*suffix: "_900"*/
-        }]
+        //},{
+        //  width: 1200 /*1200,675*/
+      //  }
+      ]
       },
       files: [{
         expand: true,
-        src: ['**.{jpg,gif,png}'],
+        src: ['**.{jpg,gif,png,svg}'],
         cwd: 'src/assets/images/',
         dest: 'dist/assets/images/nine/2017/'
       }]
@@ -80,7 +81,8 @@ module.exports = function(grunt) {
           'dist/css/main.css': 'src/css/main.scss'
         }
       }
-    },
+    }
+    ,
     purifycss: {
     options: {},
     target: {

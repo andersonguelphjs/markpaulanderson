@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>menu</title>
+  <title>THE MINER'S LAMP AWARD</title>
 
   <!-- Bootstrap -->
   <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
@@ -29,6 +29,7 @@
   <link href="dist/css/nineGallery.css" rel="stylesheet">
   <link href="dist/css/tenContact.css" rel="stylesheet">
   <link href="../lity-2.3.0/dist/lity.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="HeadRecreationBlack-180.png" sizes="16x16">
 </head>
 
 <body>
@@ -38,17 +39,23 @@
       <div class="mainBar">
         <div id="topInfo" class="col-md-12">
           <div id="topInfoContainer">
-            <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/MLLogo_51.jpg" srcset="dist/assets/images/MLLogo_80.jpg 700w, dist/assets/images/MLLogo_100.jpg 1000w" alt="topLogo" />
+            <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/one/MLLogo_51.jpg" srcset="dist/assets/images/one/MLLogo_80.jpg 700w, dist/assets/images/one/MLLogo_100.jpg 1000w" alt="topLogo" />
             <a id="topDonateBtn" href="#sectionThreeContainer" type="button">Donate</a>
             <span id="hamburger"><img class="icon icons8-Menu" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
           </div>
           <nav class="navigation">
+
             <ul class="nav-list">
-              <li class="nav-item"><a href="#">About Us </a></li>
-              <li class="nav-item"><a href="#impactContainer">Your Impact</a></li>
-              <li class="nav-item"><a href="#">Get Involved</a></li>
-              <li class="nav-item"><a href="#newsContainer">Blog</a></li>
-              <li class="nav-item"><a href="#sectionTenContainer">Contact</a></li>
+              <img class="closeX" src="dist/assets/svg/Grey _X_ Icon.svg">
+              <li class="nav-item"><a href="#sectionTwo">About Us </a></li>
+              <li class="nav-item"><a href="#impactContainer">Impact</a></li>
+              <li class="nav-item"><a href="#sectionThree">Donate</a></li>
+              <li class="nav-item"><a href="#newsContainer">News</a></li>
+              <li class="nav-item borderless"><a href="#sectionTenContainer">Connect</a></li>
+              <li class="nav-item borderless socialMedia">
+                <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" ><img src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/minerslampaward/"><img src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -128,39 +135,29 @@
         </section>
 
     </div>
-    <div data-section="3donate" class="row">
+    <div data-section="3donate" id="sectionThree" class="row">
       <div class="col-md-12">
-        <section id="sectionThree">
           <div id="sectionThreeContainer">
+            <a href="#" onclick="window.open('dist/assets/pdf/MobileWireframV2.pdf', '_blank', 'fullscreen=yes'); return false;">SEND ME A DONATION PACKAGE</a>
 
             <div class="sectionThreeItemContainer">
-              <span class="sectionThreeroundTitle one">
-                <span class="round"><span>Donate</span></span>
 
-              </span>
-              <div class="sectionThreeItemBlurb">Since 2016, the Miner's Lamp Award has brought together a network of engaged leaders from across industries, committed to improving the trajectory and outcomes of mental illness for adolescents and young adults. To date, we have invested over $1 million in groundbreaking research that will help to define the future of mental healthcare and drive the cultural shift around public attitudes towards mental illness. Our ability to invest in groundbreaking research is made possible by the generous support of sponsors like you. Please consider joining us for the 2018 Miner's Lamp Award Dinner. Full details of sponsorship opportunities are available here. [Link to pdf.] Please note that as all costs for the Miner's Lamp Award Dinner are covered by IAMGOLD Corporation, 100% of funds raised go directly into new research.
+                  <span class="sectionThreeroundTitle one">
+              <span class="round"><span>Donate</span></span></span>
+              <div class="sectionThreeItemBlurb" data-ellipsis="4">
+                Since 2016, the Miner's Lamp Award has brought together a network of engaged leaders from across industries, committed to improving the trajectory and outcomes of mental illness for adolescents and young adults. To date, we have invested over $1 million in groundbreaking research that will help to define the future of mental healthcare and drive the cultural shift around public attitudes towards mental illness. Our ability to invest in groundbreaking research is made possible by the generous support of sponsors like you. Please consider joining us for the 2018 Miner's Lamp Award Dinner. Full details of sponsorship opportunities are available here. [Link to pdf.] Please note that as all costs for the Miner's Lamp Award Dinner are covered by IAMGOLD Corporation, 100% of funds raised go directly into new research.
               </div>
             </div>
-            <div class="clearfix">
-
-            </div>
+            <div class="clearfix"></div>
             <div class="sectionThreeItemContainer">
               <span class="sectionThreeroundTitle two">
                 <span class="round"><span>Partner</span></span>
               </span>
-              <div class="sectionThreeItemBlurb">While IAMGOLD Corporation covers all costs for the Miner's Lamp Award Dinner, we are fortunate to enjoy the support of partners who contribute in kind in areas of special significance to them. If you would like to explore an in-kind contribution, please contact [TBD]. Thanks in advance for your support for the Miner's Lamp Award!
+              <div class="sectionThreeItemBlurb" data-ellipsis="4">
+                While IAMGOLD Corporation covers all costs for the Miner's Lamp Award Dinner, we are fortunate to enjoy the support of partners who contribute in kind in areas of special significance to them. If you would like to explore an in-kind contribution, please contact [TBD]. Thanks in advance for your support for the Miner's Lamp Award!
               </div>
             </div>
-            <!--div class="sectionThreeItemContainer three">
-              <div class="sectionThreeroundTitle">
-                <span class="round"><span>Sponsorship<br>Opportunities</span></span>
-              </div>
-              <div class="sectionThreeItemBlurb">
-                Vis populo principes repudiare at, cu hinc pericula incorrupte sea, illum ipsum maiorum sed ex.
-              </div>
-            </div-->
           </div>
-        </section>
       </div>
     </div>
     <div data-section="4yourImpact" class="row">
@@ -227,15 +224,15 @@
           </div>
           <div id="yourDItemsContainer">
             <div class="yourDItem">
-              <img src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/five/AristotleVoineskos--320.jpg" srcset="dist/assets/images/five/AristotleVoineskos--640.jpg 640w, dist/assets/images/five/AristotleVoineskos--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-1--1200.jpg 1200w-->
               <div class="yourDItemTitleContainer">
                 <div class="title">
-                  Pic summary
+                  Aristotle Voineskos
                 </div>
-                <div class="hdivider">|</div>
+                <!--div class="hdivider">|</div>
                 <div class="time">
                   2016 - present
-                </div>
+                </div-->
 
               </div>
               <div class="blurb">
@@ -245,16 +242,16 @@
             </div>
             <div class="divider"></div>
             <div class="yourDItem">
-              <img src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-2--640.jpg 640w, dist/assets/images/yourDonation-2--900.jpg 900w, dist/assets/images/yourDonation-2--1200.jpg 1200w" alt="yourDItem">
+              <img class="b-lazy" src="dist/assets/images/loading.gif" data-src="dist/assets/images/five/VincenzoDeLuca--320.jpg" srcset="dist/assets/images/five/VincenzoDeLuca--640.jpg 640w, dist/assets/images/five/VincenzoDeLuca--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-2--1200.jpg 1200w-->
 
               <div class="yourDItemTitleContainer">
                 <div class="title">
-                  Pic info
+                  Dr. Vincenzo De Luca
                 </div>
-                <div class="hdivider">|</div>
+                <!--div class="hdivider">|</div>
                 <div class="time">
                   2016 - present
-                </div>
+                </div-->
 
               </div>
               <div class="blurb">
@@ -273,173 +270,10 @@
             <div class="titleText">What's new</div>
             <div class="centeredLine"></div>
           </div>
-          <div class="lity-hide">
-            <div class="owl-news owl-carousel owl-theme">
-              <div id="article1" class="item lityItem">
-                <img class="full" alt="itemPic" src="dist/assets/images/1200x675-4-.-320.jpg" srcset="dist/assets/images/1200x675-4-.-640.jpg 640w, dist/assets/images/1200x675-4-.-900.jpg 900w, dist/assets/images/1200x675-4-.-1200.jpg 1200w">
-                <div class="detailContainer">
-                  <div class="type">
-                    Miner's Lamp
-                  </div>
-                  <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
-                  <div class="pipe">|</div>
-                  <div class="date">Sept 21, 2017</div>
-                </div>
-                <div class="title">
-                  Antonio Conte has been speaking
-                </div>
-                <div class="content">
-                  Antonio Conte has been speaking about the qualities of new signing Danny Drinkwater, as well as the midfielder’s relationship with N’Golo Kante, ahead of today’s visit to their former club Leicester City. Drinkwater was one of two deadline-day arrivals
-                  at Stamford Bridge along with Italian defender Davide Zappacosta, who signed from Torino, and could potentially make his Chelsea debut this afternoon.During the 2015/16 campaign Drinkwater formed a formidable midfield partnership withKante
-                  as Leicester defied the odds to win the Premier League title, and Conte believes they will work well together once again.‘I think Danny is a really good player,’ said Conte. ‘Two years ago together with N’Golo they won the league. They played
-                  regularly and showed how strong they were.‘Danny is a strong player who can help us. The midfield is very important. I need midfielders with particular characteristics which he has. Now he must find his best physical condition to be ready
-                  tohelp us.’Conte also explained why the fact we have signed two new players will not lead to a change in shape or system for his side.‘We want to continue to play with this system because, don’t forget, there are 11 players who played last
-                  season and we changed our system to give them the best condition to exploit their talent. With the new signings we have to try to give them the best chance to be in top condition.’
-
-                </div>
-              </div>
-              <div id="article2" class="item lityItem">
-                <img class="full" alt="itemPic" src="dist/assets/images/1200x675-1--320.jpg" srcset="dist/assets/images/1200x675-1--640.jpg 640w, dist/assets/images/1200x675-1--900.jpg 900w, dist/assets/images/1200x675-1--1200.jpg 1200w">
-                <div class="detailContainer">
-                  <div class="type">
-                    News article
-                  </div>
-                  <div class=""><img src="dist/assets/svg/Newspaper.svg" alt=""></div>
-                  <div class="pipe">|</div>
-                  <div class="date">Sept 22, 2017</div>
-                </div>
-                <div class="title">
-                  Just the name of another news article that will be a bit long
-                </div>
-                <div class="content">
-                  In their Man United game, Jose Mourinho had special measures to deal with Leicester’s biggest threat: wingers Demarai Gray and Marc Albrighton, forwards Jamie Vardy, and now Kelechi Iheanacho, finding space behind the defence from raking passes by the
-                  likes of Riyad Mahrez. Vardy, with Shinji Okazaki just behind, gave the Gunners’ rearguard a tough ride at times on the opening day but the Red Devils defended deep and blocked channels in midfield, forcing him into wide areas. Chelsea may
-                  try to win the battle for midfield and stifle the hosts’ danger men in similar fashion.
-                </div>
-              </div>
-              <div id="article3" class="item lityItem">
-                <img class="full" alt="itemPic" src="dist/assets/images/1200x675-2-.-320.jpg" srcset="dist/assets/images/1200x675-2-.-640.jpg 640w, dist/assets/images/1200x675-2-.-900.jpg 900w, dist/assets/images/1200x675-2-.-1200.jpg 1200w">
-                <div class="detailContainer">
-                  <div class="type">
-                    Miner's Lamp
-                  </div>
-                  <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
-                  <div class="pipe">|</div>
-                  <div class="date">Sept 23, 2017</div>
-                </div>
-                <div class="title">
-                  Title of article
-                </div>
-                <div class="content">
-                  Just over a month after he was a late substitute in the Community Shield match, Toni Rudiger is facing his first game as a Chelsea player outside of London having been an ever-present in our league campaign so far. He has also been in action for Germany
-                  over the international break, with notable success too, so the official Chelsea website sat down with the summer addition to the defence to look back at the opening weeks and ahead to games to come, including this afternoon’s fixture in
-                  Leicester. He also has an insight into another addition to the squad…IT HAS BEEN A PRETTY BUSY FIRST MONTH OF THE SEASON FOR YOU…‘For me it was important to adapt to the new place, to the new club, to the new country, and I have to say thank
-                  you to the guys and to the staff as they helped me a lot.‘To adapt it has been good to play games. Of course I came here because I want to play and I want to develop myself, and sometimes in life it is like this, someone gets suspended or
-                  injured. It is not that I wish that for my team-mates of course, but sometimes football works like this and then I have the chance to show myself very quickly in this team.‘I think it was positive for me and I would like to continue like
-                  this but it always depends on my effort in the training, and also in the games, and the coach decides.’
-
-                </div>
-              </div>
-            </div>
+          <div id="hiddenNews" class="lity-hide">
          </div>
-
           <div class="owl-two owl-carousel owl-theme">
-           <a href="#article1" data-lightbox>
-            <div class="item">
-              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-4-.-320.jpg" srcset="dist/assets/images/1200x675-4-.-640.jpg 640w, dist/assets/images/1200x675-4-.-900.jpg 900w, dist/assets/images/1200x675-4-.-1200.jpg 1200w">
-              <div class="detailContainer">
-                <div class="type">
-                  Miner's Lamp
-                </div>
-                <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
-                <div class="pipe">|</div>
-                <div class="date">Sept 21, 2017</div>
-              </div>
-              <div class="title">
-                Antonio Conte has been speaking
-              </div>
-              <div class="content">
-                Antonio Conte has been speaking about the qualities of new signing Danny Drinkwater, as well as the midfielder’s relationship with N’Golo Kante, ahead of today’s visit to their former club Leicester City. Drinkwater was one of two deadline-day arrivals
-                at Stamford Bridge along with Italian defender Davide Zappacosta, who signed from Torino, and could potentially make his Chelsea debut this afternoon.During the 2015/16 campaign Drinkwater formed a formidable midfield partnership withKante
-                as Leicester defied the odds to win the Premier League title, and Conte believes they will work well together once again.‘I think Danny is a really good player,’ said Conte. ‘Two years ago together with N’Golo they won the league. They played
-                regularly and showed how strong they were.‘Danny is a strong player who can help us. The midfield is very important. I need midfielders with particular characteristics which he has. Now he must find his best physical condition to be ready
-                tohelp us.’Conte also explained why the fact we have signed two new players will not lead to a change in shape or system for his side.‘We want to continue to play with this system because, don’t forget, there are 11 players who played last
-                season and we changed our system to give them the best condition to exploit their talent. With the new signings we have to try to give them the best chance to be in top condition.’
-
-              </div>
             </div>
-           </a>
-           <a href="#article2" data-lightbox>
-            <div class="item">
-              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-1--320.jpg" srcset="dist/assets/images/1200x675-1--640.jpg 640w, dist/assets/images/1200x675-1--900.jpg 900w, dist/assets/images/1200x675-1--1200.jpg 1200w">
-              <div class="detailContainer">
-                <div class="type">
-                  News article
-                </div>
-                <div class=""><img src="dist/assets/svg/Newspaper.svg" alt=""></div>
-                <div class="pipe">|</div>
-                <div class="date">Sept 22, 2017</div>
-              </div>
-              <div class="title">
-                Just the name of another news article that will be a bit long
-              </div>
-              <div class="content">
-                In their Man United game, Jose Mourinho had special measures to deal with Leicester’s biggest threat: wingers Demarai Gray and Marc Albrighton, forwards Jamie Vardy, and now Kelechi Iheanacho, finding space behind the defence from raking passes by the
-                likes of Riyad Mahrez. Vardy, with Shinji Okazaki just behind, gave the Gunners’ rearguard a tough ride at times on the opening day but the Red Devils defended deep and blocked channels in midfield, forcing him into wide areas. Chelsea may
-                try to win the battle for midfield and stifle the hosts’ danger men in similar fashion.
-              </div>
-            </div>
-           </a>
-           <a href="#article3" data-lightbox>
-            <div class="item">
-              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-2-.-320.jpg" srcset="dist/assets/images/1200x675-2-.-640.jpg 640w, dist/assets/images/1200x675-2-.-900.jpg 900w, dist/assets/images/1200x675-2-.-1200.jpg 1200w">
-              <div class="detailContainer">
-                <div class="type">
-                  Miner's Lamp
-                </div>
-                <div class=""><img src="dist/assets/svg/Flame.svg" alt=""></div>
-                <div class="pipe">|</div>
-                <div class="date">Sept 23, 2017</div>
-              </div>
-              <div class="title">
-                Title of article
-              </div>
-              <div class="content">
-                Just over a month after he was a late substitute in the Community Shield match, Toni Rudiger is facing his first game as a Chelsea player outside of London having been an ever-present in our league campaign so far. He has also been in action for Germany
-                over the international break, with notable success too, so the official Chelsea website sat down with the summer addition to the defence to look back at the opening weeks and ahead to games to come, including this afternoon’s fixture in
-                Leicester. He also has an insight into another addition to the squad…IT HAS BEEN A PRETTY BUSY FIRST MONTH OF THE SEASON FOR YOU…‘For me it was important to adapt to the new place, to the new club, to the new country, and I have to say thank
-                you to the guys and to the staff as they helped me a lot.‘To adapt it has been good to play games. Of course I came here because I want to play and I want to develop myself, and sometimes in life it is like this, someone gets suspended or
-                injured. It is not that I wish that for my team-mates of course, but sometimes football works like this and then I have the chance to show myself very quickly in this team.‘I think it was positive for me and I would like to continue like
-                this but it always depends on my effort in the training, and also in the games, and the coach decides.’
-
-              </div>
-            </div>
-            </a>
-            <div class="item">
-              <img class="preview" alt="itemPic" src="dist/assets/images/1200x675-3-.-320.jpg" srcset="dist/assets/images/1200x675-3-.-640.jpg 640w, dist/assets/images/1200x675-3-.-900.jpg 900w, dist/assets/images/1200x675-3-.-1200.jpg 1200w">
-              <div class="detailContainer">
-                <div class="type">
-                  News article
-                </div>
-                <div class=""><img src="dist/assets/svg/Newspaper.svg" alt=""></div>
-                <div class="pipe">|</div>
-                <div class="date">Sept 24, 2017</div>
-              </div>
-              <div class="title">
-                42 games undefeated all the way back to April 2015
-              </div>
-              <div class="content">
-                Our youth team return to action in the Under-18 Premier League this morning (Saturday), with Arsenal the visitors to Cobham for a London derby captured live by the Chelsea TV cameras (kick-off 10.30am).The young Blues will tick over 900 days unbeaten
-                at home in all competitions if they avoid defeat against the Gunners, who were the nearest challengers to Jody Morris’s side last term, finishing runners-up to our youngsters in the both the south section and national merit round.It is an
-                unblemished record that stretches across four different seasons, 42 games undefeated all the way back to April 2015 when Middlesbrough took the points home following a 3-1 victory. Morris frequently used the run as motivation for his players
-                during the Treble-winning campaign of 2016/17 and it continues to be a source of inspiration as a new crop of first-year scholars step forward.George McEachran is a more familiar face in the Under-18 surroundings, the midfielder featuring
-                on 26 occasions last season and in every game so far this term. His goals opened the scoring against both Aston Villa and Norwich City last month, with his impact in front of goal highlighted as a key area for further improvement in the
-                months ahead by the coaching staff.‘We want to carry on the unbeaten run for as long as possible,’ the 17-year-old tells the official Chelsea website as we look ahead to the game. ‘Jody and Ed [Brand, Under-18s assistant] speak about it
-                quite a lot and it’s a big thing for the Under-18s group.
-              </div>
-            </div>
-
-          </div>
         </div>
     </div>
     <div data-section="7donorLogos" class="row">
@@ -451,35 +285,35 @@
           </div>
           <div id="logoItemContainer">
             <div class="logoItem">
-              <img src="dist/assets/images/logoIMG-160.jpg" srcset="dist/assets/images/logoIMG-320.jpg 640w,
-              dist/assets/images/logoIMG-450.jpg 900w,
-              dist/assets/images/logoIMG-600.jpg 1200w" alt="logo">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoIMG-160.jpg" srcset="dist/assets/images/seven/logoIMG-320.jpg 640w,
+              dist/assets/images/seven/logoIMG-450.jpg 900w,
+              dist/assets/images/seven/logoIMG-600.jpg 1200w" alt="logo">
 
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoUTPsych-160.jpg" srcset="dist/assets/images/logoUTPsych-320.jpg 640w,
-              dist/assets/images/logoUTPsych-450.jpg 900w,
-              dist/assets/images/logoUTPsych-600.jpg 1200w" alt="logo">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoUTPsych-160.jpg" srcset="dist/assets/images/seven/logoUTPsych-320.jpg 640w,
+              dist/assets/images/seven/logoUTPsych-450.jpg 900w,
+              dist/assets/images/seven/logoUTPsych-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoAirCanada-160.jpg" srcset="dist/assets/images/logoAirCanada-320.jpg 640w,
-              dist/assets/images/logoAirCanada-450.jpg 900w,
-              dist/assets/images/logoAirCanada-600.jpg 1200w" alt="logo">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoAirCanada-160.jpg" srcset="dist/assets/images/seven/logoAirCanada-320.jpg 640w,
+              dist/assets/images/seven/logoAirCanada-450.jpg 900w,
+              dist/assets/images/seven/logoAirCanada-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoNationalB-160.png" srcset="dist/assets/images/logoNationalB-320.png 640w,
-              dist/assets/images/logoNationalB-450.png 900w,
-              dist/assets/images/logoNationalB-600.png 1200w" alt="logo">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoNationalB-160.png" srcset="dist/assets/images/seven/logoNationalB-320.png 640w,
+              dist/assets/images/seven/logoNationalB-450.png 900w,
+              dist/assets/images/seven/logoNationalB-600.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="vert" src="dist/assets/images/logoPearTree-80.png" srcset="dist/assets/images/logoPearTree-160.png 640w,
-              dist/assets/images/logoPearTree-225.png 900w,
-              dist/assets/images/logoPearTree-300.png 1200w" alt="logo">
+              <img class="b-lazy vert" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 150 200'%2F%3E" data-src="dist/assets/images/seven/logoPearTree-80.png" srcset="dist/assets/images/seven/logoPearTree-160.png 640w,
+              dist/assets/images/seven/logoPearTree-225.png 900w,
+              dist/assets/images/seven/logoPearTree-300.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img src="dist/assets/images/logoRBC-160.png" srcset="dist/assets/images/logoRBC-320.png 640w,
-              dist/assets/images/logoRBC-450.png 900w,
-              dist/assets/images/logoRBC-600.png 1200w" alt="logo">
+              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoRBC-160.png" srcset="dist/assets/images/seven/logoRBC-320.png 640w,
+              dist/assets/images/seven/logoRBC-450.png 900w,
+              dist/assets/images/seven/logoRBC-600.png 1200w" alt="logo">
             </div>
 
             <div class="logoListAllContainer">
@@ -547,8 +381,9 @@
 
             </div>
             <div class="logoCaretContainer">
-              <div class="more"></div>
-              <!--img class="logoCaret" src="dist/assets/svg/OffWhiteCarat.svg" alt="caret"/-->
+              <div class="more">
+                <img class="logoCaret" src="/Applications/XAMPP/xamppfiles/htdocs/devDocs/templates/ML/dist/assets/svg/carat717771.png" alt="caret"/>
+              </div>
             </div>
           </div>
 
@@ -559,7 +394,7 @@
       <div class="col-md-12">
         <div id="awardWinnersContainer">
           <div class="awardWinnersTitleContainer">
-            <div class="titleText">Award Winner</div>
+            <div class="titleText">Award Winners</div>
             <div class="centeredLine"></div>
           </div>
           <div class="owl-three owl-carousel owl-theme">
@@ -569,22 +404,21 @@
                   2016
                 </div>
                 <div class="contentContainer">
-                  <img class="img" src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
-
+                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/Beeston-320.jpg" srcset="dist/assets/images/eight/Beeston-640.jpg 640w, dist/assets/images/eight/Beeston-900.jpg 900w, dist/assets/images/eight/Beeston-1200.jpg 1200w" alt="yourDItem">
                   <div class="name">
                     Paul M. Beeston
                   </div>
-                  <div class="contentBox">
+                  <div class="contentBox" data-ellipsis="3">
                     Paul M. Beeston is known for many achievements. He was the very first employee of the Toronto Blue Jays; the whiz kid accountant who helped bring two World Series championships to Canada. He is a member of the Order of Canada and the beloved Canadian who went on to become president of Major League Baseball. What he is less known for but where his footprint has been no less influential is his work to support people living with mental illness. During his time as chair of the board of trustees at the Centre for Addiction and Mental Health, Paul’s impact was felt at all levels. From supporting an ambitious $1 billion expansion, to handing out cookies on Christmas Day with his wife Kaye to staff who worked in the emergency room, Paul has had an enormous impact on the lives of many.                  </div>
                 <!--item-->
                     <div class="bottomContainer">
                       <div class="left">
-                        <span>Back</span>
+                        <span>2017 Winner</span>
                         <img src="dist/assets/svg/GreyArrow.svg" alt="left">
                       </div>
                       <div class="right">
                         <img src="dist/assets/svg/GreyArrow.svg" alt="left">
-                        <span>2017 Winner</span>
+                        <span>Back</span>
                       </div>
                     </div>
                 </div>
@@ -596,12 +430,12 @@
                   2017
                 </div>
                 <div class="contentContainer">
-                  <img class="img" src="dist/assets/images/yourDonation-2--320.jpg" srcset="dist/assets/images/yourDonation-1--640.jpg 640w, dist/assets/images/yourDonation-1--900.jpg 900w, dist/assets/images/yourDonation-1--1200.jpg 1200w" alt="yourDItem">
+                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/JamesAndPatsyAnderson-320.jpg" srcset="dist/assets/images/eight/JamesAndPatsyAnderson-640.jpg 640w, dist/assets/images/eight/JamesAndPatsyAnderson-900.jpg 900w, dist/assets/images/eight/JamesAndPatsyAnderson-1200.jpg 1200w" alt="yourDItem">
 
                   <div class="name">
                     Jamie & Patsy Anderson
                   </div>
-                  <div class="contentBox">
+                  <div class="contentBox" data-ellipsis="3">
                     Mental health has long been a focus of Jamie and Patsy Anderson’s philanthropic commitments. In 2013, building on previous gifts, they generously established a Chair in Child and Youth Mental Health between CAMH, SickKids and the University of Toronto. The Chair enabled development and leadership of an integrated program in this area of mental health.
                     <br><br>
                     Jamie and Patsy are equally generous with their time, energy and expertise as volunteers. Patsy joined the Board of Directors of SickKids Foundation in 2001 and served as its Chair from 2006 to 2011, a transformative period for the hospital. Jamie, meanwhile, first joined CAMH’s fundraising campaign in 1998 and has been involved ever since, serving in a number of key governance and fundraising roles, including Co-Chair of the current “Breakthrough” campaign.
@@ -609,12 +443,12 @@
                 <!--item-->
                   <div class="bottomContainer">
                       <div class="left">
-                        <span>Back</span>
+                        <span>2016 Winner</span>
                         <img src="dist/assets/svg/GreyArrow.svg" alt="left">
                       </div>
                       <div class="right">
                         <img src="dist/assets/svg/GreyArrow.svg" alt="left">
-                        <span>2016 Winner</span>
+                        <span>Back</span>
                       </div>
                     </div>
                 </div>
@@ -649,53 +483,42 @@
     <div data-section="10Contacts" class="row">
         <div class="col-md-12" id="sectionTenContainer">
           <div class="headingTitleContainer">
-            <div class="titleText">Contact</div>
+            <div class="titleText">Connect</div>
             <div class="centeredLine"></div>
           </div>
           <div id="contactItemsContainer">
             <div class="contactItem">
-              <div class="type">
-                address
+
+            <div class="type">
+                Gabrielle Dang
               </div>
               <div class="divider">
 
               </div>
               <div class="info">
-                401 Bay St #3200<br>Toronto, ON<br> M5H 2Y4
+                647-526-3957<br>gabrielle.dang@utoronto.ca
               </div>
             </div>
             <div class="contactItem">
               <div class="type">
-                phone
+                Jonathan Carson
               </div>
               <div class="divider">
 
               </div>
               <div class="info">
-                (416) 360-4710
+                416-360-4763<br>jonathan_carson@iamgold.com
               </div>
             </div>
-            <div class="contactItem">
-              <div class="type">
-                email
-              </div>
-              <div class="divider">
-
-              </div>
-              <div class="info">
-                iamgoldcommunications<br> @iamgold.com
-              </div>
             </div>
-          </div>
           <div id="contactSocialMediaContainer">
             <div class="follow">
               follow us
-            </div>
+            </div><br>
             <div class="icons">
-              <img src="dist/assets/svg/Twitter.svg" alt="twitter">
-              <img src="dist/assets/svg/Instagram.svg" alt="instagram">
+              <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" ><img src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
+              <a target="_blank" href="https://www.instagram.com/minerslampaward/"><img src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
             </div>
-
           </div>
           <div id="MLFooter">
             &copy;2017
@@ -717,6 +540,11 @@
     <script src="dist/js/lg-zoom.min.js"></script>
     <script src="dist/js/owl.carousel.min.js"></script>
     <script src="../lity-2.3.0/dist/lity.js"></script>
+    <script src="dist/js/ellipsis.min.js"></script>
+    <script src="dist/js/blazy.min.js"></script>
+
+
+
     <script src="dist/js/index.js">>
 
     </script>

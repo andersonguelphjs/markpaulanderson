@@ -18,8 +18,8 @@
     z-index: 1;
     color: #717771;
     background-color: #ededed;
-    padding-right: 3vw;
-    padding-left: 4vmin;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .awardWinnersTitleContainer .centeredLine {
@@ -60,7 +60,7 @@
     float: right;
     padding-right: 5%;
     padding-top: 8%;
-    font-size: 18px;
+    font-size: 16px;
     width: 80%;
   }
 
@@ -70,21 +70,11 @@
   }
 
   .contentContainer .name, .contentContainer .contentBox {
-    padding-bottom: 2vmin;
+    padding-bottom: 1em;
   }
   .contentContainer .name{
     font-size: 18px;
     text-align: center;
-  }
-  .contentContainer .contentBox {
-    max-height: 76px;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-  }
-
-  .contentContainer .contentBox.long {
-    max-height: 1500px;
-    transition: max-height 0.5s ease-in;
   }
 
   .bottomContainer {
@@ -171,7 +161,7 @@
     }
 
     .contentContainer .contentBox {
-      max-height: 76px;
+  /*    max-height: 76px; */
       font-size: 18px;
     }
 
@@ -248,7 +238,7 @@
           font-size: 22px;
         }
         .contentContainer .contentBox {
-          max-height: 96px;
+      /*    max-height: 96px;*/
               font-size: 20px;
         }
 
@@ -328,7 +318,7 @@
           font-size: 26px;
         }
         .contentContainer .contentBox {
-          max-height: 116px;
+        /*  max-height: 116px; */
           font-size: 24px;
         }
 

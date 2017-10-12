@@ -66,6 +66,8 @@
     text-align: center;
     width: 100%;
     padding-bottom: 20px;
+    padding-top: 30px;
+
   }
   .logoCaretContainer .more{
     padding-top: 15px;
@@ -74,32 +76,36 @@
     top:50%;
     font-size: 14px;
     font-style: italic;
-
-    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
+    transform: translate(-50%, -50%) rotate(180deg);
+    transition: transform 0.25s ease-in;
+  }
+  .logoCaretContainer .more.long{
+    -ms-transform: translate(-50%, -50%) ; /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
     transform: translate(-50%, -50%);
+    transition: transform 0.25s ease-in;
+
   }
+  /*
   .logoCaretContainer .more::after{
     content: "more";
   }
   .logoListAllContainer.long .logoCaretContainer .more::after{
     content: "less" !important;
   }
+  */
   .logoCaret {
       /*caret*/
       position: absolute;
       top: 88%;
       left: 50%;
-      width:5vw;
+      width:2em;
       -ms-transform: translate(-50%, -50%); /* IE 9 */
       -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
       transform: translate(-50%, -50%);
     }
-    .logoCaret.clicked {
-        -ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
-        -webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
-        transform: translate(-50%, -50%) rotate(180deg);
-      }
       .logoListContainer{
         padding-top: 4em;
       }
