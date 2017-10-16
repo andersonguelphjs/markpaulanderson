@@ -8,7 +8,7 @@
 
 #titleContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
 }
 
@@ -87,7 +87,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   #titleContainer div {
     font-size: 30px;
   }
@@ -101,7 +101,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #titleContainer div {
     font-size: 36px;
   }

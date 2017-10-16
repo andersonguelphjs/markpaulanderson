@@ -28,6 +28,7 @@
   #logoItemContainer {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 2em;
   }
 
   .logoItem {

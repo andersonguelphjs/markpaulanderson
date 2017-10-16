@@ -1,4 +1,5 @@
-/*section Three - Donate, Partner, Sponship*/
+  /*section Three - Donate, Partner, Sponship*/
+
 #sectionThree {
   background-color: #ededed;
 }
@@ -20,68 +21,61 @@
 .sectionThreeItemBlurb {
   color: #00779e;
 }
-#sectionThree a{
+
+#sectionThree a {
   color: #e1af0a;
   text-align: center;
   display: block;
   padding-top: 1em;
 }
 
-/**/
-  .sectionThreeItemContainer {
-
-  }
-
 .sectionThreeItemBlurb.long {
   display: inline;
 }
 
-  .one{
-    float:left;
-  }
-  .two {
-    float:right;
-  }
+.one {
+  float: left;
+}
 
-  .sectionThreeroundTitle {
-    padding:10px;
-    width:40%;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    text-align: center;
-  }
+.two {
+  float: right;
+}
 
-  .sectionThreeroundTitle .round {
-    padding: 40px;
-  }
+.sectionThreeroundTitle {
+  padding: 10px;
+  width: 40%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
 
-  .round span {
-    text-align: center;
-    font-size: 20px;
-  }
+.sectionThreeroundTitle .round {
+  padding: 40px;
+}
 
-  .three .round span {
-    font-size: 12px;
-  }
+.round span {
+  text-align: center;
+  font-size: 20px;
+}
+
+.three .round span {
+  font-size: 12px;
+}
 
 @media (max-width: 540px) {
-
   .sectionThreeroundTitle {
     padding-top: 50px;
     height: 120px;
     text-align: center;
-    display:inline-block;
+    display: inline-block;
   }
-
   .sectionThreeroundTitle .round {
-    padding: 50px;
+    padding: 48px;
   }
-
   .round span {
     text-align: center;
     font-size: 20px;
   }
-
   .sectionThreeItemBlurb {
     font-size: 16px;
     padding: 15px;
@@ -89,47 +83,58 @@
 }
 
 @media (min-width: 541px) {
-#sectionThreeContainer {
- font-size: 18px
-}
-.sectionThreeroundTitle{
-  margin-bottom: 40px;
-    margin-top: 41px;
-}
-.sectionThreeItemContainer {
-  padding-bottom: 1em;
-}
-
-@media (min-width: 901px) {
   #sectionThreeContainer {
-    padding: 25px;
+    font-size: 18px
   }
-  .sectionThreeItemBlurb {
-  /*  padding-top: 20px;*/
+  #sectionThree a {
+    padding-bottom: 1.5em;
     font-size: 20px;
-/*    max-height: 167px;*/
+    padding-top: 1em;
   }
-  .round span {
-    text-align: center;
-    font-size: 30px;
+  .sectionThreeroundTitle {
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
-  .sectionThreeroundTitle .round {
-    padding: 60px;
-}
-}
-@media (min-width: 1201px) {
-  #sectionThreeContainer {
-    padding: 45px;
+  .sectionThreeItemContainer {
+    padding-bottom: 1em;
   }
-  .sectionThreeItemBlurb {
-  /*  padding-top: 30px;*/
-    font-size: 24px;
-}
-.round span {
-  text-align: center;
-  font-size: 36px;
-}
-.sectionThreeroundTitle .round {
-  padding: 75px;
-}
+  @media (min-width: 901px) {
+    #sectionThreeContainer {
+      padding: 25px;
+    }
+    .sectionThreeroundTitle {
+      margin-bottom: 80px;
+    }
+    .sectionThreeItemBlurb {
+      /*  padding-top: 20px;*/
+      font-size: 20px;
+      /*    max-height: 167px;*/
+    }
+    #sectionThree a {
+      font-size: 33px;
+    }
+    .round span {
+      text-align: center;
+      font-size: 30px;
+    }
+    .sectionThreeroundTitle .round {
+      padding: 80px;
+    }
+  }
+  @media (min-width: 1201px) {
+    #sectionThreeContainer {
+      padding: 0px;
+    }
+    .sectionThreeItemBlurb {
+      /*  padding-top: 30px;*/
+      font-size: 24px;
+    }
+    .round span {
+      text-align: center;
+      font-size: 36px;
+    }
+    .sectionThreeroundTitle .round {
+      padding: 75px;
+    }
+  }
 }

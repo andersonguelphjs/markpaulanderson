@@ -41,6 +41,7 @@ html [type=button] {
   border: none;
   font-family: 'Yantramanav', sans-serif;
   text-transform: uppercase;
+  margin-top: -5px;
 }
 
 #topDonateBtn:hover {
@@ -178,6 +179,7 @@ ul {
   #hamburger img {
     height: 20px !important;
     width: 25px !important;
+    margin-top: -5px;
   }
 
   .navigation {
@@ -329,6 +331,10 @@ text-decoration: none;
     position: absolute;
     top: 38%;
     left: 0px;
+    margin-top: 0px;
+  }
+  #hamburger img{
+    margin-top: 0px;
   }
   #topSliderContainer .topSliderBottomMsg {
     border-bottom: 3px solid #FFF;
@@ -367,7 +373,7 @@ text-decoration: none;
   }
 }
 
-@media (min-width: 1200px)
+@media (min-width: 1201px)
   /*for-desktop-u*/ {
   #topInfo {
     height: 120px;

@@ -1,0 +1,171 @@
+/*section Ten - Contacts */
+
+#sectionTenContainer {
+	background-color: #FFF;
+	font-family: 'Raleway', sans-serif;
+	color: #717771;
+}
+
+#sectionTenContainer .titleText {
+	background-color: #ededed;
+}
+
+.contactItem {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contactItemsContainer {
+	padding-top: 2em;
+}
+
+.contactItem .type {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.contactItem .divider {
+	height: 1px;
+	border-bottom: 1px solid #717771;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.contactItem .info {
+	text-align: center;
+}
+
+#contactSocialMediaContainer img:hover {
+	opacity: 0.5;
+}
+
+#contactSocialMediaContainer {
+	padding-top: 40px;
+	padding-bottom: 15px;
+}
+
+#contactSocialMediaContainer .follow {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#contactSocialMediaContainer .icons {
+	display: flex;
+	width: 10em;
+	justify-content: space-around;
+	margin-left: auto;
+	margin-right: auto;
+	height: 50px;
+}
+
+.icons img {
+	width: 2em;
+	height: 2em;
+}
+
+#MLFooter {
+	height: 25px;
+	background-color: #e1af0a;
+	text-align: center;
+	line-height: 25px;
+}
+
+@media (min-width: 541px) {
+
+#sectionTenContainer {
+	background-color: #ededed;
+	font-size: 18px;
+	margin-top: 30px;
+}
+
+.icons img {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+#contactTitleContainer {
+	padding-top: 10px;
+}
+
+.contactItem {
+	padding-top: 36px;
+	padding-bottom: 36px;
+	width: 66%;
+}
+
+#contactSocialMediaContainer .icons {
+	width: 12em;
+}
+
+.contactItem .divider {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+}
+
+@media (min-width: 901px) {
+
+.contactItem {
+	font-size: 18px;
+}
+
+#contactSocialMediaContainer .follow {
+	font-size: 18px;
+}
+
+#contactSocialMediaContainer .icons {
+	width: 16em;
+}
+
+#contactItemsContainer {
+	display: flex;
+	padding: 20px;
+}
+
+}
+
+@media (min-width: 1201px) {
+
+.contactItem {
+	font-size: 22px;
+}
+
+#contactSocialMediaContainer .follow {
+	font-size: 22px;
+	padding-bottom: 25px;
+}
+
+#contactItemsContainer {
+	padding: 30px;
+}
+
+#contactSocialMediaContainer .icons {
+	width: 18em;
+}
+
+}
+
+@media (max-width: 540px) {
+
+#sectionTenContainer .titleText {
+	background-color: #FFF;
+}
+
+.contactItem {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#contactSocialMediaContainer img {
+	width: 20px;
+}
+
+.contactItem .divider {
+	width: 45%;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+}
+

@@ -6,29 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>THE MINER'S LAMP AWARD</title>
-
-  <!-- Bootstrap -->
-  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
   <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
   <link rel="stylesheet" href="dist/css/owl.theme.default.min.css">
   <link type="text/css" rel="stylesheet" href="dist/css/lightgallery.min.css" />
+  <link href="dist/css/lity.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
-  <link href="dist/css/main.css" rel="stylesheet">
-  <link href="dist/css/top.css" rel="stylesheet">
-  <link href="dist/css/twoOurIdeas.css" rel="stylesheet">
-  <link href="dist/css/threeDonate.css" rel="stylesheet">
-  <link href="dist/css/fourImpact.css" rel="stylesheet">
-  <link href="dist/css/fiveYourDonations.css" rel="stylesheet">
-  <link href="dist/css/sixWhatsNew.css" rel="stylesheet">
-  <link href="dist/css/sevenLogo.css" rel="stylesheet">
-  <link href="dist/css/eightAwardWinners.css" rel="stylesheet">
-  <link href="dist/css/nineGallery.css" rel="stylesheet">
-  <link href="dist/css/tenContact.css" rel="stylesheet">
-  <link href="../lity-2.3.0/dist/lity.css" rel="stylesheet">
+  <link href="dist/css/style.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="HeadRecreationBlack-180.png" sizes="16x16">
 </head>
 
@@ -39,9 +25,9 @@
       <div class="mainBar">
         <div id="topInfo" class="col-md-12">
           <div id="topInfoContainer">
-            <span id="topMiners">THE MINER'S LAMP AWARD</span><img id="topLogo" src="dist/assets/images/one/MLLogo_51.jpg" srcset="dist/assets/images/one/MLLogo_80.jpg 700w, dist/assets/images/one/MLLogo_100.jpg 1000w" alt="topLogo" />
+            <span id="topMiners">THE MINER'S LAMP AWARD</span><img class="lazyload" id="topLogo" data-size="auto" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/one/MLLogo_80.jpg 700w, dist/assets/images/one/MLLogo_100.jpg 1000w" alt="topLogo" />
             <a id="topDonateBtn" href="#sectionThreeContainer" type="button">Donate</a>
-            <span id="hamburger"><img class="icon icons8-Menu" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
+            <span id="hamburger"><img class="icon icons8-Menu lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAp0lEQVRoQ+2XwQnAMAwD45Hz6vgtdAQJgRHXv0R850A6p+SbkjkOg2wziRGMhAiwWiGwcu3c575yelGwZ5BFUK2jcNktfIEwRgJQrUqMWPgCYYwEoFqVGLHwBcIYCUC1KntevzX/I5bPRWEu+yIZ/1EwgpEQAVYrBFauxYiMLhTESAisXNtjpOb1WzOIvJTLgj13ZBlY+TgYkdGFghgJgZVrMSKjCwU/hkwOQyzomKcAAAAASUVORK5CYII="></span>
           </div>
           <nav class="navigation">
 
@@ -69,9 +55,9 @@
         </div>
       </section>
     </div>
-    <div data-section="2ourIdeas" class="col-md-12">
+    <div data-section="2ourIdeas" class="row">
         <section id="sectionTwo" class="parent">
-          <div id="titleContainer">
+          <div id="titleContainer" class="col-md-12">
             <div data-id="1">About<span class="showingChild"></span></div>
             <div data-id="2">Funding Research<span></span></div>
             <div data-id="3">Award Dinner<span></span></div>
@@ -172,7 +158,7 @@
               <div class="impactMetric">
                 2
               </div>
-              <img src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
+              <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/CalandarIcon.svg" alt="CalendarIcon">
             </div>
             <div class="impactVerb">
               Years since launch
@@ -186,7 +172,7 @@
               <div class="impactMetric">
                 $ 1 Million
               </div>
-              <img src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
+              <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/MoneyIcon.svg" alt="CalendarIcon">
             </div>
             <div class="impactVerb">
               Raised
@@ -200,7 +186,7 @@
               <div class="impactMetric">
                 &nbsp;&nbsp;&nbsp;100%
               </div>
-              <img src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
+              <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/DonationIcon.svg" alt="CalendarIcon">
             </div>
             <div class="impactVerb">
               Funds Donated
@@ -224,7 +210,7 @@
           </div>
           <div id="yourDItemsContainer">
             <div class="yourDItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/five/AristotleVoineskos--320.jpg" srcset="dist/assets/images/five/AristotleVoineskos--640.jpg 640w, dist/assets/images/five/AristotleVoineskos--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-1--1200.jpg 1200w-->
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/five/AristotleVoineskos--640.jpg 640w, dist/assets/images/five/AristotleVoineskos--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-1--1200.jpg 1200w-->
               <div class="yourDItemTitleContainer">
                 <div class="title">
                   Aristotle Voineskos
@@ -242,7 +228,7 @@
             </div>
             <div class="divider"></div>
             <div class="yourDItem">
-              <img class="b-lazy" src="dist/assets/images/loading.gif" data-src="dist/assets/images/five/VincenzoDeLuca--320.jpg" srcset="dist/assets/images/five/VincenzoDeLuca--640.jpg 640w, dist/assets/images/five/VincenzoDeLuca--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-2--1200.jpg 1200w-->
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/five/VincenzoDeLuca--640.jpg 640w, dist/assets/images/five/VincenzoDeLuca--900.jpg 900w" alt="yourDItem"><!--, dist/assets/images/yourDonation-2--1200.jpg 1200w-->
 
               <div class="yourDItemTitleContainer">
                 <div class="title">
@@ -285,35 +271,35 @@
           </div>
           <div id="logoItemContainer">
             <div class="logoItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoIMG-160.jpg" srcset="dist/assets/images/seven/logoIMG-320.jpg 640w,
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoIMG-320.jpg 640w,
               dist/assets/images/seven/logoIMG-450.jpg 900w,
               dist/assets/images/seven/logoIMG-600.jpg 1200w" alt="logo">
 
             </div>
             <div class="logoItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoUTPsych-160.jpg" srcset="dist/assets/images/seven/logoUTPsych-320.jpg 640w,
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoUTPsych-320.jpg 640w,
               dist/assets/images/seven/logoUTPsych-450.jpg 900w,
               dist/assets/images/seven/logoUTPsych-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoAirCanada-160.jpg" srcset="dist/assets/images/seven/logoAirCanada-320.jpg 640w,
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoAirCanada-320.jpg 640w,
               dist/assets/images/seven/logoAirCanada-450.jpg 900w,
               dist/assets/images/seven/logoAirCanada-600.jpg 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoNationalB-160.png" srcset="dist/assets/images/seven/logoNationalB-320.png 640w,
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoNationalB-320.png 640w,
               dist/assets/images/seven/logoNationalB-450.png 900w,
               dist/assets/images/seven/logoNationalB-600.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="b-lazy vert" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 150 200'%2F%3E" data-src="dist/assets/images/seven/logoPearTree-80.png" srcset="dist/assets/images/seven/logoPearTree-160.png 640w,
+              <img data-size="auto" class="lazyload vert" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoPearTree-160.png 640w,
               dist/assets/images/seven/logoPearTree-225.png 900w,
               dist/assets/images/seven/logoPearTree-300.png 1200w" alt="logo">
             </div>
             <div class="logoItem">
-              <img class="b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/seven/logoRBC-160.png" srcset="dist/assets/images/seven/logoRBC-320.png 640w,
-              dist/assets/images/seven/logoRBC-450.png 900w,
-              dist/assets/images/seven/logoRBC-600.png 1200w" alt="logo">
+              <img data-size="auto" class="lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/seven/logoRBC-320.jpg 640w,
+              dist/assets/images/seven/logoRBC-450.jpg 900w,
+              dist/assets/images/seven/logoRBC-600.jpg 1200w" alt="logo">
             </div>
 
             <div class="logoListAllContainer">
@@ -382,7 +368,7 @@
             </div>
             <div class="logoCaretContainer">
               <div class="more">
-                <img class="logoCaret" src="/Applications/XAMPP/xamppfiles/htdocs/devDocs/templates/ML/dist/assets/svg/carat717771.png" alt="caret"/>
+                <image class="logoCaret lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/carat717771.png" alt="caret"/>
               </div>
             </div>
           </div>
@@ -404,7 +390,7 @@
                   2016
                 </div>
                 <div class="contentContainer">
-                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/Beeston-320.jpg" srcset="dist/assets/images/eight/Beeston-640.jpg 640w, dist/assets/images/eight/Beeston-900.jpg 900w, dist/assets/images/eight/Beeston-1200.jpg 1200w" alt="yourDItem">
+                  <img data-size="auto" class="img lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/eight/Beeston-640.jpg 640w, dist/assets/images/eight/Beeston-900.jpg 900w, dist/assets/images/eight/Beeston-1200.jpg 1200w" alt="yourDItem">
                   <div class="name">
                     Paul M. Beeston
                   </div>
@@ -414,10 +400,10 @@
                     <div class="bottomContainer">
                       <div class="left">
                         <span>2017 Winner</span>
-                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/GreyArrow.svg" alt="left">
                       </div>
                       <div class="right">
-                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/GreyArrow.svg" alt="left">
                         <span>Back</span>
                       </div>
                     </div>
@@ -430,7 +416,7 @@
                   2017
                 </div>
                 <div class="contentContainer">
-                  <img class="img b-lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E" data-src="dist/assets/images/eight/JamesAndPatsyAnderson-320.jpg" srcset="dist/assets/images/eight/JamesAndPatsyAnderson-640.jpg 640w, dist/assets/images/eight/JamesAndPatsyAnderson-900.jpg 900w, dist/assets/images/eight/JamesAndPatsyAnderson-1200.jpg 1200w" alt="yourDItem">
+                  <img data-size="auto" class="img lazyload" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-srcset="dist/assets/images/eight/JamesAndPatsyAnderson-640.jpg 640w, dist/assets/images/eight/JamesAndPatsyAnderson-900.jpg 900w, dist/assets/images/eight/JamesAndPatsyAnderson-1200.jpg 1200w" alt="yourDItem">
 
                   <div class="name">
                     Jamie & Patsy Anderson
@@ -444,10 +430,10 @@
                   <div class="bottomContainer">
                       <div class="left">
                         <span>2016 Winner</span>
-                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/GreyArrow.svg" alt="left">
                       </div>
                       <div class="right">
-                        <img src="dist/assets/svg/GreyArrow.svg" alt="left">
+                        <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/GreyArrow.svg" alt="left">
                         <span>Back</span>
                       </div>
                     </div>
@@ -516,8 +502,10 @@
               follow us
             </div><br>
             <div class="icons">
-              <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" ><img src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
-              <a target="_blank" href="https://www.instagram.com/minerslampaward/"><img src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
+              <a target="_blank" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&screen_name=AwardLamp&tw_p=followbutton" >
+                <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/Twitter.svg" alt="twitter"></a>
+              <a target="_blank" href="https://www.instagram.com/minerslampaward/">
+                <img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkEC+vBwABvAEP2J2F2AAAAABJRU5ErkJggg==" data-src="dist/assets/svg/Instagram.svg" alt="instagram"/></a>
             </div>
           </div>
           <div id="MLFooter">
@@ -526,28 +514,20 @@
         </div>
 
     </div>
-</div><!--container-->
+  </div><!--container-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="dist/js/lightgallery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-    <script src="dist/js/lg-thumbnail.min.js"></script>
-    <script src="dist/js/lg-fullscreen.min.js"></script>
-    <script src="dist/js/lg-share.min.js"></script>
-    <script src="dist/js/lg-zoom.min.js"></script>
-    <script src="dist/js/owl.carousel.min.js"></script>
-    <script src="../lity-2.3.0/dist/lity.js"></script>
-    <script src="dist/js/ellipsis.min.js"></script>
-    <script src="dist/js/blazy.min.js"></script>
-
-
-
-    <script src="dist/js/index.js">>
-
-    </script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" async></script>
+    <script src="dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" defer></script>
+    <script src="dist/js/lg-thumbnail.min.js" defer></script>
+    <script src="dist/js/lg-fullscreen.min.js" defer></script>
+    <script src="dist/js/lg-share.min.js" defer></script>
+    <script src="dist/js/lg-zoom.min.js" defer></script>
+    <script src="dist/js/owl.carousel.min.js" defer></script>
+    <script src="dist/js/lity.min.js" defer></script>
+    <script src="dist/js/lazySizes.min.js" async></script>
+    <script src="dist/js/index.min.js"></script>
+  </body>
 
 </html>

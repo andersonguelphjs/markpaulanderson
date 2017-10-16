@@ -12,7 +12,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-
+    #contactItemsContainer{
+      padding-top: 2em;
+    }
     .contactItem .type {
       text-align: center;
       text-transform: uppercase;
@@ -53,9 +55,8 @@
     }
     .icons img{
       width:2em;
+      height:2em;
     }
-
-
 
     #MLFooter {
       height: 25px;
@@ -86,14 +87,15 @@
       #sectionTenContainer {
         background-color: #ededed;
         font-size: 18px;
+        margin-top: 30px;
       }
       .icons img{
         width:1.5em;
+        height: 1.5em;
       }
       #contactTitleContainer {
         padding-top: 10px;
       }
-
 
       .contactItem {
         padding-top: 36px;
@@ -109,7 +111,7 @@
       }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 901px) {
       .contactItem {
         font-size: 18px;
       }
@@ -125,7 +127,7 @@
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1201px) {
       .contactItem {
         font-size: 22px;
       }

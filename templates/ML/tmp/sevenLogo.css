@@ -1,0 +1,243 @@
+/*section Seven - Donors */
+
+#sectionSevenContainer {
+	background-color: #FFF;
+	font-family: 'Raleway', sans-serif;
+	padding-bottom: 20px;
+}
+
+#logoTitleContainer {
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#logoTitleContainer span {
+	color: #717771;
+	font-family: 'Old Standard TT', sans-serif;
+	font-size: 16px;
+}
+
+#logoTitleContainer div {
+	border-top: 1px solid #e1af0a;
+	width: 60%;
+	margin-top: 8px;
+}
+
+#logoItemContainer {
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 2em;
+}
+
+.logoItem {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	width: 33%;
+}
+
+.logoItem img {
+	width: 80%;
+	display: inline-block;
+	max-height: 100%;
+}
+
+.logoItem img.vert {
+	width: 30%;
+	display: inline-block;
+	height: 100%;
+}
+
+.logoListAllContainer {
+	max-height: 0;
+	overflow: hidden;
+	width: 100%;
+	transition: max-height 0.5s ease-out;
+}
+
+.logoListAllContainer .headingTitleContainer {
+	padding-bottom: 2vmin;
+}
+
+.logoListAllContainer.long {
+	max-height: 1500px;
+	transition: max-height 0.5s ease-in;
+}
+
+.logoCaretContainer {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	padding-bottom: 20px;
+	padding-top: 30px;
+}
+
+.logoCaretContainer .more {
+	padding-top: 15px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	font-size: 14px;
+	font-style: italic;
+	-ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
+	-webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
+	transform: translate(-50%, -50%) rotate(180deg);
+	transition: transform 0.25s ease-in;
+}
+
+.logoCaretContainer .more.long {
+	-ms-transform: translate(-50%, -50%); /* IE 9 */
+	-webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+	transform: translate(-50%, -50%);
+	transition: transform 0.25s ease-in;
+}
+
+/*
+  .logoCaretContainer .more::after{
+    content: "more";
+  }
+  .logoListAllContainer.long .logoCaretContainer .more::after{
+    content: "less" !important;
+  }
+  */
+
+.logoCaret { /*caret*/
+	position: absolute;
+	top: 88%;
+	left: 50%;
+	width: 2em;
+	-ms-transform: translate(-50%, -50%); /* IE 9 */
+	-webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+	transform: translate(-50%, -50%);
+}
+
+.logoListContainer {
+	padding-top: 4em;
+}
+
+.logoListContainer div {
+	text-align: center;
+}
+
+@media (min-width: 541px) {
+
+#logoTitleContainer {
+	padding-top: 10px;
+}
+
+#logoTitleContainer span {
+	font-size: 22px;
+}
+
+#logoTitleContainer div {
+	width: 70%;
+	margin-top: 13px;
+}
+
+.logoItem {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.logoCaret {
+}
+
+.logoListContainer div {
+	font-size: 16px;
+	width: 48%;
+	display: inline-block;
+}
+
+}
+
+@media (min-width: 901px) {
+
+#logoTitleContainer {
+	padding-top: 10px;
+}
+
+#logoTitleContainer span {
+	font-size: 26px;
+}
+
+#logoTitleContainer div {
+	width: 75%;
+	margin-top: 15px;
+}
+
+.logoItem {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.logoCaret {
+}
+
+.logoListContainer div {
+	font-size: 18px;
+	width: 32%;
+}
+
+}
+
+@media (min-width: 1201px) {
+
+#logoTitleContainer {
+	padding-top: 10px;
+}
+
+#logoTitleContainer span {
+	font-size: 36px;
+}
+
+#logoTitleContainer div {
+	width: 80%;
+	margin-top: 20px;
+}
+
+.logoItem {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.logoCaret {
+}
+
+.logoListContainer div {
+	font-size: 22px;
+	width: 24%;
+}
+
+}
+
+@media (max-width: 540px) {
+
+#logoTitleContainer {
+	padding-top: 10px;
+}
+
+#logoTitleContainer span {
+	font-size: 16px;
+}
+
+#logoTitleContainer div {
+	width: 60%;
+	margin-top: 8px;
+}
+
+.logoItem {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 50%;
+}
+
+.logoCaret {
+}
+
+.logoListContainer div {
+	font-size: 4vmin;
+}
+
+}
+

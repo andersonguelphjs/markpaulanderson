@@ -86,7 +86,7 @@
         padding-bottom: 1vw;
       }
       #yourDTitleContainer span {
-        width: 19%;
+        width: 17%;
       }
 
       #yourDTitleContainer div {
@@ -132,7 +132,7 @@
       font-size: 30px;
     }
     #yourDTitleContainer span {
-      width: 15%;
+      width: 13%;
     }
     }
     @media (min-width: 1201px) {

@@ -9,13 +9,10 @@ module.exports = function(grunt) {
     },
     uglify: {
       dist: {
-        files: [{
-            src: 'src/js/ml_media.js',
-            dest: 'dist/js/ml_media.min.js'
-          },
+        files: [
           {
-            src: 'dist/js/built.js',
-            dest: 'dist/js/built.min.js'
+            src: 'dist/js/index.js',
+            dest: 'dist/js/index.min.js'
           }
         ]
       }
@@ -53,25 +50,25 @@ module.exports = function(grunt) {
       options: {
         sizes: [
           {
-          width: 100/*320,180*/
-        }//,{
-        //  width: 640/*640,360*/
-        //},{
-        //  width: 900/*900,506*/
+          width: 160/*320,180*/
+        },{
+          width:320/*640,360*/
+        },{
+          width: 450/*900,506*/
           /*suffix: "_900"*/
-        //},{
-        //  width: 1200 /*1200,675*/
-      //  }
+        },{
+          width: 600 /*1200,675*/
+        }
       ]
       },
       files: [{
         expand: true,
         src: ['**.{jpg,gif,png,svg}'],
         cwd: 'src/assets/images/',
-        dest: 'dist/assets/images/nine/2017/'
+        dest: 'dist/assets/images/seven/'
       }]
     }
-  },
+  },/*,
   sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
@@ -82,7 +79,7 @@ module.exports = function(grunt) {
         }
       }
     }
-    ,
+  ,
     purifycss: {
     options: {},
     target: {
@@ -90,7 +87,17 @@ module.exports = function(grunt) {
       css: ['src/css/eightAwardWinners.css'],
       dest: 'src/css/eightAwardWinners.css'
     },
+  },*/
+  cmq: {
+  options: {
+    log: false
   },
+  your_target: {
+    files: {
+      'dist/css/style.scss': ['dist/css/style.scss']
+    }
+  }
+}
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -98,27 +105,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-img');
   /*grunt.loadNpmTasks('grunt-image-resize');*/
+  grunt.loadNpmTasks('grunt-combine-media-queries');
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-purifycss');
 /*
 module.exports = function(grunt) {
   grunt.initConfig({
-    cmq: {
-      options: {
-        log: false
-      },
-      your_target: {
-        files: {
-          'output': ['build/*.css']
-        }
-      }
-    }
+
   });
-  grunt.loadNpmTasks('grunt-combine-media-queries');
+
   grunt.registerTask('default', 'cmq');
 };*/
 
 //  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'img','responsive_images','sass','purifycss']);
-    grunt.registerTask('default', ['img','responsive_images']);
+    grunt.registerTask('default', ['uglify']);
 };

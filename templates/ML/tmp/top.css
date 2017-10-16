@@ -1,0 +1,442 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	min-width: 320px;
+	background-color: #FFF;
+}
+
+html [type=button] {
+	-webkit-appearance: none;
+}
+
+.hiddenEl {
+	display: none;
+}
+
+.overlay {
+	position: fixed;
+	height: 100%;
+	width: 0;
+	opacity: 0.5;
+	z-index: 3;
+	background-color: #000;
+}
+
+.overlay.open {
+	width: 100%;
+}
+
+.mainBar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 42px;
+	z-index: 999;
+	background-color: #FFF;
+}
+
+#topDonateBtn {
+	color: #ffffff;
+	font-size: 12px;
+	background: #00779e;
+	padding: 4px 8px 4px 8px;
+	text-decoration: none;
+	border: none;
+	font-family: 'Yantramanav', sans-serif;
+	text-transform: uppercase;
+	margin-top: -5px;
+}
+
+#topDonateBtn:hover {
+	color: #00779e;
+	border: 1px solid #00779e;
+	background: #ffffff;
+	text-decoration: none;
+}
+
+strong {
+	font-weight: bold !important;
+}
+
+ul {
+	-webkit-padding-start: 0px;
+	-webkit-margin-after: 0px;
+}
+
+.shortHeight {
+	max-height: 3em;
+	transition: max-height 0.5s ease-out;
+}
+
+.long {
+	transition: max-height 0.5s ease-in;
+	max-height: 1500px;
+}
+
+#topSliderContainer {
+	margin-top: 42px;
+	position: relative;
+	text-transform: uppercase;
+	color: #FFF;
+}
+
+#topSliderContainer .topSliderImg {
+	width: 100%;
+}
+
+#topSliderContainer .topSliderTopMsg {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	width: 65%;
+	font-weight: 400; /*  text-shadow: 2px 2px 2px #000; */
+}
+
+#topSliderContainer .topSliderBottomMsg {
+	position: absolute;
+	bottom: 15%;
+	left: 2%;
+	width: 60%;
+	border-bottom: 2px solid #FFF;
+	font-weight: 400; /*  text-shadow: 2px 2px 2px #000;*/
+}
+
+#topSliderContainer .topSliderCaretContainer {
+	position: absolute;
+	top: 93%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%) rotate(180deg); /* IE 9 */
+	-webkit-transform: translate(-50%, -50%) rotate(180deg); /* Chrome, Safari, Opera */
+	transform: translate(-50%, -50%) rotate(180deg);
+}
+
+#topSliderContainer .topSliderCaret { /*caret*/
+	width: 1em;
+	-webkit-animation: pulsate 2s ease-out;
+	-webkit-animation-iteration-count: infinite;
+	opacity: 0.0;
+}
+
+#topSliderContainer .topSliderLogo {
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	-ms-transform: translate(-50%, -50%); /* IE 9 */
+	-webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+	transform: translate(-50%, -50%);
+	width: 25%;
+}
+
+#topMiners {
+	font-family: 'Yantramanav', sans-serif;
+}
+
+.nav-item {
+	text-transform: uppercase;
+}
+
+@media (min-width: 541px) {
+
+/*for-tablet-portrait-up*/
+
+#hamburger,
+.navigation .closeX,
+.socialMedia {
+	display: none;
+}
+
+.mainBar {
+	position: static;
+	height: auto;
+}
+
+#topInfo {
+	height: 80px;
+}
+
+#topInfoContainer {
+	position: relative;
+	width: 100%;
+	height: 120px;
+}
+
+#topMiners {
+	position: absolute;
+	font-size: 24px;
+	color: #a19061;
+	text-align: center;
+	width: 100%;
+	height: 55px;
+	font-weight: bold;
+	top: 5%;
+}
+
+#topLogo {
+	height: 60%;
+	position: absolute;
+	right: 5%;
+}
+
+.navigation {
+	display: block;
+	top: 58%;
+	left: 15%;
+	width: 65%;
+	position: absolute;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav-item {
+	list-style: none;
+	text-align: center;
+	float: left;
+}
+
+/*
+  .nav-item:hover {
+    background-color: #717771;
+  }
+
+  .nav-item:hover a {
+    color: #ededed;
+    text-decoration: none;
+  }
+*/
+
+.nav-item:hover a {
+	opacity: 0.5;
+	text-decoration: none;
+}
+
+.nav-item a {
+	color: #717771;
+	font-size: 12px;
+}
+
+#topSliderContainer {
+	font-size: 4vw;
+	margin-top: 0;
+}
+
+#topDonateBtn {
+	position: absolute;
+	top: 38%;
+	left: 0px;
+	margin-top: 0px;
+}
+
+#hamburger img {
+	margin-top: 0px;
+}
+
+#topSliderContainer .topSliderBottomMsg {
+	border-bottom: 3px solid #FFF; /*  text-shadow: 2px 2px 2px #000;*/
+}
+
+}
+
+@media (min-width: 900px) {
+
+/*for-tablet-landscape-up*/
+
+#topInfo {
+	height: 100px;
+}
+
+#topInfoContainer {
+	height: 160px;
+}
+
+#topSliderContainer {
+	font-size: 2.2em;
+}
+
+#topMiners {
+	font-size: 30px;
+	height: 60px;
+}
+
+#topDonateBtn {
+	font-size: 16px;
+	top: 33%;
+}
+
+.nav-item a {
+	color: #717771;
+	font-size: 16px;
+}
+
+}
+
+@media (min-width: 1201px)
+  /*for-desktop-u*/ {
+
+#topInfo {
+	height: 120px;
+}
+
+#topInfoContainer {
+	height: 200px;
+}
+
+#topSliderContainer {
+	font-size: 3.5em;
+}
+
+#topMiners {
+	font-size: 40px;
+	height: 65px;
+}
+
+.nav-item a {
+	color: #717771;
+	font-size: 20px;
+}
+
+#topDonateBtn {
+	font-size: 20px;
+}
+
+}
+
+@media (max-width: 540px) {
+
+/*phone*/
+
+#topSliderContainer .topSliderBottomMsg {
+	bottom: 15%;
+	left: 2%;
+	width: 45%;
+	border-bottom: 2px solid #FFF;
+}
+
+#topInfoContainer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#topInfoContainer #topMiners {
+	line-height: 42px;
+	color: #a19061;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#topInfo {
+	padding-left: 2px;
+	padding-right: 1px;
+}
+
+#topLogo {
+	height: 30px;
+}
+
+#topDonateBtn {
+	padding: 2px 4px 0px 4px;
+}
+
+#hamburger {
+	line-height: 36px;
+}
+
+#hamburger img {
+	height: 20px !important;
+	width: 25px !important;
+	margin-top: -5px;
+}
+
+.navigation {
+	position: fixed;
+	top: 0;
+	width: 70%;
+	margin-left: 100%;
+	z-index: 999;
+	transition-timing-function: ease-out;
+	transition: 0.25s;
+	background-color: #ededed;
+}
+
+.nav-list {
+	position: relative;
+}
+
+.navigation .closeX {
+	position: absolute;
+	width: 1em;
+	right: 0.5em;
+	top: 0.5em;
+}
+
+.navigation.open {
+	margin-left: 30%;
+	transition-timing-function: ease-out;
+	transition: 0.25s;
+}
+
+.nav-item { /*nav*/
+	width: 100%;
+	float: none;
+	list-style: none;
+	line-height: 50px;
+	text-align: center;
+	border-bottom: 1px solid #00779e;
+}
+
+.nav-item a {
+	color: #717771;
+	font-size: 14px;
+}
+
+#topSliderDiv {
+	padding: 0;
+	position: relative;
+}
+
+#topSliderContainer {
+	font-size: 5vw;
+}
+
+.socialMedia a {
+	float: left;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-bottom: 16px;
+}
+
+.nav-item.socialMedia {
+	line-height: 16px;
+}
+
+.socialMedia img {
+	width: 16px;
+}
+
+.nav-item.borderless {
+	border: none !important;
+}
+
+}
+
+@-webkit-keyframes pulsate {
+
+0% {
+	opacity: 0.0;
+}
+
+50% {
+	opacity: 1.0;
+}
+
+100% {
+	opacity: 0.0;
+}
+
+/*https://stackoverflow.com/questions/4910963/how-to-create-a-pulse-effect-using-webkit-animation-outward-rings*/
+
+}
+

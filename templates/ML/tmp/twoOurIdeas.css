@@ -1,0 +1,128 @@
+/*section Two - Our ideas, Our mission*/
+
+#sectionTwo {
+	color: #717771;
+	background-color: #FFF;
+	height: auto;
+}
+
+#titleContainer {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+
+#titleContainer div {
+	display: inline;
+	text-align: center;
+	width: auto;
+	position: relative;
+	margin-top: 18px;
+	margin-bottom: 18px;
+}
+
+#titleContainer span {
+	width: 75%;
+	border-bottom: 1px solid #e1af0a;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	bottom: 0;
+	opacity: 0;
+}
+
+#quoteContainer {
+	position: relative;
+}
+
+#quoteContainer span {
+	position: absolute;
+	font-family: 'Old Standard TT', sans-serif;
+}
+
+#quoteContainer div {
+	margin-left: 10%;
+	width: 80%;
+	display: none;
+	padding-bottom: 20px;
+}
+
+.showingChild {
+	opacity: 1 !important;
+	transition: opacity 1s;
+}
+
+@media (min-width: 541px) {
+
+#titleContainer div {
+	font-size: 20px;
+}
+
+#titleContainer div:hover {
+	opacity: 0.5;
+}
+
+#quoteContainer span {
+	font-size: 7em;
+	margin-top: -22px;
+	margin-left: -5px;
+}
+
+#quoteContainer div {
+	font-size: 18px;
+}
+
+}
+
+@media (min-width: 901px) {
+
+#titleContainer div {
+	font-size: 30px;
+}
+
+#quoteContainer span {
+	font-size: 7em;
+	margin-top: -22px;
+	margin-left: 15px;
+}
+
+#quoteContainer div {
+	font-size: 20px;
+}
+
+}
+
+@media (min-width: 1201px) {
+
+#titleContainer div {
+	font-size: 36px;
+}
+
+#quoteContainer span {
+	font-size: 12vw;
+	margin-top: -25px;
+}
+
+#quoteContainer div {
+	font-size: 24px;
+}
+
+}
+
+@media (max-width: 540px) {
+
+#titleContainer div {
+	font-size: 16px;
+}
+
+#quoteContainer span {
+	font-size: 18vw;
+	margin-top: -8px;
+}
+
+#quoteContainer div {
+	font-size: 16px;
+}
+
+}
+
