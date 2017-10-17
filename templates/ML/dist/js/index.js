@@ -212,7 +212,7 @@ var placeholder2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAA
 
         topSliderHtml += "<div class='topSliderTopMsg'>" + topSliderData[i].topMsg + "</div>";
         topSliderHtml += "<div class='topSliderBottomMsg'>" + topSliderData[i].bottomMsg + "</div>";
-        topSliderHtml += "<span><a class='topSliderCaretContainer' href='#titleContainer'><img class='topSliderCaret' src='dist/assets/svg/OffWhiteCarat.svg'></a></span>";
+        topSliderHtml += "<span><a class='topSliderCaretContainer' href='#titleContainer'><img class='topSliderCaret' src='dist/assets/svg/OffWhiteCarat.png'></a></span>";
         /*  topSliderHtml += "<img class='topSliderLogo' src='dist/assets/svg/HeadRecreationWhiteOutline.png'/></div>";*/
         topSliderHtml += "<img data-sizes='auto' class='topSliderLogo lazyload' data-src='" + placeholder2 + "'" +
           " data-srcset='dist/assets/svg/HeadRecreationWhiteOutline-360.png 640w, " +
