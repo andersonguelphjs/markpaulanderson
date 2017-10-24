@@ -1,0 +1,71 @@
+
+.jspDrag{
+	background: #717771;
+}
+.jspTrack{
+	background: #FFF;
+
+}
+.jspContainer{
+
+	padding-bottom: 48px;
+}
+.jspHorizontalBar{
+border-bottom: 1px solid #717771;
+		left:5%;
+		width: 90%;
+}
+
+/* Styles specific to this particular page */
+.scroll-pane
+{
+	width: 100%;
+	overflow: auto;
+}
+.horizontal-only
+{
+	height: auto;
+}
+.myItem{
+float: left;
+width:363px;
+height:393px;
+}
+.myItem:hover{
+	opacity: 0.5;
+}
+.myItem > img{
+	margin: 0 auto;
+	display: block;
+}
+.myItem .detailContainer2{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.myItem .detailContainer2 img{
+	width:14px;
+}
+.myItem .content2{
+height:3em;
+overflow-y: hidden;
+font-size: 22px;
+}
+.myItem .title2{
+	text-transform: uppercase;
+    color: #e1af0a;
+		font-size: 22px;
+}
+
+/*other chnages*/
+@media (min-width: 1200px){
+	#topSliderContainer {
+	    font-size: 2.5em !important;
+	}
+	#topSliderContainer .topSliderTopMsg{
+			width: 50% !important;
+	}
+	#topSliderContainer .topSliderBottomMsg {
+		width:40% !important;
+	}
+}
