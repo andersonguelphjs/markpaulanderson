@@ -1,0 +1,25 @@
+
+.jspDrag{
+	background: #000;
+}
+.jspTrack{
+	background: #FFF;
+}
+.jspContainer{
+	border-bottom: 1px solid black;
+	padding-bottom: 48px;
+}
+
+/* Styles specific to this particular page */
+.scroll-pane
+{
+	width: 100%;
+	overflow: auto;
+}
+.horizontal-only
+{
+	height: auto;
+}
+.myItem{
+float: left;
+}

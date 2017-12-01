@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+
+		<title>Basic jScrollPane demo</title>
+
+		<!-- styles specific to demo site -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+		<link type="text/css" href="css/jscrollpane.css" rel="stylesheet" media="all" />
+		<link type="text/css" href="css/demo.css" rel="stylesheet" media="all" />
+
+
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- the mousewheel plugin -->
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/jquery.scrollpane.min.js"></script>
+		<!-- scripts specific to this demo site -->
+		<script type="text/javascript" src="js/demo.js"></script>
+
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.scroll-pane').jScrollPane();
+			});
+		</script>
+	</head>
+	<body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="scroll-pane horizontal-only">
+      				<div style="width: 1500px;">
+                <div class="myItem">
+                  <table style="width: 750px;"><tr><td>okay</td></tr></table>
+                </div>
+                <div class="myItem">
+                  <table style="width: 750px;"><tr><td>okay</td></tr></table>
+                </div>
+      				</div>
+      			</div>
+        </div>
+
+      </div>
+
+    </div>
+
+	</body>
+</html>

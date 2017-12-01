@@ -3,124 +3,399 @@
 
 <head>
   <title>Shifter Menu</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" media="only screen and (max-width:540px)" href="formstone/src/css/navigation.css">
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.carousel.css">
+  <link rel="stylesheet" href="../OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+
   <style media="screen">
+
   body{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
+    min-width: 320px;
+    background-color: #000;
+  }
+  .container{
+    background-color: #FFF;
   }
     .navigation {
       display: none;
     }
-
-    #topDiv {
-      height: 100px;
-      background-color: blue;
-      padding: 0;
-      position: relative;
-    }
-
     .nav {
       width: 100%;
     }
+    nav ul{
+      -webkit-padding-start:0px;
+    }
 
-    .nav-item {
-      width: 100%;
-      float: none;
-      list-style: none;
+    #topDonateBtn {
+      color: #ffffff;
+      font-size: 12px;
+      background: #00779e;
+      padding: 4px 8px 4px 8px;
+      text-decoration: none;
+      border:none;
     }
-    .nav_content{
-      width:100%;
-      position: fixed;
-      background-color: #FFF;
-      height:42px;
+    #topDonateBtn:hover {
+      background: #3cb0fd;
+      background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+      background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+      text-decoration: none;
     }
-    /*@media only screen for tablets, desktop {*/
-    @media only screen and (min-width: 415px) {
-      .nav_content {
+
+    #topSliderContainer{
+      margin-top: 42px;
+      background-color: yellow;
+      position: relative;
+      text-transform: uppercase;
+      color:#FFF;
+
+    }
+    #topSliderContainer img{
+        width:100%;
+    }
+    #topSliderContainer .topSliderTopMsg{
+      position: absolute;
+      top:5%;
+      left:2%;
+      width:70%;
+    }
+
+    #topSliderContainer .topSliderBottomMsg{
+      position: absolute;
+          bottom: 25%;
+          left: 2%;
+          width: 35%;
+      border-bottom: 2px solid #FFF;
+    }
+    #topSliderContainer span{
+        position: absolute;
+        top:95%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+
+@media (max-width: 540px){
+  .nav-item {
+    width: 100%;
+    float: none;
+    list-style: none;
+    line-height: 50px;
+    text-align: center;
+    border-bottom:1px solid #00779e;
+  }
+  .nav-item:hover{
+    background-color: #717771;
+  }
+  .nav-item:hover a{
+    color:#ededed;
+    text-decoration: none;
+  }
+  .nav-item a{
+    color:#717771;
+  }
+  .nav-item a:hover{
+    color:#ededed;
+    text-decoration: none;
+  }
+  #topRow{
+
+  }
+  #topInfo{
+    height: 42px;
+    position: fixed;
+    z-index: 100;
+    max-width: 540px
+  }
+  #topDiv {
+    padding: 0;
+    position: relative;
+  }
+  #topInfoContainer{
+    position: absolute;
+    left: 2%;
+    display: flex;
+    align-items: center;
+    width: 84%;
+    justify-content: space-between;
+  }
+
+  #topInfoContainer #topMiners{
+     line-height:42px;
+     color:#a19061;
+     font-size: 14px;
+  }
+  #topLogo{
+     height: 30px;
+     margin-left: 5px;
+  }
+}
+/*
+
+*/
+
+    @media (min-width: 540px) {/*for-tablet-portrait-up*/
+      #navRow{
+        position: relative;
+      }
+      #topInfo {
+        height:80px;
+      }
+      #topInfoContainer{
+        position: absolute;
+        width: 100%;
+        height: 120px;
+      }
+      #topMiners{
+        position: absolute;
+        font-size: 24px;
+        color:#a19061;
+        text-align: center;
+        width:100%;
+        height:55px;
+        font-weight: bold;
+      }
+      #topLogo{
+         height: 100%;
+         margin-left: 10%;
+         margin-top: 4px;
+      }
+      .nav_handle{
         display: none;
       }
-      .navigation {
+      #navRow nav{
         position: absolute;
-        right: 5%;
-        top: 20px;
+      }
+      .navigation{
+        display:block;
+        top: 58%;
+      left: 15%;
+      width: 60%;
+      }
+      nav ul{
+        display: flex;
+    justify-content: space-between;
       }
       .nav-item {
-        float: left;
-        width: auto;
-        zoom: 1;
+        list-style: none;
+        text-align: center;
+        float:left;
       }
-      .nav-item a {
-        display: block;
-        padding: 15px 20px;
-        color: #FFF;
+      .nav-item:hover{
+        background-color: #717771;
       }
-      .nav-item a:hover {
-        background: #2C3E50;
+      .nav-item:hover a{
+        color:#ededed;
+        text-decoration: none;
+      }
+      .nav-item a{
+        color:#717771;
+        font-size: 12px
+      }
+      .nav-item a:hover{
+        color:#ededed;
+        text-decoration: none;
+      }
+      #topRow{
+
+      }
+
+      #topDiv {
+
+      }
+      #topInfoContainer{
+
+      }
+
+      #topSliderContainer{
+        font-size: 1.2em;
+        margin-top: 0;
+      }
+      #topDonateBtn{
+        position: absolute;
+        top:38%;
+        left:0px;
+        font-size: 12px;
       }
     }
+
+    @media (min-width: 900px) {/*for-tablet-landscape-up*/
+      #topInfo{
+        height:100px;
+      }
+      #topInfoContainer{
+        height: 160px;
+      }
+      #topSliderContainer{
+        font-size: 1.7em;
+      }
+      #topMiners{
+        position: absolute;
+        font-size: 36px;
+        color:#a19061;
+        text-align: center;
+        width:100%;
+        height:60px;
+      }
+      #topDonateBtn{
+        font-size: 16px;
+                top:33%;
+      }
+      .nav-item a{
+        color:#717771;
+        font-size: 16px
+      }
+    }
+
+    @media (min-width: 1200px) /*for-desktop-u*/{
+      #topInfo{
+        height:120px;
+      }
+      #topInfoContainer{
+        height: 200px;
+      }
+      #topSliderContainer{
+        font-size: 2.5em;
+      }
+      #topMiners{
+        position: absolute;
+        font-size: 40px;
+        color:#a19061;
+        text-align: center;
+        width:100%;
+        height:65px;
+      }
+      .nav-item a{
+        color:#717771;
+        font-size: 20px
+      }
+      #topDonateBtn{
+        font-size: 20px;
+
+      }
+    }
+
+
   </style>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link rel="stylesheet" media="(max-width: 414px)" href="formstone/src/css/navigation.css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
-
-
 </head>
 
-<body style="background-color:pink;">
+<body data-spy="scroll" data-target="#topInfo">
 
-  <div class="container">
+  <div class="container nav_content" style="height:2000px">
+    <div class="row" id="navRow" data-spy="affix" data-offset-top="0">
+      <div id="topInfo" class="col-md-12">
+        <span id="topInfoContainer">
+        <span id="topMiners">THE MINER'S LAMP AWARD<img id="topLogo" src="formstone/src/img/mlHead40x51.png"/></span>
+        <button id="topDonateBtn" type="button">Donate</button>
+      </span>
+          <button type="button" style="position:absolute;right:0;" class="nav_handle"></button>
+      </div>
+      <nav class="navigation" data-navigation-handle=".nav_handle" data-navigation-content=".nav_content">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#">About Us </a></li>
+          <li class="nav-item"><a href="#">Your Impact</a></li>
+          <li class="nav-item"><a href="#">Get Involved</a></li>
+          <li class="nav-item"><a href="#">Blog</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="row">
       <section class="col-md-12" id="topDiv">
-        <div class="nav_content">
-          <span style="position:absolute;left:20px;line-height:42px;">MINER'S LAMP AWARD</span>
-            <button type="button" style="position:absolute;right:0;" class="nav_handle"></button>
+
+        <div id="topSliderContainer">
+          <div class="owl-carousel owl-theme">
+          <!--div class="item">
+          <img src="formstone/src/img/topSlider1200x675-1.jpg">
+          <div class="topSliderTopMsg">1 in 5 canadians will experience mental illness in their lifetime.</div>
+          <div class="topSliderBottomMsg">we can change that</div>
+          <span>&caron;</span>
+        </div-->
         </div>
-        <nav class="navigation" data-navigation-handle=".nav_handle" data-navigation-content=".nav_content">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#">Donate</a></li>
-            <li class="nav-item"><a href="#">What is it</a></li>
-            <li class="nav-item"><a href="#">Our Leaders</a></li>
-            <li class="nav-item"><a href="#">Rod Black</a></li>
-            <li class="nav-item"><a href="#">Gallery</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
-          </ul>
-        </nav>
+       </div>
       </section>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="formstone/src/js/core.js"></script>
   <script src="formstone/src/js/mediaquery.js"></script>
   <script src="formstone/src/js/swap.js"></script>
   <script src="formstone/src/js/navigation.js"></script>
+  <script type="text/javascript" src="../OwlCarousel2-2.2.1/dist/owl.carousel.js"></script>
   <script type="text/javascript">
     /* JavaScript Media Queries */
     if (matchMedia) {
-      const mq = window.matchMedia("(min-width: 500px)");
+      var mq = window.matchMedia("(min-width: 600px)");
       mq.addListener(widthChange);
       widthChange(mq);
     }
 
     // media query change
     function widthChange(mq) {
-      console.log("width over 414");
-      const msg = (mq.matches ? "more" : "less") + " than 414 pixels";
+      console.log("width over 600");
+      var msg = (mq.matches ? "more" : "less") + " than 600 pixels";
       if (mq.matches) {
-        console.log("over 414 " + msg);
+        console.log("over 600 " + msg);
       } else {
         console.log("no matches");
       }
     }
-
+/*top slider*/
+var topSliderData=[
+  {
+    "id":1,
+    "imgSrc":"formstone/src/img/topSlider1200x675-1.jpg",
+    "topMsg":"1 in 5 canadians will experience mental illness in their lifetime.",
+    "bottomMsg":"we can change that"
+  },
+  {
+    "id":2,
+    "imgSrc":"formstone/src/img/topSlider1200x675-2.jpg",
+    "topMsg":"we work to raise awareness and funds for mental health",
+    "bottomMsg":"learn more below"
+  },
+  {
+    "id":3,
+    "imgSrc":"formstone/src/img/topSlider1200x675-3.jpg",
+    "topMsg":"join us oct 15 at the miner's lamp award event",
+    "bottomMsg":"event details below"
+  }
+]
     $(document).ready(function() {
       $(".navigation").show().navigation({
         type: "overlay",
         gravity: "right",
         maxWidth: "10000px"
       });
+      var topSliderHtml="";
+      for (var i=0;i<topSliderData.length;i++){
+        topSliderHtml+="<div class='item' data-id='"+topSliderData[i].id+"'>";
+        topSliderHtml+="<img src='"+topSliderData[i].imgSrc+"'>";
+        topSliderHtml+="<div class='topSliderTopMsg'>"+topSliderData[i].topMsg+"</div>";
+        topSliderHtml+="<div class='topSliderBottomMsg'>"+topSliderData[i].bottomMsg+"</div>";
+        topSliderHtml+="<span>ˇ</span></div>";
+      }
+
+
+
+      $('.owl-carousel').html(topSliderHtml).owlCarousel({
+          loop:true,
+          autoplay:true,
+          dots:false,
+          responsive:{
+              0:{
+                  items:1
+              }
+      }})
+
     });
   </script>
 </body>

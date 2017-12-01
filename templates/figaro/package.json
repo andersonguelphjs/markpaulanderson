@@ -1,0 +1,22 @@
+{
+  "name": "theDiomed",
+  "version": "1.0.0",
+  "description": "say the unsaid",
+  "main": "index.html",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-combine-media-queries": "^1.0.20",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-img": "^0.1.8",
+    "grunt-purifycss": "^0.1.2",
+    "grunt-responsive-images": "^1.10.1"
+  },
+  "scripts": {
+    "test": "none"
+  },
+  "author": "Mark Paul Anderson",
+  "license": "ISC"
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Queries</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+      if (matchMedia) {
+        var mq = window.matchMedia("(min-width: 901px)");
+        mq.addListener(widthChange);
+        widthChange(mq);
+      }
+
+      // media query change
+      function widthChange(mq) {
+        console.log("width change");
+        var msg = (mq.matches ? "more" : "less") + " than 901 pixels";
+        if (mq.matches) {
+          console.log("over 901 " + msg);
+          /*
+          $(document).ready(function(){
+            $("#newsContainer").find(".item").off("click");
+            $(document).on('click', '[data-lightbox]', lity);
+          });
+          */
+        } else {
+          console.log("under 901 " + msg);
+          /*
+          $(document).ready(function(){
+            $(document).off('click', '[data-lightbox]');
+            $(document).on('click', '[data-lightbox]', function() {
+              console.log(".content");
+            //  $(".content").not($(this).find(".content")).removeClass("long");
+            //  $(this).find(".content").toggleClass("long");
+            });
+
+          });
+    */
+          console.log("no matches");
+        }
+      }
+    </script>
+  </body>
+</html>

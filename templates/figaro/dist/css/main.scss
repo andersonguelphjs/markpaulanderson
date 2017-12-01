@@ -1,0 +1,258 @@
+$body-background-color: #eee;
+$container-color: #FFF;
+$main-font: 'News Cycle', sans-serif;
+$second-font: 'Cousine', monospace;
+$main-font-weight: 200;
+@mixin flipped {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter:  "FlipH";
+}
+@mixin flexAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin centerImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin unstyledLinks {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: normal !important;
+}
+.centered{
+  text-align: center;
+}
+.grow{
+  transition:all 0.2s ease;
+}
+.grow:hover
+{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition:all 0.2s ease;
+}
+body {
+  background-color: $body-background-color;
+  font-family: $main-font;
+  font-weight: $main-font-weight;
+}
+
+#disqus_thread {
+  display: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  background-color: $container-color;
+  box-shadow: 0 3px 10px 5px rgba(0,0,0,0.1);
+}
+
+.header {
+  .headerContainer {
+    @include flexAround;
+  }
+
+  .middle {
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .middle .title {
+    font-size: 64px;
+    font-family: $second-font;
+    text-align: center;
+  }
+  @media (max-width: 741px) {
+    .title {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #FFF;
+      width: 100%;
+      box-shadow: 0 3px 10px 5px rgba(0,0,0,0.1);
+      font-size: 24px !important;
+    }
+  }
+
+  .middle .tagline {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+  }
+
+  .title span {
+    background-color: #000;
+    color: #FFF;
+  }
+
+  .middle img {
+    @include centerImg;
+    width: 350px;
+  }
+
+  .dateContainer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    line-height: 40px;
+  }
+
+  .helmet {
+    width: 90px;
+  }
+
+  .helmet.reversed {
+    @include flipped;
+  }
+  @media (max-width: 741px) {
+    .hideOnMobile {
+      display: none !important;
+    }
+  }
+}
+
+.headerDivider {
+  height: 20px;
+  background-image: url("../../dist/img/greekSquare20.png");
+  background-repeat: repeat-x;
+  border-bottom: 2px solid #000;
+}
+.allArticleContainer > a,
+.linkToSingle,
+.linkToSingle:active,
+.linkToSingle:hover,
+.linkToSingle:link,
+.linkToSingle:visited {
+  @include unstyledLinks;
+}
+
+
+.allArticleContainer {
+  font-family: $second-font;
+  padding-top: 15px;
+
+
+  .articleTitle {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .imgAndSummaryContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .content,
+  .singleContent {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  @media (min-width: 742px) {
+    .articleImageContainer {
+      max-width: 20%;
+    }
+
+    .imgAndSummaryContainer img {
+      padding: 15px;
+      width: 100%;
+    }
+
+    .imgAndSummaryContainer span {
+      padding: 15px;
+      max-width: 80%;
+      font-size: 16px;
+    }
+  }
+
+  .articleDate {
+    font-size: 20px;
+    text-align: right;
+    padding-right: 25px;
+    padding-bottom: 15px;
+  }
+  @media (max-width: 741px) {
+    .imgAndSummaryContainer img,
+    .imgAndSummaryContainer span {
+      padding: 15px;
+      display: block;
+      margin: 0 auto;
+      width: 95%;
+      font-size: 16px;
+    }
+
+    .imgAndSummaryContainer {
+      display: block;
+    }
+  }
+}
+@media (max-width: 741px) {
+  .allArticleContainer{
+    margin-top: 60px;
+  }
+}
+.singleArticleContainer {
+  .socialMedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 742px) {
+    .socialMedia{
+      justify-content: flex-end;
+      padding-right: 17%;
+    }
+  }
+  .socialMedia div{
+    padding: 15px;
+  }
+  .mainImage {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+  }
+.singleDivider{
+  width: 75%;
+  border-bottom: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+  .articleTitle {
+    padding: 30px;
+  }
+
+  .singleContent {
+    padding: 15px;
+  }
+
+  .singleStatsContainer {
+    @include flexAround;
+    font-size: 20px;
+  }
+}
+
+.footerRow {
+  div {
+    padding: 15px 0;
+    text-align: center;
+    background-color: $body-background-color;
+  }
+
+  .footerHome {
+    @include unstyledLinks;
+  }
+}
