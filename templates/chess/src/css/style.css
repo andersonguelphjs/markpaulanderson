@@ -1,0 +1,19 @@
+
+.white{
+  background-color: #CC9966;
+}
+.black{
+  background-color: #FFCC99;
+}
+.square{
+  height: 80px;
+  width: 80px;
+   display: inline-block;
+}
+.clear{
+
+}
+.boardContainer{
+  margin: 0 auto;
+  width:640px;
+}
