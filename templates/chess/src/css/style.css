@@ -17,3 +17,9 @@
   margin: 0 auto;
   width:640px;
 }
+input[name='moveType']{
+  display: inline;
+}
+.buttonPanel{
+  text-align: center;
+}
